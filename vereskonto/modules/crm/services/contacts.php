@@ -298,10 +298,70 @@ final class VKL_Crm_Contact_Service
     }
 
     /**
+     * A contact's orders, newest first: their account's orders plus guest
+     * orders stamped with this contact (also for a former guest who has
+     * since created an account). Wallet top-ups and instalment
+     * repayments are not sales and are always left out.
+     *
+     * A guest stamp is trusted only while the order's phone still matches
+     * the contact: after the CRM is removed and reinstalled, ids restart
+     * and an old stamp could point at a different person.
+     *
+     * @param string[] $statuses Order statuses (without "wc-"); [] = any.
+     * @return WC_Order[]
+     */
+    public function orders(array $contact, array $statuses = [], int $limit = -1): array
+    {
+        if (!function_exists('wc_get_orders')) {
+            return [];
+        }
+
+        $base = ['limit' => $limit, 'return' => 'ids', 'type' => 'shop_order', 'orderby' => 'date', 'order' => 'DESC'];
+
+        if ([] !== $statuses) {
+            $base['status'] = $statuses;
+        }
+
+        $ids = (array) wc_get_orders($base + [
+            'customer_id' => 0,
+            'meta_query'  => [['key' => self::ORDER_META, 'value' => (string) (int) $contact['id']]], // phpcs:ignore WordPress.DB.SlowDBQuery
+        ]);
+
+        if (!empty($contact['user_id'])) {
+            $ids = array_merge($ids, (array) wc_get_orders($base + ['customer_id' => (int) $contact['user_id']]));
+        }
+
+        $orders = [];
+
+        foreach (array_unique(array_map('intval', $ids)) as $order_id) {
+            if (vkl_is_carrier_order($order_id)) {
+                continue;
+            }
+
+            $order = wc_get_order($order_id);
+
+            if (!$order instanceof WC_Order) {
+                continue;
+            }
+
+            if (0 === (int) $order->get_customer_id()
+                && vkl_normalize_mobile(vkl_latin_digits((string) $order->get_billing_phone())) !== (string) ($contact['mobile'] ?? '')
+            ) {
+                continue;
+            }
+
+            $orders[] = $order;
+        }
+
+        usort($orders, static fn(WC_Order $a, WC_Order $b): int => ($b->get_date_created() ? $b->get_date_created()->getTimestamp() : 0) <=> ($a->get_date_created() ? $a->get_date_created()->getTimestamp() : 0));
+
+        return $limit > 0 ? array_slice($orders, 0, $limit) : $orders;
+    }
+
+    /**
      * Recount a contact's paid orders, net spend and last order date.
-     * Wallet top-ups and instalment repayments are not sales and are
-     * skipped (vkl_is_carrier_order). A lead or prospect with a paid
-     * order becomes a customer; lifecycle is never downgraded here.
+     * A lead or prospect with a paid order becomes a customer; lifecycle
+     * is never downgraded here.
      */
     public function refresh_stats(int $contact_id): void
     {
@@ -311,46 +371,13 @@ final class VKL_Crm_Contact_Service
             return;
         }
 
-        $base = ['status' => self::paid_statuses(), 'limit' => -1, 'return' => 'ids', 'type' => 'shop_order'];
-
-        // Guest orders, found through the contact stamp (for_order) —
-        // also for a former guest who has since created an account.
-        $ids = (array) wc_get_orders($base + [
-            'customer_id' => 0,
-            'meta_query'  => [['key' => self::ORDER_META, 'value' => (string) $contact_id]], // phpcs:ignore WordPress.DB.SlowDBQuery
-        ]);
-
-        if (!empty($contact['user_id'])) {
-            $ids = array_merge($ids, (array) wc_get_orders($base + ['customer_id' => (int) $contact['user_id']]));
-        }
-
         $count = 0;
         $spent = 0.0;
         $last  = 0;
 
-        foreach (array_unique(array_map('intval', $ids)) as $order_id) {
-            if (vkl_is_carrier_order((int) $order_id)) {
-                continue;
-            }
-
-            $order = wc_get_order((int) $order_id);
-
-            if (!$order instanceof WC_Order) {
-                continue;
-            }
-
-            // A stamp is trusted only while the order's phone still
-            // matches this contact: after the CRM is removed and
-            // reinstalled, ids restart and an old stamp could point at a
-            // different person.
-            if (0 === (int) $order->get_customer_id()
-                && vkl_normalize_mobile(vkl_latin_digits((string) $order->get_billing_phone())) !== (string) $contact['mobile']
-            ) {
-                continue;
-            }
-
+        foreach ($this->orders($contact, self::paid_statuses()) as $order) {
             ++$count;
-            $spent += (float) $order->get_total() - (float) $order->get_total_refunded();
+            $spent  += (float) $order->get_total() - (float) $order->get_total_refunded();
             $created = $order->get_date_created();
             $last    = max($last, $created ? $created->getTimestamp() : 0);
         }

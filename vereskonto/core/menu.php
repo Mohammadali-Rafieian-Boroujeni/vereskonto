@@ -58,6 +58,13 @@ final class VKL_Admin_Menu
                 ],
             ],
             [
+                'key'   => 'crm',
+                'label' => __('CRM', 'vereskala-login'),
+                'items' => [
+                    'vkl-crm-contacts' => __('Contacts', 'vereskala-login'),
+                ],
+            ],
+            [
                 'key'   => 'customers',
                 'label' => __('Customers', 'vereskala-login'),
                 'items' => [
@@ -99,10 +106,31 @@ final class VKL_Admin_Menu
                     'vkl-messages'      => __('All messages', 'vereskala-login'),
                     'vkl-notifications' => __('SMS Notifications', 'vereskala-login'),
                     'vkl-smart'         => __('Smart shop', 'vereskala-login'),
+                    'vkl-crm-settings'  => __('CRM settings', 'vereskala-login'),
                     'vkl-status'        => __('System status', 'vereskala-login'),
                 ],
             ],
         ];
+    }
+
+    /**
+     * Whether the current user may open a screen of the plugin menu, by
+     * the capability that screen was registered with. CRM staff, for
+     * example, only reach the CRM screens, so the tab bar must not offer
+     * them links that end in "not allowed".
+     */
+    public static function can_open(string $slug): bool
+    {
+        global $submenu;
+
+        foreach ((array) ($submenu[self::PARENT] ?? []) as $item) {
+            if (isset($item[1], $item[2]) && $slug === (string) $item[2]) {
+                return current_user_can((string) $item[1]);
+            }
+        }
+
+        // Unknown screen (module off): only administrators see it.
+        return current_user_can('manage_options');
     }
 
     /**

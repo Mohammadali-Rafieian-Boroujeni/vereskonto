@@ -273,7 +273,9 @@ final class VKL_Admin_Ui
             $children = [];
 
             foreach ($group['items'] as $slug => $label) {
-                $children[] = ['label' => $label, 'slug' => $slug];
+                if (VKL_Admin_Menu::can_open((string) $slug)) {
+                    $children[] = ['label' => $label, 'slug' => $slug];
+                }
             }
 
             if (1 === count($children)) {

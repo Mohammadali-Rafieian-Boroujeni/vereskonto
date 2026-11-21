@@ -280,6 +280,22 @@ $service->flush_pending();
 $service->refresh_stats((int) $gc['id']);
 $check((int) $gc['id'] === (int) $contacts->find_by_user((int) $gu)['id'] && 2 === $contacts->find((int) $gc['id'])['orders_count'], 'guest who signs up keeps the same contact and their guest orders');
 
+// ---------------------------------------------------- timeline listeners
+$orderActs = static fn(int $cid): array => array_values(array_filter($acts->timeline($cid, 50), static fn(array $a): bool => 'order' === $a['type']));
+$gid       = (int) $gc['id'];
+$check(count($orderActs($gid)) >= 2, 'order status changes appear on the timeline');
+$before    = count($orderActs($gid));
+vkl_dispatch('order.status_changed', ['order_id' => $guest2->get_id(), 'order_number' => $guest2->get_order_number(), 'new_status' => 'completed', 'total' => 1]);
+$check($before === count($orderActs($gid)), 'same order event delivered twice → one timeline entry');
+$tu  = (int) $gu;
+vkl_dispatch('wallet.charged', ['user_id' => $tu, 'amount' => 50000, 'reason' => 'test']);
+$check('wallet' === ($acts->timeline($gid, 1)[0]['type'] ?? ''), 'wallet event logged on the contact of the account');
+vkl_dispatch('wallet.charged', ['user_id' => $agent, 'amount' => 1, 'reason' => 'staff']);
+$check(null === $contacts->find_by_user($agent), 'events for staff accounts create no contact');
+$carrier = $make_order($tu, '', [VKL_Wallet_Topup::ORDER_META => '1']);
+$carrier->update_status('completed');
+$check([] === array_filter($orderActs($gid), static fn(array $a): bool => (int) $a['ref_id'] === $carrier->get_id()), 'wallet top-up orders stay off the timeline');
+
 // --------------------------------------------------------------- backfill
 // Simulate "CRM installed on a shop that already has customers": wipe
 // contacts and run the import from scratch.

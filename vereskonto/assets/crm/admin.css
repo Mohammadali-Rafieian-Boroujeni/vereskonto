@@ -1,0 +1,211 @@
+/*
+ * Vereskonto CRM — admin screens.
+ * Logical properties (inline-start/end) so the layout mirrors itself in
+ * RTL (Persian) and LTR. Brand green matches the plugin's header band.
+ */
+.vkl-crm {
+	--crm-green: #157f3a;
+	--crm-green-dark: #0e5f29;
+	--crm-green-soft: #eaf9ef;
+	--crm-line: #e2e4e7;
+	--crm-muted: #50575e;
+	--crm-card: #fff;
+	--crm-radius: 10px;
+	--crm-shadow: 0 1px 2px rgba(16, 42, 34, .06);
+	max-width: 1280px;
+}
+
+/* ---------- cards & headings ---------- */
+.vkl-crm-card {
+	background: var(--crm-card);
+	border: 1px solid var(--crm-line);
+	border-radius: var(--crm-radius);
+	box-shadow: var(--crm-shadow);
+	padding: 16px 18px;
+	margin: 0 0 16px;
+}
+.vkl-crm-card h2 { font-size: 15px; margin: 0 0 12px; }
+.vkl-crm-card h3 { font-size: 13px; margin: 20px 0 8px; }
+.vkl-crm-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.vkl-crm-back { display: inline-block; margin: 10px 0 4px; text-decoration: none; }
+.vkl-crm-importing { display: inline-flex; align-items: center; gap: 4px; color: var(--crm-muted); font-size: 12px; }
+.vkl-crm-importing .spinner { float: none; margin: 0; }
+.vkl-crm-hint { color: var(--crm-muted); }
+.vkl-crm-empty { color: var(--crm-muted); text-align: center; padding: 24px 0; }
+.vkl-crm-warn { background: #fcf9e8; border-inline-start: 3px solid #dba617; padding: 6px 10px; margin: 10px 0 0; font-size: 12px; }
+
+/* ---------- pills, tags, avatar ---------- */
+.vkl-crm-pill {
+	display: inline-block; padding: 1px 10px; border-radius: 999px;
+	font-size: 12px; line-height: 20px; background: #f0f0f1; color: #1d2327; white-space: nowrap;
+}
+.vkl-crm-pill.is-lead { background: #f0f6fc; color: #135e96; }
+.vkl-crm-pill.is-prospect { background: #fcf9e8; color: #8a6100; }
+.vkl-crm-pill.is-customer { background: var(--crm-green-soft); color: var(--crm-green-dark); }
+.vkl-crm-pill.is-inactive { background: #f0f0f1; color: var(--crm-muted); }
+.vkl-crm-pill.is-lost { background: #fcf0f1; color: #b32d2e; }
+.vkl-crm-tag {
+	--tag: #8c8f94;
+	display: inline-block; margin-block: 2px; margin-inline-end: 4px; padding: 0 8px; border-radius: 4px;
+	font-size: 11px; line-height: 18px; color: #1d2327;
+	background: color-mix(in srgb, var(--tag) 14%, #fff);
+	border-inline-start: 3px solid var(--tag);
+}
+.vkl-crm-tag.is-category { border-radius: 999px; border-inline-start-width: 0; box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--tag) 45%, #fff); }
+.vkl-crm-avatar {
+	display: inline-grid; place-items: center; inline-size: 28px; block-size: 28px; border-radius: 50%;
+	background: var(--crm-green-soft); color: var(--crm-green-dark); font-weight: 700; font-size: 13px;
+	margin-inline-end: 8px; vertical-align: middle; flex: none;
+}
+.vkl-crm-avatar.is-large { inline-size: 56px; block-size: 56px; font-size: 22px; margin: 0; }
+
+/* ---------- list: search & filters ---------- */
+.vkl-crm-filters { margin: 12px 0 4px; }
+.vkl-crm-search { display: flex; flex-wrap: wrap; gap: 8px; }
+.vkl-crm-search input[type=search] { min-inline-size: 280px; flex: 1 1 280px; max-inline-size: 460px; }
+.vkl-crm-advanced { margin-top: 8px; }
+.vkl-crm-advanced summary { cursor: pointer; color: #2271b1; display: inline-block; padding: 4px 0; }
+.vkl-crm-filter-grid {
+	display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 10px 14px;
+	background: var(--crm-card); border: 1px solid var(--crm-line); border-radius: var(--crm-radius); padding: 14px; margin-top: 8px;
+}
+.vkl-crm-filter-grid label > span,
+.vkl-crm-fields label > span,
+.vkl-crm-inline-form label > span,
+.vkl-crm-wide > span { display: block; font-size: 12px; color: var(--crm-muted); margin-bottom: 3px; }
+.vkl-crm-filter-grid input, .vkl-crm-filter-grid select { inline-size: 100%; max-inline-size: none; }
+
+/* list table — WordPress lays the table out with fixed widths, so the
+   short columns get explicit widths and never wrap (an 11-digit mobile
+   or a stage pill split over two lines is unreadable). */
+.vkl-crm .wp-list-table .column-name { inline-size: 24%; }
+.vkl-crm .wp-list-table .column-tags { inline-size: 14%; }
+.vkl-crm .wp-list-table .column-mobile { inline-size: 7.5em; }
+.vkl-crm .wp-list-table .column-lifecycle { inline-size: 7em; }
+.vkl-crm .wp-list-table .column-owner { inline-size: 7.5em; }
+.vkl-crm .wp-list-table .column-orders_count { inline-size: 4em; }
+.vkl-crm .wp-list-table .column-total_spent { inline-size: 7.5em; }
+.vkl-crm .wp-list-table .column-last_activity_at,
+.vkl-crm .wp-list-table .column-created_at,
+.vkl-crm .wp-list-table .column-source { inline-size: 6.5em; }
+.vkl-crm .wp-list-table th,
+.vkl-crm .wp-list-table td.column-mobile,
+.vkl-crm .wp-list-table td.column-lifecycle,
+.vkl-crm .wp-list-table td.column-total_spent,
+.vkl-crm .wp-list-table td.column-last_activity_at { white-space: nowrap; }
+.vkl-crm .wp-list-table td.column-owner { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.vkl-crm .wp-list-table .column-name .row-title { vertical-align: middle; }
+.vkl-crm-bulk-values { display: inline-flex; gap: 4px; margin-inline-start: 4px; vertical-align: top; }
+.js .vkl-crm-bulk-values > span { display: none; }
+.js .vkl-crm-bulk-values > span.is-shown { display: inline; }
+
+/* ---------- forms ---------- */
+.vkl-crm-form { max-inline-size: 880px; }
+.vkl-crm-fields { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px 16px; }
+.vkl-crm-fields input, .vkl-crm-fields select, .vkl-crm-wide input, .vkl-crm-wide textarea { inline-size: 100%; max-inline-size: none; }
+.vkl-crm-wide { display: block; margin-top: 12px; }
+.vkl-crm-tagset { border: 0; padding: 0; margin: 0 0 10px; }
+.vkl-crm-tagset legend { font-weight: 600; margin-bottom: 4px; }
+.vkl-crm-check { display: inline-flex; align-items: center; gap: 4px; margin-block: 2px; margin-inline-end: 12px; }
+.vkl-crm-inline-form { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 10px 14px; }
+.vkl-crm-inline-form input[type=color] { inline-size: 48px; block-size: 30px; padding: 0 2px; }
+
+/* ---------- profile ---------- */
+.vkl-crm-profile-head {
+	display: flex; flex-wrap: wrap; align-items: center; gap: 14px;
+	background: var(--crm-card); border: 1px solid var(--crm-line); border-radius: var(--crm-radius);
+	box-shadow: var(--crm-shadow); padding: 16px 18px; margin: 10px 0 16px;
+}
+.vkl-crm-who { flex: 1 1 260px; min-inline-size: 0; }
+.vkl-crm-who h1 { margin: 0 0 6px; padding: 0; font-size: 22px; line-height: 1.3; }
+.vkl-crm-meta-line { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; color: var(--crm-muted); }
+.vkl-crm-owner .dashicons { font-size: 16px; inline-size: 16px; block-size: 16px; vertical-align: text-bottom; }
+.vkl-crm-actions { display: flex; flex-wrap: wrap; gap: 6px; }
+.vkl-crm-actions .button .dashicons { font-size: 16px; inline-size: 16px; block-size: 16px; vertical-align: text-bottom; }
+.vkl-crm-danger { color: #b32d2e !important; border-color: #e6b4b4 !important; }
+.vkl-crm-danger-link { color: #b32d2e; }
+
+.vkl-crm-profile { display: grid; grid-template-columns: minmax(260px, 320px) 1fr; gap: 16px; align-items: start; }
+.vkl-crm-dl { display: grid; grid-template-columns: auto 1fr; gap: 6px 12px; margin: 0; }
+.vkl-crm-dl dt { color: var(--crm-muted); }
+.vkl-crm-dl dd { margin: 0; overflow-wrap: anywhere; }
+.vkl-crm-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 10px; }
+.vkl-crm-stats > div { background: #f6f7f7; border-radius: 8px; padding: 8px 10px; }
+.vkl-crm-stats strong { display: block; font-size: 16px; font-variant-numeric: tabular-nums; }
+.vkl-crm-stats span { font-size: 12px; color: var(--crm-muted); }
+.vkl-crm-orders { margin: 0; }
+.vkl-crm-orders li { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; padding: 6px 0; border-top: 1px solid #f0f0f1; margin: 0; }
+.vkl-crm-order-total { margin-inline-start: auto; font-variant-numeric: tabular-nums; }
+.vkl-crm-links { display: flex; flex-direction: column; gap: 4px; margin: 10px 0 0; }
+
+/* composer */
+.vkl-crm-composer-tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--crm-line); margin: -4px 0 12px; }
+.vkl-crm-composer-tabs button {
+	background: none; border: 0; border-bottom: 2px solid transparent; padding: 8px 12px; cursor: pointer;
+	color: var(--crm-muted); font-size: 13px; display: inline-flex; align-items: center; gap: 4px; margin-bottom: -1px;
+}
+.vkl-crm-composer-tabs button[aria-selected=true] { color: var(--crm-green-dark); border-bottom-color: var(--crm-green); font-weight: 600; }
+.vkl-crm-composer-tabs .dashicons { font-size: 16px; inline-size: 16px; block-size: 16px; }
+.js .vkl-crm-composer [data-show] { display: none; }
+.js .vkl-crm-composer [data-show].is-shown { display: grid; margin-bottom: 10px; }
+
+/* timeline */
+.vkl-crm-timeline-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+.vkl-crm-timeline-head h2 { margin: 0; }
+.vkl-crm-chips { display: flex; flex-wrap: wrap; gap: 4px; }
+.vkl-crm-chips a {
+	text-decoration: none; padding: 2px 10px; border-radius: 999px; border: 1px solid var(--crm-line);
+	font-size: 12px; color: #1d2327; background: #fff;
+}
+.vkl-crm-chips a.is-active { background: var(--crm-green); border-color: var(--crm-green); color: #fff; }
+.vkl-crm-timeline { list-style: none; margin: 0; padding: 0; position: relative; }
+.vkl-crm-timeline::before {
+	content: ""; position: absolute; inset-block: 6px; inset-inline-start: 15px; inline-size: 2px; background: #f0f0f1;
+}
+.vkl-crm-day { position: relative; font-size: 12px; font-weight: 600; color: var(--crm-muted); margin: 14px 0 6px; padding-inline-start: 40px; }
+.vkl-crm-entry { position: relative; display: flex; gap: 10px; margin: 0 0 10px; }
+.vkl-crm-entry-icon {
+	position: relative; z-index: 1; flex: none; inline-size: 32px; block-size: 32px; border-radius: 50%;
+	display: grid; place-items: center; font-size: 16px; background: #f0f0f1; color: var(--crm-muted);
+	box-shadow: 0 0 0 3px #fff;
+}
+.vkl-crm-entry.is-note .vkl-crm-entry-icon { background: #fcf9e8; color: #8a6100; }
+.vkl-crm-entry.is-call .vkl-crm-entry-icon { background: #f0f6fc; color: #135e96; }
+.vkl-crm-entry.is-meeting .vkl-crm-entry-icon { background: #f5effc; color: #6c2eb9; }
+.vkl-crm-entry.is-order .vkl-crm-entry-icon,
+.vkl-crm-entry.is-wallet .vkl-crm-entry-icon,
+.vkl-crm-entry.is-installment .vkl-crm-entry-icon { background: var(--crm-green-soft); color: var(--crm-green-dark); }
+.vkl-crm-entry.is-ticket .vkl-crm-entry-icon,
+.vkl-crm-entry.is-return .vkl-crm-entry-icon { background: #fcf0f1; color: #b32d2e; }
+.vkl-crm-entry-body { flex: 1; min-inline-size: 0; background: #fbfbfc; border: 1px solid #f0f0f1; border-radius: 8px; padding: 8px 12px; }
+.vkl-crm-entry.is-system .vkl-crm-entry-body { background: transparent; border-color: transparent; padding-block: 6px; }
+.vkl-crm-entry-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; }
+.vkl-crm-entry-time { margin-inline-start: auto; color: var(--crm-muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+.vkl-crm-entry-link { font-size: 12px; }
+.vkl-crm-entry-meta { font-size: 12px; color: var(--crm-muted); margin-top: 2px; }
+.vkl-crm-entry-text { margin-top: 4px; overflow-wrap: anywhere; }
+.vkl-crm-entry-text p { margin: 0 0 6px; }
+.vkl-crm-entry-foot { display: flex; gap: 12px; font-size: 12px; color: var(--crm-muted); margin-top: 4px; }
+.vkl-crm-more { text-align: center; margin: 12px 0 0; }
+
+/* settings */
+.vkl-crm-settings { display: grid; gap: 16px; max-inline-size: 960px; }
+.vkl-crm-tag-table td { vertical-align: middle; }
+.vkl-crm-row-actions a { margin-inline-end: 10px; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 960px) {
+	.vkl-crm-profile { grid-template-columns: 1fr; }
+	.vkl-crm-main { order: -1; }
+}
+@media (max-width: 782px) {
+	.vkl-crm-search input[type=search] { min-inline-size: 0; max-inline-size: none; }
+	.vkl-crm-profile-head { padding: 12px; }
+	.vkl-crm-profile-head .vkl-crm-who { flex: 1 1 0; }
+	.vkl-crm-avatar.is-large { inline-size: 44px; block-size: 44px; font-size: 18px; }
+	.vkl-crm-actions { inline-size: 100%; }
+	.vkl-crm-actions .button { flex: 1 1 auto; text-align: center; }
+	.vkl-crm-bulk-values { display: flex; margin: 6px 0 0; }
+	.vkl-crm-composer-tabs button { flex: 1; justify-content: center; padding: 10px 4px; }
+	.vkl-crm-check { margin-inline-end: 8px; }
+}

@@ -5093,3 +5093,518 @@ msgstr "گفبات"
 
 msgid "Main menu"
 msgstr "منوی اصلی"
+
+msgid "CRM"
+msgstr "مدیریت مشتریان"
+
+msgid "Contacts"
+msgstr "مخاطبین"
+
+msgid "CRM settings"
+msgstr "تنظیمات مدیریت مشتریان"
+
+msgid "CRM file (notes, calls, timeline)"
+msgstr "پروندهٔ مشتری (یادداشت، تماس، تاریخچه)"
+
+msgid "Contacts per page"
+msgstr "مخاطب در هر صفحه"
+
+msgid "That contact no longer exists."
+msgstr "این مخاطب دیگر وجود ندارد."
+
+msgid "You are not allowed to see this contact."
+msgstr "اجازهٔ دیدن این مخاطب را ندارید."
+
+msgid "Add contact"
+msgstr "افزودن مخاطب"
+
+msgid "Search contacts"
+msgstr "جست‌وجوی مخاطبین"
+
+msgid "Name, mobile, email or company…"
+msgstr "نام، موبایل، ایمیل یا شرکت…"
+
+msgid "Clear filters"
+msgstr "پاک کردن فیلترها"
+
+msgid "Advanced filters"
+msgstr "فیلترهای پیشرفته"
+
+msgid "Owner"
+msgstr "کارشناس"
+
+msgid "Anyone"
+msgstr "همه"
+
+msgid "Unassigned"
+msgstr "بدون کارشناس"
+
+msgid "Stage"
+msgstr "مرحله"
+
+msgid "Any"
+msgstr "همه"
+
+msgid "Source"
+msgstr "منبع"
+
+msgid "Tag"
+msgstr "برچسب"
+
+msgid "City"
+msgstr "شهر"
+
+msgid "Has a site account"
+msgstr "حساب کاربری دارد"
+
+msgid "No account"
+msgstr "حساب کاربری ندارد"
+
+msgid "Spent at least"
+msgstr "حداقل مبلغ خرید"
+
+msgid "Spent at most"
+msgstr "حداکثر مبلغ خرید"
+
+msgid "Orders at least"
+msgstr "حداقل تعداد سفارش"
+
+msgid "Added from"
+msgstr "افزوده‌شده از"
+
+msgid "Added until"
+msgstr "افزوده‌شده تا"
+
+msgid "Active from"
+msgstr "آخرین فعالیت از"
+
+msgid "Active until"
+msgstr "آخرین فعالیت تا"
+
+msgid "Apply filters"
+msgstr "اعمال فیلترها"
+
+msgid "Importing existing customers… %s so far"
+msgstr "در حال انتقال مشتریان فعلی… تا الان %s نفر"
+
+msgid "You are not allowed to add contacts."
+msgstr "اجازهٔ افزودن مخاطب را ندارید."
+
+msgid "Back to contact"
+msgstr "بازگشت به مخاطب"
+
+msgid "All contacts"
+msgstr "همهٔ مخاطبین"
+
+msgid "Edit %s"
+msgstr "ویرایش %s"
+
+msgid "Open the existing contact"
+msgstr "باز کردن مخاطب موجود"
+
+msgid "Contact details"
+msgstr "مشخصات مخاطب"
+
+msgid "First name"
+msgstr "نام"
+
+msgid "Last name"
+msgstr "نام خانوادگی"
+
+msgid "Email"
+msgstr "ایمیل"
+
+msgid "Company"
+msgstr "شرکت"
+
+msgid "At least a name, mobile or email. The mobile number must be unique."
+msgstr "دست‌کم نام، موبایل یا ایمیل لازم است. شمارهٔ موبایل نباید تکراری باشد."
+
+msgid "Sales"
+msgstr "فروش"
+
+msgid "Score"
+msgstr "امتیاز"
+
+msgid "Categories and tags"
+msgstr "دسته‌ها و برچسب‌ها"
+
+msgid "No tags yet. Type new ones below, separated by commas."
+msgstr "هنوز برچسبی نیست. برچسب‌های تازه را پایین بنویسید و با ویرگول جدا کنید."
+
+msgid "Categories"
+msgstr "دسته‌ها"
+
+msgid "Tags"
+msgstr "برچسب‌ها"
+
+msgid "New tags"
+msgstr "برچسب‌های تازه"
+
+msgid "e.g. VIP, wholesale"
+msgstr "مثلاً ویژه، عمده"
+
+msgid "Cancel"
+msgstr "انصراف"
+
+msgid "Contact created"
+msgstr "مخاطب ساخته شد"
+
+msgid "This contact is in the deleted list."
+msgstr "این مخاطب در فهرست حذف‌شده‌هاست."
+
+msgid "Restore"
+msgstr "بازگردانی"
+
+msgid "Call"
+msgstr "تماس"
+
+msgid "Assign to me"
+msgstr "برداشتن برای خودم"
+
+msgid "Details"
+msgstr "جزئیات"
+
+msgid "Added"
+msgstr "تاریخ افزودن"
+
+msgid "Another contact already uses this customer's account mobile (%s). Check for a duplicate."
+msgstr "شمارهٔ موبایل حساب این مشتری (%s) در مخاطب دیگری ثبت شده است. تکراری بودن را بررسی کنید."
+
+msgid "Wallet, installments and club"
+msgstr "کیف پول، اقساط و باشگاه"
+
+msgid "Site account"
+msgstr "حساب کاربری سایت"
+
+msgid "Assign this contact to yourself to add notes, calls and meetings."
+msgstr "برای ثبت یادداشت، تماس و جلسه، اول این مخاطب را برای خودتان بردارید."
+
+msgid "Timeline"
+msgstr "تاریخچه"
+
+msgid "Filter timeline"
+msgstr "فیلتر تاریخچه"
+
+msgid "Everything"
+msgstr "همه"
+
+msgid "Notes"
+msgstr "یادداشت‌ها"
+
+msgid "Calls and meetings"
+msgstr "تماس‌ها و جلسه‌ها"
+
+msgid "Money"
+msgstr "مالی"
+
+msgid "Changes"
+msgstr "تغییرات"
+
+msgid "Older entries"
+msgstr "موارد قدیمی‌تر"
+
+msgid "Back to the newest"
+msgstr "بازگشت به جدیدترین‌ها"
+
+msgid "Meeting"
+msgstr "جلسه"
+
+msgid "We called"
+msgstr "ما تماس گرفتیم"
+
+msgid "They called"
+msgstr "مشتری تماس گرفت"
+
+msgid "Result"
+msgstr "نتیجه"
+
+msgid "Minutes"
+msgstr "دقیقه"
+
+msgid "Time"
+msgstr "ساعت"
+
+msgid "Held"
+msgstr "برگزار شد"
+
+msgid "Scheduled"
+msgstr "برنامه‌ریزی‌شده"
+
+msgid "Write a note…"
+msgstr "یادداشتی بنویسید…"
+
+msgid "What was discussed?"
+msgstr "دربارهٔ چه صحبت شد؟"
+
+msgid "Agenda or minutes…"
+msgstr "دستور جلسه یا صورت‌جلسه…"
+
+msgid "Add to timeline"
+msgstr "ثبت در تاریخچه"
+
+msgid "%s min"
+msgstr "%s دقیقه"
+
+msgid "Automatic"
+msgstr "خودکار"
+
+msgid "Assigned to %s"
+msgstr "به %s سپرده شد"
+
+msgid "Stage changed: %1$s → %2$s"
+msgstr "تغییر مرحله: %1$s ← %2$s"
+
+msgid "Name"
+msgstr "نام"
+
+msgid "Last activity"
+msgstr "آخرین فعالیت"
+
+msgid "Assign to…"
+msgstr "سپردن به…"
+
+msgid "Change stage to…"
+msgstr "تغییر مرحله به…"
+
+msgid "Add tag…"
+msgstr "افزودن برچسب…"
+
+msgid "Remove tag…"
+msgstr "برداشتن برچسب…"
+
+msgid "Deleted"
+msgstr "حذف‌شده‌ها"
+
+msgid "No contact matches these filters."
+msgstr "هیچ مخاطبی با این فیلترها پیدا نشد."
+
+msgid "No contacts yet. Existing customers are imported automatically in the background."
+msgstr "هنوز مخاطبی نیست. مشتریان فعلی به‌طور خودکار در پس‌زمینه منتقل می‌شوند."
+
+msgid "Select %s"
+msgstr "انتخاب %s"
+
+msgid "Categories group customers by type (e.g. wholesale, retail); tags are free labels (e.g. VIP, follow up). A contact can have several of each."
+msgstr "دسته‌ها مشتریان را بر اساس نوع گروه‌بندی می‌کنند (مثلاً عمده، خرده)؛ برچسب‌ها علامت‌های آزادند (مثلاً ویژه، پیگیری). هر مخاطب می‌تواند چند دسته و چند برچسب داشته باشد."
+
+msgid "Kind"
+msgstr "نوع"
+
+msgid "No categories or tags yet."
+msgstr "هنوز دسته یا برچسبی نیست."
+
+msgid "Category"
+msgstr "دسته"
+
+msgid "Edit tag"
+msgstr "ویرایش برچسب"
+
+msgid "Add a category or tag"
+msgstr "افزودن دسته یا برچسب"
+
+msgid "Colour"
+msgstr "رنگ"
+
+msgid "Add"
+msgstr "افزودن"
+
+msgid "Access"
+msgstr "دسترسی"
+
+msgid "Sales agents see contacts nobody is assigned to (so they can pick up new leads)"
+msgstr "کارشناسان فروش مخاطبان بدون کارشناس را هم ببینند (تا بتوانند سرنخ‌های تازه را بردارند)"
+
+msgid "Give staff the \"Sales agent\" role (own contacts only) or \"Sales manager\" role (everyone's contacts) under Users. Shop managers have manager access; only administrators change these settings."
+msgstr "در بخش کاربران، به کارمندان نقش «کارشناس فروش» (فقط مخاطبان خودش) یا «مدیر فروش» (مخاطبان همه) بدهید. مدیر فروشگاه دسترسی مدیر فروش را دارد و فقط مدیر کل سایت این تنظیمات را تغییر می‌دهد."
+
+msgid "Save settings"
+msgstr "ذخیرهٔ تنظیمات"
+
+msgid "Lead"
+msgstr "سرنخ"
+
+msgid "Prospect"
+msgstr "مشتری بالقوه"
+
+msgid "Inactive"
+msgstr "غیرفعال"
+
+msgid "Lost"
+msgstr "از دست رفته"
+
+msgid "Entered by staff"
+msgstr "ثبت توسط کارمند"
+
+msgid "Website sign-up"
+msgstr "ثبت‌نام در سایت"
+
+msgid "Guest checkout"
+msgstr "خرید مهمان"
+
+msgid "Phone call"
+msgstr "تماس تلفنی"
+
+msgid "Instagram"
+msgstr "اینستاگرام"
+
+msgid "Referral"
+msgstr "معرفی"
+
+msgid "Chatbot"
+msgstr "گفبات"
+
+msgid "Abandoned cart"
+msgstr "سبد رهاشده"
+
+msgid "Prize wheel"
+msgstr "گردونهٔ شانس"
+
+msgid "Credit request"
+msgstr "درخواست اعتبار"
+
+msgid "Exhibition / in store"
+msgstr "نمایشگاه / فروشگاه حضوری"
+
+msgid "Ticket"
+msgstr "تیکت"
+
+msgid "Return"
+msgstr "مرجوعی"
+
+msgid "Installment"
+msgstr "قسط"
+
+msgid "Club"
+msgstr "باشگاه"
+
+msgid "Sales stage"
+msgstr "مرحلهٔ فروش"
+
+msgid "Task"
+msgstr "وظیفه"
+
+msgid "Change"
+msgstr "تغییر"
+
+msgid "No answer"
+msgstr "پاسخ نداد"
+
+msgid "Busy"
+msgstr "مشغول بود"
+
+msgid "Phone off / unreachable"
+msgstr "خاموش / در دسترس نبود"
+
+msgid "Asked to call back"
+msgstr "خواست بعداً تماس بگیریم"
+
+msgid "Contact #%d"
+msgstr "مخاطب #%d"
+
+msgid "%s ago"
+msgstr "%s پیش"
+
+msgid "Contact saved."
+msgstr "مخاطب ذخیره شد."
+
+msgid "Contact created."
+msgstr "مخاطب ساخته شد."
+
+msgid "Contact moved to the deleted list."
+msgstr "مخاطب به فهرست حذف‌شده‌ها رفت."
+
+msgid "Contact restored."
+msgstr "مخاطب بازگردانده شد."
+
+msgid "The contact is now yours."
+msgstr "این مخاطب حالا به شما سپرده شد."
+
+msgid "Added to the timeline."
+msgstr "در تاریخچه ثبت شد."
+
+msgid "Timeline entry removed."
+msgstr "مورد از تاریخچه برداشته شد."
+
+msgid "Bulk action applied."
+msgstr "عملیات گروهی انجام شد."
+
+msgid "Tag saved."
+msgstr "برچسب ذخیره شد."
+
+msgid "Tag deleted."
+msgstr "برچسب حذف شد."
+
+msgid "Settings saved."
+msgstr "تنظیمات ذخیره شد."
+
+msgid "Please check the form and try again."
+msgstr "لطفاً فرم را بررسی و دوباره تلاش کنید."
+
+msgid "Move this contact to the deleted list?"
+msgstr "این مخاطب به فهرست حذف‌شده‌ها برود؟"
+
+msgid "Apply this action to the selected contacts?"
+msgstr "این عملیات روی مخاطبان انتخاب‌شده انجام شود؟"
+
+msgid "Remove this timeline entry?"
+msgstr "این مورد از تاریخچه برداشته شود؟"
+
+msgid "Delete this tag? It is removed from every contact."
+msgstr "این برچسب حذف شود؟ از همهٔ مخاطبان هم برداشته می‌شود."
+
+msgid "%s contact affected."
+msgid_plural "%s contacts affected."
+msgstr[0] "روی %s مخاطب انجام شد."
+msgstr[1] "روی %s مخاطب انجام شد."
+
+msgid "The email address is not valid."
+msgstr "نشانی ایمیل درست نیست."
+
+msgid "Unknown lifecycle stage."
+msgstr "مرحلهٔ مشتری نامعتبر است."
+
+msgid "The birthday is not a valid date."
+msgstr "تاریخ تولد معتبر نیست."
+
+msgid "Enter at least a name, mobile or email."
+msgstr "دست‌کم نام، موبایل یا ایمیل را وارد کنید."
+
+msgid "A contact with this mobile number already exists."
+msgstr "مخاطبی با این شمارهٔ موبایل از قبل وجود دارد."
+
+msgid "The contact could not be saved."
+msgstr "ذخیرهٔ مخاطب ناموفق بود."
+
+msgid "Order #%1$s — %2$s"
+msgstr "سفارش #%1$s — %2$s"
+
+msgid "Ticket opened: %s"
+msgstr "تیکت باز شد: %s"
+
+msgid "Ticket closed: %s"
+msgstr "تیکت بسته شد: %s"
+
+msgid "Return requested for order #%s"
+msgstr "درخواست مرجوعی برای سفارش #%s"
+
+msgid "Wallet credited %s"
+msgstr "شارژ کیف پول: %s"
+
+msgid "Wallet debited %s"
+msgstr "برداشت از کیف پول: %s"
+
+msgid "Installment paid: %s"
+msgstr "پرداخت قسط: %s"
+
+msgid "The plan is now fully paid."
+msgstr "همهٔ اقساط این طرح پرداخت شد."
+
+msgid "Requested purchase credit of %s"
+msgstr "درخواست اعتبار خرید به مبلغ %s"
+
+msgid "Credit request approved (%s)"
+msgstr "درخواست اعتبار تأیید شد (%s)"
+
+msgid "Credit request declined"
+msgstr "درخواست اعتبار رد شد"

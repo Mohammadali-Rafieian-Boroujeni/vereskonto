@@ -16,6 +16,8 @@ function esc_html($text) { return htmlspecialchars((string) $text, ENT_QUOTES); 
 function esc_attr($text) { return htmlspecialchars((string) $text, ENT_QUOTES); }
 function add_action(...$args) {}
 function add_filter(...$args) {}
+$GLOBALS['test_caps'] = ['manage_options', 'vkl_crm_access', 'vkl_crm_settings'];
+function current_user_can($cap) { return in_array($cap, $GLOBALS['test_caps'], true); }
 
 require __DIR__ . '/../core/menu.php';
 require __DIR__ . '/../modules/woocommerce/frontendui.php';
@@ -93,5 +95,18 @@ preg_match_all('~admin\.php\?page=([a-z-]+)~', $html, $m);
 
 $check($m[1] === $all, 'tab bar links every screen in group order');
 $check(1 === preg_match('~page=vkl-wallet"\s*class="vkl-tab-active"~', $html), 'tab bar marks the current screen');
+
+// --- A sales agent (CRM access only) is offered only the CRM screen. ---
+$submenu = ['vereskala-login' => [
+    ['Contacts', 'vkl_crm_access', 'vkl-crm-contacts', 'Contacts'],
+    ['Wallet', 'manage_options', 'vkl-wallet', 'Wallet'],
+    ['CRM settings', 'vkl_crm_settings', 'vkl-crm-settings', 'CRM settings'],
+]];
+$GLOBALS['test_caps'] = ['read', 'vkl_crm_access'];
+$_GET['page'] = 'vkl-crm-contacts';
+ob_start();
+(new VKL_Admin_Ui())->header();
+preg_match_all('~admin\.php\?page=([a-z-]+)~', (string) ob_get_clean(), $m);
+$check(['vkl-crm-contacts'] === $m[1], 'agent tab bar: only the CRM contacts screen');
 
 exit($failures > 0 ? 1 : 0);

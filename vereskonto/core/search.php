@@ -78,7 +78,12 @@ final class VKL_Admin_Search
             }
         }
 
-        return $out;
+        // Only screens this user may open (CRM staff see CRM entries only).
+        return array_values(array_filter($out, static function (array $entry): bool {
+            parse_str((string) parse_url($entry['u'], PHP_URL_QUERY), $args);
+
+            return VKL_Admin_Menu::can_open((string) ($args['page'] ?? ''));
+        }));
     }
 
     public function render(): void

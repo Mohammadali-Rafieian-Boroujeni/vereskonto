@@ -307,6 +307,9 @@ final class VKL_Customers_Admin
                 <?php VKL_Admin_Tabs::modal_button('vkl-modal-cust-adjust', __('Credit / debit wallet', 'vereskala-login'), 'button'); ?>
             <?php endif; ?>
             <a class="button" href="<?php echo esc_url(add_query_arg(['_customer_user' => $uid], VKL_Today_Admin::orders_url())); ?>"><?php esc_html_e('Orders in WooCommerce', 'vereskala-login'); ?></a>
+            <?php if (class_exists('VKL_Crm_Module') && VKL_Crm_Module::installed() && class_exists('VKL_Crm_Ui') && current_user_can('vkl_crm_access')) : ?>
+                <a class="button" href="<?php echo esc_url(VKL_Crm_Ui::contacts_url(['user' => $uid])); ?>"><?php esc_html_e('CRM file (notes, calls, timeline)', 'vereskala-login'); ?></a>
+            <?php endif; ?>
         </div>
 
         <?php if (null !== $sum['wallet']) : ?>

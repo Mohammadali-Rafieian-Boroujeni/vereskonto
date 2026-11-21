@@ -85,9 +85,9 @@ $screen = static function (string $name, callable $fn) use ($render, $balanced, 
     return $html;
 };
 
-// ---- Menu: seven sections, Today first. --------------------------------
+// ---- Menu: eight sections (CRM since 2.16.0), Today first. -------------
 $keys = array_column(VKL_Admin_Menu::groups(), 'key');
-$check($keys === ['today', 'inbox', 'customers', 'finance', 'marketing', 'reports', 'settings'], 'menu has the seven sections in order');
+$check($keys === ['today', 'inbox', 'crm', 'customers', 'finance', 'marketing', 'reports', 'settings'], 'menu has the eight sections in order');
 
 // ---- Today ---------------------------------------------------------------
 $today = new VKL_Today_Admin();
