@@ -63,6 +63,8 @@ final class VKL_Admin_Menu
                 'items' => [
                     'vkl-crm-contacts' => __('Contacts', 'vereskala-login'),
                     'vkl-crm-deals'    => __('Deals', 'vereskala-login'),
+                    'vkl-crm-tasks'    => __('Tasks', 'vereskala-login'),
+                    'vkl-crm-orders'   => __('Customer orders', 'vereskala-login'),
                 ],
             ],
             [
@@ -216,6 +218,7 @@ final class VKL_Admin_Menu
             'vkl-tickets'       => ['ticket.repository', 'open_count'],
             'vkl-chatbot-inbox' => ['smart.chatlog', 'needing_human_count'],
             'vkl-returns'       => ['returns.repository', 'pending_count'],
+            'vkl-crm-tasks'     => ['crm.task_service', 'badge_count'],
         ];
 
         if (!function_exists('vkl')) {

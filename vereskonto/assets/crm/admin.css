@@ -320,3 +320,47 @@
 	.vkl-crm-viewswitch { margin-inline-start: 0; }
 	.vkl-crm-stagebar > * { flex-basis: 30%; }
 }
+
+/* ================= tasks & orders (2.18.0) ================= */
+.vkl-crm-tasks { list-style: none; margin: 0; padding: 0; }
+.vkl-crm-task { display: flex; gap: 10px; align-items: flex-start; padding: 10px 4px; border-top: 1px solid #f0f0f1; margin: 0; }
+.vkl-crm-task:first-child { border-top: 0; }
+.vkl-crm-tasks.is-compact .vkl-crm-task { padding: 6px 0; }
+.vkl-crm-task-check { margin: 0; }
+.vkl-crm-checkbox {
+	inline-size: 22px; block-size: 22px; border-radius: 50%; border: 2px solid #8c8f94; background: #fff; padding: 0;
+	display: grid; place-items: center; cursor: pointer; color: transparent; flex: none;
+}
+.vkl-crm-checkbox .dashicons { font-size: 16px; inline-size: 16px; block-size: 16px; }
+.vkl-crm-checkbox:hover { border-color: var(--crm-green); color: var(--crm-green); }
+.vkl-crm-checkbox[aria-pressed=true] { background: var(--crm-green); border-color: var(--crm-green); color: #fff; }
+.vkl-crm-checkbox.is-static { cursor: default; }
+.vkl-crm-task.is-urgent .vkl-crm-checkbox { border-color: #d63638; }
+.vkl-crm-task.is-high .vkl-crm-checkbox { border-color: #dba617; }
+.vkl-crm-task-body { flex: 1; min-inline-size: 0; }
+.vkl-crm-task-title { font-weight: 600; overflow-wrap: anywhere; }
+.vkl-crm-task-title a { text-decoration: none; }
+.vkl-crm-task.is-done .vkl-crm-task-title { text-decoration: line-through; color: var(--crm-muted); font-weight: 400; }
+.vkl-crm-task-meta { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 12px; color: var(--crm-muted); margin-top: 3px; }
+.vkl-crm-task-meta a { color: inherit; }
+.vkl-crm-task-meta .dashicons { font-size: 14px; inline-size: 14px; block-size: 14px; vertical-align: text-bottom; }
+.vkl-crm-task-due.is-overdue { color: #b32d2e; font-weight: 600; }
+.vkl-crm-task-due.is-today { color: var(--crm-green-dark); font-weight: 600; }
+.vkl-crm-pill.is-prio-high { background: #fcf9e8; color: #8a6100; }
+.vkl-crm-pill.is-prio-urgent { background: #fcf0f1; color: #b32d2e; }
+.vkl-crm-quick-task { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.vkl-crm-quick-task .vkl-crm-qt-title { flex: 1 1 220px; }
+.vkl-crm-quick-task .vkl-crm-qt-title input { inline-size: 100%; }
+.vkl-crm-quick-task input[type=text]:not([name=title]) { inline-size: 7.5em; }
+.vkl-crm-task-views { margin: 4px 0 12px; }
+.vkl-crm-task-views a .count { display: inline-block; min-inline-size: 18px; padding: 0 5px; border-radius: 9px; background: rgba(0,0,0,.08); font-size: 11px; text-align: center; }
+.vkl-crm-task-views a.is-alert:not(.is-active) { border-color: #d63638; color: #b32d2e; }
+.vkl-crm-orders-table td { vertical-align: middle; }
+.vkl-crm-order-status { display: flex; gap: 4px; flex-wrap: wrap; margin: 0; }
+.vkl-crm-order-status select { max-inline-size: 150px; }
+@media (max-width: 782px) {
+	.vkl-crm-quick-task input[type=text]:not([name=title]) { flex: 1; }
+	.vkl-crm-orders-table thead { display: none; }
+	.vkl-crm-orders-table tr { display: block; border-bottom: 1px solid var(--crm-line); padding: 6px 0; }
+	.vkl-crm-orders-table td { display: block; border: 0; padding: 3px 10px; }
+}

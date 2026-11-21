@@ -34,6 +34,7 @@ final class VKL_Crm_Deals_Page
     private VKL_Crm_Activities $activities;
     private VKL_Crm_Access $access;
     private VKL_Crm_Timeline_View $view;
+    private VKL_Crm_Task_View $task_view;
 
     public function __construct(
         VKL_Crm_Deals $deals,
@@ -42,7 +43,8 @@ final class VKL_Crm_Deals_Page
         VKL_Crm_Contacts $contacts,
         VKL_Crm_Activities $activities,
         VKL_Crm_Access $access,
-        VKL_Crm_Timeline_View $view
+        VKL_Crm_Timeline_View $view,
+        VKL_Crm_Task_View $task_view
     ) {
         $this->deals      = $deals;
         $this->service    = $service;
@@ -51,6 +53,7 @@ final class VKL_Crm_Deals_Page
         $this->activities = $activities;
         $this->access     = $access;
         $this->view       = $view;
+        $this->task_view  = $task_view;
     }
 
     public function register(): void
@@ -672,6 +675,8 @@ final class VKL_Crm_Deals_Page
                         <?php endif; ?>
                     </dl>
                 </section>
+
+                <?php $this->task_view->card((int) $d['contact_id'], $id, $back, $can_edit); ?>
 
                 <?php if ($can_edit && 'open' === $d['status']) : ?>
                     <section class="vkl-crm-card" id="vkl-crm-lose">

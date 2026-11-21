@@ -4,7 +4,7 @@ WordPress / WooCommerce plugin for Vereskala: SMS login, wallet, installments, c
 
 | Path | What |
 |---|---|
-| `vereskonto/` | The plugin (version 2.17.0). Install by zipping this folder and uploading it in WordPress. |
+| `vereskonto/` | The plugin (version 2.18.0). Install by zipping this folder and uploading it in WordPress. |
 | `vereskonto/CHANGELOG.md` | Change log (Persian). |
 | `mu-plugins/vk-search-tap-fix.php` | Must-use plugin: stops WoodMart's closed full-screen search from swallowing taps on mobile. Upload to `wp-content/mu-plugins/`. |
 | `docs/CRM-PLAN.md` | Review of the plugin and the CRM development plan (Persian). |

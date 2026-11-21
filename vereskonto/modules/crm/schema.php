@@ -111,6 +111,7 @@ final class VKL_Crm_Schema
 
         wp_clear_scheduled_hook(VKL_Crm_Backfill::HOOK);
         wp_clear_scheduled_hook(VKL_Crm_Lead_Capture::HOOK);
+        wp_clear_scheduled_hook(VKL_Crm_Task_Service::HOOK);
     }
 
     public function table_exists(string $table): bool

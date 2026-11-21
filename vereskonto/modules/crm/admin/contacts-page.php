@@ -33,6 +33,7 @@ final class VKL_Crm_Contacts_Page
     private VKL_Crm_Timeline_View $view;
     private VKL_Crm_Deals $deals;
     private VKL_Crm_Pipelines $pipelines;
+    private VKL_Crm_Task_View $task_view;
 
     private ?VKL_Crm_Contacts_Table $table = null;
 
@@ -45,7 +46,8 @@ final class VKL_Crm_Contacts_Page
         VKL_Crm_Timeline $timeline,
         VKL_Crm_Timeline_View $view,
         VKL_Crm_Deals $deals,
-        VKL_Crm_Pipelines $pipelines
+        VKL_Crm_Pipelines $pipelines,
+        VKL_Crm_Task_View $task_view
     ) {
         $this->contacts   = $contacts;
         $this->service    = $service;
@@ -56,6 +58,7 @@ final class VKL_Crm_Contacts_Page
         $this->view       = $view;
         $this->deals      = $deals;
         $this->pipelines  = $pipelines;
+        $this->task_view  = $task_view;
     }
 
     public function register(): void
@@ -672,6 +675,7 @@ final class VKL_Crm_Contacts_Page
                     <?php endif; ?>
                 </section>
                 <?php $this->deals_card($c, $can_edit && !$deleted); ?>
+                <?php $this->task_view->card($id, 0, $back, $can_edit && !$deleted); ?>
             </aside>
 
             <main class="vkl-crm-main">

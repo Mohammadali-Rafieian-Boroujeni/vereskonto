@@ -13,7 +13,7 @@
 		var a = e.target.closest('[data-confirm]');
 		if (!a) { return; }
 		var key = a.getAttribute('data-confirm');
-		var msg = { delete: t.confirmDelete, activity: t.confirmAct, tag: t.confirmTag, deal: t.confirmDeal, pipeline: t.confirmPipe, stage: t.confirmStage }[key];
+		var msg = { delete: t.confirmDelete, activity: t.confirmAct, tag: t.confirmTag, deal: t.confirmDeal, task: t.confirmTask, pipeline: t.confirmPipe, stage: t.confirmStage }[key];
 		if (msg && !window.confirm(msg)) { e.preventDefault(); }
 	});
 

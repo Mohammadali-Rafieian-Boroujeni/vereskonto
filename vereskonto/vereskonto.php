@@ -3,7 +3,7 @@
 Plugin Name: Vereskonto
 Plugin URI: https://vereskala.com
 Description: Vereskonto — SMS Login & Communication Platform for WooCommerce (SMS/WhatsApp, wallet, tickets, loyalty, cart recovery)
-Version: 2.17.0
+Version: 2.18.0
 Requires at least: 6.0
 Requires PHP: 8.0
 Author: Vereskala
@@ -15,7 +15,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('VKL_VERSION', '2.17.0');
+define('VKL_VERSION', '2.18.0');
 define('VKL_FILE', __FILE__);
 define('VKL_PATH', plugin_dir_path(__FILE__));
 define('VKL_URL', plugin_dir_url(__FILE__));

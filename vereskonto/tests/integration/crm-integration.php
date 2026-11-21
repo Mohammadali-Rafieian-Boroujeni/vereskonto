@@ -402,6 +402,64 @@ $wpdb->insert($chat, ['session' => 'sess-member', 'user_id' => (int) $u2, 'role'
 $check(0 === $leads->run()['chat'], 'chats by members are not turned into leads');
 vkl('config')->set('crm_deal_cart', '0');
 
+// ------------------------------------------------------------------ tasks
+$tsvc  = vkl('crm.task_service');
+$mails = [];
+add_filter('pre_wp_mail', static function ($null, array $atts) use (&$mails) { $mails[] = $atts; return true; }, 10, 2);
+
+$k1 = $tsvc->create(['title' => 'پیگیری پیش‌فاکتور', 'due_date' => '۱۴۰۵/۰۹/۱۰', 'due_time' => '14:30', 'remind' => '60', 'contact_id' => (string) $dc, 'priority' => 'high'], $agent);
+$kt = $tasks->find((int) $k1);
+$check(is_int($k1) && '2026-12-01 11:00:00' === $kt['due_at'], 'task due 1405/09/10 14:30 Tehran stored as 11:00 UTC');
+$check('2026-12-01 10:00:00' === $kt['remind_at'], 'reminder 1 hour before');
+$check($agent === $kt['assignee_id'] && 'high' === $kt['priority'], 'assignee defaults to the creator; priority kept');
+$check(str_contains((string) $acts->timeline($dc, 1)[0]['subject'], 'پیگیری پیش‌فاکتور'), 'task creation logged on the contact timeline');
+$check(is_wp_error($tsvc->create(['title' => 'x', 'assignee_id' => (string) (int) $u2], $agent)), 'tasks cannot be given to a customer account');
+$check(is_wp_error($tsvc->create(['title' => 'x', 'due_date' => '1405/13/01'], $agent)), 'invalid due date rejected');
+$check(is_wp_error($tsvc->create(['title' => 'x', 'due_date' => '1405/09/10', 'remind' => '7'], $agent)), 'unknown reminder offset rejected');
+$check(is_wp_error($tsvc->create(['title' => '   '], $agent)), 'empty title rejected');
+$kd = $tsvc->create(['title' => 'روی فرصت', 'deal_id' => (string) $d1], $agent);
+$check($dc === $tasks->find((int) $kd)['contact_id'], 'a deal task belongs to the deal\'s contact');
+
+$tsvc->set_done((int) $k1, true, $agent);
+$check('done' === $tasks->find((int) $k1)['status'] && str_contains((string) $acts->timeline($dc, 1)[0]['subject'], 'پیگیری پیش‌فاکتور'), 'done: status and timeline entry');
+$tsvc->set_done((int) $k1, false, $agent);
+$check('open' === $tasks->find((int) $k1)['status'] && null === $tasks->find((int) $k1)['completed_at'], 'reopened');
+
+// badge: overdue + today for the current user
+$kOver = $tasks->create(['title' => 'عقب', 'assignee_id' => $agent, 'status' => 'open', 'due_at' => gmdate('Y-m-d H:i:s', time() - 3 * DAY_IN_SECONDS)]);
+$kFut  = $tasks->create(['title' => 'بعداً', 'assignee_id' => $agent, 'status' => 'open', 'due_at' => gmdate('Y-m-d H:i:s', time() + 5 * DAY_IN_SECONDS)]);
+$prevUser = get_current_user_id();
+wp_set_current_user($agent);
+$badge = $tsvc->badge_count();
+wp_set_current_user($prevUser);
+[, $todayEnd] = VKL_Crm_Task_Service::day_bounds();
+$expect = (int) $wpdb->get_var($wpdb->prepare("SELECT COUNT(*) FROM {$prefix}crm_tasks WHERE assignee_id = %d AND status = 'open' AND deleted_at IS NULL AND due_at <= %s", $agent, $todayEnd));
+$check($badge === $expect && $badge >= 1, 'badge = the agent\'s open tasks due today or overdue (future ones excluded)');
+
+// reminders: due ones mailed once, to the assignee
+$tasks->update((int) $k1, ['remind_at' => gmdate('Y-m-d H:i:s', time() - 60), 'reminded_at' => null]);
+$mails = [];
+$sent  = $tsvc->send_reminders();
+// Earlier sections may leave other due reminders; pick this task's mail.
+$ours = array_values(array_filter($mails, static fn(array $m): bool => str_contains((string) $m['subject'], 'پیگیری پیش‌فاکتور')))[0] ?? [];
+$check(1 <= $sent && 'agent@example.test' === ($ours['to'] ?? ''), 'reminder emailed to the assignee');
+$check(str_contains((string) ($ours['message'] ?? ''), '09150001111') && str_contains((string) ($ours['message'] ?? ''), 'page=vkl-crm-tasks'), 'reminder mail has the contact mobile and a link');
+$check(null !== $tasks->find((int) $k1)['reminded_at'], 'task marked as reminded');
+$mails = [];
+$check(0 === $tsvc->send_reminders() && [] === $mails, 'no second reminder for the same task');
+$tsvc->update((int) $k1, ['remind' => '15']);
+$check(null === $tasks->find((int) $k1)['reminded_at'], 'changing the reminder re-arms it');
+vkl('config')->set('crm_task_email', '0');
+$tasks->update((int) $k1, ['remind_at' => gmdate('Y-m-d H:i:s', time() - 60), 'reminded_at' => null]);
+$mails = [];
+$check(0 === $tsvc->send_reminders() && [] === $mails, 'reminder emails can be switched off');
+vkl('config')->set('crm_task_email', '1');
+$tasks->update((int) $k1, ['remind_at' => null]);
+
+// Shop-day bounds are Tehran days, not UTC days.
+[$ds, $de] = VKL_Crm_Task_Service::day_bounds('2026-12-01');
+$check('2026-11-30 20:30:00' === $ds && '2026-12-01 20:29:59' === $de, 'day bounds follow the shop time zone (Tehran +03:30)');
+
 // --------------------------------------------------------------- backfill
 // Simulate "CRM installed on a shop that already has customers": wipe
 // contacts and run the import from scratch.

@@ -5917,3 +5917,194 @@ msgstr "سبد خریدی به مبلغ %1$s (%2$s کالا) را رها کرد"
 
 msgid "Abandoned cart follow-up"
 msgstr "پیگیری سبد رهاشده"
+
+msgid "Customer orders"
+msgstr "سفارش‌های مشتریان"
+
+msgid "Orders of the customers assigned to you (customers with a site account)."
+msgstr "سفارش‌های مشتریانی که به شما سپرده شده‌اند (مشتریانی که حساب کاربری دارند)."
+
+msgid "Order number, customer name or mobile…"
+msgstr "شمارهٔ سفارش، نام یا موبایل مشتری…"
+
+msgid "Any status"
+msgstr "همهٔ وضعیت‌ها"
+
+msgid "From 1405/09/01"
+msgstr "از ۱۴۰۵/۰۹/۰۱"
+
+msgid "From date"
+msgstr "از تاریخ"
+
+msgid "To 1405/09/30"
+msgstr "تا ۱۴۰۵/۰۹/۳۰"
+
+msgid "To date"
+msgstr "تا تاریخ"
+
+msgid "No orders match."
+msgstr "هیچ سفارشی پیدا نشد."
+
+msgid "Wallet top-up or installment repayment"
+msgstr "شارژ کیف پول یا پرداخت قسط"
+
+msgid "Not a sale"
+msgstr "فروش نیست"
+
+msgid "Order status"
+msgstr "وضعیت سفارش"
+
+msgid "Create deal"
+msgstr "ساخت فرصت فروش"
+
+msgid "Status changed from the CRM by %s."
+msgstr "وضعیت از بخش مدیریت مشتریان توسط %s تغییر کرد."
+
+msgid "Order #%s"
+msgstr "سفارش #%s"
+
+msgid "%s order"
+msgid_plural "%s orders"
+msgstr[0] "%s سفارش"
+msgstr[1] "%s سفارش"
+
+msgid "Email task reminders to the assigned staff member"
+msgstr "یادآوری وظایف برای کارمند مسئول ایمیل شود"
+
+msgid "No reminder"
+msgstr "بدون یادآوری"
+
+msgid "At the due time"
+msgstr "سر موعد"
+
+msgid "15 minutes before"
+msgstr "۱۵ دقیقه پیش از موعد"
+
+msgid "1 hour before"
+msgstr "۱ ساعت پیش از موعد"
+
+msgid "1 day before"
+msgstr "۱ روز پیش از موعد"
+
+msgid "Mark as not done"
+msgstr "برگرداندن به انجام‌نشده"
+
+msgid "Mark as done"
+msgstr "انجام شد"
+
+msgid "Reminder"
+msgstr "یادآوری"
+
+msgid "Tasks"
+msgstr "وظایف"
+
+msgid "No open tasks."
+msgstr "وظیفهٔ بازی نیست."
+
+msgid "New task, e.g. call back about the quote"
+msgstr "وظیفهٔ تازه، مثلاً پیگیری تماس دربارهٔ پیش‌فاکتور"
+
+msgid "Due date"
+msgstr "موعد"
+
+msgid "Add task"
+msgstr "افزودن وظیفه"
+
+msgid "All tasks"
+msgstr "همهٔ وظایف"
+
+msgid "Edit task"
+msgstr "ویرایش وظیفه"
+
+msgid "Assigned to"
+msgstr "مسئول"
+
+msgid "Optional — type a name or mobile…"
+msgstr "اختیاری — نام یا موبایل را بنویسید…"
+
+msgid "The reminder is emailed to the assigned person."
+msgstr "یادآوری برای مسئول وظیفه ایمیل می‌شود."
+
+msgid "That task no longer exists."
+msgstr "این وظیفه دیگر وجود ندارد."
+
+msgid "You are not allowed to see this task."
+msgstr "اجازهٔ دیدن این وظیفه را ندارید."
+
+msgid "No date"
+msgstr "بدون تاریخ"
+
+msgid "Done"
+msgstr "انجام‌شده"
+
+msgid "Task views"
+msgstr "نماهای وظایف"
+
+msgid "Search tasks…"
+msgstr "جست‌وجوی وظایف…"
+
+msgid "My tasks"
+msgstr "وظایف من"
+
+msgid "Any priority"
+msgstr "همهٔ اولویت‌ها"
+
+msgid "Nothing due today. 🎉"
+msgstr "برای امروز کاری نمانده. 🎉"
+
+msgid "No tasks here."
+msgstr "وظیفه‌ای اینجا نیست."
+
+msgid "Task added."
+msgstr "وظیفه افزوده شد."
+
+msgid "Task saved."
+msgstr "وظیفه ذخیره شد."
+
+msgid "Task done."
+msgstr "وظیفه انجام شد."
+
+msgid "Task reopened."
+msgstr "وظیفه دوباره باز شد."
+
+msgid "Task deleted."
+msgstr "وظیفه حذف شد."
+
+msgid "Order status updated."
+msgstr "وضعیت سفارش به‌روز شد."
+
+msgid "Delete this task?"
+msgstr "این وظیفه حذف شود؟"
+
+msgid "Give the task a title."
+msgstr "برای وظیفه یک عنوان بنویسید."
+
+msgid "The due date is not valid."
+msgstr "موعد معتبر نیست."
+
+msgid "Unknown reminder option."
+msgstr "گزینهٔ یادآوری نامعتبر است."
+
+msgid "Tasks can only be given to CRM staff."
+msgstr "وظیفه را فقط می‌توان به کارمندان مدیریت مشتریان سپرد."
+
+msgid "The task could not be saved."
+msgstr "ذخیرهٔ وظیفه ناموفق بود."
+
+msgid "Task added: %s"
+msgstr "وظیفهٔ تازه: %s"
+
+msgid "Task done: %s"
+msgstr "وظیفه انجام شد: %s"
+
+msgid "Reminder: %s"
+msgstr "یادآوری: %s"
+
+msgid "Due: %s"
+msgstr "موعد: %s"
+
+msgid "Contact: %s"
+msgstr "مخاطب: %s"
+
+msgid "Mobile: %s"
+msgstr "موبایل: %s"

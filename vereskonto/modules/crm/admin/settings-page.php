@@ -403,6 +403,7 @@ final class VKL_Crm_Settings_Page
             'crm_lead_cart'    => [true, __('Create a lead (or note on the existing contact) for each abandoned cart with a mobile number', 'vereskala-login')],
             'crm_deal_cart'    => [false, __('…and open a follow-up deal for it', 'vereskala-login')],
             'crm_deal_credit'  => [false, __('Open a deal for each purchase-credit request', 'vereskala-login')],
+            'crm_task_email'   => [true, __('Email task reminders to the assigned staff member', 'vereskala-login')],
         ];
         $state = vkl('crm.leads')->state();
         ?>
@@ -450,7 +451,7 @@ final class VKL_Crm_Settings_Page
         check_admin_referer('vkl_crm_settings_save');
         $this->require_settings();
 
-        foreach (['crm_agents_see_unassigned', 'crm_lead_chatbot', 'crm_lead_cart', 'crm_deal_cart', 'crm_deal_credit'] as $key) {
+        foreach (['crm_agents_see_unassigned', 'crm_lead_chatbot', 'crm_lead_cart', 'crm_deal_cart', 'crm_deal_credit', 'crm_task_email'] as $key) {
             $this->config->set($key, empty($_POST[$key]) ? '0' : '1');
         }
 
