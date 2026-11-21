@@ -163,5 +163,13 @@ $check('مشتری-ویژه' === Slug::slugify('  مشتری ویژه! '), 'Pers
 $check('vip-2' === Slug::slugify('VIP 2'), 'Latin slug lower-cased');
 $check(12 === strlen(Slug::slugify('!!!')), 'symbol-only name gets a hash slug');
 
+// --- CSV export cells (formula injection) ---------------------------------
+require __DIR__ . '/../modules/crm/admin/reports-page.php';
+$check("'=HYPERLINK(1)" === VKL_Crm_Reports_Page::cell('=HYPERLINK(1)'), 'CSV: leading = neutralised');
+$check("'@SUM(A1)" === VKL_Crm_Reports_Page::cell('@SUM(A1)'), 'CSV: leading @ neutralised');
+$check("'-2+3" === VKL_Crm_Reports_Page::cell('-2+3'), 'CSV: formula starting with - neutralised');
+$check('-1500' === VKL_Crm_Reports_Page::cell(-1500), 'CSV: negative numbers untouched');
+$check('مریم' === VKL_Crm_Reports_Page::cell('مریم'), 'CSV: Persian text untouched');
+
 echo $failures ? "\n{$failures} FAILED\n" : "\nall passed\n";
 exit($failures ? 1 : 0);

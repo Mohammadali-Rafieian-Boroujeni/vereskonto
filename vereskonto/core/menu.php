@@ -61,10 +61,12 @@ final class VKL_Admin_Menu
                 'key'   => 'crm',
                 'label' => __('CRM', 'vereskala-login'),
                 'items' => [
+                    'vkl-crm'          => __('CRM dashboard', 'vereskala-login'),
                     'vkl-crm-contacts' => __('Contacts', 'vereskala-login'),
                     'vkl-crm-deals'    => __('Deals', 'vereskala-login'),
                     'vkl-crm-tasks'    => __('Tasks', 'vereskala-login'),
                     'vkl-crm-orders'   => __('Customer orders', 'vereskala-login'),
+                    'vkl-crm-reports'  => __('CRM reports', 'vereskala-login'),
                 ],
             ],
             [

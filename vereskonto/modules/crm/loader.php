@@ -9,7 +9,7 @@
  * Services in the container:
  *   crm.schema, crm.access, crm.contacts, crm.tags, crm.pipelines,
  *   crm.deals, crm.activities, crm.tasks, crm.contact_service, crm.backfill,
- *   crm.timeline, crm.deal_service, crm.leads, crm.task_service
+ *   crm.timeline, crm.deal_service, crm.leads, crm.task_service, crm.reports
  *
  * @package Vereskonto\Modules\Crm
  * @since   2.16.0
@@ -36,6 +36,7 @@ vkl_require('modules/crm/services/timeline.php');
 vkl_require('modules/crm/services/deals.php');
 vkl_require('modules/crm/services/leads.php');
 vkl_require('modules/crm/services/tasks.php');
+vkl_require('modules/crm/services/reports.php');
 
 if (is_admin()) {
     vkl_require('modules/crm/admin/ui.php');
@@ -46,6 +47,9 @@ if (is_admin()) {
     vkl_require('modules/crm/admin/task-view.php');
     vkl_require('modules/crm/admin/tasks-page.php');
     vkl_require('modules/crm/admin/orders-page.php');
+    vkl_require('modules/crm/admin/charts.php');
+    vkl_require('modules/crm/admin/dashboard-page.php');
+    vkl_require('modules/crm/admin/reports-page.php');
     vkl_require('modules/crm/admin/settings-page.php');
 }
 
@@ -104,6 +108,7 @@ final class VKL_Crm_Module
         $c->singleton('crm.timeline', static fn(VKL_Container $c): VKL_Crm_Timeline => new VKL_Crm_Timeline($c->make('crm.activities'), $c->make('crm.contact_service')));
         $c->singleton('crm.deal_service', static fn(VKL_Container $c): VKL_Crm_Deal_Service => new VKL_Crm_Deal_Service($c->make('crm.deals'), $c->make('crm.pipelines'), $c->make('crm.contacts'), $c->make('crm.activities'), $c->make('crm.contact_service')));
         $c->singleton('crm.task_service', static fn(VKL_Container $c): VKL_Crm_Task_Service => new VKL_Crm_Task_Service($c->make('crm.tasks'), $c->make('crm.contacts'), $c->make('crm.deals'), $c->make('crm.activities'), $c->make('crm.access'), $c->make('config')));
+        $c->singleton('crm.reports', static fn(VKL_Container $c): VKL_Crm_Reports => new VKL_Crm_Reports($c->make('db')));
         $c->singleton('crm.leads', static fn(VKL_Container $c): VKL_Crm_Lead_Capture => new VKL_Crm_Lead_Capture($c->make('db'), $c->make('crm.contact_service'), $c->make('crm.activities'), $c->make('crm.deal_service'), $c->make('crm.deals'), $c->make('config')));
 
         // Create/upgrade tables on admin requests, right after the
@@ -160,6 +165,8 @@ final class VKL_Crm_Module
                     $view,
                     $task_view
                 ))->register();
+                (new VKL_Crm_Dashboard_Page($c->make('crm.reports'), $c->make('crm.pipelines'), $c->make('crm.tasks'), $c->make('crm.access'), $task_view))->register();
+                (new VKL_Crm_Reports_Page($c->make('crm.reports'), $c->make('crm.contacts'), $c->make('crm.deals'), $c->make('crm.pipelines'), $c->make('crm.tags'), $c->make('crm.access')))->register();
                 (new VKL_Crm_Tasks_Page($c->make('crm.tasks'), $c->make('crm.access'), $task_view))->register();
                 (new VKL_Crm_Orders_Page($c->make('crm.contacts'), $c->make('crm.contact_service'), $c->make('crm.deals'), $c->make('crm.deal_service'), $c->make('crm.access')))->register();
                 (new VKL_Crm_Settings_Page($c->make('crm.tags'), $c->make('crm.access'), $config, $c->make('crm.pipelines')))->register();

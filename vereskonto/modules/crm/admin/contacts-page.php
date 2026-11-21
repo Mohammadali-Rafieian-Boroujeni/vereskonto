@@ -169,6 +169,9 @@ final class VKL_Crm_Contacts_Page
             <?php if ($this->access->can(VKL_Crm_Access::CAP_EDIT_OWN)) : ?>
                 <a href="<?php echo esc_url(VKL_Crm_Ui::contacts_url(['action' => 'new'])); ?>" class="page-title-action"><?php esc_html_e('Add contact', 'vereskala-login'); ?></a>
             <?php endif; ?>
+            <?php if ($this->access->can(VKL_Crm_Access::CAP_EXPORT)) : ?>
+                <a href="<?php echo esc_url(VKL_Crm_Reports_Page::export_url('contacts')); ?>" class="page-title-action"><?php esc_html_e('Export CSV', 'vereskala-login'); ?></a>
+            <?php endif; ?>
             <?php $this->backfill_notice(); ?>
         </div>
         <hr class="wp-header-end">

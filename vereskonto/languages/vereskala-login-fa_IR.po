@@ -6108,3 +6108,174 @@ msgstr "مخاطب: %s"
 
 msgid "Mobile: %s"
 msgstr "موبایل: %s"
+
+msgid "No data for this period yet."
+msgstr "هنوز داده‌ای برای این بازه نیست."
+
+msgid "Latest week: %s"
+msgstr "هفتهٔ آخر: %s"
+
+msgid "Show the numbers"
+msgstr "نمایش اعداد"
+
+msgid "Export CSV"
+msgstr "خروجی CSV"
+
+msgid "CRM dashboard"
+msgstr "داشبورد مدیریت مشتریان"
+
+msgid "Last month"
+msgstr "ماه گذشته"
+
+msgid "Custom range"
+msgstr "بازهٔ دلخواه"
+
+msgid "Period"
+msgstr "بازهٔ زمانی"
+
+msgid "Show"
+msgstr "نمایش"
+
+msgid "Whole team"
+msgstr "کل تیم"
+
+msgid "Your contacts and deals"
+msgstr "مخاطبان و فرصت‌های شما"
+
+msgid "New contacts"
+msgstr "مخاطبان تازه"
+
+msgid "Deals won"
+msgstr "فرصت‌های برنده"
+
+msgid "Won value"
+msgstr "ارزش فروش برنده"
+
+msgid "Win rate (won ÷ closed)"
+msgstr "نرخ موفقیت (برنده ÷ بسته‌شده)"
+
+msgid "Open pipeline (%s deals)"
+msgstr "قیف باز (%s فرصت)"
+
+msgid "Notes, calls and meetings"
+msgstr "یادداشت، تماس و جلسه"
+
+msgid "My tasks today (%s overdue)"
+msgstr "کارهای امروز من (%s معوق)"
+
+msgid "My tasks today"
+msgstr "کارهای امروز من"
+
+msgid "Open deals by stage — %s"
+msgstr "فرصت‌های باز به تفکیک مرحله — %s"
+
+msgid "Open deals by stage"
+msgstr "فرصت‌های باز به تفکیک مرحله"
+
+msgid "No open deals."
+msgstr "فرصت بازی نیست."
+
+msgid "Weighted by stage probability: %s"
+msgstr "ارزش وزنی بر اساس احتمال مراحل: %s"
+
+msgid "New contacts per week"
+msgstr "مخاطبان تازه در هر هفته"
+
+msgid "Won value per week"
+msgstr "ارزش فروش برنده در هر هفته"
+
+msgid "New contacts by source"
+msgstr "مخاطبان تازه به تفکیک منبع"
+
+msgid "Why deals were lost"
+msgstr "دلایل از دست رفتن فرصت‌ها"
+
+msgid "No reason given"
+msgstr "بدون دلیل"
+
+msgid "No deals were lost in this period."
+msgstr "در این بازه فرصتی از دست نرفت."
+
+msgid "My tasks for today"
+msgstr "کارهای امروز من"
+
+msgid "Latest activity"
+msgstr "آخرین فعالیت‌ها"
+
+msgid "CRM today"
+msgstr "مدیریت مشتریان امروز"
+
+msgid "tasks for today, %s overdue"
+msgstr "کار برای امروز، %s معوق"
+
+msgid "tasks for today"
+msgstr "کار برای امروز"
+
+msgid "New contacts today: %s"
+msgstr "مخاطبان تازهٔ امروز: %s"
+
+msgid "Open the CRM dashboard"
+msgstr "باز کردن داشبورد مدیریت مشتریان"
+
+msgid "CRM reports"
+msgstr "گزارش‌های مدیریت مشتریان"
+
+msgid "CSV"
+msgstr "CSV"
+
+msgid "Export all deals (CSV)"
+msgstr "خروجی همهٔ فرصت‌ها (CSV)"
+
+msgid "Deals won / lost"
+msgstr "فرصت‌های برنده / از دست رفته"
+
+msgid "Team performance"
+msgstr "عملکرد تیم"
+
+msgid "Staff member"
+msgstr "کارمند"
+
+msgid "Calls"
+msgstr "تماس‌ها"
+
+msgid "Meetings"
+msgstr "جلسه‌ها"
+
+msgid "Win rate"
+msgstr "نرخ موفقیت"
+
+msgid "Tasks done"
+msgstr "کارهای انجام‌شده"
+
+msgid "Overdue now"
+msgstr "معوق در حال حاضر"
+
+msgid "Lead sources"
+msgstr "منابع سرنخ"
+
+msgid "Now customers"
+msgstr "اکنون مشتری"
+
+msgid "Conversion"
+msgstr "نرخ تبدیل"
+
+msgid "Last 12 weeks"
+msgstr "۱۲ هفتهٔ گذشته"
+
+msgid "Week starting"
+msgstr "شروع هفته"
+
+msgid "Unknown export."
+msgstr "خروجی ناشناخته."
+
+msgid "ID"
+msgstr "شناسه"
+
+msgid "Last order"
+msgstr "آخرین سفارش"
+
+msgid "Last %d days"
+msgstr "%d روز گذشته"
+
+msgid "Year %d"
+msgstr "سال %d"

@@ -50,6 +50,26 @@ $access   = vkl('crm.access');
 $backfill = vkl('crm.backfill');
 $prefix   = $wpdb->prefix . 'vkl_';
 
+// Remove accounts an earlier, interrupted run may have left behind, so
+// sign-up and staff checks always start from scratch.
+require_once ABSPATH . 'wp-admin/includes/user.php';
+foreach (['crm_agent', 'crm_agent2', 'crm_manager'] as $login) {
+    $old = get_user_by('login', $login);
+    if ($old) {
+        wp_delete_user($old->ID);
+    }
+}
+foreach (['09187776655', '09189990000', '09191112222'] as $m) {
+    foreach (get_users(['meta_key' => 'billing_phone', 'meta_value' => $m, 'fields' => 'ID']) as $old_id) {
+        wp_delete_user((int) $old_id);
+    }
+}
+foreach (['0919 111 2222', '+98 919 111 2222', '09159998888'] as $phone) {
+    foreach (wc_get_orders(['billing_phone' => $phone, 'limit' => -1]) as $old_order) {
+        $old_order->delete(true);
+    }
+}
+
 $vkl_tables = static fn(): array => $wpdb->get_col($wpdb->prepare('SHOW TABLES LIKE %s', $wpdb->esc_like($prefix) . '%'));
 $crm_tables = static fn(): array => $wpdb->get_col($wpdb->prepare('SHOW TABLES LIKE %s', $wpdb->esc_like($prefix . 'crm_') . '%'));
 
@@ -459,6 +479,79 @@ $tasks->update((int) $k1, ['remind_at' => null]);
 // Shop-day bounds are Tehran days, not UTC days.
 [$ds, $de] = VKL_Crm_Task_Service::day_bounds('2026-12-01');
 $check('2026-11-30 20:30:00' === $ds && '2026-12-01 20:29:59' === $de, 'day bounds follow the shop time zone (Tehran +03:30)');
+
+// ---------------------------------------------------------------- reports
+$rep = vkl('crm.reports');
+VKL_Crm_Reports::flush();
+
+// Periods: Jalali month bounds in Tehran time.
+[$pf, $pt, $pl] = VKL_Crm_Reports::period('custom', '1405/09/01', '1405/09/30');
+$check('2026-11-21 20:30:00' === $pf && '2026-12-21 20:29:59' === $pt, 'custom Jalali range → Tehran-day bounds in UTC');
+[$mf] = VKL_Crm_Reports::period('this_month');
+$jm = VKL_Jalali::g2j((int) wp_date('Y'), (int) wp_date('n'), (int) wp_date('j'));
+$check(str_ends_with(VKL_Jalali::format($mf, 'short'), '/01') || str_ends_with(VKL_Jalali::format(gmdate('Y-m-d H:i:s', strtotime($mf . ' UTC') + 3 * HOUR_IN_SECONDS + 1800), 'short'), sprintf('/%02d/01', $jm[1])), 'this month starts on the 1st of the Jalali month');
+[$bf, $bt] = VKL_Crm_Reports::period('custom', '1405/09/30', '1405/09/01');
+$check($bf === $mf, 'an inverted custom range falls back to this month');
+
+// KPIs agree with direct counts.
+[$yf, $yt] = VKL_Crm_Reports::period('this_year');
+$all  = ['1=1', []];
+$k    = $rep->kpis($all, $yf, $yt);
+$won  = (int) $wpdb->get_var($wpdb->prepare("SELECT COUNT(*) FROM {$prefix}crm_deals WHERE deleted_at IS NULL AND status = 'won' AND closed_at BETWEEN %s AND %s", $yf, $yt));
+$lost = (int) $wpdb->get_var($wpdb->prepare("SELECT COUNT(*) FROM {$prefix}crm_deals WHERE deleted_at IS NULL AND status = 'lost' AND closed_at BETWEEN %s AND %s", $yf, $yt));
+$newc = (int) $wpdb->get_var($wpdb->prepare("SELECT COUNT(*) FROM {$prefix}crm_contacts WHERE deleted_at IS NULL AND created_at BETWEEN %s AND %s", $yf, $yt));
+$check($won === $k['won'] && $lost === $k['lost'] && $newc === $k['new_contacts'] && $won >= 1, 'KPIs match direct counts (won ' . $won . ', lost ' . $lost . ', new ' . $newc . ')');
+$check(abs($k['win_rate'] - round(100 * $won / max(1, $won + $lost), 1)) < 0.01, 'win rate = won ÷ (won + lost)');
+$openN = (int) $wpdb->get_var("SELECT COUNT(*) FROM {$prefix}crm_deals WHERE deleted_at IS NULL AND status = 'open'");
+$check($openN === $k['open_count'], 'open pipeline count');
+
+// Scope: an agent's KPIs cover only their records.
+$ka = $rep->kpis($access->scope_sql('t.owner_id', $agent2), $yf, $yt);
+$check($ka['open_count'] <= $k['open_count'] && $ka['new_contacts'] <= $k['new_contacts'], 'agent KPIs are a subset of the team\'s');
+
+// Funnel = open deals per open stage of the default pipeline.
+$fun = $rep->funnel($pid, $all);
+$check(count($fun) === count(array_filter($pipes->stages($pid), static fn(array $s): bool => 'open' === $s['kind'])), 'funnel lists every open stage (empty ones too)');
+$check(array_sum(array_column($fun, 'count')) === (int) $wpdb->get_var($wpdb->prepare("SELECT COUNT(*) FROM {$prefix}crm_deals WHERE deleted_at IS NULL AND status = 'open' AND pipeline_id = %d", $pid)), 'funnel totals match');
+
+// Weekly: 12 Saturday-start weeks, this week last, today's new contacts in it.
+$wk = $rep->weekly($all, 12);
+$check(12 === count($wk), '12 weeks');
+$check(6 === (int) (new DateTimeImmutable($wk[11]['week'], wp_timezone()))->format('w'), 'weeks start on Saturday');
+$check($wk[11]['contacts'] >= 1, 'this week counts the contacts created today');
+
+// Sources and lost reasons.
+$src = $rep->sources($all, $yf, $yt);
+$check(in_array('chatbot', array_column($src, 'source'), true) && in_array('cart', array_column($src, 'source'), true), 'sources include chatbot and cart leads');
+$lr = $rep->lost_reasons($all, $yf, $yt);
+$check(array_sum(array_column($lr, 'count')) === $lost, 'lost reasons add up to lost deals');
+
+// Agents table.
+$ag = $rep->agents($yf, $yt);
+$row = array_values(array_filter($ag, static fn(array $a): bool => $a['user_id'] === $agent))[0] ?? null;
+$check(null !== $row && $row['calls'] >= 1 && $row['notes'] >= 1, 'agent row counts their calls and notes');
+
+// Cache: second call served from cache; flush clears it.
+$wpdb->insert($prefix . 'crm_contacts', ['first_name' => 'cache-probe', 'mobile' => '09170004444', 'lifecycle' => 'lead', 'created_at' => gmdate('Y-m-d H:i:s'), 'updated_at' => gmdate('Y-m-d H:i:s')]);
+$check($rep->kpis($all, $yf, $yt)['new_contacts'] === $k['new_contacts'], 'reports are cached');
+VKL_Crm_Reports::flush();
+$check($rep->kpis($all, $yf, $yt)['new_contacts'] === $k['new_contacts'] + 1, 'flush refreshes them');
+
+// Exports. (Admin-only classes are loaded inside wp-admin; load them here.)
+require_once VKL_PATH . 'modules/crm/admin/ui.php';
+require_once VKL_PATH . 'modules/crm/admin/contacts-table.php';
+require_once VKL_PATH . 'modules/crm/admin/reports-page.php';
+$_GET = ['source' => 'chatbot'];
+$page = new VKL_Crm_Reports_Page($rep, $contacts, $deals, $pipes, $tags, $access);
+wp_set_current_user(1);
+$csv  = $page->export_rows('contacts', $yf, $yt);
+$expected = (int) $wpdb->get_var("SELECT COUNT(*) FROM {$prefix}crm_contacts WHERE deleted_at IS NULL AND source = 'chatbot'");
+$check(count($csv) - 1 === $expected && 16 === count($csv[0]), 'contacts export honours the list filters (' . $expected . ' rows, 16 columns)');
+$_GET = [];
+$dcsv = $page->export_rows('deals', $yf, $yt);
+$check(count($dcsv) - 1 === (int) $wpdb->get_var("SELECT COUNT(*) FROM {$prefix}crm_deals WHERE deleted_at IS NULL"), 'deals export has every deal');
+$check(null === $page->export_rows('passwords', $yf, $yt), 'unknown export type refused');
+wp_set_current_user(0);
 
 // --------------------------------------------------------------- backfill
 // Simulate "CRM installed on a shop that already has customers": wipe

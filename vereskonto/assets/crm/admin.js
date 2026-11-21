@@ -154,6 +154,13 @@
 		});
 	});
 
+	// Period picker: the date fields only matter for a custom range.
+	document.querySelectorAll('.vkl-crm-period').forEach(function (form) {
+		var sel = form.querySelector('select[name=period]'), box = form.querySelector('[data-show-custom]');
+		function sync() { if (box) { box.hidden = sel.value !== 'custom'; } }
+		sel.addEventListener('change', sync); sync();
+	});
+
 	// Contact picker on the deal form (search as you type).
 	document.querySelectorAll('[data-vkl-lookup]').forEach(function (box) {
 		var input = box.querySelector('input[type=search]');
