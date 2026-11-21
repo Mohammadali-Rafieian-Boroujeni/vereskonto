@@ -18,3 +18,9 @@ Plain PHP, no WordPress needed:
 ```bash
 for t in vereskonto/tests/*-test.php; do php "$t" > /dev/null && echo "PASS $t" || echo "FAIL $t"; done
 ```
+
+Integration test for the CRM (real WordPress + WooCommerce + MySQL). **It deletes data — run it only on a throwaway copy, never on the live site:**
+
+```bash
+VKL_WP_LOAD=/path/to/throwaway/wp-load.php VKL_I_KNOW_THIS_DELETES_DATA=1 php vereskonto/tests/integration/crm-integration.php
+```
