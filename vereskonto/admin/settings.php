@@ -48,6 +48,7 @@ function vkl_register_settings()
     register_setting('vkl_login_settings', 'vkl_otp_length', ['sanitize_callback' => $clamp(4, 8, 5)]);
     register_setting('vkl_login_settings', 'vkl_otp_expire', ['sanitize_callback' => $clamp(30, 900, 120)]);
     register_setting('vkl_login_settings', 'vkl_otp_max_requests', ['sanitize_callback' => $clamp(1, 30, 5)]);
+    register_setting('vkl_login_settings', 'vkl_otp_max_requests_ip', ['sanitize_callback' => $clamp(0, 500, 30)]);
     register_setting('vkl_login_settings', 'vkl_otp_rate_minutes', ['sanitize_callback' => $clamp(1, 240, 15)]);
     register_setting('vkl_login_settings', 'vkl_otp_max_fail', ['sanitize_callback' => $clamp(1, 20, 5)]);
     register_setting('vkl_login_settings', 'vkl_login_accent', [
@@ -435,6 +436,7 @@ function vkl_settings_login_form()
             <tr><th scope="row">تعداد ارقام</th><td><?php $num('vkl_otp_length', 5, 4, 8, 'بین ۴ تا ۸ رقم. پترن پیامک فقط یک متغیر کد دارد و طول آن را محدود نمی‌کند.'); ?></td></tr>
             <tr><th scope="row">اعتبار کد (ثانیه)</th><td><?php $num('vkl_otp_expire', 120, 30, 900, 'پس از این مدت کد از کار می‌افتد و شمارندهٔ «فرستادن دوباره» تمام می‌شود.'); ?></td></tr>
             <tr><th scope="row">بیشینهٔ درخواست کد</th><td><?php $num('vkl_otp_max_requests', 5, 1, 30, 'هر شماره در هر بازهٔ زیر حداکثر این‌قدر کد می‌خواهد.'); ?></td></tr>
+            <tr><th scope="row">بیشینهٔ درخواست کد از یک IP</th><td><?php $num('vkl_otp_max_requests_ip', 30, 0, 500, 'جلوی فرستادن پیامک انبوه به شماره‌های مختلف از یک دستگاه را می‌گیرد. ۰ = خاموش. نشانی واقعی بازدیدکننده پشت Cloudflare هم درست تشخیص داده می‌شود.'); ?></td></tr>
             <tr><th scope="row">بازهٔ شمارش درخواست‌ها (دقیقه)</th><td><?php $num('vkl_otp_rate_minutes', 15, 1, 240, 'پس از پایان این بازه، شمارنده از صفر شروع می‌شود.'); ?></td></tr>
             <tr><th scope="row">بیشینهٔ کد نادرست</th><td><?php $num('vkl_otp_max_fail', 5, 1, 20, 'پس از این تعداد کد نادرست، ورود آن شماره ۱۵ دقیقه بسته می‌شود.'); ?></td></tr>
         </table>

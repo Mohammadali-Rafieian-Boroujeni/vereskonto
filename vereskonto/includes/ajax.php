@@ -101,7 +101,7 @@ function vkl_verify()
     $mobile   = $is_email ? sanitize_email($raw) : vkl_normalize_mobile($raw);
 
     $otp = isset($_POST['otp'])
-        ? sanitize_text_field($_POST['otp'])
+        ? sanitize_text_field(wp_unslash($_POST['otp']))
         : '';
 
     if ($is_email ? !is_email($mobile) : !vkl_is_mobile($mobile)) {
@@ -118,7 +118,7 @@ function vkl_verify()
 |--------------------------------------------------------------------------
 */
 
-if (vkl_get_failed_attempts($mobile) >= vkl_otp_max_failures()) {
+if (vkl_otp_locked($mobile)) {
 
     wp_send_json_error([
         'message' => 'به دلیل واردکردن چندباره گذرشماره نادرست، آمد شما ۱۵ دقیقه بسته شد.'
@@ -135,7 +135,7 @@ if (vkl_get_failed_attempts($mobile) >= vkl_otp_max_failures()) {
 
     }
 
-    if ($saved != $otp) {
+    if (!vkl_otp_matches($saved, $otp)) {
 
         $count = vkl_add_failed_attempt($mobile);
 

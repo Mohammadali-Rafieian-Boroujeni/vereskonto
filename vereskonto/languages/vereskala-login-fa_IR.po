@@ -3857,6 +3857,9 @@ msgstr "توکن‌ها منقضی می‌شوند؛ وقتی یک فراخوا�
 msgid "Too many requests. Please try again later."
 msgstr "تعداد درخواست‌ها بیش از حد است. بعداً دوباره تلاش کنید."
 
+msgid "Too many wrong codes. Please try again in 15 minutes."
+msgstr "کد نادرست بیش از اندازه وارد شد. ۱۵ دقیقهٔ دیگر دوباره تلاش کنید."
+
 msgid "Top members"
 msgstr "اعضای برتر"
 

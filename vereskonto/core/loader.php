@@ -26,6 +26,7 @@ require_once VKL_PATH . 'core/validator.php';
 require_once VKL_PATH . 'core/security.php';
 require_once VKL_PATH . 'core/repository.php';
 require_once VKL_PATH . 'core/helpers.php';
+require_once VKL_PATH . 'core/jalali.php';
 
 /**
  * Register core services.
