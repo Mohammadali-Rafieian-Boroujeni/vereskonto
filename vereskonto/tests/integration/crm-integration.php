@@ -296,6 +296,112 @@ $carrier = $make_order($tu, '', [VKL_Wallet_Topup::ORDER_META => '1']);
 $carrier->update_status('completed');
 $check([] === array_filter($orderActs($gid), static fn(array $a): bool => (int) $a['ref_id'] === $carrier->get_id()), 'wallet top-up orders stay off the timeline');
 
+// ------------------------------------------------------------------ deals
+$dsvc  = vkl('crm.deal_service');
+$leads = vkl('crm.leads');
+$pid   = (int) $pipes->default_pipeline()['id'];
+$stg   = $pipes->stages($pid);
+$byKind = static fn(string $k): array => array_values(array_filter($stg, static fn(array $s): bool => $s['kind'] === $k))[0];
+
+$dc = $service->create(['first_name' => 'خریدار عمده', 'mobile' => '09150001111', 'owner_id' => $agent]);
+$d1 = $dsvc->create(['contact_id' => $dc, 'title' => 'سفارش ۲۰۰ دست', 'value' => '۱٬۲۰۰٬۰۰۰', 'expected_close' => '1405/10/01'], $agent);
+$deal = $deals->find($d1);
+$check(is_int($d1) && 1200000.0 === $deal['value'], 'deal created; value with Persian digits and separators');
+$check((int) $stg[0]['id'] === $deal['stage_id'] && 'open' === $deal['status'], 'new deal starts in the first open stage');
+$check($agent === $deal['owner_id'], 'deal owner defaults to the contact owner');
+$check('2026-12-22' === $deal['expected_close'], 'Jalali expected close stored as Gregorian');
+$check('prospect' === $contacts->find($dc)['lifecycle'], 'lead with an open deal becomes a prospect');
+$check(is_wp_error($dsvc->create(['contact_id' => $dc, 'title' => 'x', 'value' => '-5'])), 'negative value rejected');
+$check(is_wp_error($dsvc->create(['contact_id' => 999999, 'title' => 'x'])), 'unknown contact rejected');
+$check(is_wp_error($dsvc->create(['contact_id' => $dc, 'title' => ''])), 'empty title rejected');
+
+$p2 = $pipes->create_pipeline('عمده');
+$pipes->save_stage($p2, ['name' => 'شروع', 'kind' => 'open']);
+$foreign = $pipes->stages($p2)[0];
+$check(is_wp_error($dsvc->create(['contact_id' => $dc, 'title' => 'x', 'pipeline_id' => $pid, 'stage_id' => $foreign['id']])), 'stage from another pipeline rejected');
+$check(is_wp_error($dsvc->move($d1, (int) $foreign['id'])), 'cannot move a deal into another pipeline\'s stage');
+
+$dsvc->move($d1, (int) $stg[2]['id'], '', $agent);
+$check((int) $stg[2]['id'] === $deals->find($d1)['stage_id'], 'deal moved');
+$dact = $acts->for_deal($d1);
+$check(2 === count($dact) && 'stage' === $dact[0]['type'] && str_contains($dact[0]['subject'], $stg[2]['name']), 'creation and move logged on the deal history');
+$check($d1 === (int) $acts->timeline($dc, 1)[0]['deal_id'], 'deal entries also appear on the contact timeline');
+
+$dsvc->close($d1, true);
+$won = $deals->find($d1);
+$check('won' === $won['status'] && null !== $won['closed_at'] && 'customer' === $contacts->find($dc)['lifecycle'], 'won: status, close date, contact becomes customer');
+$dsvc->move($d1, (int) $stg[1]['id']);
+$re = $deals->find($d1);
+$check('open' === $re['status'] && null === $re['closed_at'] && 'customer' === $contacts->find($dc)['lifecycle'], 'reopened deal is open again; contact not downgraded');
+$dsvc->close($d1, false, 'قیمت بالا بود');
+$lost = $deals->find($d1);
+$check('lost' === $lost['status'] && 'قیمت بالا بود' === $lost['lost_reason'], 'lost with reason');
+$dsvc->move($d1, (int) $stg[0]['id']);
+$check('' === $deals->find($d1)['lost_reason'], 'reopening clears the lost reason');
+
+// Linked order → deal won when paid
+$oc = $contacts->find_by_user((int) $u2);
+$od = $make_order((int) $u2);
+$d2 = $dsvc->create(['contact_id' => (int) $oc['id'], 'title' => 'سفارش آنلاین', 'order' => (string) $od->get_id()]);
+$check(is_int($d2) && $od->get_id() === $deals->find($d2)['order_id'], 'order linked by number');
+$other = $make_order(0, '09159998888');
+$check(is_wp_error($dsvc->update($d2, ['order' => (string) $other->get_id()])), 'order of another customer refused');
+$check(is_wp_error($dsvc->update($d2, ['order' => '99999999'])), 'unknown order number refused');
+$od->update_status('processing');
+$check('won' === $deals->find($d2)['status'], 'deal won automatically when its order is paid');
+
+// Credit request → deal (setting)
+vkl('config')->set('crm_deal_credit', '1');
+vkl_dispatch('credit_request.created', ['user_id' => (int) $gu, 'amount' => 30000000]);
+$cd = $deals->search(['contact_id' => (int) $contacts->find_by_user((int) $gu)['id'], 'q' => ''], ['1=1', []])['rows'];
+$check(1 === count(array_filter($cd, static fn(array $d): bool => 'credit' === $d['source'] && 30000000.0 === $d['value'])), 'credit request opens a deal when enabled');
+vkl('config')->set('crm_deal_credit', '0');
+
+// Pipelines
+$check(false === $pipes->delete_pipeline($pid), 'a pipeline with deals cannot be deleted');
+$pipes->set_default($p2);
+$check($p2 === (int) $pipes->default_pipeline()['id'], 'default pipeline switched');
+$pipes->set_default($pid);
+$ids0 = array_column($pipes->stages($pid), 'id');
+$pipes->shift_stage((int) $ids0[1], -1);
+$ids1 = array_column($pipes->stages($pid), 'id');
+$check($ids1[0] === $ids0[1] && $ids1[1] === $ids0[0], 'stage moved up');
+$pipes->shift_stage((int) $ids0[1], 1);
+$check($ids0 === array_column($pipes->stages($pid), 'id'), 'and back down');
+$check($pipes->delete_pipeline($p2), 'empty extra pipeline deleted');
+
+// ------------------------------------------------------------------ leads
+delete_option(VKL_Crm_Lead_Capture::CURSOR_OPTION);
+$chat = $wpdb->prefix . 'vkl_chat_messages';
+$cart = $wpdb->prefix . 'vkl_cart';
+$now  = gmdate('Y-m-d H:i:s');
+$wpdb->query("DELETE FROM {$chat} WHERE session IN ('sess-lead-1', 'sess-old', 'sess-member')"); // earlier runs
+$wpdb->query("DELETE FROM {$cart} WHERE cart_token IN ('tok-lead-1', 'tok-lead-2')");
+$wpdb->insert($chat, ['session' => 'sess-lead-1', 'user_id' => 0, 'role' => 'user', 'topic' => '', 'message' => 'قیمت عمده؟', 'phone' => '09170001111', 'created_at' => $now]);
+$wpdb->insert($chat, ['session' => 'sess-lead-1', 'user_id' => 0, 'role' => 'user', 'topic' => '', 'message' => 'سلام', 'phone' => '09170001111', 'created_at' => $now]);
+$wpdb->insert($chat, ['session' => 'sess-old', 'user_id' => 0, 'role' => 'user', 'topic' => '', 'message' => 'old', 'phone' => '09170009999', 'created_at' => gmdate('Y-m-d H:i:s', time() - 60 * DAY_IN_SECONDS)]);
+$wpdb->insert($cart, ['cart_token' => 'tok-lead-1', 'user_id' => 0, 'mobile' => '09170002222', 'items' => '[]', 'item_count' => 2, 'total' => 500000, 'currency' => 'IRT', 'status' => 'abandoned', 'created_at' => $now, 'updated_at' => $now]);
+$cartId = (int) $wpdb->insert_id;
+vkl('config')->set('crm_deal_cart', '1');
+
+$r1 = $leads->run();
+$cl = $contacts->find_by_mobile('09170001111');
+$ca = $contacts->find_by_mobile('09170002222');
+$check(1 === $r1['chat'] && null !== $cl && 'chatbot' === $cl['source'] && 0 === $cl['owner_id'], 'chatbot guest becomes an unassigned lead (one per conversation)');
+$check(null === $contacts->find_by_mobile('09170009999'), 'first run does not import chats older than 30 days');
+$check(1 === $r1['cart'] && null !== $ca && 'cart' === $ca['source'], 'abandoned cart with mobile becomes a lead');
+$check(1 === count(array_filter($acts->timeline((int) $ca['id'], 20), static fn(array $a): bool => 'cart' === $a['ref_type'] && $cartId === (int) $a['ref_id'])), 'cart entry on the timeline');
+$cartDeals = $deals->search(['contact_id' => (int) $ca['id']], ['1=1', []])['rows'];
+$check(1 === count($cartDeals) && 500000.0 === $cartDeals[0]['value'], 'follow-up deal opened for the cart (setting on)');
+$r2 = $leads->run();
+$check(0 === $r2['chat'] && 0 === $r2['cart'], 'second run captures nothing twice');
+$wpdb->insert($cart, ['cart_token' => 'tok-lead-2', 'user_id' => 0, 'mobile' => '09170002222', 'items' => '[]', 'item_count' => 1, 'total' => 90000, 'currency' => 'IRT', 'status' => 'abandoned', 'created_at' => $now, 'updated_at' => $now]);
+$r3 = $leads->run();
+$check(1 === $r3['cart'] && 1 === count($deals->search(['contact_id' => (int) $ca['id'], 'status' => 'open'], ['1=1', []])['rows']), 'second cart: new timeline entry, no second open deal');
+$wpdb->insert($chat, ['session' => 'sess-member', 'user_id' => (int) $u2, 'role' => 'user', 'topic' => '', 'message' => 'x', 'phone' => '09189990000', 'created_at' => $now]);
+$check(0 === $leads->run()['chat'], 'chats by members are not turned into leads');
+vkl('config')->set('crm_deal_cart', '0');
+
 // --------------------------------------------------------------- backfill
 // Simulate "CRM installed on a shop that already has customers": wipe
 // contacts and run the import from scratch.
@@ -315,7 +421,7 @@ $check(null !== $contacts->find_by_mobile('09191112222'), 'guest order contact r
 $check(0 === (int) $wpdb->get_var("SELECT COUNT(*) FROM {$prefix}crm_contacts c INNER JOIN {$wpdb->usermeta} m ON m.user_id = c.user_id AND m.meta_key = '{$wpdb->prefix}capabilities' WHERE m.meta_value LIKE '%administrator%'"), 'no administrator imported');
 $check(!wp_next_scheduled(VKL_Crm_Backfill::HOOK), 'cron event cleared when done');
 $restored = $contacts->find_by_user((int) $u2);
-$check(0 === $restored['orders_count'] && 'lead' === $restored['lifecycle'], 'backfill: only cancelled + top-up orders → 0 sales, still a lead');
+$check(1 === $restored['orders_count'] && 'customer' === $restored['lifecycle'], 'backfill recounts from order history (cancelled and top-up skipped, 1 paid order)');
 $n1 = (int) $wpdb->get_var("SELECT COUNT(*) FROM {$prefix}crm_contacts");
 delete_option(VKL_Crm_Backfill::STATE_OPTION);
 $backfill->start();

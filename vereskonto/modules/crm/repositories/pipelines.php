@@ -70,7 +70,76 @@ final class VKL_Crm_Pipelines extends VKL_Crm_Repository
         ], ['%s', '%d', '%d', '%s']);
     }
 
+    public function rename(int $pipeline_id, string $name): bool
+    {
+        $name = mb_substr(trim(wp_strip_all_tags($name)), 0, 100);
+
+        return '' !== $name && $this->update($pipeline_id, ['name' => $name]);
+    }
+
+    /**
+     * Make one pipeline the default (where new deals go).
+     */
+    public function set_default(int $pipeline_id): void
+    {
+        if (null === $this->find($pipeline_id)) {
+            return;
+        }
+
+        $this->db->query('UPDATE {crm_pipelines} SET is_default = 0');
+        $this->update($pipeline_id, ['is_default' => 1]);
+    }
+
+    /**
+     * Delete a pipeline (and its stages) only when it holds no deals and
+     * is not the last one.
+     */
+    public function delete_pipeline(int $pipeline_id): bool
+    {
+        if (count($this->all()) < 2 || (int) $this->db->get_var('SELECT COUNT(*) FROM {crm_deals} WHERE pipeline_id = %d AND deleted_at IS NULL', $pipeline_id) > 0) {
+            return false;
+        }
+
+        $was_default = (int) ($this->find($pipeline_id)['is_default'] ?? 0);
+
+        $this->db->delete('crm_stages', ['pipeline_id' => $pipeline_id], ['%d']);
+        $this->db->delete('crm_pipelines', ['id' => $pipeline_id], ['%d']);
+
+        if ($was_default) {
+            $first = $this->all()[0] ?? null;
+
+            if (null !== $first) {
+                $this->set_default((int) $first['id']);
+            }
+        }
+
+        return true;
+    }
+
     /* ---- stages -------------------------------------------------------- */
+
+    /**
+     * Move a stage one place up (-1) or down (+1) within its pipeline.
+     */
+    public function shift_stage(int $stage_id, int $direction): void
+    {
+        $stage = $this->stage($stage_id);
+
+        if (null === $stage) {
+            return;
+        }
+
+        $ids = array_map(static fn(array $s): int => (int) $s['id'], $this->stages((int) $stage['pipeline_id']));
+        $at  = array_search($stage_id, $ids, true);
+        $to  = $at + ($direction < 0 ? -1 : 1);
+
+        if (false === $at || $to < 0 || $to >= count($ids)) {
+            return;
+        }
+
+        [$ids[$at], $ids[$to]] = [$ids[$to], $ids[$at]];
+        $this->reorder_stages((int) $stage['pipeline_id'], $ids);
+    }
 
     /**
      * @return array<int, array<string, mixed>>

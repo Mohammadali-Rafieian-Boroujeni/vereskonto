@@ -105,11 +105,12 @@ final class VKL_Crm_Schema
 
         VKL_Crm_Access::remove_roles();
 
-        foreach ([self::VERSION_OPTION, VKL_Crm_Backfill::STATE_OPTION] as $option) {
+        foreach ([self::VERSION_OPTION, VKL_Crm_Backfill::STATE_OPTION, VKL_Crm_Lead_Capture::CURSOR_OPTION] as $option) {
             delete_option($option);
         }
 
         wp_clear_scheduled_hook(VKL_Crm_Backfill::HOOK);
+        wp_clear_scheduled_hook(VKL_Crm_Lead_Capture::HOOK);
     }
 
     public function table_exists(string $table): bool

@@ -9,7 +9,7 @@
  * Services in the container:
  *   crm.schema, crm.access, crm.contacts, crm.tags, crm.pipelines,
  *   crm.deals, crm.activities, crm.tasks, crm.contact_service, crm.backfill,
- *   crm.timeline
+ *   crm.timeline, crm.deal_service, crm.leads
  *
  * @package Vereskonto\Modules\Crm
  * @since   2.16.0
@@ -33,11 +33,15 @@ vkl_require('modules/crm/repositories/tasks.php');
 vkl_require('modules/crm/services/contacts.php');
 vkl_require('modules/crm/services/backfill.php');
 vkl_require('modules/crm/services/timeline.php');
+vkl_require('modules/crm/services/deals.php');
+vkl_require('modules/crm/services/leads.php');
 
 if (is_admin()) {
     vkl_require('modules/crm/admin/ui.php');
     vkl_require('modules/crm/admin/contacts-table.php');
+    vkl_require('modules/crm/admin/timeline-view.php');
     vkl_require('modules/crm/admin/contacts-page.php');
+    vkl_require('modules/crm/admin/deals-page.php');
     vkl_require('modules/crm/admin/settings-page.php');
 }
 
@@ -65,6 +69,11 @@ final class VKL_Crm_Module
         $config->add_defaults([
             'crm_enabled'               => '1',
             'crm_agents_see_unassigned' => '1',
+            'crm_lead_chatbot'          => '1',
+            'crm_lead_cart'             => '1',
+            'crm_deal_cart'             => '0',
+            'crm_deal_credit'           => '0',
+            'crm_lost_reasons'          => '',
         ]);
 
         if (!$config->get_bool('crm_enabled', true)) {
@@ -88,6 +97,8 @@ final class VKL_Crm_Module
         $c->singleton('crm.contact_service', static fn(VKL_Container $c): VKL_Crm_Contact_Service => new VKL_Crm_Contact_Service($c->make('crm.contacts')));
         $c->singleton('crm.backfill', static fn(VKL_Container $c): VKL_Crm_Backfill => new VKL_Crm_Backfill($c->make('crm.contact_service')));
         $c->singleton('crm.timeline', static fn(VKL_Container $c): VKL_Crm_Timeline => new VKL_Crm_Timeline($c->make('crm.activities'), $c->make('crm.contact_service')));
+        $c->singleton('crm.deal_service', static fn(VKL_Container $c): VKL_Crm_Deal_Service => new VKL_Crm_Deal_Service($c->make('crm.deals'), $c->make('crm.pipelines'), $c->make('crm.contacts'), $c->make('crm.activities'), $c->make('crm.contact_service')));
+        $c->singleton('crm.leads', static fn(VKL_Container $c): VKL_Crm_Lead_Capture => new VKL_Crm_Lead_Capture($c->make('db'), $c->make('crm.contact_service'), $c->make('crm.activities'), $c->make('crm.deal_service'), $c->make('crm.deals'), $c->make('config')));
 
         // Create/upgrade tables on admin requests, right after the
         // plugin-wide migrator (priority 5). Then start the one-time
@@ -110,17 +121,34 @@ final class VKL_Crm_Module
             $c->make('crm.contact_service')->register_sync();
             $c->make('crm.backfill')->register();
             $c->make('crm.timeline')->register();
+            $c->make('crm.deal_service')->register_sync();
+            $c->make('crm.leads')->register();
 
             if (is_admin()) {
+                $view = new VKL_Crm_Timeline_View($c->make('crm.contacts'), $c->make('crm.activities'), $c->make('crm.deals'), $c->make('crm.access'));
+                $view->register();
+
                 (new VKL_Crm_Contacts_Page(
                     $c->make('crm.contacts'),
                     $c->make('crm.contact_service'),
                     $c->make('crm.tags'),
                     $c->make('crm.activities'),
                     $c->make('crm.access'),
-                    $c->make('crm.timeline')
+                    $c->make('crm.timeline'),
+                    $view,
+                    $c->make('crm.deals'),
+                    $c->make('crm.pipelines')
                 ))->register();
-                (new VKL_Crm_Settings_Page($c->make('crm.tags'), $c->make('crm.access'), $config))->register();
+                (new VKL_Crm_Deals_Page(
+                    $c->make('crm.deals'),
+                    $c->make('crm.deal_service'),
+                    $c->make('crm.pipelines'),
+                    $c->make('crm.contacts'),
+                    $c->make('crm.activities'),
+                    $c->make('crm.access'),
+                    $view
+                ))->register();
+                (new VKL_Crm_Settings_Page($c->make('crm.tags'), $c->make('crm.access'), $config, $c->make('crm.pipelines')))->register();
             }
         }
     }

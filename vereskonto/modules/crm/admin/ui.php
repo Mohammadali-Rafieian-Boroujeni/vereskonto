@@ -186,6 +186,21 @@ final class VKL_Crm_Ui
     }
 
     /**
+     * One-click GET action through admin-post with its own nonce
+     * (vkl_crm_{action}_{id}). The id travels as "contact" for contact
+     * actions and as "id" otherwise.
+     */
+    public static function action_url(string $action, int $id, string $prefix = 'vkl_crm_contact_'): string
+    {
+        $key = 'vkl_crm_contact_' === $prefix ? 'contact' : 'id';
+
+        return wp_nonce_url(
+            add_query_arg(['action' => $prefix . $action, $key => $id], self::post_url()),
+            'vkl_crm_' . $action . '_' . $id
+        );
+    }
+
+    /**
      * Lifecycle pill.
      */
     public static function lifecycle_pill(string $lifecycle): string
@@ -237,6 +252,15 @@ final class VKL_Crm_Ui
             'tag_saved'   => ['success', __('Tag saved.', 'vereskala-login')],
             'tag_deleted' => ['success', __('Tag deleted.', 'vereskala-login')],
             'settings'    => ['success', __('Settings saved.', 'vereskala-login')],
+            'deal_created'  => ['success', __('Deal created.', 'vereskala-login')],
+            'deal_saved'    => ['success', __('Deal saved.', 'vereskala-login')],
+            'deal_moved'    => ['success', __('Deal moved.', 'vereskala-login')],
+            'deal_won'      => ['success', __('Deal won. Well done!', 'vereskala-login')],
+            'deal_lost'     => ['success', __('Deal marked as lost.', 'vereskala-login')],
+            'deal_deleted'  => ['success', __('Deal deleted.', 'vereskala-login')],
+            'pipeline_busy' => ['error', __('A pipeline that still has deals (or is the only one) cannot be deleted.', 'vereskala-login')],
+            'stage_busy'    => ['error', __('Move the deals out of this stage before deleting it.', 'vereskala-login')],
+            'stage_needed'  => ['error', __('Every pipeline needs at least one in-progress, one won and one lost stage.', 'vereskala-login')],
             'denied'      => ['error', __('You are not allowed to do that.', 'vereskala-login')],
             'missing'     => ['error', __('That contact no longer exists.', 'vereskala-login')],
             'invalid'     => ['error', __('Please check the form and try again.', 'vereskala-login')],
@@ -337,6 +361,11 @@ final class VKL_Crm_Ui
             'confirmBulk'   => __('Apply this action to the selected contacts?', 'vereskala-login'),
             'confirmAct'    => __('Remove this timeline entry?', 'vereskala-login'),
             'confirmTag'    => __('Delete this tag? It is removed from every contact.', 'vereskala-login'),
+            'confirmDeal'   => __('Delete this deal?', 'vereskala-login'),
+            'confirmPipe'   => __('Delete this pipeline and its stages?', 'vereskala-login'),
+            'confirmStage'  => __('Delete this stage?', 'vereskala-login'),
+            'moveFailed'    => __('The deal could not be moved. Reload the page and try again.', 'vereskala-login'),
+            'noMatch'       => __('No contact found', 'vereskala-login'),
         ]);
     }
 }

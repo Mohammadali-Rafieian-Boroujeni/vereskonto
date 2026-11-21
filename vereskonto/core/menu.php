@@ -62,6 +62,7 @@ final class VKL_Admin_Menu
                 'label' => __('CRM', 'vereskala-login'),
                 'items' => [
                     'vkl-crm-contacts' => __('Contacts', 'vereskala-login'),
+                    'vkl-crm-deals'    => __('Deals', 'vereskala-login'),
                 ],
             ],
             [

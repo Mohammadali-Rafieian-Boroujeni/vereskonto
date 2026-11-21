@@ -291,7 +291,7 @@ final class VKL_Crm_Contacts_Table extends WP_List_Table
         if ($this->access->can_edit($item)) {
             $actions['edit'] = sprintf('<a href="%s">%s</a>', esc_url(VKL_Crm_Ui::contact_url($id, ['action' => 'edit'])), esc_html__('Edit', 'vereskala-login'));
         } elseif ($this->access->can_claim($item)) {
-            $actions['claim'] = sprintf('<a href="%s">%s</a>', esc_url($this->action_url('claim', $id)), esc_html__('Assign to me', 'vereskala-login'));
+            $actions['claim'] = sprintf('<a href="%s">%s</a>', esc_url(VKL_Crm_Ui::action_url('claim', $id)), esc_html__('Assign to me', 'vereskala-login'));
         }
 
         if (!empty($item['mobile'])) {
@@ -348,16 +348,5 @@ final class VKL_Crm_Contacts_Table extends WP_List_Table
     protected function column_created_at(array $item): string
     {
         return VKL_Crm_Ui::date((string) $item['created_at']);
-    }
-
-    /**
-     * Single-row action link through admin-post with its own nonce.
-     */
-    private function action_url(string $action, int $id): string
-    {
-        return wp_nonce_url(
-            add_query_arg(['action' => 'vkl_crm_contact_' . $action, 'contact' => $id], VKL_Crm_Ui::post_url()),
-            'vkl_crm_' . $action . '_' . $id
-        );
     }
 }
