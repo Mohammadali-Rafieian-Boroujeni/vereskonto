@@ -1,0 +1,75 @@
+/* ==========================================================
+   Vereskala Login — 1.19.0 redesign
+   Brand: deep green #157f3a on a soft card; large touch
+   targets; RTL; all functional selectors unchanged.
+========================================================== */
+.vkl-box{
+    max-width:410px;margin:48px auto;background:#fff;
+    padding:0 0 26px;border-radius:20px;overflow:hidden;
+    border-top:2px solid #157f3a;
+    box-shadow:0 18px 50px rgba(16,42,34,.14);
+    font-size:15px;line-height:1.9;
+}
+.vkl-box .vkl-head{
+    background:#fff;
+    color:#233; text-align:center; padding:26px 20px 20px; margin-bottom:20px;
+    border-bottom:2px solid #e5262c;
+}
+.vkl-logo{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:58px;height:58px;border-radius:50%;background:#eaf9ef;
+    font-size:28px;margin-bottom:8px;
+}
+.vkl-title{margin:0;color:#0e5f29;font-size:20px;font-weight:800}
+.vkl-sub{margin:14px 0 0;color:#55655c;font-size:13px}
+.vkl-step1,.vkl-step2{padding:0 26px}
+.vkl-label{display:block;font-weight:700;color:#124e27;margin-bottom:6px}
+.vkl-input{
+    display:flex;align-items:center;gap:8px;background:#f1faf4;
+    border:1.5px solid #dceee2;border-radius:12px;padding:4px 12px;
+    transition:border-color .15s, box-shadow .15s;
+}
+.vkl-input:focus-within{border-color:#157f3a;box-shadow:0 0 0 3px rgba(30,111,92,.14);background:#fff}
+.vkl-icon{font-size:18px}
+.vkl-input input{
+    flex:1;border:0 !important;background:transparent !important;outline:none !important;
+    box-shadow:none !important;padding:11px 4px;font-size:17px;letter-spacing:2px;min-width:0;
+}
+.vkl-paste{
+    border:1px dashed #157f3a;color:#157f3a;background:#eaf9ef;border-radius:9px;
+    padding:6px 10px;font-size:12px;cursor:pointer;white-space:nowrap;
+}
+.vkl-paste:hover{background:#d8f3e1}
+#vkl_send,#vkl_verify{
+    width:100%;margin-top:14px;background:linear-gradient(135deg,#22a84d,#157f3a);
+    color:#fff;border:0;border-radius:12px;padding:13px;font-size:16px;font-weight:700;
+    cursor:pointer;transition:transform .1s, box-shadow .15s;
+    box-shadow:0 6px 16px rgba(30,111,92,.28);
+}
+#vkl_send:hover,#vkl_verify:hover{box-shadow:0 8px 20px rgba(30,111,92,.36)}
+#vkl_send:active,#vkl_verify:active{transform:scale(.985)}
+#vkl_resend{
+    width:100%;margin-top:8px;background:#fff;color:#157f3a;border:1.5px solid #157f3a;
+    border-radius:12px;padding:10px;font-size:14px;cursor:pointer;
+}
+.vkl-hint{color:#8a938f;font-size:12px;text-align:center;margin:10px 0 0}
+.vkl-timer{color:#5c6662;font-size:13px;text-align:center;margin:12px 0 0}
+#vkl_countdown{font-weight:800;color:#157f3a}
+.vkl-foot{color:#9aa39f;font-size:11.5px;text-align:center;margin:18px 0 0}
+.vkl-message{
+    display:none;margin:0 26px 14px;padding:10px 14px;border-radius:10px;font-size:13.5px;
+}
+.vkl-message.vkl-success{background:#eaf9ef;color:#157f3a;border:1px solid #bfe0d5}
+.vkl-message.vkl-error{background:#fdeaea;color:#d92b31;border:1px solid #e8b3b3}
+.vkl-step2{animation:vklIn .25s ease}
+@keyframes vklIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@media (max-width:480px){
+    .vkl-box{margin:18px 12px;border-radius:16px}
+    .vkl-step1,.vkl-step2{padding:0 18px}
+}
+
+.vkl-logo-img img{max-height:84px;max-width:210px;width:auto;height:auto;display:block}
+/* The white header IS the plate — the mark sits on it unframed. */
+.vkl-logo-img{width:auto !important;height:auto !important;display:inline-block;
+    background:none !important;border:0 !important;border-radius:0;padding:0;
+    box-shadow:none !important}

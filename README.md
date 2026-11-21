@@ -1,0 +1,18 @@
+# Vereskonto
+
+WordPress / WooCommerce plugin for Vereskala: SMS login, wallet, installments, customer club, tickets, returns, smart shop (chatbot) and a mobile navigation bar.
+
+| Path | What |
+|---|---|
+| `vereskonto/` | The plugin (version 2.15.1). Install by zipping this folder and uploading it in WordPress. |
+| `vereskonto/CHANGELOG.md` | Change log (Persian). |
+| `mu-plugins/vk-search-tap-fix.php` | Must-use plugin: stops WoodMart's closed full-screen search from swallowing taps on mobile. Upload to `wp-content/mu-plugins/`. |
+| `docs/IA.md` | Information-architecture proposal for the admin and customer area, and what was built (Persian). |
+
+## Tests
+
+Plain PHP, no WordPress needed:
+
+```bash
+for t in vereskonto/tests/*-test.php; do php "$t" > /dev/null && echo "PASS $t" || echo "FAIL $t"; done
+```

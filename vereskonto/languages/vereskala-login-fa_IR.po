@@ -1,0 +1,5092 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Vereskonto 1.48.0\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fa_IR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Domain: vereskala-login\n"
+
+msgid " and expires on %s"
+msgstr " و تا %s اعتبار دارد"
+
+msgid "%1$d to %2$d"
+msgstr "%1$d تا %2$d"
+
+msgid ""
+"%1$s\n"
+"Your invoice for order #%2$s is ready.\n"
+"Total: %3$s\n"
+"View / print: %4$s"
+msgstr ""
+"%1$s\n"
+"فاکتور سفارش #%2$s شما آماده است.\n"
+"جمع کل: %3$s\n"
+"دیدن / چاپ: %4$s"
+
+msgid ""
+"%1$s\n"
+"Your wallet was credited: %2$s\n"
+"New balance: %3$s"
+msgstr ""
+"%1$s\n"
+"کیف پول شما شارژ شد: %2$s\n"
+"موجودی تازه: %3$s"
+
+msgid "%1$s instalments, window %2$s of each month"
+msgstr "%1$s قسط، بازه‌ی %2$s هر ماه"
+
+msgid "%1$s more points this year to reach %2$s."
+msgstr "%1$s امتیاز دیگر در سال جاری تا رسیدن به %2$s."
+
+msgid "%1$s rows are older than %2$s days."
+msgstr "%1$s ردیف کهنه‌تر از %2$s روز هستند."
+
+msgid "%1$s views today · %2$s views in the last 7 days"
+msgstr "%1$s بازدید امروز · %2$s بازدید در ۷ روز گذشته"
+
+msgid "%1$s — %2$s messages"
+msgstr "%1$s — %2$s پیام"
+
+msgid "%1$s — %2$s views, %3$s sessions"
+msgstr "%1$s — %2$s بازدید، %3$s نشست"
+
+msgid "%1$s: %2$s overdue"
+msgstr "%1$s: %2$s عقب‌افتاده"
+
+msgid "%d active credit plans"
+msgstr "%d طرح اعتباری فعال"
+
+msgid "%d installments"
+msgstr "%d قسط"
+
+msgid "%d instalment credit plans were restored — their orders never completed payment."
+msgstr "%d طرح اعتبار اقساطی بازگردانده شد — سفارش‌هایشان هرگز پرداخت را تکمیل نکردند."
+
+msgid "%d log rows removed."
+msgstr "%d ردیف از گزارش حذف شد."
+
+msgid "%d points converted to wallet credit."
+msgstr "%d امتیاز به اعتبار کیف پول تبدیل شد."
+
+msgid "%d repayment or top-up orders were moved out of the sales figures."
+msgstr "%d سپارش بازپرداخت یا شارژ از آمار فروش بیرون برده شد."
+
+msgid "%s app sessions signed out."
+msgstr "%s نشست اپ خارج شد."
+
+msgid "%s carts in this view"
+msgstr "%s سبد در این نما"
+
+msgid "%s inactive carts deleted."
+msgstr "%s سبد غیرفعال حذف شد."
+
+msgid "%s members with points"
+msgstr "%s عضو دارای امتیاز"
+
+msgid "%s messages in this view."
+msgstr "%s پیام در این نما."
+
+msgid "%s not realised"
+msgstr "%s محقق نشد"
+
+msgid "%s products"
+msgstr "%s کالا"
+
+msgid "%s recipients"
+msgstr "%s گیرنده"
+
+msgid "%s rows left…"
+msgstr "%s ردیف مانده…"
+
+msgid "%s values will be sent — your approved pattern must have exactly %s blanks, in this order."
+msgstr "%s مقدار فرستاده می‌شود — الگوی تأییدشده شما باید دقیقاً %s جای خالی داشته باشد، با همین ترتیب."
+
+msgid "%s views came from generic automation. At this level it is normal background noise and costs you little."
+msgstr "%s بازدید از خودکارسازی عمومی آمده. در این حد، پارازیت طبیعی است و هزینه‌ای برایتان ندارد."
+
+msgid "%s+ recipients"
+msgstr "بیش از %s گیرنده"
+
+msgid "(no department)"
+msgstr "(بدون بخش)"
+
+msgid "0 = no maximum."
+msgstr "۰ = بدون سقف."
+
+msgid "0 = off. This lands in the festival ledger, not the real wallet."
+msgstr "۰ = خاموش. این مبلغ در دفتر جشنواره می‌نشیند، نه در کیف پول واقعی."
+
+msgid "0 = the moment the order is paid. 24 = a day later, which usually brings the customer back sooner."
+msgstr "۰ = همان لحظه پرداخت سفارش. ۲۴ = یک روز بعد، که معمولاً مشتری را زودتر برمی‌گرداند."
+
+msgid "0 shows it immediately."
+msgstr "۰ یعنی بی‌درنگ نمایش داده شود."
+
+msgid "1 value will be sent — your approved pattern must have exactly 1 blank."
+msgstr "۱ مقدار فرستاده می‌شود — الگوی تأییدشده شما باید دقیقاً ۱ جای خالی داشته باشد."
+
+msgid "1) Base address"
+msgstr "۱) نشانی پایه"
+
+msgid "1) In My Account → Financial services, submit a credit request: amount, terms acceptance, national ID + IBAN, ID card photos and a guarantee cheque/promissory note for TWICE the amount (proof of income is optional)."
+msgstr "۱) در حساب کاربری ← خدمات مالی، درخواست اعتبار ثبت کنید: مبلغ، پذیرش شرایط، کد ملی + شبا، تصویر کارت ملی و چک/سفته ضمانت به میزان دو برابر مبلغ (مدرک درآمد اختیاری است)."
+
+msgid "1. Purchase credit is granted after document review and at the shop's discretion; submitting a request creates no obligation to approve it."
+msgstr "۱. اعتبار خرید پس از بررسی مدارک و به تشخیص فروشگاه اعطا می‌شود؛ ثبت درخواست تعهدی برای تأیید ایجاد نمی‌کند."
+
+msgid "2) After approval you will see \"Installment purchase\" as a payment method at checkout — while your remaining credit covers the order."
+msgstr "۲) پس از تأیید، روش پرداخت «خرید اقساطی» را در تسویه‌حساب می‌بینید — تا وقتی اعتبار باقی‌مانده‌تان کفاف سفارش را بدهد."
+
+msgid "2) How login works (SMS code → token)"
+msgstr "۲) آمد چگونه کار می‌کند (کد پیامکی ← توکن)"
+
+msgid "2. Repayment installments start as soon as the credit is used at checkout, and are due on the agreed day of each month."
+msgstr "۲. اقساط بازپرداخت به محض استفاده از اعتبار در تسویه‌حساب آغاز می‌شود و سررسید آن روز توافق‌شده هر ماه است."
+
+msgid "3) Available endpoints"
+msgstr "۳) نقاط پایانی موجود"
+
+msgid "3) Repayment starts only after you use the credit, monthly on your due day, payable from the same tab. Note: installment orders have no free shipping."
+msgstr "۳) بازپرداخت فقط پس از استفاده از اعتبار آغاز می‌شود، ماهانه در روز سررسید، و از همان برگه پرداخت می‌شود. توجه: سفارش‌های اقساطی گسیل رایگان ندارند."
+
+msgid "3. A delay of more than 7 days in paying an installment suspends the remaining credit and may activate the guarantee cheque/promissory note."
+msgstr "۳. تأخیر بیش از ۷ روز در پرداخت قسط، اعتبار باقی‌مانده را معلق می‌کند و ممکن است چک/سفته ضمانت را به جریان بیندازد."
+
+msgid "3a. The guarantee cheque/promissory note must be issued for TWICE the requested credit amount — this is why the proof of income is optional."
+msgstr "۳-الف. چک/سفته ضمانت باید به میزان دو برابر مبلغ اعتبار درخواستی صادر شود — به همین دلیل مدرک درآمد اختیاری است."
+
+msgid "4) Quick test"
+msgstr "۴) آزمون سریع"
+
+msgid "4. Installment orders do not qualify for free shipping and cannot be combined with wallet balance at checkout."
+msgstr "۴. سفارش‌های اقساطی گسیل رایگان ندارند و در تسویه‌حساب با موجودی کیف پول قابل جمع نیستند."
+
+msgid "5) Notes"
+msgstr "۵) نکته‌ها"
+
+msgid "5. Uploaded documents are kept confidential, used only for credit assessment, and are accessible solely to shop management."
+msgstr "۵. مدارک بارگذاری‌شده محرمانه نگه داشته می‌شوند، تنها برای اعتبارسنجی به کار می‌روند و فقط در دسترس مدیریت فروشگاه‌اند."
+
+msgid "6. Early settlement is possible at any time from the Wallet tab without penalty."
+msgstr "۶. تسویه زودتر از موعد در هر زمان از برگه کیف پول و بدون جریمه ممکن است."
+
+msgid "A cart with no activity for this long is considered abandoned."
+msgstr "سبدی که به این مدت فعالیتی نداشته باشد، رهاشده در نظر گرفته می‌شود."
+
+msgid "A customer paying by instalment credit whose order then failed to complete (a crash, a timeout) can be left owing a plan with no matching finished order. This restores credit for any such order older than one hour — orders still genuinely in progress are left untouched."
+msgstr "مشتری‌ای که با اعتبار اقساطی پرداخت کرده ولی سفارشش بعداً تکمیل نشده (کرش، تایم‌اوت) ممکن است با یک طرح بدهی بدون سفارش تکمیل‌شده‌ی متناظر باقی بماند. این دکمه اعتبار چنین سفارش‌هایی را اگر بیش از یک ساعت از ایجادشان گذشته باشد بازمی‌گرداند — سفارش‌هایی که واقعاً هنوز در حال پردازش‌اند دست‌نخورده می‌مانند."
+
+msgid "A daily job also checks every repayment plan after its monthly due day: the late fee (0 = off) is added once per month to the overdue amount and the overdue SMS goes out. The reminder pattern powers the manual \"Send reminder SMS\" button."
+msgstr "یک کار روزانه هم هر طرح بازپرداخت را پس از روز سررسید ماهانه‌اش بررسی می‌کند: جریمه دیرکرد (۰ = خاموش) ماهی یک‌بار به مبلغ سررسیدشده افزوده می‌شود و پیامک دیرکرد می‌رود. پترن یادآوری، دکمه دستی «فرستادن پیامک یادآوری» را کار می‌اندازد."
+
+msgid "A daily job checks every repayment plan after its monthly due day: the late fee (0 = off) is added once per month to the overdue amount and the overdue SMS goes out. The reminder pattern powers the manual \"Send reminder SMS\" button."
+msgstr "یک کار روزانه هر طرح بازپرداخت را پس از روز سررسید ماهانه‌اش بررسی می‌کند: جریمه دیرکرد (۰ = خاموش) ماهی یک‌بار به مبلغ معوق افزوده می‌شود و پیامک دیرکرد ارسال می‌گردد. پترن یادآوری، دکمه دستی «ارسال پیامک یادآوری» را به کار می‌اندازد."
+
+msgid "A few days after delivery we will text you a review invitation — every review earns club points that convert to wallet credit."
+msgstr "چند روز پس از تحویل، دعوت‌نامه ثبت دیدگاه را برایتان پیامک می‌کنیم — هر دیدگاه امتیاز باشگاه می‌دهد که به اعتبار کیف پول تبدیل می‌شود."
+
+msgid "A higher-end pick within the %s category."
+msgstr "انتخابی از رده بالاتر در دسته «%s»."
+
+msgid "A job was due %s ago and still has not run, so nothing is calling wp-cron.php. Set up the cron job described below."
+msgstr "کاری %s پیش سررسید شده و هنوز اجرا نشده، یعنی هیچ‌چیز wp-cron.php را صدا نمی‌زند. کرون‌جابی که پایین توضیح داده شده را بسازید."
+
+msgid "A line or two about your experience (optional — but it helps a lot)."
+msgstr "یک‌دو خط از تجربه‌تان (اختیاری — ولی خیلی کمک می‌کند)."
+
+msgid "A message is only sent when its feature is enabled AND its pattern/template field is filled in. Empty pattern = silent skip by design."
+msgstr "هر پیام فقط زمانی ارسال می‌شود که هم قابلیت آن فعال باشد و هم فیلد پترن/قالبش پر شده باشد. پترن خالی = ردشدن بی‌صدا (عمدی)."
+
+msgid "A padded copy was created and is now in use. Reinstall the app on your phone to see it."
+msgstr "یک نسخه حاشیه‌دار ساخته شد و اکنون به کار می‌رود. برای دیدنش، اپلیکیشن را روی گوشی دوباره نصب کنید."
+
+msgid "A paid installment or wallet top-up moves to its own order status instead of staying in \"processing\"/\"completed\", so the shop books the purchase once and not again with every installment."
+msgstr "قسط پرداخت‌شده یا شارژ کیف پول به‌جای ماندن در «در حال انجام»/«تکمیل‌شده» به وضعیت ویژه‌ی خود می‌رود، تا خرید یک‌بار در دفتر بنشیند و با هر قسط دوباره ثبت نشود."
+
+msgid "A popular pick this week."
+msgstr "از انتخاب‌های محبوب این هفته."
+
+msgid "A proxy is currently configured in wp-config.php."
+msgstr "هم‌اکنون یک پراکسی در wp-config.php تنظیم شده است."
+
+msgid "A repayment has to be paid with real money, not with more instalment credit."
+msgstr "بازپرداخت قسط باید با پول واقعی پرداخت شود، نه با اعتبار اقساطی بیشتر."
+
+msgid "A slide-up bar with your offer, shown once per browser session after the visitor has spent the set time on the site. Hidden on the checkout page."
+msgstr "نواری با پیشنهاد شما که پس از سپری‌شدن زمان تعیین‌شده در سایت، فقط یک‌بار در هر نشست مرورگر نمایش داده می‌شود. در برگه تسویه‌حساب پنهان است."
+
+msgid "A wallet top-up cannot itself be bought in instalments."
+msgstr "شارژ کیف پول را نمی‌توان خودش قسطی خرید."
+
+msgid "A wheel-of-fortune shown to visitors instead of the popup. Define 2–6 slices; the winner is chosen on the server by weight, and wallet-credit prizes are added automatically for logged-in customers."
+msgstr "گردانه شانسی که به‌جای پاپ‌آپ به بازدیدکنندگان نشان داده می‌شود. ۲ تا ۶ بخش تعریف کنید؛ برنده در سرور بر پایه وزن انتخاب می‌شود و جایزه‌های اعتبار کیف پول برای مشتریان واردشده خودکار افزوده می‌شود."
+
+msgid "AI assistants are reading your catalog"
+msgstr "دستیارهای هوش مصنوعی کاتالوگ شما را می‌خوانند"
+
+msgid "AI bots"
+msgstr "ربات‌های هوش مصنوعی"
+
+msgid "API key"
+msgstr "کلید API"
+
+msgid "API key (console) — recommended"
+msgstr "کلید API (کنسول) — پیشنهادی"
+
+msgid "API key and sender are set (shared with the SMS login)."
+msgstr "کلید API و شماره فرستنده تنظیم شده‌اند (مشترک با ورود پیامکی)."
+
+msgid "API status"
+msgstr "وضعیت API"
+
+msgid "Abandoned cart total"
+msgstr "جمع سبد رهاشده"
+
+msgid "Abandoned — messaged"
+msgstr "رهاشده — پیامک‌رفته"
+
+msgid "Abandoned — not messaged"
+msgstr "رهاشده — پیامک‌نرفته"
+
+msgid "Abandoned-cart customers"
+msgstr "مشتریان دارای سبد رهاشده"
+
+msgid "Abandonment delay (minutes)"
+msgstr "مهلت رهاشدگی (دقیقه)"
+
+msgid "About %s%% of sessions are on phones."
+msgstr "حدود %s٪ نشست‌ها روی گوشی است."
+
+msgid "About %s%% of visits are AI crawlers (ChatGPT, Claude, Perplexity…). They can surface your products in AI answers."
+msgstr "حدود %s٪ بازدیدها خزنده‌های هوش مصنوعی‌اند (ChatGPT، Claude، Perplexity…). آن‌ها می‌توانند کالاهای شما را در پاسخ‌های هوش مصنوعی نمایان کنند."
+
+msgid "About %s%% of visits are humans — your traffic quality is good."
+msgstr "حدود %s٪ بازدیدها انسان‌اند — کیفیت ترافیک شما خوب است."
+
+msgid "About %s%% of visits come from a phone."
+msgstr "حدود %s٪ بازدیدها از گوشی است."
+
+msgid "Access token"
+msgstr "توکن دسترسی"
+
+msgid "Account details"
+msgstr "داده‌های کاربر"
+
+msgid "Account summary"
+msgstr "خلاصه‌ی حساب"
+
+msgid "Accounting"
+msgstr "حسابداری"
+
+msgid "Actions"
+msgstr "عملیات"
+
+msgid "Active"
+msgstr "فعال"
+
+msgid "Active app sessions"
+msgstr "نشست‌های فعال اپ"
+
+msgid "Active carts"
+msgstr "سبدهای فعال"
+
+msgid "Active plan"
+msgstr "طرح فعال"
+
+msgid "Active purchase-credit plans (all customers)"
+msgstr "طرح‌های اعتبار خرید فعال (همه مشتریان)"
+
+msgid "Active: %1$d — Abandoned: %2$d — Converted: %3$d"
+msgstr "فعال: %1$d — رهاشده: %2$d — تبدیل‌شده: %3$d"
+
+msgid "Add a firewall or rate-limit rule, or turn on bot protection at your CDN. It lowers server load, and on a busy shop that also means fewer 503 errors."
+msgstr "یک قانون فایروال یا محدودیت نرخ بگذارید، یا حفاظت ربات را در CDN روشن کنید. بار سرور را کم می‌کند و در فروشگاه پرترافیک یعنی خطای ۵۰۳ کمتر."
+
+msgid "Add a product to the campaign"
+msgstr "افزودن کالا به کمپین"
+
+msgid "Add and verify your real business phone number under WhatsApp → API Setup. This number must not be registered in the regular WhatsApp app."
+msgstr "شماره تلفن واقعی کسب‌وکار خود را در WhatsApp → API Setup اضافه و تأیید کنید. این شماره نباید در اپ معمولی واتساپ ثبت شده باشد."
+
+msgid "Add day & time"
+msgstr "افزودن روز و ساعت"
+
+msgid "Add slice"
+msgstr "افزودن بخش"
+
+msgid "Add to cart"
+msgstr "افزودن به سبد"
+
+msgid "Addresses"
+msgstr "نشانی‌ها"
+
+msgid "Addresses worth comparing: rest.payamak-panel.com · api.kavenegar.com · api.sms.ir · edge.ippanel.com"
+msgstr "نشانی‌هایی که ارزش مقایسه دارند: rest.payamak-panel.com · api.kavenegar.com · api.sms.ir · edge.ippanel.com"
+
+msgid "Addresses worth comparing: rest.payamak-panel.com · console.melipayamak.com · api.kavenegar.com · api.sms.ir"
+msgstr "نشانی‌هایی که ارزش مقایسه دارند: rest.payamak-panel.com · console.melipayamak.com · api.kavenegar.com · api.sms.ir"
+
+msgid "Addresses worth comparing: webone-sms.com · api.kavenegar.com · api.sms.ir · rest.payamak-panel.com"
+msgstr "نشانی‌هایی که ارزش مقایسه دارند: webone-sms.com · api.kavenegar.com · api.sms.ir · rest.payamak-panel.com"
+
+msgid "Adds product, price and link lines to the parameters above. Use %product%, %price% and %link% in the matching pattern. These are the same for every recipient."
+msgstr "خط‌های product، price و link را به پارامترهای بالا می‌افزاید. در پترن متناظر از %product%، %price% و %link% استفاده کنید. این‌ها برای همه گیرندگان یکسان‌اند."
+
+msgid "Adds to the credit they may spend; it does not change what they already owe."
+msgstr "به اعتباری که می‌تواند خرج کند افزوده می‌شود؛ بدهی کنونی او را تغییر نمی‌دهد."
+
+msgid "Adjusted by shop"
+msgstr "اصلاح توسط فروشگاه"
+
+msgid "Admin mobile"
+msgstr "موبایل مدیر"
+
+msgid "After each full send, the campaign re-queues itself for the next selected day & time (site timezone). Leave empty for a one-off campaign."
+msgstr "پس از هر ارسال کامل، کمپین خودش را برای نزدیک‌ترین روز و ساعت انتخابی دوباره در صف می‌گذارد (به وقت سایت). برای کمپین یک‌باره خالی بگذارید."
+
+msgid "All"
+msgstr "همه"
+
+msgid "All cancelled"
+msgstr "همه لغوشده‌ها"
+
+msgid "All club members (everyone with points)"
+msgstr "همه اعضای باشگاه (هرکس امتیاز دارد)"
+
+msgid "All credit customers"
+msgstr "همه مشتریان اعتباری"
+
+msgid "All departments"
+msgstr "همه بخش‌ها"
+
+msgid "All done — tiers, Top members and the customer club tab now include the full history."
+msgstr "تمام شد — رتبه‌ها، اعضای برتر و برگه باشگاه مشتری اکنون کل سابقه را دربر می‌گیرند."
+
+msgid "All endpoints start with this base URL:"
+msgstr "همه نقاط پایانی با این نشانی پایه آغاز می‌شوند:"
+
+msgid "All messages go out over the shared service line using your own approved pattern, so no dedicated line is needed and messages reach numbers on the operator blacklist too."
+msgstr "همه پیام‌ها از خط خدماتی اشتراکی و با الگوی تأییدشده خودتان می‌روند، پس نیازی به خط اختصاصی نیست و پیام‌ها به شماره‌های لیست سیاه مخابرات هم می‌رسند."
+
+msgid "All products"
+msgstr "همه کالاها"
+
+msgid "All registered customers"
+msgstr "همه مشتریان ثبت‌نام‌شده"
+
+msgid "All users with a mobile number"
+msgstr "همه کاربران دارای شماره موبایل"
+
+msgid "Also save as the automatic daily purge window"
+msgstr "به‌عنوان بازه حذف خودکار روزانه هم ذخیره شود"
+
+msgid "Always serve your site over HTTPS so tokens are not exposed in transit."
+msgstr "همیشه سایت را روی HTTPS ارائه دهید تا توکن‌ها در مسیر افشا نشوند."
+
+msgid "Amount"
+msgstr "مبلغ"
+
+msgid "Amount due"
+msgstr "مبلغ سررسیدشده"
+
+msgid "Amount per customer"
+msgstr "مبلغ برای هر مشتری"
+
+msgid "Amount received"
+msgstr "مبلغ دریافتی"
+
+msgid "Amounts already repaid are not touched; changing the total only changes what is still owed."
+msgstr "مبالغی که پیش‌تر بازپرداخت شده دست نمی‌خورد؛ تغییر مبلغ کل فقط باقی‌مانده بدهی را عوض می‌کند."
+
+msgid "Amounts already repaid are not touched; changing the total only changes what is still owed. Lowering the accrued late fee lowers the total by the same amount, because every fee was added to both."
+msgstr "مبلغ‌های بازپرداخت‌شده دست‌نخورده می‌مانند؛ تغییر مبلغ کل تنها بدهی مانده را عوض می‌کند. کاهش جریمه‌ی انباشته، همان اندازه از مبلغ کل کم می‌کند، چون هر جریمه به هر دو افزوده شده بود."
+
+msgid "An average visit lasts about %s seconds, so most people leave before reading anything."
+msgstr "هر بازدید به‌طور میانگین حدود %s ثانیه است، پس بیشتر مردم پیش از خواندن چیزی می‌روند."
+
+msgid "An average visit lasts about %s seconds."
+msgstr "هر بازدید به‌طور میانگین حدود %s ثانیه است."
+
+msgid "An unexpected error occurred completing this order. Please try again, or contact support if it keeps happening."
+msgstr "خطای غیرمنتظره‌ای هنگام تکمیل این سفارش رخ داد. لطفاً دوباره تلاش کنید، یا اگر تکرار شد با پشتیبانی تماس بگیرید."
+
+msgid "An unpaid late fee of %s is included in the next instalment."
+msgstr "جریمه‌ی پرداخت‌نشده‌ی %s در قسط بعدی گنجانده شده است."
+
+msgid "Android crops the home-screen icon into a circle, cutting away about a fifth of each edge. For a proper round icon, upload a second version with the logo shrunk into the middle and empty space around it. Leave empty to skip."
+msgstr "اندروید نماد صفحه خانه را به دایره می‌بُرد و حدود یک‌پنجم هر لبه را می‌تراشد. برای نماد گرد درست، نسخه دومی بارگذاری کنید که نشان در میانه کوچک شده و پیرامونش خالی باشد. برای رد کردن، خالی بگذارید."
+
+msgid "Announcement SMS pattern"
+msgstr "پترن پیامک اطلاع‌رسانی"
+
+msgid "Announcement SMS pattern (optional)"
+msgstr "پترن پیامک اطلاع‌رسانی (اختیاری)"
+
+msgid "Announcement queue: %1$s sent, %2$s failed."
+msgstr "صف اعلان: %1$s فرستاده شد، %2$s ناموفق."
+
+msgid "Answered"
+msgstr "پاسخ داده شده"
+
+msgid "Answers from live shop data on this server: product search, prices, best sellers, matching accessories, order status and wallet balance. No external AI service; no data leaves the site."
+msgstr "از داده‌های زنده فروشگاه روی همین سرور پاسخ می‌دهد: جستجوی کالا، قیمت، پرفروش‌ها، اقلام مکمل، وضعیت سفارش و موجودی کیف پول. بدون سرویس هوش مصنوعی خارجی؛ هیچ داده‌ای از سایت خارج نمی‌شود."
+
+msgid "App icon"
+msgstr "نماد اپلیکیشن"
+
+msgid "App name"
+msgstr "نام اپلیکیشن"
+
+msgid "Apply"
+msgstr "اعمال"
+
+msgid "Approve & grant credit"
+msgstr "تأیید و اعطای اعتبار"
+
+msgid "Approved Meta template. Placeholders: {{1}} = name, {{2}} = coupon."
+msgstr "قالب تأییدشده متا. جای‌بان‌ها: {{1}} = name، {{2}} = coupon."
+
+msgid "Around %1$s%% of visits (%2$s views) look like generic scrapers — usually competitors watching prices or copying descriptions."
+msgstr "حدود %1$s٪ بازدیدها (%2$s بازدید) شبیه اسکرپر عمومی‌اند — معمولاً رقبایی که قیمت‌ها را می‌پایند یا توضیحات را کپی می‌کنند."
+
+msgid "Around %s%% of visits are automated. Real demand may be smaller than the raw totals suggest."
+msgstr "حدود %s٪ بازدیدها خودکارند. تقاضای واقعی شاید کمتر از عدد خام باشد."
+
+msgid "Around %s%% of visits look like generic scrapers — often competitors watching prices or copying content."
+msgstr "حدود %s٪ بازدیدها شبیه اسکرپر عمومی‌اند — اغلب رقبایی که قیمت‌ها را می‌پایند یا محتوا کپی می‌کنند."
+
+msgid "Asks the customer to review their purchase a few days after the order completes — reviews earn club points on the account Surveys tab."
+msgstr "چند روز پس از تکمیل سفارش، از مشتری می‌خواهد دیدگاهش را ثبت کند — دیدگاه‌ها در برگه نظرسنجی حساب، امتیاز باشگاه می‌دهند."
+
+msgid "At least one stage failed. Send the lines above to your hosting support and ask them to allow outgoing connections to edge.ippanel.com on port 443. This is a hosting/network matter, not a plugin setting."
+msgstr "دست‌کم یک مرحله شکست خورد. خط‌های بالا را برای پشتیبانی میزبان خود بفرستید و بخواهید اتصال بیرون‌رونده به edge.ippanel.com روی درگاه ۴۴۳ را باز کنند. این موضوع میزبان/شبکه است، نه تنظیمات افزونه."
+
+msgid "Audience"
+msgstr "مخاطبان"
+
+msgid "Auth"
+msgstr "احراز هویت"
+
+msgid "Authentication"
+msgstr "احراز هویت"
+
+msgid "Authorization token missing."
+msgstr "توکن احراز هویت وجود ندارد."
+
+msgid "Auto personal coupon"
+msgstr "کوپن خودکار شخصی"
+
+msgid "Auto-delete inactive carts (days)"
+msgstr "حذف خودکار سبدهای غیرفعال (روز)"
+
+msgid "Automatic / system"
+msgstr "خودکار / سامانه"
+
+msgid "Automatic festival credit after purchase"
+msgstr "اعتبار جشنواره خودکار پس از خرید"
+
+msgid "Automatic festival credit turned off and its settings cleared."
+msgstr "اعتبار جشنواره خودکار خاموش شد و تنظیماتش پاک شد."
+
+msgid "Automatic purge is OFF."
+msgstr "حذف خودکار خاموش است."
+
+msgid "Automatic purge is ON: older than %s days."
+msgstr "حذف خودکار روشن است: قدیمی‌تر از %s روز."
+
+msgid "Available credit"
+msgstr "اعتبار در دسترس"
+
+msgid "Available to spend right now"
+msgstr "قابل استفاده در این لحظه"
+
+msgid "Average time on site is only %s. Short visits often mean slow pages or a weak first impression."
+msgstr "میانگین زمان حضور تنها %s است. بازدید کوتاه معمولاً یعنی صفحه کند یا نخستین برخورد ضعیف."
+
+msgid "Avg. time on site"
+msgstr "میانگین زمان حضور"
+
+msgid "Back to dashboard"
+msgstr "بازگشت به پیشخوان"
+
+msgid "Back to tickets"
+msgstr "بازگشت به تیکت‌ها"
+
+msgid "Bale is connected — you receive invoices and updates there."
+msgstr "بله متصل است — فاکتور و اعلان‌ها را همان‌جا می‌گیرید."
+
+msgid "Bale lets you send invoices and order updates to customers for free. Create a bot in Bale via @BotFather, paste its token below, then register the webhook so customers can connect by tapping “Start”."
+msgstr "بله به شما امکان می‌دهد فاکتور و اعلان سفارش را رایگان برای مشتریان بفرستید. در بله با @BotFather یک ربات بسازید، توکنش را پایین بگذارید، سپس وب‌هوک را ثبت کنید تا مشتریان با زدن «شروع» وصل شوند."
+
+msgid "Bale messenger"
+msgstr "پیام‌رسان بله"
+
+msgid "Bank transfer"
+msgstr "واریز بانکی"
+
+msgid "Base URL — send the token as an Authorization: Bearer header on authenticated calls."
+msgstr "نشانی پایه — در فراخوانی‌های احرازشده، توکن را در هدر Authorization: Bearer بفرستید."
+
+msgid "Behaviour"
+msgstr "رفتار"
+
+msgid "Below Silver counts as Bronze. Yearly points mirror yearly purchases (one point per the order amount set above)."
+msgstr "کمتر از نقره‌ای، برنزی محسوب می‌شود. امتیاز سالانه بازتاب خرید سالانه است (یک امتیاز به ازای مبلغ سفارشِ تنظیم‌شده در بالا)."
+
+msgid "Best sellers"
+msgstr "پرفروش‌ها"
+
+msgid "Between %1$s and %2$s."
+msgstr "بین %1$s و %2$s."
+
+msgid "Birthday"
+msgstr "زادروز"
+
+msgid "Birthday SMS"
+msgstr "پیامک زادروز"
+
+msgid "Birthday gift coupon (optional)"
+msgstr "کوپن هدیه زادروز (اختیاری)"
+
+msgid "Birthday greetings"
+msgstr "تبریک زادروز"
+
+msgid "Booked as a repayment or wallet top-up — not a sale of goods."
+msgstr "ثبت به‌عنوان بازپرداخت یا شارژ کیف پول — نه فروش کالا."
+
+msgid "Bot"
+msgstr "ربات"
+
+msgid "Bot token"
+msgstr "توکن ربات"
+
+msgid "Bot username (without @)"
+msgstr "نام کاربری ربات (بدون @)"
+
+msgid "Bots outnumber people"
+msgstr "ربات‌ها بیشتر از انسان‌اند"
+
+msgid "Brand: %s"
+msgstr "برند: %s"
+
+msgid "Bronze"
+msgstr "برنزی"
+
+msgid "Bronze tier"
+msgstr "رتبه برنزی"
+
+msgid "Browser notifications"
+msgstr "آگاه‌سازی مرورگر"
+
+msgid "Build a second channel (SMS to past buyers, or another social profile) so a change on one platform cannot halve your traffic."
+msgstr "یک کانال دوم بسازید (پیامک به خریداران پیشین یا یک شبکه اجتماعی دیگر) تا تغییر یک پلتفرم نتواند ترافیک‌تان را نصف کند."
+
+msgid "Button link (optional)"
+msgstr "لینک دکمه (اختیاری)"
+
+msgid "Buy now and repay in instalments from your wallet."
+msgstr "اکنون بخرید و از کیف پول خود قسطی بازپرداخت کنید."
+
+msgid "By the admin"
+msgstr "توسط مدیر"
+
+msgid "By the customer"
+msgstr "توسط مشتری"
+
+msgid "By the way: shipping is free and every product is genuine. 🚚"
+msgstr "راستی: گسیل رایگان است و همه کالاها نژاده‌اند. 🚚"
+
+msgid "Campaign queued. Sending starts within five minutes."
+msgstr "کمپین در صف قرار گرفت. ارسال تا پنج دقیقه دیگر آغاز می‌شود."
+
+msgid "Campaign title"
+msgstr "عنوان جشنواره"
+
+msgid "Cancelled"
+msgstr "لغوشده"
+
+msgid "Cancelled by admin"
+msgstr "لغوشده توسط مدیر"
+
+msgid "Cancelled by customers"
+msgstr "لغوشده توسط مشتریان"
+
+msgid "Cancelled orders"
+msgstr "سفارش‌های لغوشده"
+
+msgid "Cancelled products"
+msgstr "کالاهای لغوشده"
+
+msgid "Card to card"
+msgstr "کارت به کارت"
+
+msgid "Carries a late fee that has not been paid yet."
+msgstr "جریمه‌ی دیرکردی دارد که هنوز پرداخت نشده است."
+
+msgid "Cart"
+msgstr "سبد خرید"
+
+msgid "Cart Tracking"
+msgstr "ردیابی سبد خرید"
+
+msgid "Cart rows older than this are removed by the daily housekeeping, so the overview reflects the recent reality instead of an all-time pile."
+msgstr "ردیف‌های سبد قدیمی‌تر از این مقدار با نظافت روزانه حذف می‌شوند تا نمای کلی، واقعیت اخیر را نشان دهد نه انباشت همه دوران را."
+
+msgid "Cash"
+msgstr "نقدی"
+
+msgid "Category pages"
+msgstr "صفحات دسته‌بندی"
+
+msgid "Channel"
+msgstr "کانال"
+
+msgid "Charge wallet"
+msgstr "شارژ کیف پول"
+
+msgid "Chat title"
+msgstr "عنوان گفتگو"
+
+msgid "Cheaper"
+msgstr "ارزان‌تر"
+
+msgid "Check"
+msgstr "بررسی"
+
+msgid "Check homepage load speed and make the hero banner and best offers visible without scrolling."
+msgstr "سرعت بارگذاری صفحه اصلی را بررسی کنید و بنر اصلی و بهترین پیشنهادها را بدون نیاز به اسکرول نمایان کنید."
+
+msgid "Check that searching those words actually finds the right products. A popular search that returns nothing is a sale walking away — either stock it, or add the word to an existing product."
+msgstr "بررسی کنید جستجوی این واژه‌ها واقعاً کالای درست را پیدا می‌کند. جستجوی پرتکرارِ بی‌نتیجه یعنی فروشی که از دست می‌رود — یا آن کالا را موجود کنید یا آن واژه را به کالای موجود بیفزایید."
+
+msgid "Checked: %d px square — browsers will accept this."
+msgstr "بررسی شد: %d پیکسل مربع — مرورگرها می‌پذیرند."
+
+msgid "Checkout"
+msgstr "تسویه حساب"
+
+msgid "Checkout block — the wallet box cannot render. Replace the block with the [woocommerce_checkout] shortcode on the checkout page."
+msgstr "بلوک تسویه‌حساب — جعبه کیف پول نمایش داده نمی‌شود. در برگه تسویه‌حساب، بلوک را با شورت‌کد [woocommerce_checkout] جایگزین کنید."
+
+msgid "Checkout page type"
+msgstr "نوع برگه تسویه‌حساب"
+
+msgid "Choose the audience below — the recipient count appears next to it so you know the cost before sending."
+msgstr "مخاطب را پایین برگزینید — تعداد گیرندگان کنارش نمایان می‌شود تا پیش از ارسال هزینه را بدانید."
+
+msgid "Classic shortcode — all Vereskonto checkout features work."
+msgstr "شورت‌کد کلاسیک — همه قابلیت‌های تسویه‌حساب ورسکونتو کار می‌کنند."
+
+msgid "Cleanup setting saved."
+msgstr "تنظیم پاکسازی ذخیره شد."
+
+msgid "Clear"
+msgstr "پاک‌کردن"
+
+msgid "Click a customer to see exactly which pages and products they visited. Guests appear in the totals but stay anonymous."
+msgstr "روی هر مشتری کلیک کنید تا دقیقاً ببینید چه صفحات و کالاهایی را دیده است. مهمان‌ها در جمع کل هستند اما ناشناس می‌مانند."
+
+msgid "Click to copy"
+msgstr "برای کپی کلیک کنید"
+
+msgid "Close"
+msgstr "بستن"
+
+msgid "Close survey"
+msgstr "بستن نظرسنجی"
+
+msgid "Close ticket"
+msgstr "بستن تیکت"
+
+msgid "Closed"
+msgstr "بسته"
+
+msgid "Club group SMS"
+msgstr "پیامک گروهی باشگاه"
+
+msgid "Club members (any points)"
+msgstr "اعضای باشگاه (هر امتیازی)"
+
+msgid "Club points"
+msgstr "امتیاز باشگاه"
+
+msgid "Club — Bronze tier"
+msgstr "باشگاه — رتبه برنزی"
+
+msgid "Club — Diamond tier"
+msgstr "باشگاه — رتبه الماسی"
+
+msgid "Club — Gold tier"
+msgstr "باشگاه — رتبه طلایی"
+
+msgid "Club — Silver tier"
+msgstr "باشگاه — رتبه نقره‌ای"
+
+msgid "Collected a late fee along the way, but has paid it."
+msgstr "در مسیر جریمه‌ی دیرکرد گرفته، ولی آن را پرداخته است."
+
+msgid "Configured outgoing IP"
+msgstr "IP خروجی تنظیم‌شده"
+
+msgid "Confirm"
+msgstr "تأیید"
+
+msgid "Confirm received instalments by SMS"
+msgstr "تأیید دریافت قسط با پیامک"
+
+msgid "Congratulates every customer on the birthday saved in their account details — once a year, via a daily background job."
+msgstr "زادروزِ ثبت‌شده در جزئیات حساب هر مشتری را تبریک می‌گوید — سالی یک‌بار، با یک کار پس‌زمینه روزانه."
+
+msgid "Connect Bale (free notifications)"
+msgstr "اتصال بله (اعلان رایگان)"
+
+msgid "Connect a mobile app to your store"
+msgstr "اتصال یک اپ موبایل به فروشگاه شما"
+
+msgid "Connection on port 443"
+msgstr "اتصال روی درگاه ۴۴۳"
+
+msgid "Consider a firewall/rate-limit rule or Cloudflare bot protection; it lowers server load and slows price copying."
+msgstr "یک قانون فایروال/محدودیت نرخ یا حفاظت ربات کلودفلر در نظر بگیرید؛ بار سرور را کم و کپی قیمت را کند می‌کند."
+
+msgid "Consumed / remaining"
+msgstr "مصرف‌شده / باقی‌مانده"
+
+msgid "Consumers"
+msgstr "مصرف‌کنندگان"
+
+msgid "Conversations deleted."
+msgstr "گفتگوها حذف شدند."
+
+msgid "Conversion of abandoned carts"
+msgstr "نرخ تبدیل سبدهای رها"
+
+msgid "Convert all points to wallet credit (%s)"
+msgstr "تبدیل همه امتیازها به اعتبار کیف پول (%s)"
+
+msgid "Converted"
+msgstr "تبدیل‌شده"
+
+msgid "Copied"
+msgstr "کپی شد"
+
+msgid "Copied!"
+msgstr "کپی شد!"
+
+msgid "Copy link"
+msgstr "کپی لینک"
+
+msgid "Copy the \"Phone number ID\" shown under API Setup into the field above (this is the ID, not the phone number itself)."
+msgstr "مقدار «Phone number ID» نمایش‌داده‌شده در API Setup را در فیلد بالا وارد کنید (این شناسه است، نه خود شماره تلفن)."
+
+msgid "Copy the code"
+msgstr "رونوشت کد"
+
+msgid "Copy the pattern id (bodyId) the panel gives you and paste that number — not the text — into the field below."
+msgstr "شناسه الگو (bodyId) را که پنل به شما می‌دهد رونوشت کنید و همان عدد را — نه متن را — در فیلد پایین بگذارید."
+
+msgid "Copy the shop address shown below and give it to whoever builds or configures your app."
+msgstr "نشانی فروشگاه که پایین نشان داده شده را رونوشت کنید و به کسی که اپ شما را می‌سازد یا پیکربندی می‌کند بدهید."
+
+msgid "Could not detect (custom template?)."
+msgstr "قابل تشخیص نبود (قالب سفارشی؟)."
+
+msgid "Could not determine the outgoing address."
+msgstr "نشانی خروجی را نتوانست تعیین کند."
+
+msgid "Could not register the webhook — check the bot token."
+msgstr "ثبت وب‌هوک ناموفق بود — توکن ربات را بررسی کنید."
+
+msgid "Counted from the deposit, not from the purchase. Whatever is unused simply expires."
+msgstr "از زمان واریز شمرده می‌شود، نه از زمان خرید. هرچه خرج نشود، بی‌سروصدا از اعتبار می‌افتد."
+
+msgid "Counted from the purchase to the day the next window opens. If that day comes sooner than this, the first installment moves one month further out. 0 switches the rule off."
+msgstr "از تاریخ خرید تا روزی که بازه‌ی پرداخت بعدی باز می‌شود شمرده می‌شود. اگر آن روز زودتر از این عدد برسد، نخستین قسط یک ماه جلوتر می‌رود. صفر یعنی این قاعده خاموش."
+
+msgid "Counting:"
+msgstr "شمارش:"
+
+msgid "Countries & cities"
+msgstr "کشورها و شهرها"
+
+msgid "Coupon code"
+msgstr "کد تخفیف"
+
+msgid "Coupon code (optional)"
+msgstr "کد کوپن (اختیاری)"
+
+msgid "Covers festival credit too — the customer is told as soon as the credit lands, whichever channel they can be reached on."
+msgstr "اعتبار جشنواره را هم دربر می‌گیرد — به‌محض نشستن اعتبار، از هر کانالی که در دسترس باشد به مشتری خبر داده می‌شود."
+
+msgid "Create a Meta developer account at developers.facebook.com and add a new app of type \"Business\"."
+msgstr "در developers.facebook.com حساب توسعه‌دهنده متا بسازید و یک اپ جدید از نوع «Business» اضافه کنید."
+
+msgid "Create a permanent access token: in Meta Business Settings, add a System User with access to the app and the WhatsApp account, then generate a token with the whatsapp_business_messaging permission. Paste it into the \"Access token\" field. Temporary dashboard tokens expire after 24 hours."
+msgstr "توکن دسترسی دائمی بسازید: در Meta Business Settings یک System User با دسترسی به اپ و حساب واتساپ اضافه کنید و سپس توکنی با مجوز whatsapp_business_messaging تولید کنید و در فیلد «توکن دسترسی» بگذارید. توکن‌های موقت داشبورد پس از ۲۴ ساعت منقضی می‌شوند."
+
+msgid "Create a plan for a customer; they pay each installment from their Wallet tab through any active gateway. Amounts are tracked here and every payment/refund adjusts the plan exactly once."
+msgstr "برای مشتری طرح بسازید؛ او هر قسط را از برگه کیف پول با هر درگاه فعالی می‌پردازد. مبالغ همین‌جا ردیابی می‌شوند و هر پرداخت/بازپرداخت دقیقاً یک‌بار روی طرح اثر می‌گذارد."
+
+msgid "Create a repayment plan / grant purchase credit"
+msgstr "ساخت طرح بازپرداخت / اعطای اعتبار خرید"
+
+msgid "Create plan"
+msgstr "ساخت طرح"
+
+msgid "Create survey"
+msgstr "ساخت نظرسنجی"
+
+msgid "Create your message templates under WhatsApp Manager → Message templates and wait for Meta approval. Use numbered placeholders: {{1}}, {{2}}, …"
+msgstr "قالب‌های پیام خود را در WhatsApp Manager → Message templates بسازید و منتظر تأیید متا بمانید. از جای‌بان‌های شماره‌دار استفاده کنید: {{1}}، {{2}}، …"
+
+msgid "Created (UTC)"
+msgstr "زمان ایجاد (UTC)"
+
+msgid "Credit (add funds)"
+msgstr "واریز (افزایش موجودی)"
+
+msgid "Credit / debit a customer"
+msgstr "واریز / برداشت برای مشتری"
+
+msgid "Credit amount"
+msgstr "مبلغ اعتبار"
+
+msgid "Credit customers"
+msgstr "مشتریان اعتباری"
+
+msgid "Credit granted"
+msgstr "اعطای اعتبار"
+
+msgid "Credit validity (days)"
+msgstr "اعتبار (روز)"
+
+msgid "Credited by shop"
+msgstr "واریز توسط فروشگاه"
+
+msgid "Current balance:"
+msgstr "موجودی فعلی:"
+
+msgid "Currently active: %1$s customers holding %2$s."
+msgstr "فعال در حال حاضر: %1$s مشتری با مجموع %2$s."
+
+msgid "Customer"
+msgstr "مشتری"
+
+msgid "Customer club"
+msgstr "باشگاه مشتریان"
+
+msgid "Customer has no mobile number on file."
+msgstr "برای مشتری شماره همراهی ثبت نشده است."
+
+msgid "Customer name"
+msgstr "نام مشتری"
+
+msgid "Customer reviews: %1$s out of 5 (%2$s reviews)"
+msgstr "دیدگاه مشتریان: %1$s از ۵ (%2$s دیدگاه)"
+
+msgid "Customers answer in the \"Surveys\" tab of My Account; the reward lands in their club points and converts to wallet credit like any other points."
+msgstr "مشتریان در برگه «نظرسنجی» حساب کاربری پاسخ می‌دهند؛ پاداش به امتیاز باشگاهشان می‌رود و مثل هر امتیاز دیگری به اعتبار کیف پول تبدیل می‌شود."
+
+msgid "Customers are asked once, about half a minute after arriving, and never again if they decline. Notifications go out when an order changes status, when wallet credit is added, and when an instalment is received."
+msgstr "از مشتری یک‌بار پرسیده می‌شود، حدود نیم دقیقه پس از ورود، و اگر نپذیرد دیگر هرگز. آگاه‌سازی هنگام تغییر وضعیت سپارش، افزوده‌شدن اعتبار کیف پول و دریافت قسط فرستاده می‌شود."
+
+msgid "Customers are very satisfied with this product."
+msgstr "مشتریان از این کالا بسیار راضی‌اند."
+
+msgid "Customers can sign in from the app right now."
+msgstr "مشتریان همین حالا می‌توانند از اپ وارد شوند."
+
+msgid "Customers charge their wallet from the wallet tab; payment goes through the normal checkout and any active payment gateway."
+msgstr "مشتریان از برگه کیف پول شارژ می‌کنند؛ پرداخت از مسیر عادی تسویه‌حساب و با هر درگاه فعال انجام می‌شود."
+
+msgid "Customers earn points on completed orders."
+msgstr "مشتریان با تکمیل سفارش امتیاز می‌گیرند."
+
+msgid "Customers search for things you may not sell"
+msgstr "مشتریان دنبال چیزهایی می‌گردند که شاید نمی‌فروشید"
+
+msgid "Customers stay signed in for the number of days you set below; after that the app simply asks for a new SMS code."
+msgstr "مشتریان به تعداد روزهایی که پایین تعیین می‌کنید وارد می‌مانند؛ پس از آن اپ فقط یک کد پیامکی تازه می‌خواهد."
+
+msgid "Customers with at least one paid order"
+msgstr "مشتریان دارای دست‌کم یک سفارش پرداخت‌شده"
+
+msgid "Customers with wallet balance"
+msgstr "مشتریان دارای موجودی کیف پول"
+
+msgid "DB column \"type\""
+msgstr "ستون «type» دیتابیس"
+
+msgid "Daily trend"
+msgstr "روند روزانه"
+
+msgid "Database schema (type column)"
+msgstr "ساختار دیتابیس (ستون type)"
+
+msgid "Database tables"
+msgstr "جدول‌های پایگاه‌داده"
+
+msgid "Date"
+msgstr "تاریخ"
+
+msgid "Date (UTC)"
+msgstr "تاریخ (UTC)"
+
+msgid "Day"
+msgstr "روز"
+
+msgid "Days after completion"
+msgstr "روز پس از تکمیل"
+
+msgid "Dear customer"
+msgstr "مشتری گرامی"
+
+msgid "Debit (remove funds)"
+msgstr "برداشت (کاهش موجودی)"
+
+msgid "Defaults to the shop page."
+msgstr "پیش‌فرض: برگه فروشگاه."
+
+msgid "Delete"
+msgstr "حذف"
+
+msgid "Delete ALL recorded conversations?"
+msgstr "همه گفتگوهای ثبت‌شده حذف شوند؟"
+
+msgid "Delete all conversations"
+msgstr "حذف همه گفتگوها"
+
+msgid "Delete all non-active carts older than the given days? This cannot be undone."
+msgstr "همه سبدهای غیرفعالِ قدیمی‌تر از این تعداد روز حذف شوند؟ این کار برگشت‌پذیر نیست."
+
+msgid "Delete automatically every day"
+msgstr "هر روز خودکار حذف شود"
+
+msgid "Delete conversation"
+msgstr "حذف گفتگو"
+
+msgid "Delete everything"
+msgstr "حذف همه"
+
+msgid "Delete inactive carts older than (days)"
+msgstr "حذف سبدهای غیرفعال قدیمی‌تر از (روز)"
+
+msgid "Delete now"
+msgstr "حذف همین حالا"
+
+msgid "Delete older than 90 days"
+msgstr "حذف قدیمی‌تر از ۹۰ روز"
+
+msgid "Delete the ENTIRE message history? Export a CSV first — this cannot be undone."
+msgstr "تمام تاریخچه پیام‌ها حذف شود؟ ابتدا خروجی CSV بگیرید — این کار بازگشت‌پذیر نیست."
+
+msgid "Delete this campaign? Sending stops and it disappears from this list; already-sent messages stay in the log."
+msgstr "این کمپین حذف شود؟ ارسال متوقف و از این فهرست حذف می‌شود؛ پیام‌های ارسال‌شده در گزارش می‌مانند."
+
+msgid "Delete this conversation?"
+msgstr "این گفتگو حذف شود؟"
+
+msgid "Delete this festival grant for ALL its recipients? Remaining credit disappears immediately."
+msgstr "این واریز جشنواره برای همه دریافت‌کنندگانش حذف شود؟ اعتبار باقی‌مانده بلافاصله از بین می‌رود."
+
+msgid "Delete this plan? Any amount already repaid stays recorded in the wallet history, but the plan itself disappears."
+msgstr "این طرح حذف شود؟ هر مبلغی که پیش‌تر بازپرداخت شده در تاریخچه کیف پول می‌ماند، ولی خودِ طرح از بین می‌رود."
+
+msgid "Delete this plan? Payment records on orders remain, but the plan itself is removed permanently."
+msgstr "این طرح حذف شود؟ سوابق پرداخت روی سفارش‌ها می‌ماند، اما خود طرح برای همیشه حذف می‌شود."
+
+msgid "Delivered"
+msgstr "رسیده"
+
+msgid "Department"
+msgstr "بخش"
+
+msgid "Deposit SMS pattern"
+msgstr "پترن پیامک واریز"
+
+msgid "Deposit after (hours)"
+msgstr "واریز پس از (ساعت)"
+
+msgid "Description"
+msgstr "توضیحات"
+
+msgid "Desktop"
+msgstr "رایانه"
+
+msgid "Desktop %1$s%% (%2$s sessions)"
+msgstr "دسکتاپ %1$s٪ (%2$s نشست)"
+
+msgid "Devices"
+msgstr "دستگاه‌ها"
+
+msgid "Diamond"
+msgstr "الماسی"
+
+msgid "Diamond tier"
+msgstr "رتبه الماسی"
+
+msgid "Direct debt"
+msgstr "بدهی مستقیم"
+
+msgid "Direct debt (repayment starts now)"
+msgstr "بدهی مستقیم (بازپرداخت از اکنون آغاز می‌شود)"
+
+msgid "Direction"
+msgstr "نوع تراکنش"
+
+msgid "Discount coupon"
+msgstr "کوپن تخفیف"
+
+msgid "Dispatch method"
+msgstr "شیوه گسیل"
+
+msgid "Dispatch methods"
+msgstr "شیوه‌های گسیل"
+
+msgid "Dispatched via %1$s, tracking code: %2$s."
+msgstr "ارسال با %1$s، کد رهگیری: %2$s."
+
+msgid "Does this customer have a loan?"
+msgstr "این مشتری وام دارد؟"
+
+msgid "Done — nothing left to remove."
+msgstr "انجام شد — چیزی برای حذف نمانده."
+
+msgid "Downloads"
+msgstr "بارگیری‌ها"
+
+msgid "Due"
+msgstr "سررسید"
+
+msgid "Due day"
+msgstr "روز سررسید"
+
+msgid "Due day (Jalali)"
+msgstr "روز سررسید (خورشیدی)"
+
+msgid "Due day of month (1–28)"
+msgstr "روز سررسید ماه (۱ تا ۲۸)"
+
+msgid "Due now"
+msgstr "سررسید کنونی"
+
+msgid "Due window"
+msgstr "بازه‌ی سررسید"
+
+msgid "Each is a ready-made demand signal — stock the closest item or publish a matching product/landing page."
+msgstr "هرکدام یک سیگنال آماده تقاضاست — نزدیک‌ترین کالا را تأمین کنید یا کالا/صفحه فرودِ متناظر بسازید."
+
+msgid "Each recovery message carries a unique single-use code for that customer (locked to their e-mail, short expiry = urgency). Overrides the shared coupon below."
+msgstr "هر پیام بازگردانی، یک کد یکتای یک‌بارمصرف مخصوص همان مشتری دارد (قفل‌شده به ایمیل او؛ انقضای کوتاه = حس فوریت). جایگزین کوپن مشترک پایین می‌شود."
+
+msgid "Each sign-in costs one SMS, exactly like signing in on the website."
+msgstr "هر بار آمد یک پیامک هزینه دارد، دقیقاً مثل آمد در وب‌سایت."
+
+msgid "Early days"
+msgstr "تازه آغاز شده"
+
+msgid ""
+"Earn points on every completed order\n"
+"Convert points to wallet credit any time"
+msgstr ""
+"کسب امتیاز از هر سفارش تکمیل‌شده\n"
+"تبدیل امتیاز به اعتبار کیف پول در هر زمان"
+
+msgid "Edit"
+msgstr "ویرایش"
+
+msgid "Edit / actions"
+msgstr "ویرایش / عملیات"
+
+msgid "Edit account"
+msgstr "ویرایش حساب"
+
+msgid "Enable Bale notifications"
+msgstr "فعال‌سازی اعلان‌های بله"
+
+msgid "Enable abandoned-cart SMS"
+msgstr "فعال‌سازی پیامک سبد رهاشده"
+
+msgid "Enable abandoned-cart WhatsApp"
+msgstr "فعال‌سازی واتساپ سبد رهاشده"
+
+msgid "Enable cart tracking"
+msgstr "فعال‌سازی ردیابی سبد خرید"
+
+msgid "Enable customer club"
+msgstr "فعال‌سازی باشگاه مشتریان"
+
+msgid "Enable invitations: every customer gets a unique code & link on their club page."
+msgstr "فعال‌سازی دعوت: هر مشتری کد و لینک یکتای خودش را در برگه باشگاه می‌گیرد."
+
+msgid "Enable the mobile API"
+msgstr "فعال‌سازی API موبایل"
+
+msgid "Enable the wheel"
+msgstr "فعال‌سازی گردانه"
+
+msgid "Enable tracking"
+msgstr "فعال‌سازی ردیابی"
+
+msgid "Enabled"
+msgstr "فعال"
+
+msgid "Endpoint"
+msgstr "نقطه پایانی"
+
+msgid "Endpoint reference"
+msgstr "مرجع نقاط پایانی"
+
+msgid "Engagement popup"
+msgstr "پاپ‌آپ پیشنهاد"
+
+msgid "Enter the template name (not its text) wherever a WhatsApp template field appears, e.g. in the cart settings for abandoned carts. Placeholder order there: {{1}} = customer name, {{2}} = coupon code."
+msgstr "هرجا فیلد قالب واتساپ هست، نام قالب (نه متن آن) را وارد کنید؛ مثلاً در تنظیمات سبد برای سبدهای رهاشده. ترتیب جای‌بان‌ها در آنجا: {{1}} = نام مشتری، {{2}} = کد کوپن."
+
+msgid "Environment"
+msgstr "محیط"
+
+msgid "Estimated purchases this year"
+msgstr "برآورد خرید امسال"
+
+msgid "Every day"
+msgstr "هر روز"
+
+msgid "Every figure on this page counts real visitors only — bots and crawlers are left out."
+msgstr "هر عدد این برگه فقط بازدیدکننده واقعی را می‌شمارد — ربات‌ها و خزنده‌ها کنار گذاشته شده‌اند."
+
+msgid "Every five minutes (Vereskonto)"
+msgstr "هر پنج دقیقه (ورسکونتو)"
+
+msgid "Every message — login codes, campaigns, reminders — goes through the provider selected here."
+msgstr "همه پیام‌ها — گذرشماره آمد، کمپین‌ها، یادآوری‌ها — از سرویس‌دهنده‌ای که این‌جا برگزیده‌اید می‌روند."
+
+msgid "Every stage passed — the server can reach the gateway, so sending should work."
+msgstr "همه مرحله‌ها گذشت — سرور به درگاه می‌رسد، پس ارسال باید کار کند."
+
+msgid "Everyone with an installment file: available credit, open debt, remaining installments and accumulated late fees. Expand a row for per-plan reminder SMS."
+msgstr "همه کسانی که پرونده اقساطی دارند: اعتبار در دسترس، بدهی باز، اقساط مانده و جریمه‌های انباشته. برای پیامک یادآوری هر طرح، ردیف را باز کنید."
+
+msgid ""
+"Everything in Bronze\n"
+"Occasional personal discount coupons\n"
+"Early access to sales"
+msgstr ""
+"همه امکانات برنزی\n"
+"کوپن‌های تخفیف شخصی مناسبتی\n"
+"دسترسی زودهنگام به حراج‌ها"
+
+msgid ""
+"Everything in Gold\n"
+"Dedicated shopping advisor\n"
+"Special birthday gift"
+msgstr ""
+"همه امکانات طلایی\n"
+"مشاور خرید اختصاصی\n"
+"هدیه ویژه زادروز"
+
+msgid ""
+"Everything in Silver\n"
+"FREE dispatch on all orders\n"
+"Priority support"
+msgstr ""
+"همه امکانات نقره‌ای\n"
+"گسیل رایگان همه سفارش‌ها\n"
+"پشتیبانی اولویت‌دار"
+
+msgid "Everything, bots included"
+msgstr "همه‌چیز، با ربات‌ها"
+
+msgid "Example — for a pattern like:"
+msgstr "نمونه — برای پترنی مانند:"
+
+msgid "Example: for a pattern reading «%name% dear, your order %order% was cancelled», the variables listed as “name, order” line up correctly. Swapping them in the pattern would put the order number where the name belongs."
+msgstr "نمونه: برای الگویی با متن «%name% گرامی، سپارش %order% شما لغو شد»، متغیرهای «name, order» درست جا می‌افتند. اگر در الگو جابه‌جایشان کنید، شماره سپارش جای نام می‌نشیند."
+
+msgid "Excellent"
+msgstr "عالی"
+
+msgid "Expert analysis"
+msgstr "تحلیل کارشناسی"
+
+msgid "Expires"
+msgstr "انقضا"
+
+msgid "Export this view as CSV"
+msgstr "خروجی CSV از این نما"
+
+msgid "Expose the versioned REST endpoints for the Android/mobile app."
+msgstr "نقاط پایانی نسخه‌دار REST را برای اپ اندروید/موبایل در دسترس قرار می‌دهد."
+
+msgid "Failed"
+msgstr "ناموفق"
+
+msgid "Failure reason (gateway response):"
+msgstr "علت خطا (پاسخ درگاه پیامک):"
+
+msgid "Fallback customer name"
+msgstr "نام جایگزین مشتری"
+
+msgid "Feature"
+msgstr "قابلیت"
+
+msgid "Feature it on the homepage and in a campaign, and place related items on its page to turn that attention into larger baskets."
+msgstr "آن را در صفحه اصلی و یک کمپین برجسته کنید و کالاهای مرتبط را در صفحه‌اش بگذارید تا این توجه به سبد بزرگ‌تر تبدیل شود."
+
+msgid "Features and required patterns"
+msgstr "قابلیت‌ها و پترن‌های موردنیاز"
+
+msgid "Festival credit (automatic grant and batch deposit)"
+msgstr "اعتبار جشنواره (اعطای خودکار و واریز گروهی)"
+
+msgid "Festival credit applied: %s"
+msgstr "اعتبار جشنواره اعمال شد: %s"
+
+msgid "Festival credit granted to %s customers."
+msgstr "اعتبار جشنواره به %s مشتری واریز شد."
+
+msgid "Festival credit is a separate ledger: it never appears in the customer statement, it is spent automatically BEFORE the real balance at checkout, and whatever is unused vanishes silently when the window ends. The customer sees it as a distinct \"festival credit until DATE\" line on their Finance tab."
+msgstr "اعتبار جشنواره دفتر جداگانه‌ای است: هرگز در صورت‌حساب مشتری نمی‌آید، در تسویه‌حساب خودکار پیش از موجودی واقعی خرج می‌شود، و هرچه استفاده نشود در پایان بازه بی‌صدا حذف می‌گردد. مشتری آن را به‌صورت خط جداگانه «اعتبار جشنواره تا تاریخ…» در برگه خدمات مالی می‌بیند."
+
+msgid "Festival credit:"
+msgstr "اعتبار جشنواره:"
+
+msgid "Festival wallet deposit (batch)"
+msgstr "واریز جشنواره‌ای کیف پول (گروهی)"
+
+msgid "Festival-credit pattern code is empty — set it in Finance settings."
+msgstr "کد پترن اعتبار جشنواره خالی است — آن را در تنظیمات بخش مالی وارد کنید."
+
+msgid "Figures include crawler and scraper traffic, so they run higher than real demand."
+msgstr "اعداد شامل ترافیک خزنده و اسکرپر است، پس بالاتر از تقاضای واقعی‌اند."
+
+msgid "Fill the parameters one per line. They are inserted into the pattern BY POSITION, so keep them in the same order as the blanks in your pattern."
+msgstr "پارامترها را هر کدام در یک خط بنویسید. آن‌ها بر پایه جایگاه در الگو جاگذاری می‌شوند، پس همان ترتیب جاهای خالی الگو را نگه دارید."
+
+msgid "Filled in = every club member is invited by SMS through the campaign queue (batched, logged, respectful of the daily scheduler). CRM-style structure — pattern variables: points, link. Example pattern text:"
+msgstr "در صورت پر کردن، همه اعضای باشگاه از طریق صف کمپین با پیامک دعوت می‌شوند (دسته‌ای، ثبت‌شده در گزارش، هماهنگ با زمان‌بند). ساختار استاندارد CRM — متغیرهای پترن: points، link. نمونه متن پترن:"
+
+msgid "Filter"
+msgstr "فیلتر"
+
+msgid "Finance section"
+msgstr "بخش مالی"
+
+msgid "Financial services"
+msgstr "خدمات مالی"
+
+msgid "Finished every plan without a single late fee."
+msgstr "همه طرح‌ها را بدون حتی یک جریمه دیرکرد تمام کرده."
+
+msgid "Focus on conversion: clear prices, fast checkout, and the smart-bar offer."
+msgstr "روی تبدیل تمرکز کنید: قیمت شفاف، تسویه سریع و پیشنهاد نوار هوشمند."
+
+msgid "Follow-up day (Jalali)"
+msgstr "روز پیگیری (خورشیدی)"
+
+msgid "For another order, send its number."
+msgstr "برای سفارش دیگری، شماره‌اش را بفرستید."
+
+msgid "For direct support, please open a ticket here: %s — our team will reply as soon as possible."
+msgstr "برای پشتیبانی مستقیم، از اینجا تیکت ثبت کنید: %s — همکاران ما در اولین فرصت پاسخ می‌دهند."
+
+msgid "For example 09131234567 — it is turned into a wa.me link automatically. Leave empty to hide."
+msgstr "برای نمونه ۰۹۱۳۱۲۳۴۵۶۷ — خودکار به پیوند wa.me تبدیل می‌شود. برای پنهان‌کردن خالی بگذارید."
+
+msgid "For purchase credit, \"Total amount\" is the credit limit; the \"Installment purchase\" payment method appears at checkout only for this customer while their remaining credit covers the order."
+msgstr "برای اعتبار خرید، «مبلغ کل» همان سقف اعتبار است؛ روش پرداخت «خرید اقساطی» فقط برای همین مشتری و تا زمانی که اعتبار باقی‌مانده‌اش کفاف سفارش را بدهد در تسویه‌حساب نمایش داده می‌شود."
+
+msgid "Friday"
+msgstr "جمعه"
+
+msgid "From"
+msgstr "از"
+
+msgid "From %s yearly points"
+msgstr "از %s امتیاز سالانه"
+
+msgid "From the Console section of your panel. With this method a sender line is required, and the Pattern Code field below holds the message TEXT — use {verification-code} where the login code should appear."
+msgstr "از بخش کنسول در پنل خود. در این روش خط فرستنده لازم است و فیلد «کد پترن» پایین خودِ متن پیام را نگه می‌دارد — هرجا گذرشماره باید بیاید {verification-code} بگذارید."
+
+msgid "From the WhatsApp Business account."
+msgstr "از حساب واتساپ بیزینس."
+
+msgid "From then on they see their wallet balance, festival credit, loyalty points and past orders, and stay signed in until they sign out."
+msgstr "از آن پس موجودی کیف پول، اعتبار جشنواره، امتیاز باشگاه و سپارش‌های گذشته خود را می‌بینند و تا وقتی برون‌رفت نکنند وارد می‌مانند."
+
+msgid "From this version a paid installment or wallet top-up gets its own order status, so it is not counted as a sale a second time. Orders paid before that are still sitting in the sales statuses — this button moves up to 200 of them at a time."
+msgstr "از این نسخه، قسط پرداخت‌شده یا شارژ کیف پول وضعیت سپارش ویژه‌ی خود را می‌گیرد تا بار دوم به‌عنوان فروش شمرده نشود. سپارش‌هایی که پیش‌تر پرداخت شده‌اند هنوز در وضعیت‌های فروش مانده‌اند — این دکمه هر بار تا ۲۰۰ تای آن‌ها را جابه‌جا می‌کند."
+
+msgid "Full details per message: SMS Logs → Message details."
+msgstr "جزئیات کامل هر پیام: گزارش پیامک ← جزئیات پیام."
+
+msgid "Full request through WordPress"
+msgstr "درخواست کامل از راه وردپرس"
+
+msgid "Fully settled — thank you!"
+msgstr "کاملاً تسویه شد — سپاسگزاریم!"
+
+msgid "Gateway class loaded"
+msgstr "کلاس درگاه بارگذاری شده"
+
+msgid "Gateway enabled in WooCommerce → Payments"
+msgstr "درگاه در ووکامرس ← پرداخت‌ها فعال است"
+
+msgid "Gateway response"
+msgstr "پاسخ درگاه"
+
+msgid "Gateway status %d."
+msgstr "وضعیت درگاه %d."
+
+msgid "Gateways"
+msgstr "درگاه‌ها"
+
+msgid "Generates a unique single-use code per customer (locked to their account e-mail, auto-expiring) and sends it as the \"coupon\" variable — overrides the static coupon above."
+msgstr "برای هر مشتری یک کد یکتای یک‌بارمصرف می‌سازد (قفل‌شده به ایمیل حساب، با انقضای خودکار) و به‌عنوان متغیر «coupon» می‌فرستد — جایگزین کوپن ثابت بالا می‌شود."
+
+msgid "Gift code:"
+msgstr "کد هدیه:"
+
+msgid "Give every buyer festival credit automatically"
+msgstr "به هر خریدار خودکار اعتبار جشنواره بده"
+
+msgid "Give the wheel a spin and see what you win."
+msgstr "گردانه را بچرخانید و ببینید چه می‌برید."
+
+msgid "Give this line to your app developer — it is the only address the app needs."
+msgstr "این خط را به سازنده اپ خود بدهید — تنها نشانی‌ای است که اپ لازم دارد."
+
+msgid "Give those readers an obvious next step — a clear add-to-cart, or the wallet and instalment options on the product page."
+msgstr "به این خواننده‌ها یک گام بعدی روشن بدهید — دکمه افزودن به سبد واضح، یا گزینه‌های کیف پول و اقساط در صفحه کالا."
+
+msgid "Goes well with it"
+msgstr "موارد مکمل"
+
+msgid "Gold"
+msgstr "طلایی"
+
+msgid "Gold tier"
+msgstr "رتبه طلایی"
+
+msgid "Good news: orders ship FREE, every product is genuine, returns are easy, and support answers 24/7 — that is what makes buying here worth it. 🚚✨"
+msgstr "خبر خوب: گسیل سفارش‌ها رایگان است، همه کالاها نژاده‌اند، بازگشت کالا آسان است و پشتیبانی ۲۴/۷ پاسخ می‌دهد — همین‌هاست که خرید از اینجا را به‌صرفه می‌کند. 🚚✨"
+
+msgid "Good to know"
+msgstr "خوب است بدانید"
+
+msgid "Google/Bing-type crawlers are visiting — that is how you get found in search."
+msgstr "خزنده‌های گوگل/بینگ بازدید می‌کنند — این‌گونه در جستجو پیدا می‌شوید."
+
+msgid "Grant festival credit"
+msgstr "واریز اعتبار جشنواره"
+
+msgid "Granted on"
+msgstr "تاریخ اعطا"
+
+msgid "Granted on this line"
+msgstr "اعتبار اعطاشده در این ردیف"
+
+msgid "Grants club points for PAST completed orders from the database, 100 orders per click. Safe to repeat — every order counts at most once."
+msgstr "برای سفارش‌های تکمیل‌شده گذشته از دیتابیس امتیاز باشگاه می‌دهد؛ هر کلیک ۱۰۰ سفارش. تکرارش بی‌خطر است — هر سفارش حداکثر یک‌بار حساب می‌شود."
+
+msgid "Greeting message"
+msgstr "پیام خوش‌آمد"
+
+msgid "Group SMS queued for %s customers in arrears."
+msgstr "پیامک گروهی برای %s مشتری بدهکار در صف رفت."
+
+msgid "Group SMS queued for %s customers whose payment has fallen due."
+msgstr "پیامک گروهی برای %s مشتری با بازپرداخت سررسیدشده در صف رفت."
+
+msgid "Group SMS queued — track it on the SMS Campaigns page and in the SMS report."
+msgstr "پیامک گروهی در صف قرار گرفت — در برگه کمپین‌های پیامکی و گزارش پیامک پیگیری کنید."
+
+msgid "Group SMS to club members"
+msgstr "پیامک گروهی به اعضای باشگاه"
+
+msgid "Group SMS to customers in arrears"
+msgstr "پیامک گروهی به مشتریان بدهکار"
+
+msgid "Group SMS to customers whose payment has fallen due"
+msgstr "پیامک گروهی به مشتریان با بازپرداخت سررسیدشده"
+
+msgid "Guarantee Sayad cheque or promissory note (image)"
+msgstr "چک صیادی یا سفته ضمانت (تصویر)"
+
+msgid "Guarantee Sayad cheque or promissory note — issued for TWICE the requested credit (image)"
+msgstr "چک صیادی یا سفته ضمانت — به میزان دو برابر اعتبار درخواستی (تصویر)"
+
+msgid "Guarantee amount required (2× the credit): %s"
+msgstr "مبلغ ضمانت موردنیاز (۲ برابر اعتبار): %s"
+
+msgid "Guarantee documents"
+msgstr "مدارک ضمانت"
+
+msgid "Guest"
+msgstr "مهمان"
+
+msgid "Guests appear in the totals but stay anonymous — only signed-in customers are listed here by name."
+msgstr "مهمان‌ها در جمع کل حساب می‌شوند اما ناشناس می‌مانند — فقط مشتریان واردشده اینجا با نام فهرست می‌شوند."
+
+msgid "Guests who open the checkout are sent to the login page and returned to checkout after logging in. Payment links for existing orders keep working."
+msgstr "مهمانانی که برگه تسویه‌حساب را باز کنند به برگه ورود فرستاده می‌شوند و پس از ورود به تسویه‌حساب بازمی‌گردند. لینک‌های پرداخت سفارش‌های موجود همچنان کار می‌کنند."
+
+msgid "Happy to help you choose! Tell me in one line: what is it for (e.g. gift, daily use, summer), and roughly what budget — like \"a women's perfume for a gift, under 2 million\"."
+msgstr "با کمال میل کمکتان می‌کنم انتخاب کنید! در یک خط بگویید: برای چه می‌خواهید (مثلاً هدیه، استفاده روزانه، تابستان) و حدوداً چه بودجه‌ای — مثل «عطر زنانه برای هدیه، زیر ۲ میلیون»."
+
+msgid "Has collected late fees and still owes money."
+msgstr "جریمه دیرکرد گرفته و هنوز بدهکار است."
+
+msgid "Heavy scraper activity"
+msgstr "فعالیت سنگین اسکرپر"
+
+msgid "Hello! I can look up prices, find products, suggest best sellers and matching accessories, and check your order status. What are you looking for?"
+msgstr "سلام! می‌توانم قیمت بگویم، کالا پیدا کنم، پرفروش‌ها و اقلام مکمل را پیشنهاد بدهم و وضعیت سفارش را بررسی کنم. دنبال چه هستید؟"
+
+msgid "Help me choose"
+msgstr "کمکم کن انتخاب کنم"
+
+msgid "Here is what I found, with prices:"
+msgstr "این‌ها را با قیمت پیدا کردم:"
+
+msgid "Here is what I found:"
+msgstr "این‌ها را پیدا کردم:"
+
+msgid "Here is what our articles say about that:"
+msgstr "آنچه مقاله‌های ما در این‌باره می‌گویند:"
+
+msgid "Hi! Ask me about products, prices, or your order."
+msgstr "سلام! درباره کالاها، قیمت‌ها یا سفارشتان از من بپرسید."
+
+msgid "High"
+msgstr "زیاد"
+
+msgid "Higher-end"
+msgstr "رده بالاتر"
+
+msgid "Higher-end options worth a look:"
+msgstr "گزینه‌های رده‌بالاتری که ارزش دیدن دارند:"
+
+msgid "History"
+msgstr "تاریخچه"
+
+msgid "Hold back messages whose variables contain a web address"
+msgstr "نگه‌داشتن پیامک‌هایی که متغیرشان نشانی وب دارد"
+
+msgid "Home"
+msgstr "صفحه اصلی"
+
+msgid "How"
+msgstr "شیوه"
+
+msgid "How it was paid"
+msgstr "شیوه‌ی پرداخت"
+
+msgid "How long a wallet-credit prize stays usable."
+msgstr "جایزه اعتبار کیف پول چند روز قابل استفاده می‌ماند."
+
+msgid "How long an app stays signed in after verifying an OTP. Expired tokens are cleaned up automatically."
+msgstr "مدت‌زمانی که اپ پس از تأیید کد وارد می‌ماند. توکن‌های منقضی خودکار پاک می‌شوند."
+
+msgid "How the pattern fields work"
+msgstr "فیلدهای الگو چطور کار می‌کنند"
+
+msgid "How to use the mobile app"
+msgstr "شیوه استفاده از اپ موبایل"
+
+msgid "I could not find a matching product. Try a different wording, or ask our team via a ticket: %s"
+msgstr "کالای مطابقی پیدا نکردم. با واژه‌های دیگری امتحان کنید یا از طریق تیکت از همکاران ما بپرسید: %s"
+
+msgid "I could not find that order on your account. Please log in and check the order number."
+msgstr "این سفارش را روی حساب شما پیدا نکردم. لطفاً وارد شوید و شماره سفارش را بررسی کنید."
+
+msgid "I did not find that exact match — these are the favourites in %s:"
+msgstr "دقیقاً همان را پیدا نکردم — این‌ها محبوب‌های دسته «%s» هستند:"
+
+msgid "I found no orders on your account yet. Once you order, I can track it here for you."
+msgstr "هنوز سفارشی روی حساب شما پیدا نکردم. پس از ثبت سفارش، همین‌جا برایتان پیگیری می‌کنم."
+
+msgid "I found this on our site:"
+msgstr "این را در سایت‌مان پیدا کردم:"
+
+msgid "I have read and accept the installment purchase terms and conditions."
+msgstr "شرایط و ضوابط خرید اقساطی را خواندم و می‌پذیرم."
+
+msgid "IBAN (Sheba) of the applicant"
+msgstr "شماره شبا به نام خود متقاضی"
+
+msgid "IPPanel pattern code"
+msgstr "کد پترن آی‌پی‌پنل"
+
+msgid "If a customer loses their phone, use “Sign out all app sessions” below — everyone is asked to sign in again."
+msgstr "اگر مشتری گوشی‌اش را گم کرد، از «برون‌رفت همه نشست‌های اپ» در پایین استفاده کنید — از همه خواسته می‌شود دوباره وارد شوند."
+
+msgid "If customers see a timeout when asking for their login code, the server could not reach the SMS gateway. Run this test to find out whether the problem is your hosting or the gateway."
+msgstr "اگر مشتریان هنگام درخواست گذرشماره خطای زمان‌اتمام می‌بینند، یعنی سرور نتوانسته به درگاه پیامک برسد. این آزمون را اجرا کنید تا بدانید مشکل از میزبان شماست یا از درگاه."
+
+msgid "If that is not available, use one of these instead:"
+msgstr "اگر آن در دسترس نیست، به‌جایش یکی از این‌ها را به کار ببرید:"
+
+msgid "If the handshake keeps failing: route through a proxy"
+msgstr "اگر دست‌دادن همچنان شکست خورد: از راه پراکسی بفرستید"
+
+msgid "If the next due day falls sooner than this, the first installment moves one month further out. 0 switches the rule off."
+msgstr "اگر نزدیک‌ترین روز سررسید زودتر از این بیفتد، نخستین قسط یک ماه جلوتر می‌رود. صفر یعنی این قاعده خاموش."
+
+msgid "If your host gave you an extra Iranian IP (for example for a bank gateway), enter it here and SMS requests will go out from that address instead of the server’s default one. It must already be bound to this server — otherwise leave it empty and use the relay below."
+msgstr "اگر هاست شما یک IP ایرانی اضافه داده (مثلاً برای درگاه بانکی)، آن را این‌جا بنویسید تا درخواست‌های پیامک به‌جای IP پیش‌فرض سرور از آن نشانی بروند. این IP باید از پیش روی همین سرور بسته شده باشد — وگرنه خالی بگذارید و از بازپخش پایین استفاده کنید."
+
+msgid "Immediately"
+msgstr "بلافاصله"
+
+msgid "Import next batch"
+msgstr "بارگیری دسته بعدی"
+
+msgid "Import purchase history"
+msgstr "بارگیری سابقه خرید"
+
+msgid "In arrears"
+msgstr "بدهکاران قسط"
+
+msgid "In cPanel: Advanced → Cron Jobs → add a job every five minutes with one of these lines."
+msgstr "در سی‌پنل: Advanced ← Cron Jobs ← یک کار هر پنج دقیقه با یکی از این خط‌ها بیفزایید."
+
+msgid "In progress"
+msgstr "جاری"
+
+msgid "In the app dashboard, add the \"WhatsApp\" product. Meta creates a WhatsApp Business account and a test phone number for you."
+msgstr "در داشبورد اپ، محصول «WhatsApp» را اضافه کنید. متا یک حساب واتساپ بیزینس و یک شماره آزمایشی برایتان می‌سازد."
+
+msgid "Inactive-cart cleanup"
+msgstr "پاکسازی سبدهای غیرفعال"
+
+msgid "Increase credit"
+msgstr "افزایش اعتبار"
+
+msgid "Insert product variables"
+msgstr "درج متغیرهای کالا"
+
+msgid "Installable app"
+msgstr "اپلیکیشن نصب‌شدنی"
+
+msgid "Installable app and browser notifications"
+msgstr "اپلیکیشن نصب‌شدنی و آگاه‌سازی مرورگر"
+
+msgid "Installment credit"
+msgstr "اعتبار اقساطی"
+
+msgid "Installment gateway"
+msgstr "درگاه اقساطی"
+
+msgid "Installment payment"
+msgstr "پرداخت قسط"
+
+msgid "Installment payment is temporarily unavailable."
+msgstr "پرداخت قسط موقتاً در دسترس نیست."
+
+msgid "Installment plans"
+msgstr "طرح‌های اقساطی"
+
+msgid "Installment purchase"
+msgstr "خرید اقساطی"
+
+msgid "Installment purchase (Vereskonto)"
+msgstr "خرید اقساطی (ورسکونتو)"
+
+msgid "Installment purchase (checkout method)"
+msgstr "خرید اقساطی (روش تسویه‌حساب)"
+
+msgid "Installment purchase (your credit: %s)"
+msgstr "خرید اقساطی (اعتبار شما: %s)"
+
+msgid "Installment purchase does not qualify for free shipping. Please choose a different shipping method."
+msgstr "خرید اقساطی مشمول ارسال رایگان نمی‌شود. لطفاً یک روش ارسال دیگر انتخاب کنید."
+
+msgid "Installment purchase in three steps:"
+msgstr "خرید اقساطی در سه گام:"
+
+msgid "Installment-credit requests"
+msgstr "درخواست‌های اعتبار اقساطی"
+
+msgid "Installments left"
+msgstr "اقساط مانده"
+
+msgid "Installs the Vereskonto app on their phone."
+msgstr "اپ ورسکونتو را روی گوشی خود نصب می‌کند."
+
+msgid "Instalment %2$s of %3$s: %1$s — due %4$s."
+msgstr "قسط %2$s از %3$s: %1$s — سررسید %4$s."
+
+msgid "Instalment not credited: the order has no payment date yet."
+msgstr "قسط ثبت نشد: این سپارش هنوز تاریخ پرداخت ندارد."
+
+msgid "Instalment payment is temporarily unavailable."
+msgstr "پرداخت اقساطی موقتاً در دسترس نیست."
+
+msgid "Instalment plans and purchase credit have moved to %s."
+msgstr "طرح‌های اقساطی و اعتبار خرید به %s منتقل شدند."
+
+msgid "Instalments"
+msgstr "تعداد اقساط"
+
+msgid "Invalidates the current token."
+msgstr "توکن کنونی را باطل می‌کند."
+
+msgid "Invite friends"
+msgstr "دعوت دوستان"
+
+msgid "Invite friends with your personal link — after their first purchase, your reward lands in your wallet automatically."
+msgstr "دوستان‌تان را با لینک اختصاصی‌تان دعوت کنید — پس از نخستین خریدشان، پاداش خودکار به کیف پول شما واریز می‌شود."
+
+msgid "Invoice"
+msgstr "فاکتور"
+
+msgid "Invoice %s"
+msgstr "فاکتور %s"
+
+msgid "It carries much of your demand, so keep it always in stock and cross-sell related items from its page so one stock-out cannot hurt overall sales."
+msgstr "بخش زیادی از تقاضای شما را می‌کشد، پس همیشه موجود نگهش دارید و از صفحه‌اش کالاهای مرتبط را هم‌فروشی کنید تا یک ناموجودی به کل فروش آسیب نزند."
+
+msgid "Items"
+msgstr "اقلام"
+
+msgid "JPG, PNG or PDF — up to 5 MB each. Documents stay confidential and are visible to shop management only."
+msgstr "JPG، PNG یا PDF — هرکدام تا ۵ مگابایت. مدارک محرمانه می‌مانند و فقط برای مدیریت فروشگاه قابل مشاهده‌اند."
+
+msgid "Judge sales by the human share, and consider a caching/CDN rule or rate-limit for aggressive bots."
+msgstr "فروش را با سهم انسانی بسنجید، و برای ربات‌های پرخاشگر قانون کش/CDN یا محدودیت نرخ در نظر بگیرید."
+
+msgid "Keep data for (days)"
+msgstr "نگهداری داده‌ها به مدت (روز)"
+
+msgid "Keep product titles and descriptions unique and complete so those crawls turn into search traffic."
+msgstr "عنوان و توضیح کالاها را یکتا و کامل نگه دارید تا آن خزش‌ها به ترافیک جستجو تبدیل شوند."
+
+msgid "Keep repayments out of the sales figures"
+msgstr "بازپرداخت‌ها در آمار فروش شمرده نشوند"
+
+msgid "Keeps visitor questions and bot replies for 90 days so you can read what customers really ask (shown below)."
+msgstr "پرسش‌های بازدیدکنندگان و پاسخ‌های ربات را ۹۰ روز نگه می‌دارد تا ببینید مشتریان واقعاً چه می‌پرسند (در پایین نمایش داده می‌شود)."
+
+msgid "Known visitors (registered users)"
+msgstr "بازدیدکنندگان شناخته‌شده (کاربران سایت)"
+
+msgid "Label"
+msgstr "برچسب"
+
+msgid "Label = what the customer sees. Type: “credit” adds wallet credit (set the amount), “coupon” reveals a code, “none” is a blank/try-again. Weight = relative chance (bigger = more likely)."
+msgstr "برچسب = آنچه مشتری می‌بیند. نوع: «اعتبار» اعتبار کیف پول می‌افزاید (مبلغ را بگذارید)، «کد تخفیف» یک کد نشان می‌دهد، «هیچ» پوچ/دوباره تلاش کنید. وزن = شانس نسبی (بزرگ‌تر = محتمل‌تر)."
+
+msgid "Large tables cost write bandwidth on every request. Anything past the retention window can be removed safely."
+msgstr "جدول‌های بزرگ در هر درخواست پهنای‌باند نوشتن مصرف می‌کنند. هرچه از بازه نگهداشت گذشته باشد با خیال راحت حذف‌شدنی است."
+
+msgid "Last 30 days"
+msgstr "۳۰ روز اخیر"
+
+msgid "Last 7 days"
+msgstr "۷ روز اخیر"
+
+msgid "Last 90 days"
+msgstr "۹۰ روز اخیر"
+
+msgid "Last activity (UTC)"
+msgstr "آخرین فعالیت (UTC)"
+
+msgid "Last day of the payment window (1–28)"
+msgstr "واپسین روز بازه‌ی پرداخت (۱ تا ۲۸)"
+
+msgid "Last messages"
+msgstr "آخرین پیام‌ها"
+
+msgid "Last update"
+msgstr "آخرین به‌روزرسانی"
+
+msgid "Last update (UTC)"
+msgstr "آخرین به‌روزرسانی (UTC)"
+
+msgid "Last visit"
+msgstr "آخرین بازدید"
+
+msgid "Late fee % (empty = shop rate)"
+msgstr "درصد جریمه (خالی = نرخ فروشگاه)"
+
+msgid "Late fee (% per month on the overdue amount)"
+msgstr "جریمه دیرکرد (درصد در ماه روی مبلغ معوق)"
+
+msgid "Late fee accrued"
+msgstr "جریمه‌ی انباشته"
+
+msgid "Late fee of %s has been added to this plan. It is collected with your next payment."
+msgstr "جریمه دیرکرد %s به این طرح افزوده شده است. همراه پرداخت بعدی شما دریافت می‌شود."
+
+msgid "Late fee of %s is still open and is collected with your next payment."
+msgstr "جریمه‌ی دیرکرد %s هنوز باز است و همراه پرداخت بعدی شما دریافت می‌شود."
+
+msgid "Late fee: %s"
+msgstr "جریمه دیرکرد: %s"
+
+msgid "Late fees"
+msgstr "جریمه دیرکرد"
+
+msgid "Late fees charged"
+msgstr "جریمه‌های دیرکرد"
+
+msgid "Leave a field empty to switch that message off."
+msgstr "برای خاموش‌کردن آن پیام، فیلد را خالی بگذارید."
+
+msgid "Leave empty for the current gateway, or enter another provider’s address to compare before switching."
+msgstr "برای درگاه کنونی خالی بگذارید، یا نشانی سرویس‌دهنده دیگری را بنویسید تا پیش از مهاجرت مقایسه کنید."
+
+msgid "Leave empty to send directly, as before."
+msgstr "برای ارسال مستقیم (مثل قبل) خالی بگذارید."
+
+msgid "Leave empty to start sending within five minutes. With a date set, sending starts at that local site time."
+msgstr "خالی بگذارید تا ارسال ظرف پنج دقیقه آغاز شود. با تعیین تاریخ، ارسال در همان زمان محلی سایت شروع می‌شود."
+
+msgid "Leave empty to use the built-in defaults (e.g. free dispatch for Gold and above). These lists appear on the customer club tab under each tier."
+msgstr "خالی بگذارید تا پیش‌فرض‌های داخلی استفاده شود (مثلاً گسیل رایگان برای طلایی به بالا). این فهرست‌ها زیر هر رتبه در برگه باشگاه مشتری نمایش داده می‌شوند."
+
+msgid "Leave empty to use the site title."
+msgstr "برای استفاده از عنوان سایت خالی بگذارید."
+
+msgid "Leave the late-fee percentage empty to follow the shop-wide rate; enter 0 to charge no fee on this plan at all."
+msgstr "برای پیروی از نرخ فروشگاه، درصد جریمه را خالی بگذارید؛ برای اینکه این وام هیچ جریمه‌ای نگیرد، صفر بنویسید."
+
+msgid "Lets customers add the shop to their home screen and receive notifications about orders, wallet and instalments — even when the site is closed. Requires HTTPS. On iPhone, notifications only work after the customer has installed the app from Safari’s share menu; Android and desktop Chrome show an install prompt automatically."
+msgstr "به مشتری امکان می‌دهد فروشگاه را به صفحه خانه بیفزاید و درباره سپارش، کیف پول و اقساط آگاه شود — حتی وقتی سایت بسته است. نیازمند HTTPS. روی آیفون، آگاه‌سازی فقط پس از نصب اپلیکیشن از منوی هم‌رسانی سافاری کار می‌کند؛ اندروید و کروم رومیزی خودشان پیشنهاد نصب نشان می‌دهند."
+
+msgid "Lets customers with granted installment credit buy now and repay in installments from their Wallet tab."
+msgstr "به مشتریانِ دارای اعتبار اقساطی اجازه می‌دهد اکنون بخرند و از برگه کیف پول قسط‌به‌قسط بازپرداخت کنند."
+
+msgid "Limit the audience to customers whose purchase (or wallet/points activity) falls in this range. Leave a side empty for open-ended. Applies to purchasing audiences only."
+msgstr "مخاطبان را به مشتریانی محدود می‌کند که خرید (یا فعالیت کیف پول/امتیاز) آن‌ها در این بازه باشد. یک سمت را خالی بگذارید تا باز بماند. فقط برای مخاطبان مبتنی بر خرید اعمال می‌شود."
+
+msgid "Line total"
+msgstr "جمع ردیف"
+
+msgid "Liveness & version"
+msgstr "زنده‌بودن و نسخه"
+
+msgid "Loan principal"
+msgstr "اصل وام"
+
+msgid "Loan statement"
+msgstr "صورت‌حساب وام"
+
+msgid "Loan statement — %s"
+msgstr "صورت‌حساب وام — %s"
+
+msgid "Loans"
+msgstr "وام"
+
+msgid "Location"
+msgstr "موقعیت"
+
+msgid "Log out"
+msgstr "برون‌رفت"
+
+msgid "Look a customer up by name, mobile or email to see their repayment position and, if they already have a plan, raise their ceiling."
+msgstr "مشتری را با نام، شماره همراه یا رایانامه بیابید تا وضعیت بازپرداختش را ببینید و اگر طرحی دارد، سقفش را بالا ببرید."
+
+msgid "Look at page speed first, then at whether the landing page answers what the visitor came for."
+msgstr "اول سرعت صفحه را ببینید، بعد اینکه صفحه ورودی پاسخ آنچه بازدیدکننده برایش آمده را می‌دهد یا نه."
+
+msgid "Low"
+msgstr "کم"
+
+msgid "Loyalty points and tier."
+msgstr "امتیاز و سطح باشگاه."
+
+msgid "Loyalty points conversion"
+msgstr "تبدیل امتیاز باشگاه"
+
+msgid "Maintenance"
+msgstr "نگهداری"
+
+msgid "Make a safe version of this icon"
+msgstr "ساخت نسخه امن از این نماد"
+
+msgid "Make sure it is always in stock, and cross-sell related items from its page to spread the demand."
+msgstr "مطمئن شوید همیشه موجود است، و از صفحه‌اش کالاهای مرتبط را پیشنهاد دهید تا تقاضا پخش شود."
+
+msgid "Make sure product pages have clear text (name, price, key specs) so AI tools describe them accurately. Block them in robots.txt only if you do not want that exposure."
+msgstr "مطمئن شوید صفحه کالاها متن روشن دارند (نام، قیمت، مشخصات کلیدی) تا ابزارهای هوش مصنوعی درست توصیف‌شان کنند. فقط اگر این نمایش را نمی‌خواهید، در robots.txt مسدودشان کنید."
+
+msgid "Make sure your SMS settings (first tab) are working, because customers sign in with an SMS code."
+msgstr "مطمئن شوید تنظیمات پیامک شما (تب نخست) کار می‌کند، چون مشتریان با کد پیامکی وارد می‌شوند."
+
+msgid "Match shipping options and delivery estimates to where your customers actually are."
+msgstr "گزینه‌های ارسال و برآورد زمان تحویل را با جایی که مشتریان‌تان واقعاً هستند هماهنگ کنید."
+
+msgid "Max recipients"
+msgstr "حداکثر گیرندگان"
+
+msgid "Maximum top-up amount"
+msgstr "حداکثر مبلغ شارژ"
+
+msgid "Maximum: %s"
+msgstr "حداکثر: %s"
+
+msgid "Melipayamak fills the blanks BY POSITION, not by name: the first line goes into the first blank, the second into the second. The key is only a label for you — change the order here and the values land in the wrong places."
+msgstr "ملی‌پیامک جاهای خالی را بر پایه جایگاه پر می‌کند نه نام: خط نخست در جای خالی نخست می‌نشیند، خط دوم در دومی. کلید فقط برچسبی برای خودتان است — ترتیب را عوض کنید، مقدارها جابه‌جا می‌افتند."
+
+msgid "Member since"
+msgstr "عضو از"
+
+msgid "Message"
+msgstr "پیام"
+
+msgid "Message could not be sent (check gateway settings and the log)."
+msgstr "پیام ارسال نشد (تنظیمات درگاه و گزارش را بررسی کنید)."
+
+msgid "Message details"
+msgstr "جزئیات پیام"
+
+msgid "Message sent."
+msgstr "پیام ارسال شد."
+
+msgid "Messaged"
+msgstr "پیامک رفته"
+
+msgid "Method"
+msgstr "متد"
+
+msgid "Minimum %s."
+msgstr "حداقل %s."
+
+msgid "Minimum days between purchase and first installment"
+msgstr "کمترین فاصله میان خرید و نخستین قسط (روز)"
+
+msgid "Minimum first order of the invited friend"
+msgstr "حداقل نخستین خرید دوستِ دعوت‌شده"
+
+msgid "Minimum order to spend it"
+msgstr "کف خرید برای استفاده از آن"
+
+msgid "Minimum order to use it"
+msgstr "حداقل مبلغ خرید برای استفاده"
+
+msgid "Minimum top-up amount"
+msgstr "حداقل مبلغ شارژ"
+
+msgid "Minutes on site before showing"
+msgstr "دقیقه حضور در سایت پیش از نمایش"
+
+msgid "Missing — open any admin page once so migrations run, or deactivate/reactivate the plugin."
+msgstr "موجود نیست — یک‌بار یکی از صفحات پیشخوان را باز کنید تا مایگریشن‌ها اجرا شوند، یا افزونه را غیرفعال/فعال کنید."
+
+msgid "Mobile"
+msgstr "موبایل"
+
+msgid "Mobile %1$s%% (%2$s sessions)"
+msgstr "موبایل %1$s٪ (%2$s نشست)"
+
+msgid "Mobile API"
+msgstr "API موبایل"
+
+msgid "Mobile number"
+msgstr "شماره همراه"
+
+msgid "Monday"
+msgstr "دوشنبه"
+
+msgid "Month"
+msgstr "ماه"
+
+msgid "More budget-friendly options close to it:"
+msgstr "گزینه‌های به‌صرفه‌ترِ نزدیک به آن:"
+
+msgid "Most customers rate this product positively."
+msgstr "بیشتر مشتریان به این کالا امتیاز مثبت داده‌اند."
+
+msgid "Most external visits come from %s. That is great while it lasts, but it is a single point of failure."
+msgstr "بیشتر بازدیدهای بیرونی از %s می‌آید. تا وقتی برقرار است عالی است، اما یک نقطه‌ضعف تک‌نقطه‌ای است."
+
+msgid "Most viewed products"
+msgstr "پربازدیدترین کالاها"
+
+msgid "Most visits come from %1$s, with %2$s places seen in total."
+msgstr "بیشتر بازدیدها از %1$s است، و در کل %2$s مکان دیده شده."
+
+msgid "Mostly real people"
+msgstr "بیشتر انسان واقعی"
+
+msgid "Move past repayment and top-up orders to the repayment status?"
+msgstr "سپارش‌های بازپرداخت و شارژ پیشین به وضعیت بازپرداخت منتقل شوند؟"
+
+msgid "My account"
+msgstr "حساب من"
+
+msgid "My installment plans"
+msgstr "طرح‌های اقساطی من"
+
+msgid "My orders"
+msgstr "سپارش‌های من"
+
+msgid "My patterns (admin-defined)"
+msgstr "پترن‌های من (تعریف مدیر)"
+
+msgid "My suggestion for you:"
+msgstr "پیشنهاد من برای شما:"
+
+msgid "Name lookup (DNS)"
+msgstr "جستجوی نام (DNS)"
+
+msgid "Name, mobile or email…"
+msgstr "نام، شماره همراه یا رایانامه…"
+
+msgid "Name, mobile, email or national ID…"
+msgstr "نام، شماره همراه، ایمیل یا کد ملی…"
+
+msgid "National ID"
+msgstr "کد ملی"
+
+msgid "National ID (10 digits)"
+msgstr "کد ملی (۱۰ رقم)"
+
+msgid "National ID card — back (or birth-certificate first page)"
+msgstr "کارت ملی — پشت (یا صفحه اول شناسنامه)"
+
+msgid "National ID card — front"
+msgstr "کارت ملی — رو"
+
+msgid "Needs watching"
+msgstr "نیازمند پیگیری"
+
+msgid "New campaign"
+msgstr "کمپین جدید"
+
+msgid "New ticket"
+msgstr "تیکت جدید"
+
+msgid "Newer"
+msgstr "تازه‌تر"
+
+msgid "Next"
+msgstr "بعدی"
+
+msgid "Next abandoned-cart check"
+msgstr "بررسی بعدی سبدهای رهاشده"
+
+msgid "Next automatic run: %s"
+msgstr "اجرای خودکار بعدی: %s"
+
+msgid "Next campaign batch"
+msgstr "دسته بعدی کمپین"
+
+msgid "Next due"
+msgstr "سررسید بعدی"
+
+msgid "Next installment: %1$s — due on day %2$d of each month."
+msgstr "قسط بعدی: %1$s — سررسید روز %2$d هر ماه."
+
+msgid "Next page"
+msgstr "صفحه بعد"
+
+msgid "Next payment: %1$s instalment + %2$s late fee = %3$s"
+msgstr "پرداخت بعدی: %1$s قسط + %2$s جریمه‌ی دیرکرد = %3$s"
+
+msgid "Next payment: %1$s — instalment %2$s of %3$s, due %4$s."
+msgstr "پرداخت بعدی: %1$s — قسط %2$s از %3$s، سررسید %4$s."
+
+msgid "No"
+msgstr "خیر"
+
+msgid "No Google/Bing-type indexer appeared in this range. New or low-visibility sites often see few."
+msgstr "در این بازه هیچ نمایه‌ساز گوگل/بینگ دیده نشد. سایت‌های نو یا کم‌دیده اغلب کم می‌بینند."
+
+msgid "No announcement was sent: nobody received credit in this batch."
+msgstr "اعلانی فرستاده نشد: در این دسته کسی اعتبار نگرفت."
+
+msgid "No announcement was sent: the pattern field was left empty."
+msgstr "اعلانی فرستاده نشد: فیلد الگو خالی مانده بود."
+
+msgid "No answers yet."
+msgstr "هنوز پاسخی ثبت نشده."
+
+msgid "No automatic grant has been made yet. Once a qualifying order is paid, the grants appear here and in the batch list below as one monthly campaign."
+msgstr "هنوز هیچ اعتبار خودکاری داده نشده. به‌محض پرداخت نخستین سفارش واجد شرایط، واریزها اینجا و در فهرست دسته‌های پایین به‌شکل یک کارزار ماهانه دیده می‌شوند."
+
+msgid "No automatic plan is active. Fill in the form below and enable it to start giving every buyer festival credit."
+msgstr "هیچ طرح خودکاری فعال نیست. فرم پایین را پر و فعالش کنید تا به هر خریدار اعتبار جشنواره داده شود."
+
+msgid "No automatic run is scheduled — use the button, or check the site cron."
+msgstr "هیچ اجرای خودکاری زمان‌بندی نشده — از دکمه استفاده کنید یا کرون سایت را بررسی کنید."
+
+msgid "No cancelled orders in this view."
+msgstr "در این نما سفارش لغوشده‌ای نیست."
+
+msgid "No carts tracked yet."
+msgstr "هنوز سبدی ردیابی نشده است."
+
+msgid "No conversations recorded yet."
+msgstr "هنوز گفتگویی ثبت نشده است."
+
+msgid "No customer matched that search."
+msgstr "هیچ مشتری با این جستجو یافت نشد."
+
+msgid "No festival grants yet."
+msgstr "هنوز واریز جشنواره‌ای وجود ندارد."
+
+msgid "No geo data yet. Country/city comes from CDN headers (e.g. Cloudflare) — without a CDN in front of the site this stays empty; no raw IP address is ever stored."
+msgstr "هنوز داده جغرافیایی نیست. کشور/شهر از هدرهای CDN (مثل کلودفلر) می‌آید — بدون CDN جلوی سایت، این بخش خالی می‌ماند؛ هیچ‌وقت IP خام ذخیره نمی‌شود."
+
+msgid "No history yet"
+msgstr "هنوز بدون سابقه"
+
+msgid "No installment customers yet."
+msgstr "هنوز مشتری اقساطی وجود ندارد."
+
+msgid "No invitees yet — share your link and the list appears here."
+msgstr "هنوز کسی را دعوت نکرده‌اید — لینک‌تان را به اشتراک بگذارید تا فهرست اینجا ظاهر شود."
+
+msgid "No logged-in customers visited in this range."
+msgstr "در این بازه هیچ مشتری واردشده‌ای بازدید نکرده."
+
+msgid "No members with points yet."
+msgstr "هنوز عضوی با امتیاز وجود ندارد."
+
+msgid "No messages logged yet. If you expected messages here, check the toggles and patterns above first."
+msgstr "هنوز پیامی ثبت نشده است. اگر انتظار پیام داشتید، ابتدا کلیدها و پترن‌های بالا را بررسی کنید."
+
+msgid "No open debt."
+msgstr "بدهی بازی ندارد."
+
+msgid "No open repayment plan. Nothing is owed."
+msgstr "هیچ طرح بازپرداخت بازی ندارد. بدهی‌ای نیست."
+
+msgid "No payment has fallen due today."
+msgstr "امروز هیچ بازپرداختی سررسید نشده است."
+
+msgid "No plans on file."
+msgstr "هیچ برنامه‌ای ثبت نشده است."
+
+msgid "No points yet — every completed order earns you points automatically."
+msgstr "هنوز امتیازی ندارید — هر سفارش تکمیل‌شده خودکار برایتان امتیاز می‌آورد."
+
+msgid "No proxy is configured at the moment. Ask your host whether they provide one before adding these lines."
+msgstr "در حال حاضر پراکسی‌ای تنظیم نشده. پیش از افزودن این خط‌ها از میزبان خود بپرسید که آیا پراکسی فراهم می‌کند."
+
+msgid "No purchase emails for repayments"
+msgstr "بدون ایمیل خرید برای بازپرداخت‌ها"
+
+msgid "No sales in this range yet."
+msgstr "در این بازه هنوز فروشی نبوده."
+
+msgid "No search-engine crawls seen"
+msgstr "هیچ خزش موتور جستجویی دیده نشد"
+
+msgid "No surveys right now — check back soon!"
+msgstr "فعلاً نظرسنجی‌ای نیست — به‌زودی سر بزنید!"
+
+msgid "No transactions yet — top up your wallet or shop to see them here."
+msgstr "هنوز تراکنشی ندارید — کیف پول را شارژ کنید یا خرید کنید تا اینجا ببینید."
+
+msgid "No values yet. Write one per line as key=value."
+msgstr "هنوز مقداری نیست. هر کدام را در یک خط به‌شکل key=value بنویسید."
+
+msgid "No viewed product matches this search in the selected range."
+msgstr "هیچ کالای بازدیدشده‌ای در بازه انتخابی با این جستجو منطبق نیست."
+
+msgid "No visits recorded in this range yet. Classification appears once traffic is tracked."
+msgstr "هنوز بازدیدی در این بازه ثبت نشده. طبقه‌بندی پس از ثبت ترافیک نمایان می‌شود."
+
+msgid "No visits recorded in this range yet. Data appears as soon as real visitors browse the site."
+msgstr "در این بازه هنوز بازدیدی ثبت نشده. به‌محض اینکه بازدیدکنندگان واقعی سایت را بگردند، داده‌ها ظاهر می‌شوند."
+
+msgid "Nobody is behind on an installment right now."
+msgstr "هم‌اکنون هیچ‌کس در پرداخت قسط عقب نیست."
+
+msgid "Nobody is using the site search"
+msgstr "هیچ‌کس از جستجوی سایت استفاده نمی‌کند"
+
+msgid "Non-active carts (abandoned / recovered / converted) older than this are deleted by the daily cleanup — e.g. 1 keeps only the last day. 0 = off (the general retention window still applies)."
+msgstr "سبدهای غیرفعال (رهاشده / بازگشته / تبدیل‌شده) قدیمی‌تر از این، در نظافت روزانه حذف می‌شوند — مثلاً ۱ یعنی فقط یک روز اخیر بماند. ۰ = خاموش (پنجره نگهداری کلی همچنان برقرار است)."
+
+msgid "None of the selected instalments could be processed."
+msgstr "هیچ‌کدام از اقساط انتخاب‌شده قابل پردازش نیستند."
+
+msgid "None yet: create a plan of type \"Purchase credit\" on the Wallet page. Plans of type \"Direct debt\" never show the checkout method."
+msgstr "هنوز هیچ: در برگه کیف پول طرحی از نوع «اعتبار خرید» بسازید. طرح‌های نوع «بدهی مستقیم» هرگز روش تسویه‌حساب را نشان نمی‌دهند."
+
+msgid "Normal"
+msgstr "معمولی"
+
+msgid "Not applied: you set %1$s but requests still leave from %2$s. Ask your host whether that address is bound to this server."
+msgstr "اعمال نشد: شما %1$s را گذاشتید ولی درخواست‌ها همچنان از %2$s بیرون می‌روند. از هاست بپرسید آیا آن نشانی روی همین سرور بسته شده است."
+
+msgid "Not enough credit in the panel."
+msgstr "اعتبار پنل کافی نیست."
+
+msgid "Not enough data in this range yet for a meaningful analysis. Come back once more visits are recorded."
+msgstr "هنوز داده کافی در این بازه برای تحلیل معنادار نیست. پس از ثبت بازدید بیشتر دوباره سر بزنید."
+
+msgid "Not much traffic in this range yet"
+msgstr "هنوز ترافیک زیادی در این بازه نیست"
+
+msgid "Not scheduled — deactivate and reactivate the plugin."
+msgstr "زمان‌بندی نشده — افزونه را یک‌بار غیرفعال و دوباره فعال کنید."
+
+msgid "Not sent from here: variable \"%s\" contains a web address, and the shared service line refuses those. Put the address inside the approved pattern text, or have the provider approve your domain."
+msgstr "از اینجا فرستاده نشد: متغیر «%s» نشانی وب دارد و خط خدماتی اشتراکی آن را نمی‌پذیرد. نشانی را داخل خودِ متن تأییدشده‌ی الگو بگذارید، یا از پنل بخواهید دامنه‌ی شما را تأیید کند."
+
+msgid "Not used with Melipayamak — that gateway has no phonebook endpoint in its web service, so customers are not synced. Leave empty."
+msgstr "با ملی‌پیامک استفاده نمی‌شود — وب‌سرویس آن متد دفترچه تلفن ندارد، پس مخاطبان همگام نمی‌شوند. خالی بگذارید."
+
+msgid "Note"
+msgstr "یادداشت"
+
+msgid "Note to customer (for rejection)"
+msgstr "یادداشت برای مشتری (در صورت رد)"
+
+msgid "Note: Meta only allows approved template messages to be sent outside a 24-hour customer-service window, and messaging is billed per conversation by Meta."
+msgstr "توجه: متا فقط اجازه ارسال پیام‌های قالبی تأییدشده را خارج از پنجره ۲۴ساعته پشتیبانی می‌دهد و هزینه پیام‌رسانی را بر اساس هر مکالمه محاسبه می‌کند."
+
+msgid "Nothing could be sent from %s — that address is not usable on this server."
+msgstr "از %s چیزی فرستاده نشد — این نشانی روی این سرور قابل استفاده نیست."
+
+msgid "Nothing has been received on this plan yet."
+msgstr "هنوز پرداختی روی این طرح دریافت نشده است."
+
+msgid "Nothing here yet."
+msgstr "هنوز چیزی اینجا نیست."
+
+msgid "Nothing left the queue. Check the SMS report for the gateway’s reason, and make sure those customers have a mobile number on file."
+msgstr "چیزی از صف بیرون نرفت. علت را در گزارش پیامک‌ها ببینید و مطمئن شوید آن مشتریان شماره همراه ثبت‌شده دارند."
+
+msgid "Nothing recorded: enter an amount greater than zero."
+msgstr "چیزی ثبت نشد: مبلغی بزرگ‌تر از صفر وارد کنید."
+
+msgid "Nothing recorded: that plan no longer exists."
+msgstr "چیزی ثبت نشد: آن برنامه دیگر وجود ندارد."
+
+msgid "Nothing recorded: this plan is already fully repaid."
+msgstr "چیزی ثبت نشد: این وام پیش‌تر به‌طور کامل بازپرداخت شده است."
+
+msgid "Nothing recorded: this row is purchase credit, not a debt. It becomes repayable once the customer spends it."
+msgstr "چیزی ثبت نشد: این ردیف اعتبار خرید است، نه بدهی. پس از آنکه مشتری آن را خرج کند، بازپرداخت‌پذیر می‌شود."
+
+msgid "Nothing to do now — worth revisiting if the share climbs above a fifth of your traffic."
+msgstr "الان کاری لازم نیست — اگر سهمش از یک‌پنجم ترافیک گذشت، دوباره بررسی کنید."
+
+msgid "Nothing was changed — the customer has no open plan to raise."
+msgstr "چیزی تغییر نکرد — این مشتری طرح بازی برای افزایش ندارد."
+
+msgid "Notifications"
+msgstr "اعلان‌ها"
+
+msgid "Notifications & Bale"
+msgstr "اعلان‌ها و بله"
+
+msgid "Number of installments"
+msgstr "تعداد اقساط"
+
+msgid "Numbers cover the last %d days — empty carts are never stored and older rows are cleaned up daily (adjust below)."
+msgstr "اعداد پنجرهٔ %d روز اخیر را می‌پوشانند — سبدهای خالی هرگز ذخیره نمی‌شوند و ردیف‌های قدیمی‌تر روزانه پاک می‌شوند (در پایین قابل تنظیم)."
+
+msgid "Numbers cover the last %d days — empty carts are never stored, bots are filtered out (user-agent + cookie + JavaScript proof), and unmessageable guest rows expire after 2 days."
+msgstr "اعداد پنجرهٔ %d روز اخیر را می‌پوشانند — سبد خالی هرگز ذخیره نمی‌شود، ربات‌ها فیلتر می‌شوند (شناسه مرورگر + کوکی + اثبات جاوااسکریپت) و ردیف‌های مهمانِ بدون شماره پس از ۲ روز منقضی می‌شوند."
+
+msgid "Numeric phonebook id from your SMS panel. Every newly registered customer with a valid mobile is added there automatically; results appear in the SMS log as contact.add. Empty = off."
+msgstr "شناسه عددی دفترچه تلفن از پنل پیامکی‌تان. هر مشتری تازه‌ثبت‌نام با موبایل معتبر خودکار آنجا اضافه می‌شود؛ نتیجه در گزارش پیامک با نوع contact.add ثبت می‌شود. خالی = خاموش."
+
+msgid "Of course — here is how to reach our team directly."
+msgstr "البته — از این راه‌ها مستقیم با تیم ما در تماس باشید."
+
+msgid "Off"
+msgstr "خاموش"
+
+msgid "Offer text"
+msgstr "متن پیشنهاد"
+
+msgid "Older"
+msgstr "قدیمی‌تر"
+
+msgid "Older rows are removed by the daily housekeeping — keeps the table light on shared hosting."
+msgstr "ردیف‌های قدیمی‌تر در نظافت روزانه حذف می‌شوند — جدول را روی هاست اشتراکی سبک نگه می‌دارد."
+
+msgid "Older than (days)"
+msgstr "قدیمی‌تر از (روز)"
+
+msgid "On"
+msgstr "روشن"
+
+msgid "On the single product page: daily/weekly view counts, a summary of customer reviews with star distribution, and a guidance line. External review feeds can be attached via the vkl_insights_extra_lines filter."
+msgstr "در برگه محصول تکی: شمار بازدید روزانه/هفتگی، جمع‌بندی دیدگاه مشتریان با توزیع ستاره‌ها و یک خط راهنمایی. منابع دیدگاه بیرونی را می‌توان با فیلتر vkl_insights_extra_lines متصل کرد."
+
+msgid "On track"
+msgstr "در مسیر درست"
+
+msgid "On-site search terms"
+msgstr "واژه‌های جستجوشده در سایت"
+
+msgid "Once a visitor has seen the wheel, it stays hidden for this long. Changing the slices shows it again."
+msgstr "پس از اینکه بازدیدکننده گردانه را دید، این مدت پنهان می‌ماند. تغییر بخش‌ها دوباره نشانش می‌دهد."
+
+msgid "Once it arrives, turn your opinion into money: review your purchase and earn club points convertible to wallet credit. We will also text you a reminder."
+msgstr "پس از رسیدن سفارش، دیدگاهت را پول کن: برای خریدت دیدگاه بنویس و امتیاز باشگاهِ قابل تبدیل به کیف پول بگیر. یادآوری‌اش را هم پیامک می‌کنیم."
+
+msgid "Once shown, the popup stays hidden for this many hours. Changing the offer text or coupon shows it again immediately."
+msgstr "پس از یک‌بار نمایش، پاپ‌آپ به این تعداد ساعت پنهان می‌ماند. تغییر متن پیشنهاد یا کوپن، آن را بی‌درنگ دوباره نشان می‌دهد."
+
+msgid "One department per line (e.g. sales, technical, billing). Shown as a selector on the customer ticket form."
+msgstr "در هر خط یک بخش (مانند فروش، فنی، مالی). به‌صورت فهرست انتخابی در فرم تیکت مشتری نمایش داده می‌شود."
+
+msgid "One dispatch method per line (e.g. post, courier, Tipax). Shown as a selector on the order edit screen."
+msgstr "در هر خط یک شیوه گسیل (مانند پست، پیک، تیپاکس). به‌صورت فهرست انتخابی در صفحه ویرایش سفارش نمایش داده می‌شود."
+
+msgid "One key=value per line. Keys must match the pattern variables."
+msgstr "در هر خط یک key=value. کلیدها باید با متغیرهای پترن یکسان باشند."
+
+msgid "One message per customer in the list above. Variables: name, title, amount (past due), due (day and Jalali month), penalty."
+msgstr "برای هر مشتری فهرست بالا یک پیام. متغیرها: name، title، amount (مبلغ عقب‌افتاده)، due (روز و ماه خورشیدی)، penalty."
+
+msgid "One of the most viewed products today — it may sell out."
+msgstr "از پربازدیدترین کالاهای امروز — ممکن است تمام شود."
+
+msgid "One pattern per line: code | title | variables. Example:"
+msgstr "هر خط یک پترن: کد | عنوان | متغیرها. نمونه:"
+
+msgid "One point per this order amount (shop currency)."
+msgstr "به ازای هر این مبلغ از سفارش یک امتیاز (به واحد پول فروشگاه)."
+
+msgid "One product carries most of the attention"
+msgstr "یک کالا بیشترِ توجه را به خود می‌کشد"
+
+msgid "Online payment — order %s"
+msgstr "پرداخت برخط — سپارش %s"
+
+msgid "Only %s views were recorded, so treat the shares below as a rough hint rather than a trend."
+msgstr "فقط %s بازدید ثبت شده، پس درصدهای پایین را یک اشاره تقریبی بدانید نه یک روند."
+
+msgid "Only direct visits so far (no external referrers)."
+msgstr "تاکنون فقط بازدید مستقیم (بدون ارجاع خارجی)."
+
+msgid "Only needed if you have your own line; leave empty to use the shared service line."
+msgstr "فقط اگر خط اختصاصی دارید لازم است؛ برای استفاده از خط خدماتی اشتراکی خالی بگذارید."
+
+msgid "Only orders at or above this total earn the credit. 0 = every order."
+msgstr "فقط سفارش‌هایی با این مبلغ یا بیشتر اعتبار می‌گیرند. ۰ = همه سفارش‌ها."
+
+msgid "Only signed-in customers can pay in instalments."
+msgstr "فقط مشتریان واردشده می‌توانند قسطی بپردازند."
+
+msgid "Open"
+msgstr "باز"
+
+msgid "Open a ticket: %s"
+msgstr "ثبت تیکت: %s"
+
+msgid "Open debt"
+msgstr "بدهی باز"
+
+msgid "Open plans"
+msgstr "طرح‌های باز"
+
+msgid "Open printable invoice"
+msgstr "بازکردن فاکتور چاپی"
+
+msgid "Opens Bale and connects this account after you tap Start."
+msgstr "بله را باز می‌کند و پس از زدن «شروع» این حساب را وصل می‌کند."
+
+msgid "Opens the app and enters your shop address (or it is already built in)."
+msgstr "اپ را باز می‌کند و نشانی فروشگاه شما را وارد می‌کند (یا از پیش در اپ گنجانده شده)."
+
+msgid "Optional. Configure it on the SMS Notifications page (see the setup guide there)."
+msgstr "اختیاری. در برگه اعلان‌های پیامکی تنظیم کنید (راهنمای راه‌اندازی همان‌جاست)."
+
+msgid "Options (one per line, at least two)"
+msgstr "گزینه‌ها (هر خط یکی، دست‌کم دو گزینه)"
+
+msgid "Order"
+msgstr "سفارش"
+
+msgid "Order %1$s is currently: %2$s."
+msgstr "سفارش %1$s اکنون در وضعیت «%2$s» است."
+
+msgid "Order SMS"
+msgstr "پیامک سفارش"
+
+msgid "Order amount per point"
+msgstr "مبلغ سفارش به ازای هر امتیاز"
+
+msgid "Order details"
+msgstr "جزئیات سفارش"
+
+msgid "Order notifications"
+msgstr "اعلان‌های سفارش"
+
+msgid "Order paid — send the invoice"
+msgstr "پرداخت سپارش — فرستادن فاکتور"
+
+msgid "Order payment"
+msgstr "پرداخت سفارش"
+
+msgid "Order refund"
+msgstr "بازپرداخت سفارش"
+
+msgid "Order tracking"
+msgstr "پیگیری سفارش"
+
+msgid "Orders"
+msgstr "سپارش‌ها"
+
+msgid "Orders (year / total)"
+msgstr "سفارش‌ها (امسال / کل)"
+
+msgid "Other"
+msgstr "دیگر"
+
+msgid "Other pages"
+msgstr "صفحات دیگر"
+
+msgid "Our current best sellers:"
+msgstr "پرفروش‌های فعلی ما:"
+
+msgid "Outgoing address for SMS (for gateways that refuse foreign server IPs)"
+msgstr "نشانی خروجی پیامک (برای درگاه‌هایی که IP سرور خارجی را نمی‌پذیرند)"
+
+msgid "Overall rating: %d out of 5."
+msgstr "امتیاز کلی: %d از ۵."
+
+msgid "Overall satisfaction"
+msgstr "رضایت کلی"
+
+msgid "Overdue"
+msgstr "معوق"
+
+msgid "Overview"
+msgstr "نمای کلی"
+
+msgid "Own orders (paged)"
+msgstr "سفارش‌های خود کاربر (صفحه‌بندی‌شده)"
+
+msgid "Own profile"
+msgstr "پروفایل خود کاربر"
+
+msgid "Padded icon (optional)"
+msgstr "نماد حاشیه‌دار (اختیاری)"
+
+msgid "Page %1$s of %2$s"
+msgstr "صفحه %1$s از %2$s"
+
+msgid "Page types"
+msgstr "نوع صفحات"
+
+msgid "Pageviews"
+msgstr "بازدید صفحه"
+
+msgid "Paid"
+msgstr "پرداخت‌شده"
+
+msgid "Paid %1$s of %2$s"
+msgstr "پرداخت‌شده %1$s از %2$s"
+
+msgid "Paid %1$s of %2$s (%3$s%%)"
+msgstr "پرداخت‌شده %1$s از %2$s (%3$s%%)"
+
+msgid "Paid off, but collected late fees along the way."
+msgstr "تسویه کرده، ولی در مسیر جریمه دیرکرد گرفته."
+
+msgid "Paid orders"
+msgstr "سفارش‌های پرداخت‌شده"
+
+msgid "Paid so far"
+msgstr "پرداخت‌شده تا کنون"
+
+msgid "Paid with Vereskonto installment credit; repayment plan activated."
+msgstr "با اعتبار اقساطی ورسکونتو پرداخت شد؛ برنامه بازپرداخت فعال گردید."
+
+msgid "Panel password"
+msgstr "گذرواژه پنل"
+
+msgid "Panel phonebook id (auto-add customers)"
+msgstr "شناسه دفترچه تلفن پنل (افزودن خودکار مشتریان)"
+
+msgid "Panel username"
+msgstr "نام کاربری پنل"
+
+msgid "Panel username and password"
+msgstr "نام کاربری و گذرواژه پنل"
+
+msgid "Password (optional)"
+msgstr "گذرواژه (اختیاری)"
+
+msgid "Past due"
+msgstr "عقب‌افتاده"
+
+msgid "Paste this in a terminal to confirm the API is reachable (should return ok: true):"
+msgstr "این را در ترمینال بگذارید تا مطمئن شوید API در دسترس است (باید ok: true برگرداند):"
+
+msgid "Path"
+msgstr "مسیر"
+
+msgid "Pattern"
+msgstr "پترن"
+
+msgid "Pattern approved in the panel:"
+msgstr "الگوی تأییدشده در پنل:"
+
+msgid "Pattern code"
+msgstr "کد پترن"
+
+msgid "Pattern code (bodyId)"
+msgstr "کد الگو (bodyId)"
+
+msgid "Pattern code (empty = the overdue pattern from settings)"
+msgstr "کد پترن (خالی = پترن دیرکرد از تنظیمات)"
+
+msgid "Pattern code (empty = the reminder pattern from settings)"
+msgstr "کد پترن (خالی = پترن یادآوری از تنظیمات)"
+
+msgid "Pattern parameters"
+msgstr "پارامترهای پترن"
+
+msgid "Pattern variable: name. Sent to the customer when their credit request is rejected."
+msgstr "متغیر پترن: name. هنگام رد درخواست اعتبار، به مشتری ارسال می‌شود."
+
+msgid "Pattern variables: name, amount."
+msgstr "متغیرهای پترن: name، amount."
+
+msgid "Pattern variables: name, amount. Sent to the admin mobile the moment a customer submits an installment-credit request."
+msgstr "متغیرهای پترن: name، amount. لحظه ثبت درخواست اعتبار اقساطی توسط مشتری، به شماره مدیر ارسال می‌شود."
+
+msgid "Pattern variables: name, amount. Sent to the customer when their credit request is approved."
+msgstr "متغیرهای پترن: name، amount. هنگام تأیید درخواست اعتبار، به مشتری ارسال می‌شود."
+
+msgid "Pattern variables: name, coupon."
+msgstr "متغیرهای پترن: name، coupon."
+
+msgid "Pattern variables: name, coupon. Uses the API key and sender from the login settings."
+msgstr "متغیرهای پترن: name، coupon. از کلید API و فرستنده تنظیمات ورود استفاده می‌شود."
+
+msgid "Pattern variables: name, order, code, method."
+msgstr "متغیرهای پترن: name، order، code، method."
+
+msgid "Pattern variables: name, order, link."
+msgstr "متغیرهای پترن: name، order، link."
+
+msgid "Pattern variables: name, order. Leave empty to disable."
+msgstr "متغیرهای پترن: name، order. برای غیرفعال کردن خالی بگذارید."
+
+msgid "Pattern variables: name, ticket."
+msgstr "متغیرهای پترن: name، ticket."
+
+msgid "Pattern variables: ticket."
+msgstr "متغیرهای پترن: ticket."
+
+msgid "Pattern: admin alert"
+msgstr "پترن: هشدار مدیر"
+
+msgid "Pattern: admin — new credit request"
+msgstr "پترن: مدیر — درخواست اعتبار جدید"
+
+msgid "Pattern: birthday"
+msgstr "پترن: زادروز"
+
+msgid "Pattern: cancellation alert to the shop"
+msgstr "الگو: هشدار لغو به فروشگاه"
+
+msgid "Pattern: credit approved (to customer)"
+msgstr "پترن: تأیید اعتبار (به مشتری)"
+
+msgid "Pattern: credit rejected (to customer)"
+msgstr "پترن: رد اعتبار (به مشتری)"
+
+msgid "Pattern: dispatched by courier (پیک)"
+msgstr "پترن: ارسال با پیک"
+
+msgid "Pattern: final instalment (plan finished)"
+msgstr "الگو: قسط پایانی (طرح تمام شد)"
+
+msgid "Pattern: instalment received"
+msgstr "الگو: دریافت قسط"
+
+msgid "Pattern: instalment received — alert to the shop"
+msgstr "الگو: دریافت قسط — هشدار به فروشگاه"
+
+msgid "Pattern: new order alert"
+msgstr "پترن: هشدار سفارش جدید"
+
+msgid "Pattern: order %s"
+msgstr "پترن: سفارش %s"
+
+msgid "Pattern: order placed alert"
+msgstr "پترن: هشدار ثبت سفارش"
+
+msgid "Pattern: overdue (name, amount, penalty)"
+msgstr "پترن: دیرکرد (name، amount، penalty)"
+
+msgid "Pattern: reminder (name, title, amount, due)"
+msgstr "پترن: یادآوری (name، title، amount، due)"
+
+msgid "Pattern: review request"
+msgstr "پترن: درخواست دیدگاه"
+
+msgid "Pattern: support replied"
+msgstr "پترن: پاسخ پشتیبانی"
+
+msgid "Pattern: tracking code"
+msgstr "پترن: کد رهگیری"
+
+msgid "Pattern: wallet charged"
+msgstr "پترن: شارژ کیف پول"
+
+msgid "Pay all — %s"
+msgstr "پرداخت همه — %s"
+
+msgid "Pay selected"
+msgstr "پرداخت انتخاب‌شده"
+
+msgid "Pay this installment"
+msgstr "پرداخت این قسط"
+
+msgid "Pay with bank gateway"
+msgstr "پرداخت با درگاه بانکی"
+
+msgid "Paying customers"
+msgstr "مشتریان خریدکرده"
+
+msgid "Payment due now"
+msgstr "پرداخت سررسیده"
+
+msgid "Payment fallen due"
+msgstr "بازپرداخت سررسیدشده"
+
+msgid "Payment method"
+msgstr "روش پرداخت"
+
+msgid "Payment recorded — the plan has been reduced by that amount."
+msgstr "پرداخت ثبت شد — بدهی همان اندازه کم شد."
+
+msgid "Payment window"
+msgstr "بازه‌ی پرداخت"
+
+msgid "Payment window (days, ending on the due day)"
+msgstr "بازه‌ی پرداخت (روز، پایان‌یافته در روز سررسید)"
+
+msgid "Payments received"
+msgstr "پرداخت‌های دریافت‌شده"
+
+msgid "Payments recorded by hand"
+msgstr "پرداخت‌های دستی ثبت‌شده"
+
+msgid "Payments recorded by the shop"
+msgstr "پرداخت‌های ثبت‌شده از سوی فروشگاه"
+
+msgid "People"
+msgstr "انسان"
+
+msgid "People only"
+msgstr "فقط انسان"
+
+msgid "Per-recipient: name=auto fills each customer's real name automatically (fallback: \"Dear customer\")."
+msgstr "به‌ازای هر گیرنده: name=auto نام واقعی هر مشتری را خودکار پر می‌کند (در نبود نام: «مشتری گرامی»)."
+
+msgid "Percent"
+msgstr "درصد"
+
+msgid "Permanent access token of the Meta app."
+msgstr "توکن دسترسی دائمی اپلیکیشن متا."
+
+msgid "Phone"
+msgstr "گوشی"
+
+msgid "Phone number ID"
+msgstr "شناسه شماره تلفن"
+
+msgid "Phone: %s"
+msgstr "تلفن: %s"
+
+msgid "Phones draw their own round frame around the home-screen icon, which clips artwork that reaches the edges. This creates a 512 px copy with the logo centred and space around it, so the whole design stays visible whatever shape the phone uses. The new file replaces the address above; the original is left untouched."
+msgstr "گوشی‌ها خودشان قاب گردی دور نماد صفحه خانه می‌کشند که طرح‌های تا لبه را می‌بُرد. این کار یک نسخه ۵۱۲ پیکسلی می‌سازد که نشان در میانه‌اش نشسته و پیرامونش فضا دارد، پس تمام طرح دیده می‌شود هر شکلی که گوشی به کار ببرد. فایل تازه جای نشانی بالا را می‌گیرد؛ اصلِ تصویر دست‌نخورده می‌ماند."
+
+msgid "Pick a wider date range, or come back once more visits have accumulated."
+msgstr "بازه زمانی گسترده‌تری برگزینید، یا پس از انباشته‌شدن بازدید بیشتر برگردید."
+
+msgid "Pick an audience to see how many people it reaches."
+msgstr "یک مخاطب برگزینید تا ببینید به چند نفر می‌رسد."
+
+msgid "Pick from your saved patterns below, or type a code. Variable values must stay short and non-promotional (a name, a code, a number) — promotional wording belongs in the pattern text approved by the SMS provider, or the message will be rejected."
+msgstr "از پترن‌های ذخیره‌شده پایین انتخاب کنید یا کد را بنویسید. مقدار متغیرها باید کوتاه و غیرتبلیغاتی بماند (یک نام، یک کد، یک عدد) — متن تبلیغاتی جایش در متن پترنِ تأییدشده نزد خدمات‌دهنده پیامک است، وگرنه پیام رد می‌شود."
+
+msgid "Plan"
+msgstr "طرح"
+
+msgid "Plan details"
+msgstr "جزئیات طرح‌ها"
+
+msgid "Plan title"
+msgstr "عنوان طرح"
+
+msgid "Plan type"
+msgstr "نوع طرح"
+
+msgid "Plans & reminder SMS"
+msgstr "طرح‌ها و پیامک یادآوری"
+
+msgid "Plans, payments & reminder SMS"
+msgstr "برنامه‌ها، پرداخت‌ها و پیامک یادآوری"
+
+msgid "Please complete your first name, last name and mobile in Account details first: %s"
+msgstr "لطفاً ابتدا نام، نام خانوادگی و موبایل را در جزئیات حساب کامل کنید: %s"
+
+msgid "Please enter a valid Iranian mobile number (e.g. 09131234567)."
+msgstr "یک شماره‌ی همراه معتبر ایرانی وارد کنید (مثلاً ۰۹۱۳۱۲۳۴۵۶۷)."
+
+msgid "Please enter a valid birthday."
+msgstr "لطفاً زادروز معتبری وارد کنید."
+
+msgid "Please enter a valid mobile number (e.g. 09123456789)."
+msgstr "لطفاً شماره همراه معتبری وارد کنید (مانند 09123456789)."
+
+msgid "Please enter a valid mobile number."
+msgstr "یک شماره‌ی همراه معتبر وارد کنید."
+
+msgid "Please enter an amount within the allowed range."
+msgstr "لطفاً مبلغی در بازه مجاز وارد کنید."
+
+msgid "Please enter your mobile number."
+msgstr "لطفاً شماره همراه خود را وارد کنید."
+
+msgid "Please fill in the amount and accept the terms."
+msgstr "لطفاً مبلغ را وارد و شرایط را بپذیرید."
+
+msgid "Please log in first, then I can look up your orders — or send me the order number."
+msgstr "ابتدا وارد شوید تا سفارش‌هایتان را ببینم — یا شماره سفارش را بفرستید."
+
+msgid "Please log in first, then I can show your wallet balance."
+msgstr "ابتدا وارد شوید تا موجودی کیف پولتان را نشان بدهم."
+
+msgid "Please save a valid national ID and IBAN in Account details first: %s"
+msgstr "لطفاً ابتدا کد ملی و شماره شبای معتبر را در جزئیات حساب ذخیره کنید: %s"
+
+msgid "Please select at least one instalment."
+msgstr "حداقل یک قسط را انتخاب کنید."
+
+msgid "Please sign in first so your prize can be added to your account."
+msgstr "لطفاً نخست وارد شوید تا جایزه به حساب شما افزوده شود."
+
+msgid "Please type your question first."
+msgstr "لطفاً نخست پرسش خود را بنویسید."
+
+msgid "Point value for conversion"
+msgstr "ارزش هر امتیاز برای تبدیل"
+
+msgid "Points"
+msgstr "امتیاز"
+
+msgid "Points balance"
+msgstr "موجودی امتیاز"
+
+msgid "Points earned in %d"
+msgstr "امتیاز کسب‌شده در %d"
+
+msgid "Points earned this year: %s"
+msgstr "امتیاز کسب‌شده در سال جاری: %s"
+
+msgid "Points per product review"
+msgstr "امتیاز هر دیدگاه کالا"
+
+msgid "Points the button at the product search for whatever this visitor searched most (site search and chatbot). Falls back to the link above."
+msgstr "دکمه را به جستجوی محصولِ همان چیزی می‌برد که این بازدیدکننده بیشتر جستجو کرده (جستجوی سایت و چت‌بات). در نبود سابقه، به لینک بالا برمی‌گردد."
+
+msgid "Port"
+msgstr "درگاه"
+
+msgid "Preferred (no web request, lightest on the server):"
+msgstr "ترجیحی (بدون درخواست وب، سبک‌ترین برای سرور):"
+
+msgid "Preferred number of installments"
+msgstr "تعداد اقساط پیشنهادی"
+
+msgid "Previous"
+msgstr "قبلی"
+
+msgid "Previous page"
+msgstr "صفحه قبل"
+
+msgid "Priced below the average of the %s category — good value."
+msgstr "قیمتی پایین‌تر از میانگین دسته «%s» — به‌صرفه."
+
+msgid "Priced in line with the %s category average."
+msgstr "قیمتی هم‌تراز میانگین دسته «%s»."
+
+msgid "Print"
+msgstr "چاپ"
+
+msgid "Prioritise mobile: big tap targets, a short checkout, and images that load fast on mobile data."
+msgstr "موبایل را در اولویت بگذارید: دکمه‌های بزرگ، تسویه کوتاه، و تصاویری که روی اینترنت موبایل زود بار می‌شوند."
+
+msgid "Priority"
+msgstr "درجه اهمیت"
+
+msgid "Product"
+msgstr "کالا"
+
+msgid "Product insights"
+msgstr "بینش‌های محصول"
+
+msgid "Product pages"
+msgstr "صفحات کالا"
+
+msgid "Product quality"
+msgstr "کیفیت کالا"
+
+msgid "Product views"
+msgstr "بازدید کالاها"
+
+msgid "Progress so far: %s orders scanned."
+msgstr "پیشرفت تاکنون: %s سفارش بررسی شده."
+
+msgid "Proof of income (payslip, employment letter or business licence)"
+msgstr "مدرک درآمد (فیش حقوقی، گواهی اشتغال یا پروانه کسب)"
+
+msgid "Proof of income — optional (payslip, employment letter or business licence)"
+msgstr "مدرک درآمد — اختیاری (فیش حقوقی، گواهی اشتغال یا پروانه کسب)"
+
+msgid "Publish the app, or share its install link with your customers."
+msgstr "اپ را منتشر کنید، یا پیوند نصبش را با مشتریان خود به اشتراک بگذارید."
+
+msgid "Purchase credit"
+msgstr "اعتبار خرید"
+
+msgid "Purchase credit & installments"
+msgstr "وام و بازپرداخت"
+
+msgid "Purchase credit (BNPL — repayment starts after the credit is spent at checkout)"
+msgstr "اعتبار خرید (BNPL — بازپرداخت پس از مصرف اعتبار در تسویه‌حساب آغاز می‌شود)"
+
+msgid "Purchase credit (request #%d)"
+msgstr "اعتبار خرید (درخواست #%d)"
+
+msgid "Purchase credit — %s"
+msgstr "اعتبار خرید — %s"
+
+msgid "Purchase date range (optional)"
+msgstr "بازه تاریخ خرید (اختیاری)"
+
+msgid "Purchase history"
+msgstr "سابقه خرید"
+
+msgid "Purchase-history import: %1$s orders scanned, %2$s received points."
+msgstr "بارگیری سابقه خرید: %1$s سفارش بررسی شد، %2$s سفارش امتیاز گرفت."
+
+msgid "Purchased — reward deposited to your wallet"
+msgstr "خرید کرد — پاداش به کیف پول شما واریز شد"
+
+msgid "Purpose"
+msgstr "کاربرد"
+
+msgid "Put the pattern id (bodyId) from your panel in the Pattern Code field below — for the login code that is the pattern whose text contains your shop name and the code placeholder. Pattern variables are filled in the order the plugin sends them."
+msgstr "شناسه الگو (bodyId) را از پنل خود در فیلد «کد پترن» پایین بگذارید — برای گذرشماره آمد، همان الگویی که متنش نام فروشگاه و جای کد را دارد. متغیرهای الگو به همان ترتیبی پر می‌شوند که افزونه می‌فرستد."
+
+msgid "Put the pattern id (bodyId) from your panel in the Pattern Code field below. The pattern’s variables are filled in the order the plugin sends them, so define them in the same order inside the pattern."
+msgstr "شناسه الگو (bodyId) را از پنل خود در فیلد «کد پترن» پایین بگذارید. متغیرهای الگو به همان ترتیبی پر می‌شوند که افزونه می‌فرستد، پس در خودِ الگو هم با همان ترتیب تعریفشان کنید."
+
+msgid "Put the search box somewhere obvious in the header — search users buy far more often than browsers."
+msgstr "کادر جستجو را در سرصفحه جای پیدایی بگذارید — کسانی که جستجو می‌کنند بسیار بیشتر از گردندگان خرید می‌کنند."
+
+msgid "Qty sold"
+msgstr "تعداد فروش"
+
+msgid "Qualifying order total"
+msgstr "کف مبلغ سفارش برای شمول"
+
+msgid "Quantity"
+msgstr "تعداد"
+
+msgid "Question"
+msgstr "پرسش"
+
+msgid "Queue campaign"
+msgstr "ثبت کمپین در صف"
+
+msgid "Queue group SMS"
+msgstr "قراردادن پیامک گروهی در صف"
+
+msgid "Queue it. Sending runs in batches in the background; watch the counters below and the SMS report."
+msgstr "در صف بگذارید. ارسال دسته‌دسته در پس‌زمینه انجام می‌شود؛ شمارنده‌های پایین و گزارش پیامک‌ها را بپایید."
+
+msgid "Queue processed — check the counters below and the SMS report."
+msgstr "صف پردازش شد — شمارنده‌های پایین و گزارش پیامک را ببینید."
+
+msgid "Queue worker"
+msgstr "کارگر صف"
+
+msgid "Queued through the campaign engine (visible and editable on the SMS Campaigns page; delivery in the SMS report)."
+msgstr "از راه موتور کمپین در صف می‌رود (در برگه کمپین‌های پیامکی قابل مشاهده و ویرایش؛ وضعیت ارسال در گزارش پیامک)."
+
+msgid "Raise this customer’s ceiling by"
+msgstr "افزایش سقف این مشتری به میزان"
+
+msgid "Reaching a human"
+msgstr "رسیدن به یک انسان"
+
+msgid "Real visitors came but none searched, which usually means the search box is hard to find."
+msgstr "بازدیدکننده واقعی آمده ولی هیچ‌کس جستجو نکرده، که معمولاً یعنی کادر جستجو دیریاب است."
+
+msgid "Reason"
+msgstr "علت"
+
+msgid "Rebuild the table now? It stays locked while this runs, so do it at a quiet hour. Best done AFTER removing the old rows."
+msgstr "جدول همین حالا بازسازی شود؟ هنگام اجرا قفل می‌ماند، پس در ساعت خلوت انجامش دهید. بهتر است پس از حذف ردیف‌های کهنه باشد."
+
+msgid "Receives an SMS code and enters it — that is the whole sign-in."
+msgstr "یک کد پیامکی می‌گیرد و واردش می‌کند — تمام آمد همین است."
+
+msgid "Recent campaigns"
+msgstr "کمپین‌های اخیر"
+
+msgid "Recent conversations"
+msgstr "گفتگوهای اخیر"
+
+msgid "Recent transactions"
+msgstr "تراکنش‌های اخیر"
+
+msgid "Recently started repaying; no problems so far."
+msgstr "تازه بازپرداخت را آغاز کرده؛ تا این‌جا بی‌مشکل."
+
+msgid "Recipients"
+msgstr "دریافت‌کنندگان"
+
+msgid "Reclaim disk space"
+msgstr "بازپس‌گیری فضای دیسک"
+
+msgid "Reclassified: repayment or wallet top-up, not a sale of goods."
+msgstr "بازطبقه‌بندی شد: بازپرداخت یا شارژ کیف پول، نه فروش کالا."
+
+msgid "Reclassify past repayment orders"
+msgstr "بازطبقه‌بندی سپارش‌های بازپرداخت پیشین"
+
+msgid "Recommendation: export a CSV archive before purging; keep at least the last 90 days for dispute resolution."
+msgstr "توصیه: پیش از پاکسازی، آرشیو CSV بگیرید؛ دست‌کم ۹۰ روز آخر را برای پیگیری اختلاف‌ها نگه دارید."
+
+msgid "Record a payment"
+msgstr "ثبت پرداخت"
+
+msgid "Record payment"
+msgstr "ثبت پرداخت"
+
+msgid "Record real-visitor pageviews (admins and known crawlers are always skipped; no raw IP is stored)."
+msgstr "بازدید صفحات بازدیدکنندگان واقعی ثبت شود (مدیران و خزنده‌های شناخته‌شده همیشه نادیده گرفته می‌شوند؛ IP خام ذخیره نمی‌شود)."
+
+msgid "Recover credit stuck on incomplete orders"
+msgstr "بازیابی اعتبار گیرکرده روی سفارش‌های ناتمام"
+
+msgid "Recovered"
+msgstr "بازگشته"
+
+msgid "Refer-a-friend"
+msgstr "دعوت دوستان"
+
+msgid "Reference"
+msgstr "مرجع"
+
+msgid "Reference / tracking number"
+msgstr "شماره‌ی پیگیری / ارجاع"
+
+msgid "Referral reward — your invited friend made their first purchase (%s)"
+msgstr "پاداش دعوت — دوستِ دعوت‌شده شما نخستین خریدش را انجام داد (%s)"
+
+msgid "Referrer"
+msgstr "ارجاع‌دهنده"
+
+msgid "Refresh the homepage offer or send a campaign — a smart-bar promotion or an SMS to past buyers usually lifts it quickly."
+msgstr "پیشنهاد صفحه اصلی را تازه کنید یا کارزار بفرستید — یک تبلیغ نوار هوشمند یا پیامک به خریداران پیشین معمولاً زود بلندش می‌کند."
+
+msgid "Register webhook with Bale"
+msgstr "ثبت وب‌هوک در بله"
+
+msgid "Registered users among the viewers"
+msgstr "کاربران سایت در میان بازدیدکنندگان"
+
+msgid "Reject"
+msgstr "رد"
+
+msgid "Reject this request?"
+msgstr "این درخواست رد شود؟"
+
+msgid "Related products:"
+msgstr "کالاهای مرتبط:"
+
+msgid "Relay address"
+msgstr "نشانی بازپخش"
+
+msgid "Relay type"
+msgstr "نوع بازپخش"
+
+msgid "Remaining"
+msgstr "مانده"
+
+msgid "Reminder SMS sent."
+msgstr "پیامک یادآوری ارسال شد."
+
+msgid "Reminder day (Jalali)"
+msgstr "روز یادآوری (خورشیدی)"
+
+msgid "Reminder not sent — check the reminder pattern and the customer mobile."
+msgstr "پیامک ارسال نشد — پترن یادآوری و شماره موبایل مشتری را بررسی کنید."
+
+msgid "Remove"
+msgstr "حذف"
+
+msgid "Remove log rows older than 90 days?"
+msgstr "ردیف‌های قدیمی‌تر از ۹۰ روز حذف شوند؟"
+
+msgid "Remove old rows"
+msgstr "حذف ردیف‌های کهنه"
+
+msgid "Repayable in"
+msgstr "بازپرداخت در"
+
+msgid "Repaying steadily and never late."
+msgstr "پیوسته بازپرداخت می‌کند و هرگز دیر نکرده."
+
+msgid "Repayment / top-up"
+msgstr "بازپرداخت / شارژ کیف پول"
+
+msgid "Repayment schedule"
+msgstr "برنامه‌ی بازپرداخت"
+
+msgid "Repeat (optional)"
+msgstr "تکرار (اختیاری)"
+
+msgid "Request installment credit"
+msgstr "درخواست اعتبار خرید اقساطی"
+
+msgid "Requested credit amount"
+msgstr "مبلغ اعتبار درخواستی"
+
+msgid "Require login for checkout"
+msgstr "الزام ورود برای تسویه‌حساب"
+
+msgid "Required for admin alerts (new order, new ticket)."
+msgstr "برای هشدارهای مدیر (سفارش جدید، تیکت جدید) لازم است."
+
+msgid "Resend"
+msgstr "ارسال دوباره"
+
+msgid "Resend failed — check the new log row for the gateway response."
+msgstr "ارسال دوباره ناموفق بود — پاسخ درگاه را در ردیف تازه گزارش ببینید."
+
+msgid "Restore instalment credit for orders that never completed payment?"
+msgstr "اعتبار اقساطی سفارش‌هایی که هرگز پرداختشان تکمیل نشده بازگردانده شود؟"
+
+msgid "Returned"
+msgstr "برگشتی"
+
+msgid "Returns"
+msgstr "برمی‌گرداند"
+
+msgid "Returns a token on success."
+msgstr "در صورت موفقیت یک توکن برمی‌گرداند."
+
+msgid "Revenue"
+msgstr "درآمد"
+
+msgid "Reverse"
+msgstr "برگرداندن"
+
+msgid "Reverse this recorded payment? The amount goes back onto the plan."
+msgstr "این پرداخت ثبت‌شده برگردانده شود؟ مبلغ دوباره به بدهی افزوده می‌شود."
+
+msgid "Review now"
+msgstr "همین حالا دیدگاه بده"
+
+msgid "Review requests"
+msgstr "درخواست دیدگاه"
+
+msgid "Review the products you bought — each review earns %d club points, convertible to wallet credit, and helps other shoppers choose."
+msgstr "برای کالاهایی که خریده‌اید دیدگاه بنویسید — هر دیدگاه %d امتیاز باشگاه می‌دهد که به اعتبار کیف پول تبدیل می‌شود و به انتخاب دیگر خریداران هم کمک می‌کند."
+
+msgid "Review-request SMS"
+msgstr "پیامک درخواست دیدگاه"
+
+msgid "Revoke the current token"
+msgstr "ابطال توکن فعلی"
+
+msgid "Reward for reviewing a purchased product on the account Surveys tab. Reviews are moderated like normal WooCommerce reviews."
+msgstr "پاداش ثبت دیدگاه برای کالای خریداری‌شده در برگه نظرسنجی حساب. دیدگاه‌ها مانند دیدگاه‌های عادی ووکامرس بازبینی می‌شوند."
+
+msgid "Reward per referral (deposited to wallet)"
+msgstr "پاداش هر دعوت (واریز به کیف پول)"
+
+msgid "Reward points"
+msgstr "امتیاز پاداش"
+
+msgid "Reward: %d club points (convertible to wallet credit)."
+msgstr "پاداش: %d امتیاز باشگاه (قابل تبدیل به اعتبار کیف پول)."
+
+msgid "Rows (approx.)"
+msgstr "ردیف (تقریبی)"
+
+msgid "Runs in small batches so the site stays responsive. Afterwards ask your host to run OPTIMIZE TABLE during a quiet hour to actually reclaim the disk space — that operation locks the table while it runs."
+msgstr "در دسته‌های کوچک اجرا می‌شود تا سایت پاسخگو بماند. پس از آن از میزبان بخواهید در ساعت خلوت OPTIMIZE TABLE را اجرا کند تا فضای دیسک واقعاً آزاد شود — آن عملیات هنگام اجرا جدول را قفل می‌کند."
+
+msgid "SMS"
+msgstr "پیامک"
+
+msgid "SMS Campaigns"
+msgstr "کمپین‌های پیامکی"
+
+msgid "SMS Logs"
+msgstr "گزارش پیامک‌ها"
+
+msgid "SMS Notifications"
+msgstr "اعلان‌های پیامکی"
+
+msgid "SMS gateway"
+msgstr "درگاه پیامک"
+
+msgid "SMS gateway (IPPanel)"
+msgstr "درگاه پیامک (آی‌پی‌پنل)"
+
+msgid "SMS gateway reachability"
+msgstr "دسترسی به درگاه پیامک"
+
+msgid "SMS invitation pattern (optional)"
+msgstr "پترن دعوت پیامکی (اختیاری)"
+
+msgid "SMS login reuses your existing SMS gateway settings (first tab) — the login code is sent through the same pattern system, so make sure SMS is configured."
+msgstr "آمد پیامکی از همان تنظیمات درگاه پیامک شما (تب نخست) استفاده می‌کند — کد آمد از همان سامانه پترن فرستاده می‌شود، پس مطمئن شوید پیامک پیکربندی شده."
+
+msgid "SMS provider"
+msgstr "سرویس‌دهنده پیامک"
+
+msgid "SMS resent — the new attempt is logged at the top of the list."
+msgstr "پیامک دوباره فرستاده شد — تلاش تازه بالای فهرست ثبت شده است."
+
+msgid "SMS sender unavailable."
+msgstr "فرستنده پیامک در دسترس نیست."
+
+msgid "SMS settings"
+msgstr "تنظیمات پیامک"
+
+msgid "SPIN"
+msgstr "بچرخان"
+
+msgid "Sales overview"
+msgstr "نمای فروش"
+
+msgid "Same request without certificate check"
+msgstr "همان درخواست بدون بررسی گواهی"
+
+msgid "Saturday"
+msgstr "شنبه"
+
+msgid "Save"
+msgstr "ذخیره"
+
+msgid "Save plan"
+msgstr "ذخیره طرح"
+
+msgid "Save setting"
+msgstr "ذخیره تنظیم"
+
+msgid "Save setting: stores the window and the daily on/off — nothing is deleted. Delete now: removes non-active carts (abandoned / recovered / converted) older than the given days, once, without touching the saved setting."
+msgstr "«ذخیره تنظیم»: بازه و روشن/خاموشِ روزانه را ذخیره می‌کند — چیزی حذف نمی‌شود. «حذف همین حالا»: سبدهای غیرفعال (رهاشده / بازگشته / تبدیل‌شده) قدیمی‌تر از این تعداد روز را یک‌بار حذف می‌کند، بدون دست‌زدن به تنظیم ذخیره‌شده."
+
+msgid "Schedule (site time)"
+msgstr "زمان‌بندی (به وقت سایت)"
+
+msgid "Scheduled for"
+msgstr "زمان‌بندی‌شده برای"
+
+msgid "Scheduled jobs are overdue"
+msgstr "کارهای زمان‌بندی‌شده عقب افتاده‌اند"
+
+msgid "Scheduled jobs need a cron job on your hosting"
+msgstr "کارهای زمان‌بندی‌شده به یک کرون‌جاب روی میزبان شما نیاز دارند"
+
+msgid "Scheduler (WP-Cron)"
+msgstr "زمان‌بند (WP-Cron)"
+
+msgid "Scrapers"
+msgstr "اسکرپرها"
+
+msgid "Search"
+msgstr "جستجو"
+
+msgid "Search a product…"
+msgstr "جستجوی کالا…"
+
+msgid "Search by mobile…"
+msgstr "جستجو با شماره موبایل…"
+
+msgid "Search customer by name, email or ID…"
+msgstr "جستجوی مشتری با نام، ایمیل یا شناسه…"
+
+msgid "Search engines"
+msgstr "موتورهای جستجو"
+
+msgid "Search engines are indexing you"
+msgstr "موتورهای جستجو شما را نمایه می‌کنند"
+
+msgid "Search members by mobile, name or email…"
+msgstr "جستجوی اعضا با شماره همراه، نام یا رایانامه…"
+
+msgid "Search results"
+msgstr "نتایج جستجو"
+
+msgid "Search subject or department…"
+msgstr "جستجوی موضوع یا بخش…"
+
+msgid "Searches"
+msgstr "جستجوها"
+
+msgid "Secure handshake (TLS) + certificate"
+msgstr "دست‌دادن امن (TLS) و گواهی"
+
+msgid "Security check failed."
+msgstr "بررسی امنیتی ناموفق بود."
+
+msgid "See more results"
+msgstr "مشاهده موارد بیشتر"
+
+msgid "Selected:"
+msgstr "انتخاب‌شده:"
+
+msgid "Send"
+msgstr "ارسال"
+
+msgid "Send SMS through a relay (for gateways that refuse foreign server IPs)"
+msgstr "ارسال پیامک از راه بازپخش (برای درگاه‌هایی که IP سرور خارجی را نمی‌پذیرند)"
+
+msgid "Send from this IP"
+msgstr "ارسال از این IP"
+
+msgid "Send login code by SMS"
+msgstr "ارسال کد ورود با پیامک"
+
+msgid "Send message"
+msgstr "ارسال پیام"
+
+msgid "Send one SMS per abandoned cart (max one per customer per day)."
+msgstr "ارسال یک پیامک برای هر سبد رهاشده (حداکثر یک پیامک برای هر مشتری در روز)."
+
+msgid "Send reminder SMS"
+msgstr "ارسال پیامک یادآوری"
+
+msgid "Send reply"
+msgstr "ارسال پاسخ"
+
+msgid "Send test"
+msgstr "ارسال آزمایشی"
+
+msgid "Send the WhatsApp template to abandoned carts as well (uses the WhatsApp settings from the notifications page)."
+msgstr "قالب واتساپ نیز برای سبدهای رهاشده ارسال شود (از تنظیمات واتساپ در برگه اعلان‌ها استفاده می‌کند)."
+
+msgid "Send the next batch now"
+msgstr "همین حالا دسته بعدی را بفرست"
+
+msgid "Send the reminder SMS to every customer in arrears?"
+msgstr "پیامک یادآوری برای همه مشتریان بدهکار فرستاده شود؟"
+
+msgid "Send the reminder SMS to everyone whose payment has fallen due?"
+msgstr "پیامک یادآوری برای همه کسانی که بازپرداختشان سررسید شده فرستاده شود؟"
+
+msgid "Send this exact SMS to this number again?"
+msgstr "همین پیامک دوباره به همین شماره فرستاده شود؟"
+
+msgid "Send to all"
+msgstr "فرستادن به همه"
+
+msgid "Sender line (optional)"
+msgstr "خط فرستنده (اختیاری)"
+
+msgid "Sending a campaign, step by step"
+msgstr "فرستادن کمپین، گام‌به‌گام"
+
+msgid "Sending is limited on this account — contact the provider."
+msgstr "ارسال روی این حساب محدود شده — با سرویس‌دهنده تماس بگیرید."
+
+msgid "Sends an SMS login code."
+msgstr "یک کد آمد پیامکی می‌فرستد."
+
+msgid "Sends exactly what the campaign would send, to one number, and logs it — the cheapest way to catch a wrong variable before thousands go out."
+msgstr "دقیقاً همان چیزی را که کمپین می‌فرستد به یک شماره ارسال و ثبت می‌کند — ارزان‌ترین راه گرفتن متغیر اشتباه پیش از رفتن هزاران پیام."
+
+msgid "Sends the customer an SMS code."
+msgstr "برای مشتری یک کد پیامکی می‌فرستد."
+
+msgid "Sent"
+msgstr "ارسال شد"
+
+msgid "Sent as the \"coupon\" variable. Create the coupon in WooCommerce first."
+msgstr "به‌عنوان متغیر «coupon» ارسال می‌شود. کوپن را ابتدا در ووکامرس بسازید."
+
+msgid "Sent the moment the credit lands. Variables: name (auto-filled), amount, min, days. Empty = no SMS."
+msgstr "همان لحظه واریز فرستاده می‌شود. متغیرها: name (پرشدن خودکار)، amount، min، days. خالی = بدون پیامک."
+
+msgid "Sent to the admin the moment a customer places an order. Pattern variables: order."
+msgstr "به‌محض ثبت سفارش توسط مشتری برای مدیر ارسال می‌شود. متغیرهای پترن: order."
+
+msgid "Sent to the gateway as one text field, %d values separated by semicolons:"
+msgstr "آنچه در یک فیلد متن به درگاه رفت — %d مقدار، جداشده با نقطه‌ویرگول:"
+
+msgid "Sent when an order is paid (enters processing). Pattern variables: order."
+msgstr "هنگام پرداخت سفارش (ورود به وضعیت در حال انجام) ارسال می‌شود. متغیرهای پترن: order."
+
+msgid "Sent when an order is paid (enters processing). Pattern variables: order. Note: with both this and the alert above filled in, an ordinary order texts the shop twice — once on placement, once on payment. Leave one empty for a single message."
+msgstr "هنگام پرداخت سپارش (ورود به «در حال انجام») فرستاده می‌شود. متغیرهای الگو: order. توجه: اگر این و هشدار بالا هر دو پر باشند، برای هر سپارش عادی دو پیامک به فروشگاه می‌رود — یکی هنگام ثبت، یکی هنگام پرداخت. برای یک پیامک، یکی را خالی بگذارید."
+
+msgid "Sessions"
+msgstr "نشست‌ها"
+
+msgid "Set the API key and sender number on the main Vereskonto settings page."
+msgstr "کلید API و شماره فرستنده را در برگه تنظیمات اصلی ورسکونتو وارد کنید."
+
+msgid "Set the interval to every 5 minutes (*/5 * * * *). A shorter interval only adds load; a longer one delays cart reminders. Once the job runs, the “next run” times below start moving."
+msgstr "بازه را هر ۵ دقیقه بگذارید (*/5 * * * *). بازه کوتاه‌تر فقط بار می‌افزاید؛ بلندتر یادآوری سبد را دیر می‌کند. پس از اجرای کار، زمان‌های «اجرای بعدی» پایین شروع به حرکت می‌کنند."
+
+msgid "Set the template language code above exactly as chosen when creating the template (e.g. fa, de, en_US)."
+msgstr "کد زبان قالب در بالا را دقیقاً همان‌طور که هنگام ساخت قالب انتخاب کرده‌اید وارد کنید (مانند fa، de، en_US)."
+
+msgid "Settings"
+msgstr "تنظیمات"
+
+msgid "Several customers match — pick one:"
+msgstr "چند مشتری هم‌خوانی دارند — یکی را برگزینید:"
+
+msgid "Share your link — when an invited friend makes their first purchase of at least %2$s, %1$s is deposited to your wallet automatically."
+msgstr "لینک‌تان را به اشتراک بگذارید — وقتی دوستِ دعوت‌شده نخستین خریدش را به مبلغ دست‌کم %2$s انجام دهد، %1$s خودکار به کیف پول شما واریز می‌شود."
+
+msgid "Shop admin"
+msgstr "مدیر فروشگاه"
+
+msgid "Shop assistant"
+msgstr "دستیار فروشگاه"
+
+msgid "Shop chatbot"
+msgstr "چت‌بات فروشگاه"
+
+msgid "Shop now"
+msgstr "زود بخر"
+
+msgid "Shop questions"
+msgstr "پرسش‌های فروشگاه"
+
+msgid "Shoppers weighing this item also check:"
+msgstr "خریدارانی که این کالا را می‌سنجند، این‌ها را هم می‌بینند:"
+
+msgid "Short name"
+msgstr "نام کوتاه"
+
+msgid "Show again after (hours)"
+msgstr "نمایش دوباره پس از (ساعت)"
+
+msgid "Show to guests"
+msgstr "نمایش برای مهمانان"
+
+msgid "Shown as a click-to-copy code. Create the coupon in WooCommerce first."
+msgstr "به‌صورت کد قابل کپی با کلیک نمایش داده می‌شود. کوپن را ابتدا در ووکامرس بسازید."
+
+msgid "Shown as plain text. Leave empty to hide."
+msgstr "به‌صورت متن ساده نمایش داده می‌شود. برای پنهان‌کردن خالی بگذارید."
+
+msgid "Shown at the top of the wheel dialog (e.g. “Spin & win!”)."
+msgstr "بالای پنجره گردانه نمایش داده می‌شود (مثلاً «بچرخان و ببر!»)."
+
+msgid "Shown under the icon on the home screen — keep it to about 12 characters."
+msgstr "زیر نماد در صفحه خانه نمایش داده می‌شود — حدود ۱۲ نویسه نگهش دارید."
+
+msgid "Shows the wallet balance box above the payment methods for logged-in customers. Requires the classic checkout shortcode — see the Status page."
+msgstr "جعبه موجودی کیف پول را بالای روش‌های پرداخت برای مشتریان واردشده نشان می‌دهد. نیازمند شورت‌کد کلاسیک تسویه‌حساب است — برگه وضعیت را ببینید."
+
+msgid "Sign in and spin"
+msgstr "وارد شوید و بچرخانید"
+
+msgid "Sign in first so your prize can be added to your account."
+msgstr "نخست وارد شوید تا جایزه به حساب شما افزوده شود."
+
+msgid "Sign out all app sessions"
+msgstr "خروج همه نشست‌های اپ"
+
+msgid "Sign out every app on every device? Users will need to log in again."
+msgstr "همه اپ‌ها روی همه دستگاه‌ها خارج شوند؟ کاربران باید دوباره وارد شوند."
+
+msgid "Sign-in codes go through the gateway’s own one-time-code method, which also reaches numbers on the operator blacklist. Other messages use the shared service line with an approved pattern, so no dedicated line is required."
+msgstr "گذرشماره آمد از متد ویژه کد یک‌بارمصرف درگاه می‌رود که به شماره‌های لیست سیاه مخابرات هم می‌رسد. بقیه پیام‌ها از خط خدماتی اشتراکی با الگوی تأییدشده می‌روند، پس نیازی به خط اختصاصی نیست."
+
+msgid "Signed-in customers"
+msgstr "مشتریان واردشده"
+
+msgid "Signing keys are in place. Devices currently subscribed: %s"
+msgstr "کلیدهای امضا آماده‌اند. دستگاه‌های مشترک کنونی: %s"
+
+msgid "Signing keys will be created automatically the first time this is switched on."
+msgstr "کلیدهای امضا نخستین بار که این را روشن کنید خودکار ساخته می‌شوند."
+
+msgid "Silver"
+msgstr "نقره‌ای"
+
+msgid "Silver tier"
+msgstr "رتبه نقره‌ای"
+
+msgid "Size"
+msgstr "حجم"
+
+msgid "Smart button link"
+msgstr "لینک هوشمند دکمه"
+
+msgid "Smart shop"
+msgstr "فروشگاه هوشمند"
+
+msgid "So far: %1$s of %2$s invitees purchased — %3$s deposited."
+msgstr "تاکنون: %1$s از %2$s دعوت‌شده خرید کرده‌اند — %3$s واریز شده."
+
+msgid "Some Iranian gateways only accept requests from an Iranian IP address. Instead of moving the whole site to an Iranian server, you can put a small relay there and send only the SMS requests through it. Everything else on the site keeps connecting directly."
+msgstr "برخی درگاه‌های ایرانی فقط درخواست‌هایی را می‌پذیرند که از IP ایران بیایند. به‌جای انتقال کل سایت به سرور ایران، می‌توانید یک بازپخش کوچک آن‌جا بگذارید و فقط درخواست‌های پیامک را از آن بفرستید. بقیه سایت مستقیم وصل می‌ماند."
+
+msgid "Some plugin files are missing on the server"
+msgstr "برخی فایل‌های افزونه روی سرور نیستند"
+
+msgid "Some scraper traffic"
+msgstr "کمی ترافیک اسکرپر"
+
+msgid "Something went wrong — please try again later."
+msgstr "خطایی رخ داد — لطفاً بعداً دوباره تلاش کنید."
+
+msgid "Sorry — I could not answer that just now. Please try again."
+msgstr "ببخشید — الان نتوانستم پاسخ دهم. لطفاً دوباره تلاش کنید."
+
+msgid "Sorry — something went wrong on our side. Please try again, or ask us directly."
+msgstr "ببخشید — از سمت ما خطایی رخ داد. لطفاً دوباره تلاش کنید، یا مستقیم از ما بپرسید."
+
+msgid "Spin & win!"
+msgstr "بچرخان و ببر!"
+
+msgid "Spin the wheel"
+msgstr "گردانه شانس"
+
+msgid "Start import"
+msgstr "شروع بارگیری"
+
+msgid "State"
+msgstr "وضعیت"
+
+msgid "Statement"
+msgstr "صورت‌حساب"
+
+msgid "Statistics window (days)"
+msgstr "پنجره آمار (روز)"
+
+msgid "Status"
+msgstr "وضعیت"
+
+msgid "Still owed"
+msgstr "مانده‌ی بدهی"
+
+msgid "Stop after this many messages (0 = send to the whole audience)."
+msgstr "پس از این تعداد پیام متوقف شود (۰ = ارسال به همه مخاطبان)."
+
+msgid "Stopped. Reload and try again."
+msgstr "متوقف شد. برگه را دوباره بار کنید و از نو تلاش کنید."
+
+msgid "Store conversations"
+msgstr "ذخیره گفتگوها"
+
+msgid "Store name, version, server time (health check)."
+msgstr "نام فروشگاه، نسخه، زمان سرور (بررسی سلامت)."
+
+msgid "Strong engagement"
+msgstr "درگیری بالای کاربران"
+
+msgid "Subject"
+msgstr "موضوع"
+
+msgid "Subject and message are required."
+msgstr "موضوع و متن پیام الزامی است."
+
+msgid "Submit a sitemap in Google Search Console and check the site is not set to discourage indexing."
+msgstr "در گوگل سرچ کنسول نقشه سایت ثبت کنید و مطمئن شوید سایت روی «منع نمایه‌سازی» تنظیم نشده."
+
+msgid "Submit answer"
+msgstr "ثبت پاسخ"
+
+msgid "Submit credit request"
+msgstr "ثبت درخواست اعتبار"
+
+msgid "Submit review & earn %d points"
+msgstr "ثبت دیدگاه و دریافت %d امتیاز"
+
+msgid "Submit ticket"
+msgstr "ثبت تیکت"
+
+msgid "Sunday"
+msgstr "یکشنبه"
+
+msgid "Support"
+msgstr "پشتیبانی"
+
+msgid "Support WhatsApp number"
+msgstr "شماره واتساپ پشتیبانی"
+
+msgid "Support phone number"
+msgstr "شماره تلفن پشتیبانی"
+
+msgid "Support tickets"
+msgstr "تیکت‌های پشتیبانی"
+
+msgid "Sure — send me your order number (e.g. \"order status 1234\") and I will check it."
+msgstr "حتماً — شماره سفارش را بفرستید (مثلاً «وضعیت سفارش 1234») تا بررسی کنم."
+
+msgid "Survey invitation: %s"
+msgstr "دعوت به نظرسنجی: %s"
+
+msgid "Survey invitations"
+msgstr "دعوت‌های نظرسنجی"
+
+msgid "Surveys"
+msgstr "دیدگاه"
+
+msgid "Switch it on in the settings below, otherwise the app cannot connect to your shop."
+msgstr "آن را در تنظیمات پایین روشن کنید، وگرنه اپ نمی‌تواند به فروشگاه شما وصل شود."
+
+msgid "Switch the connection on in the settings below and save."
+msgstr "اتصال را در تنظیمات پایین روشن کنید و ذخیره کنید."
+
+msgid "Table"
+msgstr "جدول"
+
+msgid "Tablet"
+msgstr "تبلت"
+
+msgid "Tell me which product you mean (or ask about one first), and I will suggest matching items."
+msgstr "بگویید کدام کالا را می‌گویید (یا اول درباره یکی بپرسید) تا اقلام مکملش را پیشنهاد بدهم."
+
+msgid "Template language code"
+msgstr "کد زبان قالب"
+
+msgid "Terms and conditions"
+msgstr "شرایط و ضوابط"
+
+msgid "Test message FAILED — open SMS Logs → Message details for the gateway reason."
+msgstr "پیام آزمایشی ناموفق بود — گزارش پیامک ← جزئیات پیام را برای علت درگاه ببینید."
+
+msgid "Test message sent — check the phone and the SMS log."
+msgstr "پیام آزمایشی ارسال شد — گوشی و گزارش پیامک را بررسی کنید."
+
+msgid "Test send (before queueing a campaign)"
+msgstr "ارسال آزمایشی (پیش از صف‌کردن کمپین)"
+
+msgid "Test the checkout on a real phone now and then: tap targets, the address form, and how long the page takes on mobile data."
+msgstr "هرچند وقت تسویه را روی یک گوشی واقعی بیازمایید: اندازه دکمه‌ها، فرم نشانی، و زمان بارگذاری روی داده همراه."
+
+msgid "Test the connection now"
+msgstr "همین حالا اتصال را بیازما"
+
+msgid "Test with a manual send from the Cart Tracking screen and check the SMS Logs page: WhatsApp rows show channel \"whatsapp\" together with the raw gateway response."
+msgstr "با ارسال دستی از صفحه ردیابی سبد آزمایش کنید و برگه گزارش پیامک‌ها را ببینید: ردیف‌های واتساپ کانال «whatsapp» و پاسخ خام درگاه را نشان می‌دهند."
+
+msgid "Tested address"
+msgstr "نشانی آزموده‌شده"
+
+msgid "Text the shop when an order is cancelled"
+msgstr "پیامک به فروشگاه هنگام لغو سپارش"
+
+msgid "Thank you for shopping with us — free dispatch, genuine products, easy returns."
+msgstr "از خریدتان سپاسگزاریم — گسیل رایگان، کالای نژاده، بازگشت آسان."
+
+msgid "Thank you! How can I help you?"
+msgstr "ممنون! چطور می‌تونم کمک کنم؟"
+
+msgid "Thank-you festival credit"
+msgstr "اعتبار جشنواره سپاس"
+
+msgid "Thanks for your feedback!"
+msgstr "از بازخوردتان سپاسگزاریم!"
+
+msgid "Thanks for your order!"
+msgstr "از سفارش شما سپاسگزاریم!"
+
+msgid "Thanks! %d points were added to your club balance — convert them to wallet credit any time."
+msgstr "سپاس! %d امتیاز به موجودی باشگاه شما افزوده شد — هر زمان خواستید به اعتبار کیف پول تبدیلش کنید."
+
+msgid "That customer has no installment file yet."
+msgstr "این مشتری هنوز پرونده‌ی اقساطی ندارد."
+
+msgid "That customer no longer exists."
+msgstr "این مشتری دیگر وجود ندارد."
+
+msgid "That exact detail is not stated for this product; its specs are:"
+msgstr "این جزئیات دقیق برای این کالا درج نشده؛ مشخصاتش این‌هاست:"
+
+msgid "That message is a bit long — please shorten it and send again."
+msgstr "این پیام کمی بلند است — لطفاً کوتاهش کنید و دوباره بفرستید."
+
+msgid "That one deserves a proper answer from our team rather than a guess from me."
+msgstr "این پرسش پاسخ درستی از تیم ما می‌خواهد، نه حدس من."
+
+msgid "The 1.13 migration has not run — deactivate and reactivate the plugin once, then re-check."
+msgstr "مایگریشن 1.13 اجرا نشده — یک‌بار افزونه را غیرفعال و دوباره فعال کنید، سپس دوباره بررسی کنید."
+
+msgid "The IBAN must start with IR followed by 24 digits, and must belong to the applicant."
+msgstr "شماره شبا باید با IR و ۲۴ رقم پس از آن باشد و به نام خود متقاضی باشد."
+
+msgid "The SMS gateway is not configured yet."
+msgstr "درگاه پیامک هنوز پیکربندی نشده است."
+
+msgid "The SMS gateway is not responding, so sending is paused for a few minutes."
+msgstr "درگاه پیامک پاسخ نمی‌دهد، پس ارسال چند دقیقه متوقف شده است."
+
+msgid "The SMS gateway is not responding, so the code was emailed to you instead."
+msgstr "درگاه پیامک پاسخ نمی‌دهد، پس گذرشماره به‌جایش به رایانامه شما فرستاده شد."
+
+msgid "The account is inactive."
+msgstr "حساب غیرفعال است."
+
+msgid "The account is not verified yet."
+msgstr "حساب هنوز تأیید نشده است."
+
+msgid "The amount is deducted from this plan straight away and the customer gets the same confirmation SMS as an online payment. More than what is still owed cannot be recorded."
+msgstr "مبلغ بی‌درنگ از این وام کم می‌شود و همان پیامک تأیید پرداخت برخط برای مشتری فرستاده می‌شود. بیش از مانده‌ی بدهی نمی‌توان ثبت کرد."
+
+msgid "The app never handles passwords. It asks for a one-time SMS code, then exchanges it for a token that is sent with every later request."
+msgstr "اپ هرگز با گذرواژه سروکار ندارد. یک کد پیامکی یک‌بارمصرف می‌خواهد، سپس آن را با توکنی مبادله می‌کند که با هر درخواست بعدی فرستاده می‌شود."
+
+msgid "The app stores the token and sends it on every protected request as a header:"
+msgstr "اپ توکن را ذخیره و در هر درخواست محافظت‌شده به‌صورت هدر می‌فرستد:"
+
+msgid "The approved pattern code from your SMS panel. Variable values must stay short and non-promotional (a name, a code, a number) — promotional wording belongs in the pattern text approved at the provider."
+msgstr "کد پترن تأییدشده از پنل پیامکی شما. مقدار متغیرها باید کوتاه و غیرتبلیغاتی بماند (یک نام، یک کد، یک عدد) — متن تبلیغاتی جایش در متن پترنِ تأییدشده نزد خدمات‌دهنده است."
+
+msgid "The biggest single source of visits is %s."
+msgstr "بزرگ‌ترین منبع بازدید %s است."
+
+msgid "The bodyId of an approved pattern in your Melipayamak panel. The promotional wording lives inside that approved pattern; the values you send below only fill its blanks and must stay short (a name, a number, a code)."
+msgstr "شناسه (bodyId) یک الگوی تأییدشده در پنل ملی‌پیامک شما. متن تبلیغاتی داخل همان الگوی تأییدشده است؛ مقدارهایی که پایین می‌فرستید فقط جاهای خالی را پر می‌کنند و باید کوتاه بمانند (یک نام، یک عدد، یک کد)."
+
+msgid "The cart is not available."
+msgstr "سبد خرید در دسترس نیست."
+
+msgid "The code could not be emailed right now. Please try again in a moment."
+msgstr "گذرشماره در این لحظه با رایانامه فرستاده نشد. لطفاً کمی بعد دوباره تلاش کنید."
+
+msgid "The code could not be sent right now. Please try again in a moment."
+msgstr "گذرشماره در این لحظه فرستاده نشد. لطفاً کمی بعد دوباره تلاش کنید."
+
+msgid "The code is incorrect or has expired."
+msgstr "کد نادرست است یا منقضی شده."
+
+msgid "The connection opens but the gateway never answers. Show this page to your host, and also ask IPPanel whether your account or server IP is blocked on their side."
+msgstr "اتصال باز می‌شود ولی درگاه هرگز پاسخ نمی‌دهد. این برگه را به میزبان خود نشان دهید، و از IPPanel هم بپرسید آیا حساب یا IP سرور شما نزد آن‌ها مسدود است."
+
+msgid "The connection opens but the gateway never answers. Show this page to your host, and also ask your SMS provider whether your account or server IP is blocked on their side."
+msgstr "اتصال باز می‌شود ولی درگاه هرگز پاسخ نمی‌دهد. این برگه را به میزبان خود نشان دهید، و از سرویس‌دهنده پیامک هم بپرسید آیا حساب یا IP سرور شما نزد آن‌ها مسدود است."
+
+msgid "The copy could not be created. Make sure the icon was uploaded to this site’s media library."
+msgstr "نسخه ساخته نشد. مطمئن شوید نماد در کتابخانه رسانه همین سایت بارگذاری شده است."
+
+msgid "The credit ceiling was raised."
+msgstr "سقف اعتبار افزایش یافت."
+
+msgid "The customer’s profile."
+msgstr "نمایه مشتری."
+
+msgid "The customer’s recent orders."
+msgstr "سپارش‌های اخیر مشتری."
+
+msgid "The gateway rejected the request."
+msgstr "درگاه درخواست را رد کرد."
+
+msgid "The gateway will then see the relay’s IP address — register that one in your panel’s allowed-IP list, not the server’s own."
+msgstr "آن‌گاه درگاه، IP بازپخش را می‌بیند — همان را در فهرست IPهای مجاز پنل ثبت کنید، نه IP خود سرور را."
+
+msgid "The guarantee cheque/promissory note amount must be TWICE the requested credit."
+msgstr "مبلغ چک/سفته ضمانت باید دو برابر اعتبار درخواستی باشد."
+
+msgid "The instalment gateway is switched off in WooCommerce payment settings."
+msgstr "درگاه اقساطی در تنظیمات پرداخت ووکامرس خاموش است."
+
+msgid "The instalment module is not available."
+msgstr "ماژول اقساط در دسترس نیست."
+
+msgid "The message text contains a blocked word."
+msgstr "متن پیام شامل واژه‌ای مسدود است."
+
+msgid "The method only appears for the customer who owns the credit, while logged in, and while the remaining credit covers the ENTIRE order total (including shipping). Testing with a different account than the plan owner is the most common reason it stays hidden."
+msgstr "این روش فقط برای همان مشتریِ صاحب اعتبار، در حالت واردشده، و تا وقتی اعتبار باقی‌مانده کل مبلغ سفارش (با احتساب حمل) را بپوشاند نمایش داده می‌شود. رایج‌ترین علت پنهان‌ماندن: تست با حسابی غیر از صاحب طرح."
+
+msgid "The method shows at checkout only when: the customer is logged in, has an active credit plan, and the remaining credit covers the whole order (including shipping). It never shows for guests or on the Checkout Block."
+msgstr "این روش فقط زمانی در تسویه‌حساب نشان داده می‌شود که: مشتری وارد شده باشد، طرح اعتباری فعال داشته باشد و اعتبار باقی‌مانده کل سفارش (با حمل) را بپوشاند. برای مهمان‌ها یا روی بلوک تسویه‌حساب هرگز نمایش داده نمی‌شود."
+
+msgid "The mobile API is OFF."
+msgstr "API موبایل خاموش است."
+
+msgid "The mobile API is ON."
+msgstr "API موبایل روشن است."
+
+msgid "The mobile API module is not available."
+msgstr "ماژول API موبایل در دسترس نیست."
+
+msgid "The mobile app connection is OFF."
+msgstr "اتصال اپ موبایل خاموش است."
+
+msgid "The mobile app connection is ON."
+msgstr "اتصال اپ موبایل روشن است."
+
+msgid "The mobile number is not valid."
+msgstr "شماره موبایل معتبر نیست."
+
+msgid "The most-used search was “%1$s” (%2$s times), across %3$s different terms in this range."
+msgstr "پرکاربردترین جستجو «%1$s» بود (%2$s بار)، در میان %3$s واژه متفاوت در این بازه."
+
+msgid "The name lookup failed. Ask your host to fix DNS resolution on the server."
+msgstr "جستجوی نام شکست خورد. از میزبان خود بخواهید حل نام (DNS) روی سرور را درست کند."
+
+msgid "The national ID is not valid."
+msgstr "کد ملی معتبر نیست."
+
+msgid "The notifications module is not available."
+msgstr "ماژول اعلان‌ها در دسترس نیست."
+
+msgid "The panel rejected the values without saying which one. It is not sent from here again until something changes at the panel: the approved pattern must expect exactly as many variables as were sent above, in the same order, and shared-line patterns usually refuse a variable that carries a web address or an unapproved word. Try the same pattern ID with the same values in the provider's own test form — whichever combination is accepted there tells you what to change."
+msgstr "پنل مقدارها را رد کرده و نگفته کدام‌یک. تا در پنل چیزی عوض نشود، فرستادن دوباره از اینجا نتیجه نمی‌دهد: الگوی تأییدشده باید دقیقاً همین تعداد متغیر بالا را، به همین ترتیب، بخواهد؛ و الگوهای خط اشتراکی معمولاً متغیری را که نشانی وب یا واژه‌ی تأییدنشده دارد نمی‌پذیرند. همین شناسه‌ی الگو را با همین مقدارها در فرم آزمایش خود پنل بفرستید — هر ترکیبی که آنجا پذیرفته شد، همان را باید اینجا تنظیم کرد."
+
+msgid "The panel username or password is wrong."
+msgstr "نام کاربری یا گذرواژه پنل نادرست است."
+
+msgid "The pattern TEXT itself is registered and approved at your SMS provider — that is where promotional wording is allowed. Here you only keep the approved codes so campaign forms offer them ready-made."
+msgstr "متن پترن نزد خدمات‌دهنده پیامک ثبت و تأیید می‌شود — جای مجاز متن تبلیغاتی همان‌جاست. اینجا فقط کدهای تأییدشده را نگه می‌دارید تا فرم‌های کمپین آماده پیشنهادشان بدهند."
+
+msgid "The port is closed. Ask your host to allow outgoing connections to edge.ippanel.com on port 443."
+msgstr "درگاه بسته است. از میزبان خود بخواهید اتصال بیرون‌رونده به edge.ippanel.com روی درگاه ۴۴۳ را باز کند."
+
+msgid "The port is closed. Ask your host to allow outgoing connections to this address on port 443."
+msgstr "درگاه بسته است. از میزبان خود بخواهید اتصال بیرون‌رونده به این نشانی روی درگاه ۴۴۳ را باز کند."
+
+msgid "The port opens instantly but the secure handshake never completes. That pattern means something between your server and the gateway is dropping the encrypted traffic — a network filter or an outbound proxy. Show this page to your host and ask whether outbound HTTPS to edge.ippanel.com is being inspected or filtered."
+msgstr "درگاه بی‌درنگ باز می‌شود ولی دست‌دادن امن هرگز کامل نمی‌شود. این الگو یعنی چیزی میان سرور شما و درگاه، ترافیک رمزنگاری‌شده را می‌اندازد — یک پالایه شبکه یا پراکسی خروجی. این برگه را به میزبان خود نشان دهید و بپرسید آیا HTTPS بیرون‌رونده به edge.ippanel.com بازرسی یا پالایش می‌شود."
+
+msgid "The port opens instantly but the secure handshake never completes. Traffic is being accepted and then silently dropped, which happens in two situations: a filter on your host inspecting outgoing HTTPS, or the gateway blocking your server. Do both — send this page to your host, and send IPPanel the outgoing IP shown above and ask them to allow it. If your site is hosted outside Iran, that block is the most likely cause."
+msgstr "درگاه بی‌درنگ باز می‌شود ولی دست‌دادن امن هرگز کامل نمی‌شود. ترافیک پذیرفته و سپس بی‌صدا انداخته می‌شود، که در دو حالت رخ می‌دهد: پالایه‌ای روی میزبان شما که HTTPS بیرون‌رونده را بازرسی می‌کند، یا مسدودکردن سرور شما توسط خود درگاه. هر دو را انجام دهید — این برگه را برای میزبان بفرستید، و IP خروجی بالا را به IPPanel بدهید و بخواهید بازش کنند. اگر سایت شما خارج از ایران میزبانی می‌شود، همین مسدودی محتمل‌ترین علت است."
+
+msgid "The port opens instantly but the secure handshake never completes. Traffic is being accepted and then silently dropped, which happens in two situations: a filter on your host inspecting outgoing HTTPS, or the gateway blocking your server. Do both — send this page to your host, and send your SMS provider the outgoing IP shown above and ask them to allow it. If your site is hosted outside Iran, that block is the most likely cause."
+msgstr "درگاه بی‌درنگ باز می‌شود ولی دست‌دادن امن هرگز کامل نمی‌شود. ترافیک پذیرفته و سپس بی‌صدا انداخته می‌شود، که در دو حالت رخ می‌دهد: پالایه‌ای روی میزبان که HTTPS بیرون‌رونده را بازرسی می‌کند، یا مسدودکردن سرور شما توسط خود درگاه. هر دو را انجام دهید — این برگه را برای میزبان بفرستید، و IP خروجی بالا را به سرویس‌دهنده پیامک بدهید و بخواهید بازش کنند. اگر سایت شما خارج از ایران میزبانی می‌شود، همین مسدودی محتمل‌ترین علت است."
+
+msgid "The prize could not be added — please contact us."
+msgstr "جایزه افزوده نشد — لطفاً با ما تماس بگیرید."
+
+msgid "The provider is updating their system — try again shortly."
+msgstr "سرویس‌دهنده در حال به‌روزرسانی سامانه است — کمی بعد دوباره تلاش کنید."
+
+msgid "The recorded payment was reversed and the plan restored."
+msgstr "پرداخت ثبت‌شده برگردانده شد و بدهی به حالت پیشین بازگشت."
+
+msgid "The reminder uses the \"reminder\" pattern configured on the Wallet page (variables: name, title, amount, due)."
+msgstr "یادآوری از پترن «یادآوری» تنظیم‌شده در برگه کیف پول استفاده می‌کند (متغیرها: name، title، amount، due)."
+
+msgid "The request was not sent."
+msgstr "درخواست فرستاده نشد."
+
+msgid "The request works only when the certificate check is skipped, so the server has an out-of-date certificate bundle. Ask your host to update the CA bundle (ca-certificates) and the openssl.cafile setting in PHP."
+msgstr "درخواست فقط وقتی کار می‌کند که بررسی گواهی رد شود، پس بسته گواهی سرور کهنه است. از میزبان بخواهید بسته CA (ca-certificates) و تنظیم openssl.cafile در PHP را به‌روز کند."
+
+msgid "The requested credit may not exceed %s."
+msgstr "اعتبار درخواستی نمی‌تواند از %s بیشتر باشد."
+
+msgid "The reward lands automatically after the invited friend's FIRST order at or above the minimum — once per friend. The SMS pattern receives name (auto-filled) and amount as variables; leave it empty to skip the SMS."
+msgstr "پاداش پس از نخستین سفارشِ دوستِ دعوت‌شده به مبلغ حداقل تعیین‌شده، خودکار واریز می‌شود — یک‌بار برای هر دوست. پترن پیامک متغیرهای name (پرشدن خودکار) و amount را می‌گیرد؛ خالی بگذارید تا پیامکی نرود."
+
+msgid "The sender number is not valid."
+msgstr "شماره فرستنده معتبر نیست."
+
+msgid "The server could NOT reach the gateway (gave up after %s ms). This is a hosting/network problem, not a plugin setting — ask your host to allow outgoing connections to edge.ippanel.com."
+msgstr "سرور نتوانست به درگاه برسد (پس از %s میلی‌ثانیه رها کرد). این مشکل میزبان/شبکه است، نه تنظیمات افزونه — از میزبان خود بخواهید اتصال بیرون‌رونده به edge.ippanel.com را باز کند."
+
+msgid "The server could not resolve the gateway name (DNS)."
+msgstr "سرور نتوانست نام درگاه را بیابد (DNS)."
+
+msgid "The server reached the gateway in %s ms — sending should work."
+msgstr "سرور در %s میلی‌ثانیه به درگاه رسید — ارسال باید کار کند."
+
+msgid "The text message could not be delivered. Please enter your email address instead and we will send the code there."
+msgstr "پیامک به مقصد نرسید. لطفاً به‌جایش رایانامه خود را وارد کنید تا گذرشماره را همان‌جا بفرستیم."
+
+msgid "The variables are filled BY POSITION, not by name: the first blank in your pattern gets the first variable listed under the field, the second blank the second, and so on. Define them in the pattern in exactly that order."
+msgstr "متغیرها بر پایه جایگاه پر می‌شوند نه نام: نخستین جای خالی الگو، نخستین متغیر فهرست‌شده زیر فیلد را می‌گیرد، دومی دومین را و همین‌طور. در الگو دقیقاً با همان ترتیب تعریفشان کنید."
+
+msgid "Their due day has arrived and this month's installment is still open — but they are otherwise on schedule. Anyone already behind from earlier months is listed under \"In arrears\" instead, so nobody appears twice."
+msgstr "روز سررسیدشان رسیده و قسط این ماه هنوز باز است — اما در بقیه ماه‌ها عقب نیستند. هرکس از ماه‌های پیشین عقب مانده باشد، در بخش «بدهکاران قسط» می‌آید، پس هیچ‌کس دوبار نمایش داده نمی‌شود."
+
+msgid "Their payment window is open right now and this month's installment is still unpaid — but they are otherwise on schedule. Anyone already behind from earlier months is listed under \"In arrears\" instead, so nobody appears twice."
+msgstr "بازه‌ی پرداختشان هم‌اکنون باز است و قسط این ماه هنوز پرداخت نشده — اما در بقیه‌ی ماه‌ها عقب نیستند. هرکس از ماه‌های پیشین عقب مانده باشد، در بخش «بدهکاران قسط» می‌آید، پس هیچ‌کس دوبار نمایش داده نمی‌شود."
+
+msgid "Theme colour"
+msgstr "رنگ زمینه"
+
+msgid "There are more orders — click the import button again to continue."
+msgstr "سفارش‌های بیشتری هست — برای ادامه دوباره روی دکمه بارگیری کلیک کنید."
+
+msgid "These apply to every channel below — Bale, WhatsApp, SMS and browser notifications. Switching one off stops that message everywhere at once."
+msgstr "این‌ها بر همه کانال‌های پایین اثر می‌گذارند — بله، واتساپ، پیامک و آگاه‌سازی مرورگر. خاموش‌کردن یکی، آن پیام را همه‌جا یکجا متوقف می‌کند."
+
+msgid "These are not due yet. You may pay any of them early by selecting them below."
+msgstr "هنوز سررسید نشده‌اند. می‌توانید هر کدام را زودتر با انتخاب پرداخت کنید."
+
+msgid "These go well with it:"
+msgstr "این‌ها با آن جور درمی‌آیند:"
+
+msgid "These notes are generated automatically from the numbers above — treat them as a starting point, not financial advice."
+msgstr "این یادداشت‌ها خودکار از اعداد بالا ساخته شده‌اند — آن‌ها را نقطه شروع بدانید، نه مشاوره مالی."
+
+msgid "These searched terms returned no product: %s"
+msgstr "این واژه‌های جستجوشده هیچ کالایی نیاوردند: %s"
+
+msgid "This address is not in the media library, so the size cannot be checked. Upload the icon here to be certain browsers accept it."
+msgstr "این نشانی در کتابخانه رسانه نیست، پس اندازه‌اش بررسی‌شدنی نیست. نماد را همین‌جا بارگذاری کنید تا مطمئن شوید مرورگرها می‌پذیرند."
+
+msgid "This connection lets your customers use your shop from a phone app: they sign in with their mobile number and see their wallet, points and orders — no password needed."
+msgstr "این اتصال به مشتریان شما امکان می‌دهد فروشگاه‌تان را از یک اپ گوشی به کار ببرند: با شماره همراه وارد می‌شوند و کیف پول، امتیاز و سپارش‌هایشان را می‌بینند — بدون نیاز به گذرواژه."
+
+msgid "This customer has not used credit yet."
+msgstr "این مشتری هنوز از اعتبار استفاده نکرده."
+
+msgid "This happens when an upload finishes only partly. Every visit then hits an error, which slows the site and can produce 503 responses. Delete the plugin folder over FTP and upload the full package again."
+msgstr "این وقتی رخ می‌دهد که آپلود ناقص تمام شود. آن‌گاه هر بازدید به خطا می‌خورد، سایت کند می‌شود و پاسخ ۵۰۳ می‌دهد. پوشه افزونه را با FTP پاک کنید و بسته کامل را دوباره آپلود کنید."
+
+msgid "This image is %1$d×%2$d. It has to be square, or the icon will look stretched."
+msgstr "این تصویر %1$d×%2$d است. باید مربع باشد وگرنه نماد کشیده دیده می‌شود."
+
+msgid "This image is only %d px. Browsers need at least 192 px before they will offer to install the app."
+msgstr "این تصویر تنها %d پیکسل است. مرورگرها دست‌کم ۱۹۲ پیکسل می‌خواهند تا نصب اپلیکیشن را پیشنهاد دهند."
+
+msgid "This is a good moment to surface upsells and bundles; the audience is receptive."
+msgstr "لحظه خوبی است برای نمایش پیشنهادهای مکمل و بسته‌ای؛ مخاطب پذیراست."
+
+msgid "This is a spending limit, not a debt: nothing is owed and no instalment falls due until the credit is used at checkout. A separate loan statement is issued for each purchase made with it."
+msgstr "این یک سقف خرید است، نه بدهی: تا زمانی که اعتبار در تسویه‌حساب به کار نرود، چیزی بدهکار نیستید و هیچ قسطی سررسید نمی‌شود. برای هر خریدی که با آن انجام شود، صورت‌حساب وام جداگانه صادر می‌شود."
+
+msgid "This is already the most affordable option in its category right now."
+msgstr "همین حالا هم این به‌صرفه‌ترین گزینه دسته خودش است."
+
+msgid "This is already the top option in its category right now."
+msgstr "همین حالا هم این بالاترین گزینه دسته خودش است."
+
+msgid "This is the address Bale calls when a customer taps Start. Save your token above first, then register it."
+msgstr "این نشانی‌ای است که بله هنگام زدن «شروع» توسط مشتری صدا می‌زند. اول توکن بالا را ذخیره کنید، سپس ثبتش کنید."
+
+msgid "This is what I found on the site about that:"
+msgstr "این را در سایت درباره‌اش پیدا کردم:"
+
+msgid "This loan is fully settled. Thank you!"
+msgstr "این وام به‌طور کامل تسویه شده است. سپاسگزاریم!"
+
+msgid "This mobile number is already used by another account."
+msgstr "این شماره همراه قبلاً برای حساب دیگری استفاده شده است."
+
+msgid "This month"
+msgstr "این ماه"
+
+msgid "This server’s outgoing IP (give this to the gateway)"
+msgstr "IP خروجی این سرور (این را به درگاه بدهید)"
+
+msgid "This site is not served over HTTPS, so browsers will ignore it."
+msgstr "این سایت روی HTTPS ارائه نمی‌شود، پس مرورگرها نادیده‌اش می‌گیرند."
+
+msgid "This statement reflects the shop ledger at the moment it was opened."
+msgstr "این صورت‌حساب، دفتر فروشگاه را در همان لحظه‌ی گشودن نشان می‌دهد."
+
+msgid "This week"
+msgstr "این هفته"
+
+msgid "This year"
+msgstr "امسال"
+
+msgid "Thursday"
+msgstr "پنجشنبه"
+
+msgid "Ticket SMS"
+msgstr "پیامک تیکت"
+
+msgid "Ticket departments"
+msgstr "بخش‌های تیکت"
+
+msgid "Ticket not found."
+msgstr "تیکت پیدا نشد."
+
+msgid "Ticket notifications"
+msgstr "اعلان‌های تیکت"
+
+msgid "Tickets"
+msgstr "تیکت‌ها"
+
+msgid "Tier"
+msgstr "رتبه"
+
+msgid "Tier benefits"
+msgstr "امکانات رتبه‌ها"
+
+msgid "Tier benefits (shown to customers, one per line)"
+msgstr "امکانات رتبه‌ها (نمایش به مشتریان، هر خط یک مورد)"
+
+msgid "Tier thresholds (points earned this year)"
+msgstr "آستانه رتبه‌ها (امتیاز کسب‌شده در سال جاری)"
+
+msgid "Tiers, Top members and the customer club tab update automatically, because they all read this ledger."
+msgstr "رتبه‌ها، اعضای برتر و برگه باشگاه مشتری خودکار به‌روز می‌شوند، چون همه از همین دفتر می‌خوانند."
+
+msgid "Title"
+msgstr "عنوان"
+
+msgid "Title shown to the customer"
+msgstr "عنوانی که به مشتری نشان داده می‌شود"
+
+msgid "To"
+msgstr "تا"
+
+msgid "Today"
+msgstr "امروز"
+
+msgid "Token and phone number ID are set."
+msgstr "توکن و شناسه شماره تلفن تنظیم شده‌اند."
+
+msgid "Token is invalid or expired."
+msgstr "توکن نامعتبر یا منقضی است."
+
+msgid "Token lifetime (days)"
+msgstr "طول عمر توکن (روز)"
+
+msgid "Tokens expire; when a protected call returns 401, have the app send the customer through the SMS login again."
+msgstr "توکن‌ها منقضی می‌شوند؛ وقتی یک فراخوان محافظت‌شده ۴۰۱ برگرداند، اپ باید مشتری را دوباره از مسیر آمد پیامکی عبور دهد."
+
+msgid "Too many requests. Please try again later."
+msgstr "تعداد درخواست‌ها بیش از حد است. بعداً دوباره تلاش کنید."
+
+msgid "Top members"
+msgstr "اعضای برتر"
+
+msgid "Top up"
+msgstr "افزایش موجودی"
+
+msgid "Top-up reversal"
+msgstr "برگشت شارژ"
+
+msgid "Total"
+msgstr "جمع"
+
+msgid "Total amount"
+msgstr "مبلغ کل"
+
+msgid "Total to pay"
+msgstr "جمع قابل پرداخت"
+
+msgid "Track cart activity and history."
+msgstr "ردیابی فعالیت و تاریخچه سبد خرید."
+
+msgid "Tracking code"
+msgstr "کد رهگیری"
+
+msgid "Tracking is currently OFF — the dashboard shows past data only. Enable it below to collect new visits."
+msgstr "ردیابی اکنون خاموش است — داشبورد فقط داده‌های گذشته را نشان می‌دهد. برای ثبت بازدیدهای تازه، پایین صفحه فعالش کنید."
+
+msgid "Tracking settings"
+msgstr "تنظیمات ردیابی"
+
+msgid "Traffic is slowing down"
+msgstr "ترافیک در حال کاهش است"
+
+msgid "Traffic is trending up"
+msgstr "ترافیک رو به رشد است"
+
+msgid "Traffic leans on one source"
+msgstr "ترافیک به یک منبع تکیه دارد"
+
+msgid "Traffic sources"
+msgstr "منابع ترافیک"
+
+msgid "Try again / blank"
+msgstr "دوباره تلاش کنید / پوچ"
+
+msgid "Tuesday"
+msgstr "سه‌شنبه"
+
+msgid "Turn it on or off under Vereskonto → Mobile API settings (the api_enabled option). While off, all endpoints below return 404."
+msgstr "آن را از Vereskonto → تنظیمات API موبایل (گزینه api_enabled) روشن/خاموش کنید. تا وقتی خاموش است، همه نقاط پایانی زیر ۴۰۴ برمی‌گردانند."
+
+msgid "Turn off automatic festival credit and clear its settings?"
+msgstr "اعتبار جشنواره خودکار خاموش و تنظیماتش پاک شود؟"
+
+msgid "Turn the spin-the-wheel on. If both the wheel and the popup are on, only enable the one you want visitors to see."
+msgstr "گردانه شانس را روشن کنید. اگر هم گردانه و هم پاپ‌آپ روشن باشند، فقط همانی را فعال کنید که می‌خواهید بازدیدکننده ببیند."
+
+msgid "Turn your opinion into money!"
+msgstr "دیدگاهت را پول کن!"
+
+msgid "Two automatic messages go out each Jalali month: the reminder on the day set above, and a follow-up on the later day for anyone still behind. Both use the patterns above, and each customer receives each one only once per month."
+msgstr "هر ماه خورشیدی دو پیام خودکار می‌رود: یادآوری در روزی که بالا تعیین شده، و پیگیری در روز دیرتر برای هرکس که هنوز عقب است. هر دو از پترن‌های بالا استفاده می‌کنند و هر مشتری هرکدام را ماهی فقط یک‌بار می‌گیرد."
+
+msgid "Type"
+msgstr "نوع"
+
+msgid "Type at least three characters to search."
+msgstr "برای جستجو دست‌کم سه نویسه تایپ کنید."
+
+msgid "Type your question…"
+msgstr "پرسش خود را بنویسید…"
+
+msgid "Types their mobile number and taps “Sign in”."
+msgstr "شماره همراهش را می‌نویسد و «آمد» را می‌زند."
+
+msgid "URL of a square PNG, 512×512. Upload it to the media library and paste the address here."
+msgstr "نشانی یک PNG مربعی ۵۱۲×۵۱۲. آن را در کتابخانه رسانه بارگذاری کنید و نشانی‌اش را این‌جا بچسبانید."
+
+msgid "Uncategorised"
+msgstr "دسته‌بندی‌نشده"
+
+msgid "Unit price"
+msgstr "قیمت واحد"
+
+msgid "Unknown"
+msgstr "نامشخص"
+
+msgid "Unlimited"
+msgstr "نامحدود"
+
+msgid "Upcoming"
+msgstr "پیش‌رو"
+
+msgid "Upcoming instalments"
+msgstr "اقساط پیش‌رو"
+
+msgid "Upload failed for: %s (JPG/PNG/PDF, max 5 MB)."
+msgstr "بارگذاری ناموفق برای: %s (JPG/PNG/PDF، حداکثر ۵ مگابایت)."
+
+msgid "Urgent"
+msgstr "فوری"
+
+msgid "Use my wallet balance (%s)"
+msgstr "استفاده از موجودی کیف پول من (%s)"
+
+msgid "Use the form above to grant this customer purchase credit."
+msgstr "برای اعطای اعتبار خرید به این مشتری از فرم بالا استفاده کنید."
+
+msgid "Used as the \"name\" variable when the customer has no stored first name."
+msgstr "وقتی نامی برای مشتری ثبت نشده، به‌عنوان متغیر «name» استفاده می‌شود."
+
+msgid "Used for SMS login and order notifications."
+msgstr "برای ورود پیامکی و اعلان‌های سفارش استفاده می‌شود."
+
+msgid "Used instead of the tracking pattern when the dispatch method contains «پیک». Pattern variables: name, order, code, method."
+msgstr "وقتی روش ارسال شامل «پیک» باشد، به‌جای پترن رهگیری استفاده می‌شود. متغیرهای پترن: name، order، code، method."
+
+msgid "Used to build each customer’s connect link (ble.ir/your_bot?start=…)."
+msgstr "برای ساختن لینک اتصال هر مشتری استفاده می‌شود (ble.ir/your_bot?start=…)."
+
+msgid "User"
+msgstr "کاربر"
+
+msgid "Username (optional)"
+msgstr "نام کاربری (اختیاری)"
+
+msgid "Valid days"
+msgstr "روز اعتبار"
+
+msgid "Valid for (days)"
+msgstr "اعتبار به مدت (روز)"
+
+msgid "Value for money"
+msgstr "ارزش خرید"
+
+msgid "Variables (key=value per line)"
+msgstr "متغیرها (هر خط key=value)"
+
+msgid "Variables, in this exact order: name, amount."
+msgstr "متغیرها، دقیقاً با این ترتیب: name، amount."
+
+msgid "Variables, in this exact order: name, amount. Goes to the admin mobile. Leave empty to disable."
+msgstr "متغیرها، دقیقاً با این ترتیب: name، amount. به شماره مدیر می‌رود. برای خاموش‌کردن خالی بگذارید."
+
+msgid "Variables, in this exact order: name, amount. Goes to the customer each time a repayment is received, instead of the generic purchase confirmation."
+msgstr "متغیرها، دقیقاً با این ترتیب: name، amount. هر بار که بازپرداختی دریافت شود به‌جای تأیید خرید عمومی برای مشتری می‌رود."
+
+msgid "Variables, in this exact order: name, amount. Sent to the admin mobile the moment a customer submits an installment-credit request."
+msgstr "متغیرها، دقیقاً با این ترتیب: name، amount. لحظه‌ای که مشتری درخواست اعتبار اقساطی می‌دهد به شماره مدیر می‌رود."
+
+msgid "Variables, in this exact order: name, amount. Sent to the customer when their credit request is approved."
+msgstr "متغیرها، دقیقاً با این ترتیب: name، amount. وقتی درخواست اعتبار مشتری تأیید شود برایش می‌رود."
+
+msgid "Variables, in this exact order: name, amount. Used for the payment that clears the plan. Leave empty to use the pattern above."
+msgstr "متغیرها، دقیقاً با این ترتیب: name، amount. برای پرداختی که طرح را تسویه می‌کند. خالی بگذارید تا الگوی بالا به کار رود."
+
+msgid "Variables, in this exact order: name, coupon."
+msgstr "متغیرها، دقیقاً با این ترتیب: name، coupon."
+
+msgid "Variables, in this exact order: name, order, code, method."
+msgstr "متغیرها، دقیقاً با این ترتیب: name، order، code، method."
+
+msgid "Variables, in this exact order: name, order, link."
+msgstr "متغیرها، دقیقاً با این ترتیب: name، order، link."
+
+msgid "Variables, in this exact order: name, order. Goes to the admin mobile above. Leave empty to reuse the customer cancellation pattern."
+msgstr "متغیرها، دقیقاً با این ترتیب: name، order. به شماره مدیر بالا می‌رود. خالی بگذارید تا همان الگوی لغو مشتری به کار رود."
+
+msgid "Variables, in this exact order: name, order. Leave empty to disable."
+msgstr "متغیرها، دقیقاً با این ترتیب: name، order. برای خاموش‌کردن خالی بگذارید."
+
+msgid "Variables, in this exact order: name, order. No link — the provider rejects URLs inside an approved pattern."
+msgstr "متغیرها، دقیقاً با این ترتیب: name، order. بدون پیوند — سرویس‌دهنده نشانی اینترنتی داخل الگوی تأییدشده را نمی‌پذیرد."
+
+msgid "Variables, in this exact order: name, ticket."
+msgstr "متغیرها، دقیقاً با این ترتیب: name، ticket."
+
+msgid "Variables, in this exact order: ticket."
+msgstr "متغیرها، دقیقاً با این ترتیب: ticket."
+
+msgid "Variables: name, title, amount (this month), due (day and Jalali month)."
+msgstr "متغیرها: name، title، amount (قسط این ماه)، due (روز و ماه خورشیدی)."
+
+msgid "Vereskonto invoice"
+msgstr "فاکتور ورسکونتو"
+
+msgid "Vereskonto: an unexpected error interrupted payment completion — %s. Check the server error log for the full trace."
+msgstr "ورسکونتو: خطای غیرمنتظره‌ای تکمیل پرداخت را متوقف کرد — %s. برای جزئیات کامل، لاگ خطای سرور را بررسی کنید."
+
+msgid "Vereskonto: could not send the review-request SMS — no pattern is configured under Vereskonto settings."
+msgstr "ورسکونتو: ارسال پیامک درخواست دیدگاه ممکن نشد — الگویی در تنظیمات ورسکونتو تعریف نشده است."
+
+msgid "Vereskonto: could not send the review-request SMS — no valid mobile number on this order."
+msgstr "ورسکونتو: ارسال پیامک درخواست دیدگاه ممکن نشد — این سفارش شماره موبایل معتبری ندارد."
+
+msgid "Vereskonto: instalment credit automatically restored — this order never completed payment within the recovery window."
+msgstr "ورسکونتو: اعتبار اقساطی به‌صورت خودکار بازگردانده شد — این سفارش در بازه‌ی بازیابی هرگز پرداختش تکمیل نشد."
+
+msgid "Vereskonto: manual review-request SMS attempt failed — check the SMS log for the gateway response."
+msgstr "ورسکونتو: تلاش دستی برای ارسال پیامک درخواست دیدگاه ناموفق بود — پاسخ درگاه را در لاگ پیامک بررسی کنید."
+
+msgid "Vereskonto: review-request SMS not sent — this order is a repayment/top-up carrier, not a sale."
+msgstr "ورسکونتو: پیامک درخواست دیدگاه ارسال نشد — این سفارش یک سفارش حامل بازپرداخت/شارژ کیف پول است، نه یک فروش."
+
+msgid "Vereskonto: review-request SMS sent manually by an admin."
+msgstr "ورسکونتو: پیامک درخواست دیدگاه به‌صورت دستی توسط مدیر ارسال شد."
+
+msgid "Vereskonto: send review-request SMS now"
+msgstr "ورسکونتو: ارسال فوری پیامک درخواست دیدگاه"
+
+msgid "Vereskonto: the automatic review-request SMS failed to send. Use the order action \"Vereskonto: send review-request SMS now\" to retry, or check the SMS log for the gateway response."
+msgstr "ورسکونتو: ارسال خودکار پیامک درخواست دیدگاه ناموفق بود. از عمل «ورسکونتو: ارسال فوری پیامک درخواست دیدگاه» برای تلاش دوباره استفاده کنید، یا پاسخ درگاه را در لاگ پیامک بررسی کنید."
+
+msgid "Verifies the code, returns a token."
+msgstr "کد را بررسی و یک توکن برمی‌گرداند."
+
+msgid "Verify code → returns Bearer token"
+msgstr "تأیید کد ← بازگرداندن توکن Bearer"
+
+msgid "View"
+msgstr "مشاهده"
+
+msgid "View & request"
+msgstr "نمایش و درخواست"
+
+msgid "View all"
+msgstr "دیدن همه"
+
+msgid "View product"
+msgstr "مشاهده کالا"
+
+msgid "Views"
+msgstr "بازدیدها"
+
+msgid "Visitors"
+msgstr "بازدیدکنندگان"
+
+msgid "Visitors are staying to read"
+msgstr "بازدیدکنندگان می‌مانند و می‌خوانند"
+
+msgid "Visitors leave quickly"
+msgstr "بازدیدکنندگان زود می‌روند"
+
+msgid "Visitors look at it %s times per visit on average — a strong sign of buying interest."
+msgstr "بازدیدکنندگان به‌طور میانگین %s بار در هر بازدید به آن نگاه می‌کنند — نشانه‌ای قوی از قصد خرید."
+
+msgid "Visitors spend %s on average — they are genuinely browsing."
+msgstr "بازدیدکنندگان به‌طور میانگین %s می‌مانند — واقعاً در حال گشتن‌اند."
+
+msgid "Visits are very short"
+msgstr "بازدیدها بسیار کوتاه‌اند"
+
+msgid "Visits dropped about %s%% between the first and second half of this range."
+msgstr "بازدیدها میان نیمه اول و دوم این بازه حدود %s٪ افت کرد."
+
+msgid "Visits in the second half of this range are about %s%% higher than the first half."
+msgstr "بازدیدهای نیمه دوم این بازه حدود %s٪ بیشتر از نیمه اول است."
+
+msgid "WP-Cron is disabled in wp-config.php. Abandoned-cart checks and campaigns only run if your host triggers wp-cron.php externally."
+msgstr "WP-Cron در wp-config.php غیرفعال است. بررسی سبدهای رهاشده و کمپین‌ها فقط در صورتی اجرا می‌شوند که هاست شما wp-cron.php را از بیرون فراخوانی کند."
+
+msgid "WP-Cron is disabled on this site (DISABLE_WP_CRON), so a server cron job must call wp-cron.php."
+msgstr "کرون وردپرس در این سایت خاموش است (DISABLE_WP_CRON)؛ پس باید کرون سرور، فایل wp-cron.php را صدا بزند."
+
+msgid "WP-Cron runs on site visits."
+msgstr "WP-Cron با بازدیدهای سایت اجرا می‌شود."
+
+msgid "Waiting for their first purchase"
+msgstr "در انتظار نخستین خرید"
+
+msgid "Wallet"
+msgstr "کیف پول"
+
+msgid "Wallet & festival credit"
+msgstr "کیف پول و اعتبار جشنواره"
+
+msgid "Wallet SMS"
+msgstr "پیامک کیف پول"
+
+msgid "Wallet balance"
+msgstr "موجودی کیف پول"
+
+msgid "Wallet balance and festival credit."
+msgstr "موجودی کیف پول و اعتبار جشنواره."
+
+msgid "Wallet credit"
+msgstr "اعتبار کیف پول"
+
+msgid "Wallet credit per point (0 disables conversion)."
+msgstr "اعتبار کیف پول به ازای هر امتیاز (۰ تبدیل را غیرفعال می‌کند)."
+
+msgid "Wallet notifications"
+msgstr "اعلان‌های کیف پول"
+
+msgid "Wallet on the checkout page"
+msgstr "کیف پول در برگه تسویه‌حساب"
+
+msgid "Wallet or festival credit added"
+msgstr "افزوده‌شدن اعتبار کیف پول یا جشنواره"
+
+msgid "Wallet top-up"
+msgstr "شارژ کیف پول"
+
+msgid "Wallet top-up is temporarily unavailable."
+msgstr "شارژ کیف پول موقتاً در دسترس نیست."
+
+msgid "Wallet top-up via bank gateway"
+msgstr "شارژ کیف پول با درگاه بانکی"
+
+msgid "Wallet update failed (check user id and balance)."
+msgstr "به‌روزرسانی کیف پول ناموفق بود (شناسه کاربر و موجودی را بررسی کنید)."
+
+msgid "Wallet updated."
+msgstr "کیف پول به‌روزرسانی شد."
+
+msgid "Was late before"
+msgstr "پیش‌تر دیرکرد داشته"
+
+msgid "Webhook"
+msgstr "وب‌هوک"
+
+msgid "Webhook registered with Bale."
+msgstr "وب‌هوک در بله ثبت شد."
+
+msgid "Wednesday"
+msgstr "چهارشنبه"
+
+msgid "Weight"
+msgstr "وزن"
+
+msgid "What customers type into your own search box — pure demand signal: frequent terms with no matching product are your next best sellers."
+msgstr "آنچه مشتریان در جعبه جستجوی خودتان می‌نویسند — سیگنال خالص تقاضا: واژه‌های پرتکرارِ بدون کالای متناظر، پرفروش‌های بعدی شما هستند."
+
+msgid "What exactly are you looking for? Name a product or category — or tap one of these:"
+msgstr "دقیقاً دنبال چه هستید؟ نام کالا یا دسته را بنویسید — یا یکی از این‌ها را لمس کنید:"
+
+msgid "What people search for on your site"
+msgstr "مردم در سایت شما چه جستجو می‌کنند"
+
+msgid "What you do (once)"
+msgstr "کاری که شما می‌کنید (یک‌بار)"
+
+msgid "What you write here — one key=value per line, in the SAME order as the blanks:"
+msgstr "آنچه این‌جا می‌نویسید — هر خط یک key=value، با همان ترتیب جاهای خالی:"
+
+msgid "What your customer does"
+msgstr "کاری که مشتری شما می‌کند"
+
+msgid "Whatever is working there deserves more of your effort — and it is worth checking the link still points at the right page."
+msgstr "هر چیزی که آن‌جا کار می‌کند ارزش تلاش بیشتر دارد — و بد نیست بررسی کنید پیوند هنوز به صفحه درست اشاره می‌کند."
+
+msgid "Whatever you changed recently is working — keep that channel warm and consider increasing its budget."
+msgstr "هر تغییری اخیراً داده‌اید جواب می‌دهد — آن کانال را گرم نگه دارید و به افزایش بودجه‌اش فکر کنید."
+
+msgid "WhatsApp"
+msgstr "واتساپ"
+
+msgid "WhatsApp gateway (Meta Cloud API)"
+msgstr "درگاه واتساپ (Meta Cloud API)"
+
+msgid "WhatsApp setup guide"
+msgstr "راهنمای راه‌اندازی واتساپ"
+
+msgid "WhatsApp template name"
+msgstr "نام قالب واتساپ"
+
+msgid "WhatsApp: %s"
+msgstr "واتساپ: %s"
+
+msgid "Wheel prize"
+msgstr "جایزه گردانه"
+
+msgid "Wheel slices (2–6)"
+msgstr "بخش‌های گردانه (۲ تا ۶)"
+
+msgid "Wheel title"
+msgstr "عنوان گردانه"
+
+msgid "When"
+msgstr "زمان"
+
+msgid "When off, only logged-in customers see the chat button."
+msgstr "در حالت خاموش، فقط مشتریان واردشده دکمه گفتگو را می‌بینند."
+
+msgid "When the chatbot is asked something it should not guess at — whether goods are genuine, warranty, damage, complaints — it hands the customer these contacts instead of inventing an answer. The ticket link is always offered; add the others if you want them shown too."
+msgstr "وقتی از چت‌بات چیزی پرسیده شود که نباید حدس بزند — اصل‌بودن کالا، گارانتی، آسیب‌دیدگی، شکایت — به‌جای ساختن پاسخ، این راه‌های تماس را به مشتری می‌دهد. پیوند تیکت همیشه ارائه می‌شود؛ بقیه را اگر می‌خواهید نمایش داده شوند بیفزایید."
+
+msgid "When the port opens but the secure handshake never finishes, the traffic is being filtered on the way out. WordPress can send its outgoing requests through a proxy your host provides. Add these lines to wp-config.php, above the \"That's all\" comment:"
+msgstr "وقتی درگاه باز می‌شود ولی دست‌دادن امن تمام نمی‌شود، یعنی ترافیک در مسیر خروج پالایش می‌شود. وردپرس می‌تواند درخواست‌های بیرون‌رونده‌اش را از راه پراکسی‌ای که میزبان فراهم می‌کند بفرستد. این خط‌ها را در wp-config.php، بالای توضیح \"That's all\" بیفزایید:"
+
+msgid "Where should we message you?"
+msgstr "پیام‌ها را کجا برایتان بفرستیم؟"
+
+msgid "Where visitors arrive from"
+msgstr "بازدیدکنندگان از کجا می‌آیند"
+
+msgid "Where your visitors are"
+msgstr "بازدیدکنندگان شما کجا هستند"
+
+msgid "Which events notify the customer"
+msgstr "کدام رویدادها به مشتری خبر می‌دهند"
+
+msgid "Which products were in each cancelled order, and how the cancellation happened."
+msgstr "در هر سفارش لغوشده چه کالاهایی بوده و لغو چگونه انجام شده است."
+
+msgid "Who is visiting"
+msgstr "چه کسانی بازدید می‌کنند"
+
+msgid "With a due day of 5 and a window of 5, the customer may pay from the 1st to the 5th. The late fee starts the day after the window closes."
+msgstr "با روز سررسید ۵ و بازه‌ی ۵ روزه، مشتری از یکم تا پنجم می‌تواند بپردازد. جریمه‌ی دیرکرد از فردای پایان بازه آغاز می‌شود."
+
+msgid "With a pattern code set, an announcement campaign is queued to exactly these recipients: %name% fills per customer automatically, and amount / min / days are available as variables. Track it on the SMS Campaigns page."
+msgstr "با تعیین کد پترن، کمپین اطلاع‌رسانی دقیقاً برای همین دریافت‌کنندگان در صف می‌رود: %name% برای هر مشتری خودکار پر می‌شود و amount / min / days هم به‌عنوان متغیر در دسترس‌اند. پیگیری در برگه کمپین‌های پیامکی."
+
+msgid "With an API key the panel password is never stored on this site, and the key can be revoked on its own. Note that the key stops working if you later change your panel password."
+msgstr "با کلید API، گذرواژه پنل هرگز در این سایت ذخیره نمی‌شود و کلید را می‌توان جداگانه باطل کرد. توجه کنید که اگر بعداً گذرواژه پنل را عوض کنید، کلید از کار می‌افتد."
+
+msgid "Without a search the fifty customers with the largest open debt are listed."
+msgstr "بدون جستجو، پنجاه مشتری با بیشترین بدهی مانده نشان داده می‌شوند."
+
+msgid "WooCommerce analytics tables are not available yet — they fill automatically as WooCommerce Analytics runs."
+msgstr "جدول‌های تحلیلی ووکامرس هنوز در دسترس نیستند — با اجرای Analytics ووکامرس خودکار پر می‌شوند."
+
+msgid "WooCommerce coupon sent as the \"coupon\" variable in recovery messages."
+msgstr "کوپن ووکامرسی که به‌عنوان متغیر «coupon» در پیام‌های بازگشت سبد ارسال می‌شود."
+
+msgid "WooCommerce would email the customer and the shop that an order is complete — for goods nobody ordered. The repayment confirmation from this plugin stays."
+msgstr "ووکامرس برای مشتری و فروشگاه ایمیل «سپارش تکمیل شد» می‌فرستد — برای کالایی که کسی سفارش نداده. پیامک تأیید بازپرداخت خودِ افزونه سر جایش می‌ماند."
+
+msgid "WordPress normally runs scheduled work when someone visits the site, but that is switched off here (DISABLE_WP_CRON). Until your hosting calls the file below on a timer, abandoned-cart checks, campaign batches, instalment reminders and the daily notices will not run."
+msgstr "وردپرس معمولاً کارهای زمان‌بندی‌شده را هنگام بازدید کسی از سایت اجرا می‌کند، ولی این‌جا خاموش است (DISABLE_WP_CRON). تا وقتی میزبان شما فایل پایین را روی زمان‌سنج صدا نزند، بررسی سبدهای رهاشده، دسته‌های کمپین، یادآوری اقساط و اعلان‌های روزانه اجرا نمی‌شوند."
+
+msgid "Worked example"
+msgstr "نمونه عملی"
+
+msgid "Working — the gateway will see %s."
+msgstr "کار می‌کند — درگاه %s را خواهد دید."
+
+msgid "Write the message in your SMS panel as a pattern and wait for approval, then copy its id (bodyId)."
+msgstr "متن پیام را در پنل پیامکی خود به‌عنوان الگو بنویسید و منتظر تأیید بمانید، سپس شناسه‌اش (bodyId) را رونوشت کنید."
+
+msgid "Write the message in your SMS panel as a pattern and wait for it to be approved."
+msgstr "متن پیام را در پنل پیامکی خود به‌عنوان الگو بنویسید و منتظر تأییدش بمانید."
+
+msgid "YOUR available credit (this admin account)"
+msgstr "اعتبار در دسترس شما (همین حساب مدیر)"
+
+msgid "Year"
+msgstr "سال"
+
+msgid "Year (Zoroastrian)"
+msgstr "سال (زرتشتی)"
+
+msgid "Year shown as: Zoroastrian solar (Solar Hijri)."
+msgstr "نمایش سال: خورشیدی زرتشتی (خورشیدی اسلامی)."
+
+msgid "Yes"
+msgstr "بله"
+
+msgid "You"
+msgstr "شما"
+
+msgid "You are %1$s behind on repayments (%2$s). Pay it from the instalment plans below, and instalment purchase opens again straight away."
+msgstr "شما %1$s در بازپرداخت عقب هستید (%2$s). آن را از طرح‌های اقساطی پایین بپردازید تا خرید اقساطی بی‌درنگ دوباره باز شود."
+
+msgid "You are at the highest tier — thank you for being with us!"
+msgstr "شما در بالاترین رتبه‌اید — سپاس که با ما هستید!"
+
+msgid "You are here"
+msgstr "شما اینجایید"
+
+msgid "You are not allowed to do that."
+msgstr "شما اجازه انجام این کار را ندارید."
+
+msgid "You have %1$s festival credit — it is spent automatically on your next order%2$s."
+msgstr "شما %1$s اعتبار جشنواره دارید — در خرید بعدی خودکار خرج می‌شود%2$s."
+
+msgid "You have already had your turn. Come back later for another spin."
+msgstr "نوبت شما استفاده شده است. برای چرخش دیگر بعداً برگردید."
+
+msgid "You have an overdue repayment. Settle it first, then instalment purchase becomes available again."
+msgstr "شما یک بازپرداخت معوق دارید. نخست آن را تسویه کنید تا خرید اقساطی دوباره در دسترس شود."
+
+msgid "You have answered %d survey."
+msgid_plural "You have answered %d surveys."
+msgstr[0] "شما به %d نظرسنجی پاسخ داده‌اید."
+msgstr[1] "شما به %d نظرسنجی پاسخ داده‌اید."
+
+msgid "You have no active credit yet — submit a request from Financial services."
+msgstr "هنوز اعتبار فعالی ندارید — از خدمات مالی درخواست ثبت کنید."
+
+msgid "You have no instalment credit yet — request it from Financial services."
+msgstr "هنوز اعتبار اقساطی ندارید — از بخش خدمات مالی درخواست کنید."
+
+msgid "You may submit a new request below."
+msgstr "می‌توانید در پایین درخواست تازه‌ای ثبت کنید."
+
+msgid "You still have %1$s festival credit — it unlocks on a cart of %2$s or more."
+msgstr "شما %1$s اعتبار جشنواره دارید — با سبد %2$s یا بیشتر باز می‌شود."
+
+msgid "Your audience is mostly on mobile"
+msgstr "مخاطب شما بیشتر روی موبایل است"
+
+msgid "Your cart currently counts as %s."
+msgstr "سبد شما اکنون %s حساب می‌شود."
+
+msgid "Your checkout page uses the WooCommerce Checkout block. The wallet box (and other classic checkout hooks) cannot render inside the block. Edit the checkout page and replace the block with the [woocommerce_checkout] shortcode to use them."
+msgstr "برگه تسویه‌حساب شما از بلوک تسویه‌حساب ووکامرس استفاده می‌کند. جعبه کیف پول (و دیگر هوک‌های تسویه کلاسیک) درون بلوک نمایش داده نمی‌شوند. برگه تسویه‌حساب را ویرایش و بلوک را با شورت‌کد [woocommerce_checkout] جایگزین کنید."
+
+msgid "Your credit request and documents were received. We will review them and get back to you."
+msgstr "درخواست اعتبار و مدارک شما دریافت شد. بررسی می‌کنیم و نتیجه را اطلاع می‌دهیم."
+
+msgid "Your current available credit: %s."
+msgstr "اعتبار در دسترس فعلی شما: %s."
+
+msgid "Your installment credit no longer covers this order."
+msgstr "اعتبار اقساطی شما دیگر کفاف این سفارش را نمی‌دهد."
+
+msgid "Your installment credit:"
+msgstr "اعتبار اقساطی شما:"
+
+msgid "Your installment-credit request is under review. We will inform you of the result."
+msgstr "درخواست اعتبار اقساطی شما در حال بررسی است. نتیجه را به شما اطلاع می‌دهیم."
+
+msgid "Your instalment credit (%1$s) does not cover this cart (%2$s)."
+msgstr "اعتبار اقساطی شما (%1$s) کفاف این سبد (%2$s) را نمی‌دهد."
+
+msgid "Your invitees"
+msgstr "دعوت‌شده‌های شما"
+
+msgid "Your latest order %1$s is currently: %2$s."
+msgstr "آخرین سفارش شما %1$s اکنون در وضعیت «%2$s» است."
+
+msgid "Your membership tier: %s"
+msgstr "رتبه عضویت شما: %s"
+
+msgid "Your mobile number"
+msgstr "شماره‌ی همراه شما"
+
+msgid "Your points:"
+msgstr "امتیازهای شما:"
+
+msgid "Your previous request was not approved."
+msgstr "درخواست قبلی شما تأیید نشد."
+
+msgid "Your repeat purchases"
+msgstr "خریدهای پرتکرار شما"
+
+msgid "Your reply"
+msgstr "پاسخ شما"
+
+msgid "Your reply was added."
+msgstr "پاسخ شما ثبت شد."
+
+msgid "Your review was submitted for moderation and %d points landed in your club balance. Thank you!"
+msgstr "دیدگاه شما برای بازبینی ثبت شد و %d امتیاز به موجودی باشگاهتان نشست. سپاسگزاریم!"
+
+msgid "Your review was submitted for moderation. Thank you!"
+msgstr "دیدگاه شما برای بازبینی ثبت شد. سپاسگزاریم!"
+
+msgid "Your shop address for the app"
+msgstr "نشانی فروشگاه شما برای اپ"
+
+msgid "Your shop is mostly used on phones"
+msgstr "فروشگاه شما بیشتر با گوشی استفاده می‌شود"
+
+msgid "Your site should use HTTPS, which almost all hosts provide today."
+msgstr "سایت شما باید از HTTPS استفاده کند، که امروزه تقریباً همه میزبان‌ها فراهم می‌کنند."
+
+msgid "Your store exposes a small REST API so an Android/iOS app can log customers in by SMS code and read their wallet, points and orders. Below is everything needed to set it up."
+msgstr "فروشگاه شما یک REST API کوچک ارائه می‌دهد تا یک اپ اندروید/iOS بتواند مشتریان را با کد پیامکی وارد کند و کیف پول، امتیاز و سپارش‌هایشان را بخواند. در زیر هر چیزی که برای راه‌اندازی لازم است آمده."
+
+msgid "Your ticket was submitted."
+msgstr "تیکت شما ثبت شد."
+
+msgid "Your top product right now"
+msgstr "کالای برتر شما در این لحظه"
+
+msgid "Your wallet balance is %s."
+msgstr "موجودی کیف پول شما %s است."
+
+msgid "Zoroastrian solar year: %1$s · Solar Hijri (Islamic) year: %2$s"
+msgstr "سال خورشیدی زرتشتی: %1$s · سال خورشیدی اسلامی (هجری): %2$s"
+
+msgid "active"
+msgstr "فعال"
+
+msgid "body:"
+msgstr "بدنه:"
+
+msgid "choose \"Installment purchase\" as the payment method at checkout to use it. Repayment installments start only after you use the credit. Note: installment orders do not qualify for free shipping."
+msgstr "برای استفاده، هنگام تسویه‌حساب روش پرداخت «خرید اقساطی» را انتخاب کنید. اقساط بازپرداخت فقط پس از استفاده از اعتبار آغاز می‌شود. توجه: سفارش‌های اقساطی گسیل رایگان ندارند."
+
+msgid "class loaded"
+msgstr "کلاس بارگذاری شده"
+
+msgid "could not count"
+msgstr "شمارش ممکن نشد"
+
+msgid "counting…"
+msgstr "در حال شمارش…"
+
+msgid "due on day %d"
+msgstr "سررسید روز %d"
+
+msgid "e.g. fa, de, en_US. Must match the approved template language."
+msgstr "مانند fa، de، en_US. باید با زبان قالب تأییدشده یکسان باشد."
+
+msgid "e.g. order #1234 in 4 installments"
+msgstr "مثلاً سفارش ۱۲۳۴ در ۴ قسط"
+
+msgid "enabled in WooCommerce payments"
+msgstr "فعال در پرداخت‌های ووکامرس"
+
+msgid "latest: %s"
+msgstr "آخرین: %s"
+
+msgid "name=auto fills each recipient’s own name (falling back to “Dear customer”), so one campaign can still feel personal."
+msgstr "name=auto نام خود هر گیرنده را پر می‌کند (و اگر نبود «مشتری گرامی»)، پس یک کمپین هم می‌تواند شخصی به‌نظر برسد."
+
+msgid "needs the Authorization: Bearer token header."
+msgstr "به هدر Authorization: Bearer token نیاز دارد."
+
+msgid "of each month"
+msgstr "هر ماه"
+
+msgid "order %d"
+msgstr "سفارش %d"
+
+msgid "payment window: %s"
+msgstr "بازه‌ی پرداخت: %s"
+
+msgid "post"
+msgstr "پست"
+
+msgid "purchase credit"
+msgstr "اعتبار خرید"
+
+msgid "settled"
+msgstr "تسویه‌شده"
+
+msgid "unpaid late fee %s — added to the next installment"
+msgstr "جریمه‌ی پرداخت‌نشده %s — به قسط بعدی افزوده می‌شود"
+
+msgid "unused"
+msgstr "استفاده‌نشده"
+
+msgid "usable on orders from %s"
+msgstr "قابل استفاده در خریدهای از %s"
+
+msgid "used %s"
+msgstr "مصرف: %s"
+
+msgid "valid until %s — spent automatically before your balance at checkout"
+msgstr "اعتبار تا %s — در تسویه‌حساب خودکار پیش از موجودی‌تان خرج می‌شود"
+
+msgid "آخرین قسط شما پرداخت شد و طرح تسویه گردید. 🎉"
+msgstr "آخرین قسط شما پرداخت شد و طرح تسویه گردید. 🎉"
+
+msgid "آمد / نام‌نویسی با شماره همراه — زود و بدون گذرواژه"
+msgstr "آمد / نام‌نویسی با شماره همراه — زود و بدون گذرواژه"
+
+msgid "آگاه‌سازی سپارش‌ها"
+msgstr "آگاه‌سازی سپارش‌ها"
+
+msgid "اجازه می‌دهید از وضعیت سپارش، قسط و پیشنهادها آگاهتان کنیم؟ هر زمان بخواهید می‌توانید خاموشش کنید."
+msgstr "اجازه می‌دهید از وضعیت سپارش، قسط و پیشنهادها آگاهتان کنیم؟ هر زمان بخواهید می‌توانید خاموشش کنید."
+
+msgid "ارزان‌تر از این داری؟"
+msgstr "ارزان‌تر از این داری؟"
+
+msgid "ارسال مجدد تا"
+msgstr "ارسال مجدد تا"
+
+msgid "ارسال مجدد کد"
+msgstr "ارسال مجدد کد"
+
+msgid "اطلاعات شما نزد ورسکالا محرمانه می‌ماند."
+msgstr "اطلاعات شما نزد ورسکالا محرمانه می‌ماند."
+
+msgid "اعتبار %s به کیف پول شما افزوده شد."
+msgstr "اعتبار %s به کیف پول شما افزوده شد."
+
+msgid "اقساط و بدهی من"
+msgstr "اقساط و بدهی من"
+
+msgid "امتیاز کنونی شما: %s"
+msgstr "امتیاز کنونی شما: %s"
+
+msgid "بازپرداخت سپارش %s شما انجام شد."
+msgstr "بازپرداخت سپارش %s شما انجام شد."
+
+msgid "باشد"
+msgstr "باشد"
+
+msgid "باشگاه مشتریان و امتیازها"
+msgstr "باشگاه مشتریان و امتیازها"
+
+msgid "باشگاه مشتریان ورسکالا چهار پله دارد و هر خرید امتیاز می‌آورد؛ امتیازها را می‌توانید به اعتبار کیف پول تبدیل کنید. 🌿"
+msgstr "باشگاه مشتریان ورسکالا چهار پله دارد و هر خرید امتیاز می‌آورد؛ امتیازها را می‌توانید به اعتبار کیف پول تبدیل کنید. 🌿"
+
+msgid "برای دیدن امتیاز خودتان، نخست وارد شوید."
+msgstr "برای دیدن امتیاز خودتان، نخست وارد شوید."
+
+msgid "بعداً"
+msgstr "بعداً"
+
+msgid "ثانیه"
+msgstr "ثانیه"
+
+msgid "جای‌گذاری"
+msgstr "جای‌گذاری"
+
+msgid "جای‌گذاری کد از پیامک"
+msgstr "جای‌گذاری کد از پیامک"
+
+msgid "جای‌گذاری گذرشماره"
+msgstr "جای‌گذاری گذرشماره"
+
+msgid "خرید اقساطی و شرایط وام"
+msgstr "خرید اقساطی و شرایط وام"
+
+msgid "داده‌های شما نزد ورسکالا پوشیده می‌ماند."
+msgstr "داده‌های شما نزد ورسکالا پوشیده می‌ماند."
+
+msgid "دریافت کد ورود"
+msgstr "دریافت کد ورود"
+
+msgid "دریافت گذرشماره"
+msgstr "دریافت گذرشماره"
+
+msgid "سپارش %s شما تحویل داده شد. سپاس از خرید شما 🌿"
+msgstr "سپارش %s شما تحویل داده شد. سپاس از خرید شما 🌿"
+
+msgid "سپارش %s شما لغو شد."
+msgstr "سپارش %s شما لغو شد."
+
+msgid "سپارش %s شما پرداخت شد و در دست آماده‌سازی است."
+msgstr "سپارش %s شما پرداخت شد و در دست آماده‌سازی است."
+
+msgid "شرایط دریافت وام و خرید اقساطی"
+msgstr "شرایط دریافت وام و خرید اقساطی"
+
+msgid "شرایط مرجوعی و گارانتی"
+msgstr "شرایط مرجوعی و گارانتی"
+
+msgid "شماره موبایل"
+msgstr "شماره موبایل"
+
+msgid "شماره همراه یا رایانامه"
+msgstr "شماره همراه یا رایانامه"
+
+msgid "فرستادن دوباره تا"
+msgstr "فرستادن دوباره تا"
+
+msgid "فرستادن دوباره گذرشماره"
+msgstr "فرستادن دوباره گذرشماره"
+
+msgid "فرستاده شد به"
+msgstr "فرستاده شد به"
+
+msgid "قسط %s شما دریافت شد."
+msgstr "قسط %s شما دریافت شد."
+
+msgid "موجودی کیف پول من"
+msgstr "موجودی کیف پول من"
+
+msgid "نصب اپلیکیشن ورسکالا"
+msgstr "نصب اپلیکیشن ورسکالا"
+
+msgid "نصب کن"
+msgstr "نصب کن"
+
+msgid "نه، ممنون"
+msgstr "نه، ممنون"
+
+msgid "هزینه ارسال و مرجوعی"
+msgstr "هزینه ارسال و مرجوعی"
+
+msgid "هزینه ارسال چند است؟"
+msgstr "هزینه ارسال چند است؟"
+
+msgid "ورسکالا را روی گوشی خود نصب کنید: بازکردن سریع‌تر، کار با اینترنت ضعیف، و آگاهی از سپارش‌ها."
+msgstr "ورسکالا را روی گوشی خود نصب کنید: بازکردن سریع‌تر، کار با اینترنت ضعیف، و آگاهی از سپارش‌ها."
+
+msgid "ورود"
+msgstr "ورود"
+
+msgid "ورود / عضویت با شماره موبایل — سریع و بدون گذرواژه"
+msgstr "ورود / عضویت با شماره موبایل — سریع و بدون گذرواژه"
+
+msgid "وضعیت سپارش شما"
+msgstr "وضعیت سپارش شما"
+
+msgid "وضعیت سپارش من"
+msgstr "وضعیت سپارش من"
+
+msgid "ویرایش"
+msgstr "ویرایش"
+
+msgid "پرداخت قسط"
+msgstr "پرداخت قسط"
+
+msgid "پرفروش‌ترین‌ها"
+msgstr "پرفروش‌ترین‌ها"
+
+msgid "پشتیبانی و ثبت تیکت"
+msgstr "پشتیبانی و ثبت تیکت"
+
+msgid "پیام تازه‌ای برای شما هست."
+msgstr "پیام تازه‌ای برای شما هست."
+
+msgid "پیشنهاد بده چی بخرم"
+msgstr "پیشنهاد بده چی بخرم"
+
+msgid "پیگیری سپارش من"
+msgstr "پیگیری سپارش من"
+
+msgid "کد تأیید پیامک می‌شود؛ هزینه‌ای ندارد."
+msgstr "کد تأیید پیامک می‌شود؛ هزینه‌ای ندارد."
+
+msgid "کد تأیید پیامک‌شده"
+msgstr "کد تأیید پیامک‌شده"
+
+msgid "کیف پول شما"
+msgstr "کیف پول شما"
+
+msgid "گذرشماره با پیامک یا رایانامه فرستاده می‌شود؛ هزینه‌ای ندارد."
+msgstr "گذرشماره با پیامک یا رایانامه فرستاده می‌شود؛ هزینه‌ای ندارد."
+
+msgid "گذرشماره فرستاده‌شده"
+msgstr "گذرشماره فرستاده‌شده"
+
+msgid "گفتگو با پشتیبان"
+msgstr "گفتگو با پشتیبان"
+
+msgid "— None —"
+msgstr "— هیچ‌کدام —"
+
+msgid "— Select —"
+msgstr "— انتخاب —"
+
+msgid "— choose a product —"
+msgstr "— یک کالا برگزینید —"
+
+msgid "“%1$s” is your most-viewed product: %2$s views, about %3$s%% of all product views in this range."
+msgstr "«%1$s» پربازدیدترین کالای شماست: %2$s بازدید، حدود %3$s٪ از همه بازدیدهای کالا در این بازه."
+
+msgid "“%s” alone draws a large share of all product views."
+msgstr "«%s» به‌تنهایی سهم بزرگی از کل بازدید کالاها را می‌گیرد."
+
+msgid "⏳ Only %s left in stock."
+msgstr "⏳ تنها %s عدد در انبار مانده."
+
+msgid "✅ Your account is now connected. You will receive invoices and updates here."
+msgstr "✅ حساب شما اکنون متصل شد. فاکتور و اعلان‌ها را همین‌جا می‌گیرید."
+
+msgid "🛒 Right now this item is in the carts of %s other shoppers — order before it sells out."
+msgstr "🛒 هم‌اکنون این کالا در سبد خرید %s نفر دیگر است — پیش از تمام‌شدن سفارش دهید."
+
+msgid "Inbox"
+msgstr "رسیدگی"
+
+msgid "Chatbot conversations"
+msgstr "گفتگوهای گفبات"
+
+msgid "Return requests"
+msgstr "درخواست‌های برگشت"
+
+msgid "Wallet & credit"
+msgstr "کیف پول و اعتبار"
+
+msgid "Installments & credit"
+msgstr "اقساط و اعتبار"
+
+msgid "Marketing"
+msgstr "بازاریابی"
+
+msgid "Reports"
+msgstr "گزارش‌ها"
+
+msgid "Sales report"
+msgstr "آمار فروش"
+
+msgid "Site visits"
+msgstr "آمار بازدید"
+
+msgid "SMS log"
+msgstr "گزارش پیامک‌ها"
+
+msgid "General settings"
+msgstr "تنظیمات عمومی"
+
+msgid "System status"
+msgstr "وضعیت سیستم"
+
+msgid "Sign-in & identity"
+msgstr "ورود و هویت"
+
+msgid "Sign-in page"
+msgstr "برگهٔ ورود و کد یک‌بارمصرف"
+
+msgid "National ID matching"
+msgstr "تطبیق کد ملی"
+
+msgid "Developer"
+msgstr "توسعه‌دهنده"
+
+msgid "More settings"
+msgstr "تنظیمات دیگر"
+
+msgid "My purchases"
+msgstr "خریدهای من"
+
+msgid "Open the cancelled orders report"
+msgstr "مشاهدهٔ گزارش سفارش‌های لغوشده"
+
+msgid "Sections"
+msgstr "بخش‌ها"
+
+msgid "Due & in arrears"
+msgstr "سررسید و معوق"
+
+msgid "Credit requests"
+msgstr "درخواست‌های اعتبار"
+
+msgid "No credit requests are waiting."
+msgstr "درخواست اعتباری در انتظار نیست."
+
+msgid "Transactions"
+msgstr "تراکنش‌ها"
+
+msgid "Festival credit"
+msgstr "اعتبار جشنواره"
+
+msgid "%s failed — see the SMS log for the reason."
+msgstr "%s ناموفق — علت را در گزارش پیامک‌ها ببینید."
+
+msgid "%s failed"
+msgstr "%s ناموفق"
+
+msgid "%s sent"
+msgstr "%s ارسال"
+
+msgid "Abandoned carts"
+msgstr "سبدهای رهاشده"
+
+msgid "All answered"
+msgstr "همه پاسخ گرفته‌اند"
+
+msgid "All customers"
+msgstr "همه مشتریان"
+
+msgid "All dispatched"
+msgstr "همه ارسال شده‌اند"
+
+msgid "All messages"
+msgstr "همهٔ پیامک‌ها"
+
+msgid "Ask for a review"
+msgstr "درخواست نظر"
+
+msgid "Automatic festival credit granted"
+msgstr "واریز خودکار اعتبار جشنواره"
+
+msgid "Available purchase credit"
+msgstr "اعتبار خرید در دسترس"
+
+msgid "Bale, WhatsApp and browser notifications for invoices and wallet credit are switched on the Notifications & Bale settings tab. Messages whose pattern is chosen per send (campaigns, surveys, festival batches) are set where they are sent."
+msgstr "اعلان بله، واتس‌اپ و مرورگر برای فاکتور و اعتبار کیف پول در تب «اعلان‌ها و بله» تنظیمات روشن یا خاموش می‌شود. پیامک‌هایی که پترنشان هنگام ارسال انتخاب می‌شود (کمپین، نظرسنجی، اعتبار دسته‌ای جشنواره) همان‌جا تنظیم می‌شوند."
+
+msgid "Cart reminder"
+msgstr "یادآوری سبد خرید"
+
+msgid "Chatbot — alerts to staff"
+msgstr "گفبات — اطلاع به پشتیبانان"
+
+msgid "Chatbot — reply to the customer"
+msgstr "گفبات — پاسخ به مشتری"
+
+msgid "Chats asking for a person"
+msgstr "گفتگوهای منتظر پشتیبان"
+
+msgid "Connected"
+msgstr "متصل"
+
+msgid "Credit / debit wallet"
+msgstr "واریز / برداشت کیف پول"
+
+msgid "Credit approved"
+msgstr "تأیید اعتبار"
+
+msgid "Credit rejected"
+msgstr "رد اعتبار"
+
+msgid "Customer asks for a person"
+msgstr "مشتری پشتیبان انسانی می‌خواهد"
+
+msgid "Customers"
+msgstr "مشتریان"
+
+msgid "Daily jobs are running late — reminders and late fees may be delayed."
+msgstr "کارهای روزانه عقب افتاده‌اند — یادآوری‌ها و جریمه‌ها ممکن است دیر انجام شوند."
+
+msgid "Dashboard"
+msgstr "پیشخوان"
+
+msgid "Dispatched by courier"
+msgstr "ارسال با پیک"
+
+msgid "Edit user"
+msgstr "ویرایش کاربر"
+
+msgid "Every text message the shop sends, in one table. A message goes out when its topic is switched on and it has a pattern code; an empty code means that message is not sent. Changes here are the same settings as on each topic’s own screen."
+msgstr "همهٔ پیامک‌هایی که فروشگاه می‌فرستد، در یک جدول. پیامک وقتی فرستاده می‌شود که موضوعش روشن باشد و کد پترن داشته باشد؛ کد خالی یعنی آن پیامک فرستاده نمی‌شود. تغییرات این‌جا همان تنظیمات صفحهٔ خود هر موضوع است."
+
+msgid "Everyone on schedule"
+msgstr "همه طبق برنامه‌اند"
+
+msgid "Final installment — plan finished"
+msgstr "قسط آخر — پایان طرح"
+
+msgid "Find a setting"
+msgstr "جست‌وجوی تنظیمات"
+
+msgid "Find a setting…"
+msgstr "جست‌وجوی تنظیمات…"
+
+msgid "Happy birthday"
+msgstr "تبریک تولد"
+
+msgid "Health"
+msgstr "سلامت"
+
+msgid "Installment payments"
+msgstr "پرداخت اقساط"
+
+msgid "Installment received"
+msgstr "دریافت قسط"
+
+msgid "Installment reminders and credit"
+msgstr "یادآوری اقساط و اعتبار"
+
+msgid "Installments due or in arrears"
+msgstr "اقساط سررسید یا معوق"
+
+msgid "Items waiting on you: %s"
+msgstr "موارد منتظر شما: %s"
+
+msgid "Latest orders"
+msgstr "آخرین سفارش‌ها"
+
+msgid "Latest wallet transactions"
+msgstr "آخرین تراکنش‌های کیف پول"
+
+msgid "Manage plans on the installments screen"
+msgstr "مدیریت طرح‌ها در صفحهٔ اقساط"
+
+msgid "Messages in the last 24 hours"
+msgstr "پیامک‌های ۲۴ ساعت گذشته"
+
+msgid "Messages sent today"
+msgstr "پیامک‌های ارسال‌شدهٔ امروز"
+
+msgid "Messages"
+msgstr "پیامک‌ها"
+
+msgid "Monthly reminder"
+msgstr "یادآوری ماهانه"
+
+msgid "New credit request"
+msgstr "درخواست اعتبار تازه"
+
+msgid "New message in a chat"
+msgstr "پیام تازه در گفتگو"
+
+msgid "New order placed"
+msgstr "ثبت سفارش تازه"
+
+msgid "New return request"
+msgstr "درخواست برگشت تازه"
+
+msgid "No club points yet."
+msgstr "هنوز امتیازی ندارد."
+
+msgid "No customer matches this search."
+msgstr "مشتری‌ای با این جست‌وجو پیدا نشد."
+
+msgid "No customers yet."
+msgstr "هنوز مشتری‌ای نیست."
+
+msgid "No failures"
+msgstr "بدون خطا"
+
+msgid "No gateway credentials — customers cannot receive sign-in codes."
+msgstr "اطلاعات درگاه وارد نشده — مشتریان کد ورود دریافت نمی‌کنند."
+
+msgid "No installment plans."
+msgstr "طرح اقساطی ندارد."
+
+msgid "No messages sent to this number."
+msgstr "پیامکی به این شماره فرستاده نشده است."
+
+msgid "No orders yet."
+msgstr "هنوز سفارشی ندارد."
+
+msgid "No pattern — not sent"
+msgstr "بدون پترن — فرستاده نمی‌شود"
+
+msgid "No return requests."
+msgstr "درخواست برگشتی ندارد."
+
+msgid "No tickets."
+msgstr "تیکتی ندارد."
+
+msgid "No wallet transactions."
+msgstr "تراکنش کیف پولی ندارد."
+
+msgid "Nobody waiting"
+msgstr "کسی منتظر نیست"
+
+msgid "None pending"
+msgstr "موردی در انتظار نیست"
+
+msgid "Nothing found"
+msgstr "چیزی پیدا نشد"
+
+msgid "Nothing is waiting on you right now."
+msgstr "الان کاری منتظر شما نیست."
+
+msgid "Open installment debt"
+msgstr "بدهی اقساط باز"
+
+msgid "Order cancelled — alert to the shop"
+msgstr "لغو سفارش — اطلاع به فروشگاه"
+
+msgid "Order cancelled"
+msgstr "لغو سفارش"
+
+msgid "Order paid"
+msgstr "پرداخت سفارش"
+
+msgid "Orders in WooCommerce"
+msgstr "سفارش‌ها در ووکامرس"
+
+msgid "Paid orders to dispatch"
+msgstr "سفارش‌های پرداخت‌شدهٔ آمادهٔ ارسال"
+
+msgid "Paid orders today"
+msgstr "سفارش‌های پرداخت‌شدهٔ امروز"
+
+msgid "Referral reward deposited"
+msgstr "واریز پاداش معرفی"
+
+msgid "Request reviewed"
+msgstr "بررسی درخواست"
+
+msgid "Return requests to review"
+msgstr "درخواست‌های برگشت برای بررسی"
+
+msgid "Running"
+msgstr "در حال اجرا"
+
+msgid "Sales today"
+msgstr "فروش امروز"
+
+msgid "Save changes"
+msgstr "ذخیرهٔ تغییرات"
+
+msgid "Saved. Settings changed: %s"
+msgstr "ذخیره شد. تنظیمات تغییرکرده: %s"
+
+msgid "Scheduled jobs"
+msgstr "کارهای زمان‌بندی‌شده"
+
+msgid "Search customers"
+msgstr "جست‌وجوی مشتریان"
+
+msgid "Shop"
+msgstr "فروشگاه"
+
+msgid "Staff replied in a chat"
+msgstr "پاسخ کارشناس در گفتگو"
+
+msgid "Support replied"
+msgstr "پاسخ پشتیبانی"
+
+msgid "This customer has no mobile number on file."
+msgstr "شمارهٔ موبایلی برای این مشتری ثبت نشده است."
+
+msgid "Tickets & returns"
+msgstr "تیکت‌ها و برگشت‌ها"
+
+msgid "Tickets waiting for a reply"
+msgstr "تیکت‌های منتظر پاسخ"
+
+msgid "Today so far"
+msgstr "امروز تا این لحظه"
+
+msgid "Total spent"
+msgstr "جمع خرید"
+
+msgid "Updated"
+msgstr "به‌روزرسانی"
+
+msgid "Variables"
+msgstr "متغیرها"
+
+msgid "WP-Cron is run by the server."
+msgstr "WP-Cron را سرور اجرا می‌کند."
+
+msgid "Waiting on you"
+msgstr "منتظر شما"
+
+msgid "Wallet charged"
+msgstr "شارژ کیف پول"
+
+msgctxt "account tab bar"
+msgid "Home"
+msgstr "خانه"
+
+msgid "Purchases"
+msgstr "خریدها"
+
+msgid "Account"
+msgstr "حساب"
+
+msgctxt "account tab bar"
+msgid "Chat"
+msgstr "گفبات"
+
+msgid "Main menu"
+msgstr "منوی اصلی"

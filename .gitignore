@@ -1,0 +1,15 @@
+# Release zips and build output
+*.zip
+
+# Composer internals (vendor/autoload.php is committed)
+**/vendor/composer/
+composer.lock
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Logs
+*.log
