@@ -6279,3 +6279,33 @@ msgstr "%d روز گذشته"
 
 msgid "Year %d"
 msgstr "سال %d"
+
+msgid "This token belongs to the shop app and cannot open the CRM. Sign in to the CRM app instead."
+msgstr "این توکن مال اپ فروشگاه است و به بخش مدیریت مشتریان دسترسی ندارد. در اپ مدیریت مشتریان وارد شوید."
+
+msgid "Sign in first."
+msgstr "اول وارد شوید."
+
+msgid "This account has no access to the CRM."
+msgstr "این حساب به بخش مدیریت مشتریان دسترسی ندارد."
+
+msgid "The text message could not be sent. Try again in a moment."
+msgstr "پیامک فرستاده نشد. کمی بعد دوباره تلاش کنید."
+
+msgid "That deal does not belong to this contact."
+msgstr "این فرصت فروش مال این مخاطب نیست."
+
+msgid "Not found."
+msgstr "پیدا نشد."
+
+msgid "Unknown entry type."
+msgstr "نوع مورد نامعتبر است."
+
+msgid "Write something in the note."
+msgstr "متن یادداشت را بنویسید."
+
+msgid "The meeting date is not valid."
+msgstr "تاریخ جلسه معتبر نیست."
+
+msgid "The entry could not be saved."
+msgstr "ثبت این مورد ناموفق بود."

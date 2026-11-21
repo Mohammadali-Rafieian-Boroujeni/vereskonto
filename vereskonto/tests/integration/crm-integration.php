@@ -77,7 +77,10 @@ $crm_tables = static fn(): array => $wpdb->get_col($wpdb->prepare('SHOW TABLES L
 $check(VKL_Crm_Module::installed(), 'CRM installed by the first admin request');
 $check(9 === count($crm_tables()), '9 CRM tables exist');
 $check(VKL_Crm_Schema::VERSION === get_option(VKL_Crm_Schema::VERSION_OPTION), 'CRM schema version recorded');
-$check('2.9.21' === get_option('vkl_db_version'), 'plugin-wide schema version untouched');
+// The plugin-wide schema version belongs to the other modules; the CRM
+// keeps its own and must never change this one.
+$plugin_schema = (string) get_option('vkl_db_version');
+$check(version_compare($plugin_schema, '2.9.21', '>='), 'plugin-wide schema version intact (' . $plugin_schema . ')');
 $before_tables = count($vkl_tables());
 $check(37 === $before_tables, '28 existing + 9 CRM tables');
 
@@ -553,6 +556,29 @@ $check(count($dcsv) - 1 === (int) $wpdb->get_var("SELECT COUNT(*) FROM {$prefix}
 $check(null === $page->export_rows('passwords', $yf, $yt), 'unknown export type refused');
 wp_set_current_user(0);
 
+// ------------------------------------------------------------- api tokens
+$tok = vkl('api.tokens');
+$check((bool) $wpdb->get_var("SHOW COLUMNS FROM {$prefix}api_tokens LIKE 'scope'"), 'api_tokens has the scope column (2.20.0 migration)');
+$st = $tok->issue($agent, 'test', 1, 'staff');
+$ct = $tok->issue($agent, 'test', 1);
+$check(['user_id' => $agent, 'scope' => 'staff'] === $tok->resolve_full($st), 'staff token resolves with staff scope');
+$check('customer' === $tok->resolve_full($ct)['scope'], 'tokens default to customer scope');
+$check($agent === $tok->resolve($st), 'resolve() still returns the user id');
+$check(null === $tok->resolve_full('not-a-token'), 'garbage token rejected');
+$tok->revoke($st);
+$check(null === $tok->resolve_full($st), 'revoked token rejected');
+$wpdb->update($prefix . 'api_tokens', ['expires_at' => gmdate('Y-m-d H:i:s', time() - 5)], ['token_hash' => hash('sha256', $ct)]);
+$check(null === $tok->resolve_full($ct) && 0 === (int) $wpdb->get_var($wpdb->prepare("SELECT COUNT(*) FROM {$prefix}api_tokens WHERE token_hash = %s", hash('sha256', $ct))), 'expired token rejected and removed');
+
+// shared manual-entry rules (admin composer + REST)
+$tl = vkl('crm.timeline');
+$check(is_wp_error($tl->manual(['type' => 'sms'], $dc, 0, $agent)), 'manual entry: only note / call / meeting');
+$check(is_wp_error($tl->manual(['type' => 'note', 'body' => '  '], $dc, 0, $agent)), 'manual entry: empty note rejected');
+$mid = $tl->manual(['type' => 'call', 'outcome' => 'weird', 'direction' => 'sideways', 'minutes' => 9999], $dc, 0, $agent);
+$ma  = $acts->find((int) $mid);
+$check('answered' === $ma['outcome'] && 'out' === $ma['direction'] && 36000 === $ma['duration'], 'manual call: unknown values fall back, minutes capped at 600');
+$check(is_wp_error($tl->manual(['type' => 'meeting', 'meeting_date' => '1405/13/40'], $dc, 0, $agent)), 'manual meeting: invalid date rejected');
+
 // --------------------------------------------------------------- backfill
 // Simulate "CRM installed on a shop that already has customers": wipe
 // contacts and run the import from scratch.
@@ -591,7 +617,7 @@ $check(null === get_role('vkl_sales_agent') && !get_role('administrator')->has_c
 $demoted = get_userdata($agent);
 $check(in_array('customer', $demoted->roles, true), 'former agent keeps a working account (customer)');
 $check(false === get_option(VKL_Crm_Schema::VERSION_OPTION), 'uninstall clears the CRM version');
-$check('2.9.21' === get_option('vkl_db_version'), 'plugin-wide schema version still untouched');
+$check($plugin_schema === get_option('vkl_db_version'), 'CRM uninstall left the plugin-wide schema version alone');
 $check($schema->maybe_install() && 9 === count($crm_tables()) && null !== get_role('vkl_sales_agent'), 'reinstall after uninstall works');
 
 // --------------------------------------------------------------- cleanup

@@ -37,6 +37,7 @@ vkl_require('modules/crm/services/deals.php');
 vkl_require('modules/crm/services/leads.php');
 vkl_require('modules/crm/services/tasks.php');
 vkl_require('modules/crm/services/reports.php');
+vkl_require('modules/crm/rest/controller.php');
 
 if (is_admin()) {
     vkl_require('modules/crm/admin/ui.php');
@@ -83,6 +84,7 @@ final class VKL_Crm_Module
             'crm_deal_credit'           => '0',
             'crm_lost_reasons'          => '',
             'crm_task_email'            => '1',
+            'api_staff_token_ttl_days'  => 30,
         ]);
 
         if (!$config->get_bool('crm_enabled', true)) {
@@ -136,8 +138,28 @@ final class VKL_Crm_Module
             $c->make('crm.leads')->register();
             $c->make('crm.task_service')->register();
 
+            // Staff mobile app API (needs the API module's token store).
+            if ($c->has('api.tokens')) {
+                (new VKL_Crm_Rest(
+                    $config,
+                    $c->make('api.tokens'),
+                    $c->make('crm.access'),
+                    $c->make('crm.contacts'),
+                    $c->make('crm.contact_service'),
+                    $c->make('crm.tags'),
+                    $c->make('crm.activities'),
+                    $c->make('crm.timeline'),
+                    $c->make('crm.pipelines'),
+                    $c->make('crm.deals'),
+                    $c->make('crm.deal_service'),
+                    $c->make('crm.tasks'),
+                    $c->make('crm.task_service'),
+                    $c->make('crm.reports')
+                ))->register();
+            }
+
             if (is_admin()) {
-                $view = new VKL_Crm_Timeline_View($c->make('crm.contacts'), $c->make('crm.activities'), $c->make('crm.deals'), $c->make('crm.access'));
+                $view = new VKL_Crm_Timeline_View($c->make('crm.contacts'), $c->make('crm.activities'), $c->make('crm.deals'), $c->make('crm.access'), $c->make('crm.timeline'));
                 $view->register();
 
                 $task_view = new VKL_Crm_Task_View($c->make('crm.tasks'), $c->make('crm.task_service'), $c->make('crm.contacts'), $c->make('crm.deals'), $c->make('crm.access'));

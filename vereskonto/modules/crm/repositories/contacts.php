@@ -148,8 +148,14 @@ final class VKL_Crm_Contacts extends VKL_Crm_Repository
      */
     private function filter_sql(array $f): array
     {
-        $where = [!empty($f['deleted']) ? 't.deleted_at IS NOT NULL' : 't.deleted_at IS NULL'];
+        $where = [!empty($f['with_deleted']) ? '1=1' : (!empty($f['deleted']) ? 't.deleted_at IS NOT NULL' : 't.deleted_at IS NULL')];
         $args  = [];
+
+        // Sync (mobile app): changed since a time, optionally with deletions.
+        if (!empty($f['updated_since']) && preg_match('/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/', (string) $f['updated_since'])) {
+            $where[] = 't.updated_at >= %s';
+            $args[]  = $f['updated_since'];
+        }
 
         $q = trim((string) ($f['q'] ?? ''));
 

@@ -56,6 +56,76 @@ final class VKL_Crm_Timeline
         }
     }
 
+    /** Call results a person can record. */
+    public const CALL_OUTCOMES = ['answered', 'no_answer', 'busy', 'off', 'callback'];
+
+    /** Meeting states. */
+    public const MEETING_STATES = ['done', 'scheduled', 'cancelled'];
+
+    /**
+     * Validate and log a note / call / meeting written by a person. One
+     * set of rules for the admin composer and the REST API.
+     *
+     * Input keys: type (note|call|meeting), subject, body; for calls
+     * direction (in|out), outcome, minutes; for meetings meeting_status,
+     * meeting_date (Jalali or Y-m-d, shop time) and meeting_time (HH:MM).
+     * The caller has already checked access to the contact and that the
+     * deal (if any) belongs to it.
+     *
+     * @param array<string, mixed> $input
+     * @return int|WP_Error Activity id.
+     */
+    public function manual(array $input, int $contact_id, int $deal_id, int $author_id)
+    {
+        $type = sanitize_key((string) ($input['type'] ?? 'note'));
+        $body = mb_substr(sanitize_textarea_field((string) ($input['body'] ?? '')), 0, 20000);
+
+        if (!in_array($type, ['note', 'call', 'meeting'], true)) {
+            return new WP_Error('vkl_crm_activity', __('Unknown entry type.', 'vereskala-login'), ['status' => 422, 'field' => 'type']);
+        }
+
+        if ('note' === $type && '' === trim($body)) {
+            return new WP_Error('vkl_crm_activity', __('Write something in the note.', 'vereskala-login'), ['status' => 422, 'field' => 'body']);
+        }
+
+        $data = [
+            'contact_id' => $contact_id,
+            'deal_id'    => max(0, $deal_id),
+            'type'       => $type,
+            'subject'    => mb_substr(sanitize_text_field((string) ($input['subject'] ?? '')), 0, 190),
+            'body'       => $body,
+            'author_id'  => $author_id,
+            'done_at'    => gmdate('Y-m-d H:i:s'),
+        ];
+
+        if ('call' === $type) {
+            $outcome           = sanitize_key((string) ($input['outcome'] ?? 'answered'));
+            $data['direction'] = 'in' === ($input['direction'] ?? '') ? 'in' : 'out';
+            $data['outcome']   = in_array($outcome, self::CALL_OUTCOMES, true) ? $outcome : 'answered';
+            $data['duration']  = max(0, min(600, (int) ($input['minutes'] ?? 0))) * 60;
+        }
+
+        if ('meeting' === $type) {
+            $state           = sanitize_key((string) ($input['meeting_status'] ?? 'done'));
+            $data['outcome'] = in_array($state, self::MEETING_STATES, true) ? $state : 'done';
+            $when            = VKL_Crm_Task_Service::local_to_utc((string) ($input['meeting_date'] ?? ''), (string) ($input['meeting_time'] ?? ''));
+
+            if (false === $when) {
+                return new WP_Error('vkl_crm_activity', __('The meeting date is not valid.', 'vereskala-login'), ['status' => 422, 'field' => 'meeting_date']);
+            }
+
+            $data['scheduled_at'] = $when;
+
+            if ('done' !== $data['outcome']) {
+                $data['done_at'] = null;
+            }
+        }
+
+        $id = $this->activities->log($data);
+
+        return $id > 0 ? $id : new WP_Error('vkl_crm_db', __('The entry could not be saved.', 'vereskala-login'), ['status' => 500]);
+    }
+
     /**
      * Record a CRM-side change ("assigned to Sara", "stage → customer").
      */

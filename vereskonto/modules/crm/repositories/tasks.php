@@ -69,8 +69,15 @@ final class VKL_Crm_Tasks extends VKL_Crm_Repository
      */
     public function search(array $filters, array $scope, string $day_start_utc, string $day_end_utc, int $page = 1, int $per_page = 50): array
     {
-        $where = ['t.deleted_at IS NULL', $scope[0]];
+        $where = [!empty($filters['with_deleted']) ? '1=1' : 't.deleted_at IS NULL', $scope[0]];
         $args  = $scope[1];
+        $f     = $filters;
+
+        // Sync (mobile app): changed since a time, optionally with deletions.
+        if (!empty($f['updated_since']) && preg_match('/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/', (string) $f['updated_since'])) {
+            $where[] = 't.updated_at >= %s';
+            $args[]  = $f['updated_since'];
+        }
         $view  = in_array($filters['view'] ?? '', self::VIEWS, true) ? $filters['view'] : 'all';
         $order = 'ASC';
         $by    = 'due_at';

@@ -23,9 +23,11 @@ final class VKL_Crm_Timeline_View
     private VKL_Crm_Activities $activities;
     private VKL_Crm_Deals $deals;
     private VKL_Crm_Access $access;
+    private VKL_Crm_Timeline $timeline;
 
-    public function __construct(VKL_Crm_Contacts $contacts, VKL_Crm_Activities $activities, VKL_Crm_Deals $deals, VKL_Crm_Access $access)
+    public function __construct(VKL_Crm_Contacts $contacts, VKL_Crm_Activities $activities, VKL_Crm_Deals $deals, VKL_Crm_Access $access, VKL_Crm_Timeline $timeline)
     {
+        $this->timeline   = $timeline;
         $this->contacts   = $contacts;
         $this->activities = $activities;
         $this->deals      = $deals;
@@ -187,13 +189,6 @@ final class VKL_Crm_Timeline_View
             VKL_Crm_Ui::redirect($back, null === $c ? 'missing' : 'denied');
         }
 
-        $type = isset($_POST['type']) ? sanitize_key((string) $_POST['type']) : 'note';
-        $body = isset($_POST['body']) ? sanitize_textarea_field(wp_unslash((string) $_POST['body'])) : '';
-
-        if (!in_array($type, ['note', 'call', 'meeting'], true)) {
-            VKL_Crm_Ui::redirect($back, 'invalid');
-        }
-
         // A note can also belong to one of the contact's deals.
         $deal_id = isset($_POST['deal_id']) ? absint($_POST['deal_id']) : 0;
 
@@ -205,47 +200,16 @@ final class VKL_Crm_Timeline_View
             }
         }
 
-        $data = [
-            'contact_id' => $id,
-            'deal_id'    => $deal_id,
-            'type'       => $type,
-            'subject'    => isset($_POST['subject']) ? mb_substr(sanitize_text_field(wp_unslash((string) $_POST['subject'])), 0, 190) : '',
-            'body'       => mb_substr($body, 0, 20000),
-            'author_id'  => get_current_user_id(),
-            'done_at'    => gmdate('Y-m-d H:i:s'),
-        ];
+        $input = [];
 
-        if ('note' === $type && '' === trim($body)) {
-            VKL_Crm_Ui::redirect($back, 'invalid');
-        }
-
-        if ('call' === $type) {
-            $data['direction'] = isset($_POST['direction']) && 'in' === $_POST['direction'] ? 'in' : 'out';
-            $outcome           = isset($_POST['outcome']) ? sanitize_key((string) $_POST['outcome']) : 'answered';
-            $data['outcome']   = array_key_exists($outcome, VKL_Crm_Ui::call_outcomes()) ? $outcome : 'answered';
-            $data['duration']  = max(0, min(600, isset($_POST['minutes']) ? absint($_POST['minutes']) : 0)) * 60;
-        }
-
-        if ('meeting' === $type) {
-            $status          = isset($_POST['meeting_status']) ? sanitize_key((string) $_POST['meeting_status']) : 'done';
-            $data['outcome'] = in_array($status, ['done', 'scheduled', 'cancelled'], true) ? $status : 'done';
-            $when            = $this->local_to_utc(
-                isset($_POST['meeting_date']) ? wp_unslash((string) $_POST['meeting_date']) : '',
-                isset($_POST['meeting_time']) ? wp_unslash((string) $_POST['meeting_time']) : ''
-            );
-
-            if (false === $when) {
-                VKL_Crm_Ui::redirect($back, 'invalid');
-            }
-
-            $data['scheduled_at'] = $when;
-
-            if ('done' !== $data['outcome']) {
-                $data['done_at'] = null;
+        foreach (['type', 'subject', 'body', 'direction', 'outcome', 'minutes', 'meeting_status', 'meeting_date', 'meeting_time'] as $field) {
+            if (isset($_POST[$field])) {
+                $input[$field] = wp_unslash((string) $_POST[$field]);
             }
         }
 
-        VKL_Crm_Ui::redirect($back, $this->activities->log($data) > 0 ? 'logged' : 'invalid');
+        $result = $this->timeline->manual($input, $id, $deal_id, get_current_user_id());
+        VKL_Crm_Ui::redirect($back, is_wp_error($result) ? 'invalid' : 'logged');
     }
 
     public function handle_activity_delete(): void
@@ -280,33 +244,4 @@ final class VKL_Crm_Timeline_View
         return (int) $a['author_id'] === get_current_user_id() && $this->access->can_edit($c);
     }
 
-    /**
-     * Jalali (or Gregorian) date + HH:MM in shop time → UTC MySQL.
-     * Empty date → null (no date); invalid → false.
-     *
-     * @return string|null|false
-     */
-    private function local_to_utc(string $date, string $time)
-    {
-        $date = trim(vkl_latin_digits($date));
-
-        if ('' === $date) {
-            return null;
-        }
-
-        $g = preg_match('/^\d{4}-\d{2}-\d{2}$/', $date) && (int) substr($date, 0, 4) > 1700 ? $date : VKL_Jalali::parse($date);
-        $t = preg_match('/^([01]\d|2[0-3]):[0-5]\d$/', trim(vkl_latin_digits($time))) ? trim(vkl_latin_digits($time)) : '09:00';
-
-        if ('' === $g) {
-            return false;
-        }
-
-        try {
-            $local = new DateTimeImmutable($g . ' ' . $t . ':00', wp_timezone());
-        } catch (Exception $e) {
-            return false;
-        }
-
-        return $local->setTimezone(new DateTimeZone('UTC'))->format('Y-m-d H:i:s');
-    }
 }
