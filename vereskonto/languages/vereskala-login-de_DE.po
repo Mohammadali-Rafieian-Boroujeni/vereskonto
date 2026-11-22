@@ -5090,3 +5090,75 @@ msgstr "Konto"
 msgctxt "account tab bar"
 msgid "Chat"
 msgstr "Chat"
+
+# 2.21.0
+msgid "Customers & CRM"
+msgstr "Kunden & CRM"
+
+msgid "Customer profiles"
+msgstr "Kundenprofile"
+
+msgid "Contacts & leads"
+msgstr "Kontakte & Leads"
+
+msgid "Sign-in code pattern"
+msgstr "Muster für den Anmeldecode"
+
+msgid "The pattern id (bodyId) from your panel whose text contains your shop name and the code placeholder."
+msgstr "Die Muster-ID (bodyId) aus Ihrem Panel, deren Text den Shopnamen und den Platzhalter für den Code enthält."
+
+msgid "Melipayamak username and password are set (shared with the SMS login)."
+msgstr "Melipayamak-Benutzername und -Passwort sind gesetzt (gemeinsam mit der SMS-Anmeldung)."
+
+msgid "Enter the Melipayamak username and password under Settings → SMS settings."
+msgstr "Melipayamak-Benutzername und -Passwort unter Einstellungen → SMS-Einstellungen eintragen."
+
+msgid "%s customers match this search."
+msgstr "%s Kunden passen zu dieser Suche."
+
+msgid "%s customer accounts, newest first. Open one to see orders, wallet, installments, club points and messages together."
+msgstr "%s Kundenkonten, neueste zuerst. Öffnen Sie eines, um Bestellungen, Guthaben, Raten, Clubpunkte und Nachrichten zusammen zu sehen."
+
+msgid "My CRM tasks due today or overdue"
+msgstr "Meine CRM-Aufgaben, heute fällig oder überfällig"
+
+msgid "Nothing due"
+msgstr "Nichts fällig"
+
+msgid "Connected, but the sign-in code pattern is empty — customers cannot sign in."
+msgstr "Verbunden, aber das Muster für den Anmeldecode ist leer – Kunden können sich nicht anmelden."
+
+msgid "Yesterday by now: none"
+msgstr "Gestern bis jetzt: keine"
+
+msgid "Same as yesterday by now"
+msgstr "Gleich wie gestern bis jetzt"
+
+msgid "%s vs. yesterday by now"
+msgstr "%s gegenüber gestern bis jetzt"
+
+msgid "%s health warnings"
+msgstr "%s Warnungen"
+
+msgid "Average order value"
+msgstr "Durchschnittlicher Bestellwert"
+
+msgid "New customer accounts"
+msgstr "Neue Kundenkonten"
+
+msgid "Sales, last 7 days"
+msgstr "Umsatz, letzte 7 Tage"
+
+msgid "%s order"
+msgid_plural "%s orders"
+msgstr[0] "%s Bestellung"
+msgstr[1] "%s Bestellungen"
+
+msgid "Not a sale"
+msgstr "Kein Verkauf"
+
+msgid "Wallet top-ups and installment repayments are not counted as sales."
+msgstr "Guthabenaufladungen und Ratenzahlungen zählen nicht als Umsatz."
+
+msgid "All orders"
+msgstr "Alle Bestellungen"

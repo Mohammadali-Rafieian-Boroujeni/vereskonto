@@ -185,6 +185,7 @@ final class VKL_Customers_Admin
             .vkl-customers .vkl-who strong{color:#1d2327;font-size:15px}
             .vkl-customers .vkl-back{display:inline-block;margin:8px 0 2px;text-decoration:none}
             .vkl-customers td.num{font-variant-numeric:tabular-nums}
+            .vkl-customers td.is-debt,.vkl-customers td.is-debt a{color:#b32d2e;font-weight:600}
             .vkl-customers .vkl-pill{display:inline-block;padding:0 8px;border-radius:999px;background:#f0f0f1;font-size:12px}
         </style>
         <?php
@@ -197,7 +198,14 @@ final class VKL_Customers_Admin
         $res  = $this->search($q, $page);
         $pages = (int) ceil($res['total'] / self::PER_PAGE);
         ?>
-        <h1><?php esc_html_e('Customers', 'vereskala-login'); ?></h1>
+        <h1><?php esc_html_e('Customer profiles', 'vereskala-login'); ?></h1>
+        <p class="description"><?php
+            echo esc_html('' !== $q
+                /* translators: %s: number of customers. */
+                ? sprintf(__('%s customers match this search.', 'vereskala-login'), number_format_i18n($res['total']))
+                /* translators: %s: number of customers. */
+                : sprintf(__('%s customer accounts, newest first. Open one to see orders, wallet, installments, club points and messages together.', 'vereskala-login'), number_format_i18n($res['total'])));
+        ?></p>
         <form method="get" action="<?php echo esc_url(admin_url('admin.php')); ?>" class="vkl-search" role="search">
             <input type="hidden" name="page" value="<?php echo esc_attr(self::PAGE); ?>">
             <label class="screen-reader-text" for="vkl-customer-q"><?php esc_html_e('Search customers', 'vereskala-login'); ?></label>
@@ -213,26 +221,30 @@ final class VKL_Customers_Admin
                 <th><?php esc_html_e('Customer', 'vereskala-login'); ?></th>
                 <th><?php esc_html_e('Mobile', 'vereskala-login'); ?></th>
                 <th><?php esc_html_e('Orders', 'vereskala-login'); ?></th>
+                <th><?php esc_html_e('Total spent', 'vereskala-login'); ?></th>
                 <th><?php esc_html_e('Wallet', 'vereskala-login'); ?></th>
+                <th><?php esc_html_e('Open installment debt', 'vereskala-login'); ?></th>
                 <th><?php esc_html_e('Points', 'vereskala-login'); ?></th>
                 <th><?php esc_html_e('Member since', 'vereskala-login'); ?></th>
             </tr></thead>
             <tbody>
             <?php if ([] === $res['users']) : ?>
-                <tr><td colspan="6"><?php echo '' !== $q ? esc_html__('No customer matches this search.', 'vereskala-login') : esc_html__('No customers yet.', 'vereskala-login'); ?></td></tr>
+                <tr><td colspan="8"><?php echo '' !== $q ? esc_html__('No customer matches this search.', 'vereskala-login') : esc_html__('No customers yet.', 'vereskala-login'); ?></td></tr>
             <?php endif; ?>
             <?php foreach ($res['users'] as $u) : ?>
                 <?php
-                $uid    = (int) $u->ID;
-                $wallet = self::ask('wallet', 'balance', [$uid], null);
-                $points = self::ask('loyalty.repository', 'balance', [$uid], null);
+                $uid  = (int) $u->ID;
+                $sum  = $this->summary($uid);
+                $debt = (float) ($sum['debt'] ?? 0);
                 ?>
                 <tr>
                     <td><a href="<?php echo esc_url(self::profile_url($uid)); ?>"><strong><?php echo esc_html($u->display_name ?: $u->user_login); ?></strong></a></td>
                     <td dir="ltr"><?php echo esc_html((string) get_user_meta($uid, 'billing_phone', true)); ?></td>
-                    <td class="num"><?php echo function_exists('wc_get_customer_order_count') ? esc_html(number_format_i18n((int) wc_get_customer_order_count($uid))) : '—'; ?></td>
-                    <td class="num"><?php echo null !== $wallet ? self::price((float) $wallet) : '—'; // phpcs:ignore ?></td>
-                    <td class="num"><?php echo null !== $points ? esc_html(number_format_i18n((int) $points)) : '—'; ?></td>
+                    <td class="num"><?php echo null !== $sum['orders'] ? esc_html(number_format_i18n((int) $sum['orders'])) : '—'; ?></td>
+                    <td class="num"><?php echo null !== $sum['spent'] ? self::price((float) $sum['spent']) : '—'; // phpcs:ignore ?></td>
+                    <td class="num"><?php echo null !== $sum['wallet'] ? self::price((float) $sum['wallet']) : '—'; // phpcs:ignore ?></td>
+                    <td class="num<?php echo $debt > 0 ? ' is-debt' : ''; ?>"><?php echo null === $sum['debt'] ? '—' : ($debt > 0 ? '<a href="' . esc_url(self::profile_url($uid, 'credit')) . '">' . self::price($debt) . '</a>' : '—'); // phpcs:ignore ?></td>
+                    <td class="num"><?php echo null !== $sum['points'] ? esc_html(number_format_i18n((int) $sum['points'])) : '—'; ?></td>
                     <td><?php echo self::date((string) $u->user_registered); // phpcs:ignore ?></td>
                 </tr>
             <?php endforeach; ?>

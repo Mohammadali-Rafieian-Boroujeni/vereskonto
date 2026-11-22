@@ -23,9 +23,10 @@ add_action('admin_init', 'vkl_register_settings');
 
 function vkl_register_settings()
 {
-    register_setting('vkl_settings', 'vkl_api_key');
-    register_setting('vkl_settings', 'vkl_pattern_code');
-    register_setting('vkl_settings', 'vkl_sender');
+    // 2.21.0: the "API Key" and "Sender" fields of the pre-Melipayamak
+    // gateway are gone — nothing sent with them any more. Stored values
+    // are left in place (unused) so a downgrade still finds them.
+    register_setting('vkl_settings', 'vkl_pattern_code', ['sanitize_callback' => 'sanitize_text_field']);
     register_setting('vkl_settings', 'vkl_meli_username', ['sanitize_callback' => 'sanitize_text_field']);
     register_setting('vkl_settings', 'vkl_meli_password', ['sanitize_callback' => 'sanitize_text_field']);
     register_setting('vkl_settings', 'vkl_sms_bind_ip', ['sanitize_callback' => 'sanitize_text_field']);
@@ -221,23 +222,12 @@ function vkl_settings_sms_form()
                 <th scope="row"><?php esc_html_e('Panel password', 'vereskala-login'); ?></th>
                 <td><input type="password" dir="ltr" class="regular-text" name="vkl_meli_password" value="<?php echo esc_attr((string) get_option('vkl_meli_password', '')); ?>"></td>
             </tr>
-        </table>
-        <p class="description" style="max-width:820px">
-            <?php esc_html_e('Put the pattern id (bodyId) from your panel in the Pattern Code field below — for the login code that is the pattern whose text contains your shop name and the code placeholder. Pattern variables are filled in the order the plugin sends them.', 'vereskala-login'); ?>
-        </p>
-
-        <table class="form-table">
             <tr>
-                <th>API Key</th>
-                <td><input type="text" class="regular-text" name="vkl_api_key" value="<?php echo esc_attr(get_option('vkl_api_key')); ?>"></td>
-            </tr>
-            <tr>
-                <th>Pattern Code</th>
-                <td><input type="text" class="regular-text" name="vkl_pattern_code" value="<?php echo esc_attr(get_option('vkl_pattern_code')); ?>"></td>
-            </tr>
-            <tr>
-                <th>Sender</th>
-                <td><input type="text" class="regular-text" name="vkl_sender" value="<?php echo esc_attr(get_option('vkl_sender')); ?>"></td>
+                <th scope="row"><?php esc_html_e('Sign-in code pattern', 'vereskala-login'); ?></th>
+                <td>
+                    <input type="text" dir="ltr" class="regular-text" name="vkl_pattern_code" value="<?php echo esc_attr((string) get_option('vkl_pattern_code', '')); ?>">
+                    <p class="description"><?php esc_html_e('The pattern id (bodyId) from your panel whose text contains your shop name and the code placeholder.', 'vereskala-login'); ?></p>
+                </td>
             </tr>
         </table>
 

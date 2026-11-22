@@ -45,8 +45,16 @@ final class VKL_Notify_Sms implements VKL_Notify_Channel
 
     public function is_enabled(): bool
     {
-        // The SMS driver is configured whenever an API key is present.
-        return '' !== $this->config->get_string('api_key');
+        // Ready when the gateway (Melipayamak) has its credentials. This
+        // used to look at the legacy "API Key" field, which the current
+        // gateway never uses, so SMS notifications stayed off for shops
+        // that had set up Melipayamak only.
+        if (function_exists('vkl') && vkl()->has('sms.driver')) {
+            return (bool) vkl('sms.driver')->is_configured();
+        }
+
+        return '' !== $this->config->get_string('meli_username')
+            && '' !== $this->config->get_string('meli_password');
     }
 
     public function can_reach(int $user_id): bool

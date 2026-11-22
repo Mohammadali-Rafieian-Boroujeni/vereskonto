@@ -6309,3 +6309,67 @@ msgstr "تاریخ جلسه معتبر نیست."
 
 msgid "The entry could not be saved."
 msgstr "ثبت این مورد ناموفق بود."
+
+# 2.21.0
+msgid "Customers & CRM"
+msgstr "مشتریان و CRM"
+
+msgid "Customer profiles"
+msgstr "پروفایل مشتریان"
+
+msgid "Contacts & leads"
+msgstr "مخاطبین و سرنخ‌ها"
+
+msgid "Sign-in code pattern"
+msgstr "پترن کد ورود"
+
+msgid "The pattern id (bodyId) from your panel whose text contains your shop name and the code placeholder."
+msgstr "شناسهٔ الگو (bodyId) از پنل ملی‌پیامک؛ الگویی که متنش نام فروشگاه و جای کد را دارد."
+
+msgid "Melipayamak username and password are set (shared with the SMS login)."
+msgstr "نام کاربری و گذرواژهٔ ملی‌پیامک وارد شده است (مشترک با ورود پیامکی)."
+
+msgid "Enter the Melipayamak username and password under Settings → SMS settings."
+msgstr "نام کاربری و گذرواژهٔ ملی‌پیامک را در تنظیمات ← تنظیمات پیامک وارد کنید."
+
+msgid "%s customers match this search."
+msgstr "%s مشتری با این جست‌وجو پیدا شد."
+
+msgid "%s customer accounts, newest first. Open one to see orders, wallet, installments, club points and messages together."
+msgstr "%s حساب مشتری، تازه‌ترین‌ها اول. با باز کردن هرکدام، سفارش‌ها، کیف پول، اقساط، امتیاز باشگاه و پیامک‌ها را یک‌جا ببینید."
+
+msgid "My CRM tasks due today or overdue"
+msgstr "وظایف CRM من برای امروز یا عقب‌افتاده"
+
+msgid "Nothing due"
+msgstr "کاری سررسید نشده"
+
+msgid "Connected, but the sign-in code pattern is empty — customers cannot sign in."
+msgstr "متصل است، اما پترن کد ورود خالی است — مشتریان نمی‌توانند وارد شوند."
+
+msgid "Yesterday by now: none"
+msgstr "دیروز تا این ساعت: هیچ"
+
+msgid "Same as yesterday by now"
+msgstr "برابر با دیروز تا این ساعت"
+
+msgid "%s vs. yesterday by now"
+msgstr "%s نسبت به دیروز تا این ساعت"
+
+msgid "%s health warnings"
+msgstr "%s هشدار سلامت"
+
+msgid "Average order value"
+msgstr "میانگین مبلغ سفارش"
+
+msgid "New customer accounts"
+msgstr "حساب‌های مشتری تازه"
+
+msgid "Sales, last 7 days"
+msgstr "فروش ۷ روز اخیر"
+
+msgid "Wallet top-ups and installment repayments are not counted as sales."
+msgstr "شارژ کیف پول و پرداخت قسط جزو فروش حساب نمی‌شوند."
+
+msgid "All orders"
+msgstr "همهٔ سفارش‌ها"

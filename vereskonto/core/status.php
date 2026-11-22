@@ -423,7 +423,9 @@ final class VKL_Status_Admin
         $checkout  = $this->checkout_type();
         $cfg       = $this->config;
 
-        $sms_ok = '' !== $cfg->get_string('api_key') && '' !== $cfg->get_string('sender');
+        $sms_ok = function_exists('vkl') && vkl()->has('sms.driver')
+            ? (bool) vkl('sms.driver')->is_configured()
+            : ('' !== $cfg->get_string('meli_username') && '' !== $cfg->get_string('meli_password'));
         $wa_ok  = '' !== $cfg->get_string('wa_token') && '' !== $cfg->get_string('wa_phone_id');
 
         // label, enabled?, [pattern config keys that must be non-empty].
@@ -762,7 +764,7 @@ define('WP_PROXY_PASSWORD', 'PASS');</pre>
                 <tr>
                     <td><?php esc_html_e('SMS gateway', 'vereskala-login'); ?></td>
                     <td><?php echo wp_kses_post($this->mark($sms_ok)); ?>
-                        <?php $sms_ok ? esc_html_e('API key and sender are set (shared with the SMS login).', 'vereskala-login') : esc_html_e('Set the API key and sender number on the main Vereskonto settings page.', 'vereskala-login'); ?>
+                        <?php $sms_ok ? esc_html_e('Melipayamak username and password are set (shared with the SMS login).', 'vereskala-login') : esc_html_e('Enter the Melipayamak username and password under Settings → SMS settings.', 'vereskala-login'); ?>
                     </td>
                 </tr>
                 <tr>

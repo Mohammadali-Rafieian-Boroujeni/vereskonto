@@ -42,10 +42,13 @@ final class VKL_Admin_Menu
     {
         return [
             [
+                // Both overviews side by side: the shop's day (admins) and
+                // the sales team's period (CRM staff see only this one).
                 'key'   => 'today',
                 'label' => __('Dashboard', 'vereskala-login'),
                 'items' => [
                     'vkl-today' => __('Today', 'vereskala-login'),
+                    'vkl-crm'   => __('CRM dashboard', 'vereskala-login'),
                 ],
             ],
             [
@@ -58,22 +61,19 @@ final class VKL_Admin_Menu
                 ],
             ],
             [
-                'key'   => 'crm',
-                'label' => __('CRM', 'vereskala-login'),
+                // One section for "people": the 360° profile of a customer
+                // account (wallet, installments, club…) next to the CRM
+                // record of the same person (leads included), their deals,
+                // follow-up tasks and orders. Until 2.20 these were two
+                // sections, "Customers" (one screen) and "CRM".
+                'key'   => 'customers',
+                'label' => __('Customers & CRM', 'vereskala-login'),
                 'items' => [
-                    'vkl-crm'          => __('CRM dashboard', 'vereskala-login'),
-                    'vkl-crm-contacts' => __('Contacts', 'vereskala-login'),
+                    'vkl-customers'    => __('Customer profiles', 'vereskala-login'),
+                    'vkl-crm-contacts' => __('Contacts & leads', 'vereskala-login'),
                     'vkl-crm-deals'    => __('Deals', 'vereskala-login'),
                     'vkl-crm-tasks'    => __('Tasks', 'vereskala-login'),
                     'vkl-crm-orders'   => __('Customer orders', 'vereskala-login'),
-                    'vkl-crm-reports'  => __('CRM reports', 'vereskala-login'),
-                ],
-            ],
-            [
-                'key'   => 'customers',
-                'label' => __('Customers', 'vereskala-login'),
-                'items' => [
-                    'vkl-customers' => __('Customers', 'vereskala-login'),
                 ],
             ],
             [
@@ -101,6 +101,7 @@ final class VKL_Admin_Menu
                     'vkl-cancelled' => __('Cancelled orders', 'vereskala-login'),
                     'vkl-analytics' => __('Site visits', 'vereskala-login'),
                     'vkl-sms-logs'  => __('SMS log', 'vereskala-login'),
+                    'vkl-crm-reports' => __('CRM reports', 'vereskala-login'),
                 ],
             ],
             [
@@ -273,7 +274,22 @@ final class VKL_Admin_Menu
                 continue; // A heading over a single screen only repeats its name.
             }
 
-            $first = (string) array_key_first($group['items']);
+            // The first screen this user can open: a sales agent does not
+            // get "Today", so the Dashboard caption goes above their CRM
+            // dashboard instead of disappearing.
+            $first = '';
+
+            foreach (array_keys($group['items']) as $slug) {
+                if (self::can_open((string) $slug)) {
+                    $first = (string) $slug;
+                    break;
+                }
+            }
+
+            if ('' === $first) {
+                continue;
+            }
+
             $label = str_replace(['\\', '"', '<', '>'], ['\\\\', '\\"', '', ''], $group['label']);
             $css  .= sprintf(
                 '%1$s li:has(> a[href$="page=%2$s"])::before{content:"%3$s"}',

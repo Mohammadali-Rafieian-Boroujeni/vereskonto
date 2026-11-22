@@ -81,7 +81,6 @@ final class VKL_Sms_Module
         $config->add_defaults([
             'meli_username'         => '',
             'meli_password'         => '',
-            'meli_sender'           => '',
             'default_customer_name' => 'ورسکالایی',
             'birthday_sms_enabled'  => '0',
             'birthday_pattern'      => '',

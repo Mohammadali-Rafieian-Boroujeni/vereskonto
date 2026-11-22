@@ -63,7 +63,7 @@ function wp_nonce_field(...$a) {}
 function wp_get_referer() { return $GLOBALS['test_referer'] ?? false; }
 function get_current_screen() { return (object) ['id' => 'vereskonto_page_' . ($_GET['page'] ?? '')]; }
 function wc_price($p) { return (string) $p; }
-function wc_get_orders($a = []) { return []; }
+function wc_get_orders($a = []) { return $GLOBALS['test_orders'] ?? []; }
 function add_action(...$a) {}
 function add_filter(...$a) {}
 function apply_filters($h, $v) { return $v; }

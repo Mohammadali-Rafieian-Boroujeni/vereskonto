@@ -85,9 +85,11 @@ $screen = static function (string $name, callable $fn) use ($render, $balanced, 
     return $html;
 };
 
-// ---- Menu: eight sections (CRM since 2.16.0), Today first. -------------
+// ---- Menu: seven sections (2.21.0 folded "CRM" into "Customers"). -------
 $keys = array_column(VKL_Admin_Menu::groups(), 'key');
-$check($keys === ['today', 'inbox', 'crm', 'customers', 'finance', 'marketing', 'reports', 'settings'], 'menu has the eight sections in order');
+$check($keys === ['today', 'inbox', 'customers', 'finance', 'marketing', 'reports', 'settings'], 'menu has the seven sections in order');
+$groups = array_column(VKL_Admin_Menu::groups(), 'items', 'key');
+$check(isset($groups['today']['vkl-crm'], $groups['customers']['vkl-customers'], $groups['customers']['vkl-crm-contacts'], $groups['reports']['vkl-crm-reports']), 'dashboards together, people together, all reports together');
 
 // ---- Today ---------------------------------------------------------------
 $today = new VKL_Today_Admin();
@@ -98,7 +100,58 @@ $check(substr_count($html, 'class="vkl-card is-clear"') >= 1, 'today shows a don
 $GLOBALS['test_options']['vkl_meli_username'] = '';
 $check(false === $today->health()[0]['ok'], 'health flags a missing SMS gateway');
 $GLOBALS['test_options']['vkl_meli_username'] = 'shop';
-$check(true === $today->health()[0]['ok'], 'health passes with gateway credentials');
+$GLOBALS['test_options']['vkl_meli_password'] = 'secret';
+$check(false === $today->health()[0]['ok'], 'health flags an empty sign-in code pattern');
+$GLOBALS['test_options']['vkl_pattern_code'] = '12345';
+$check(true === $today->health()[0]['ok'], 'health passes with gateway credentials and pattern');
+$GLOBALS['test_options']['vkl_api_key'] = 'legacy';
+$GLOBALS['test_options']['vkl_meli_password'] = '';
+$check(false === $today->health()[0]['ok'], 'legacy API key alone no longer counts as a gateway');
+unset($GLOBALS['test_options']['vkl_api_key']);
+
+// Waiting cards: work first, all-clear after.
+$cards = $today->waiting();
+$seen_clear = false;
+$ordered = true;
+foreach ($cards as $c) {
+    if ($c['count'] <= 0) { $seen_clear = true; } elseif ($seen_clear) { $ordered = false; }
+}
+$check($ordered, 'waiting cards list pending work before all-clear ones');
+
+// Figures: seven days, sales only.
+$f = $today->figures();
+$check(7 === count($f['days']) && 0 === $f['orders'] && null === $f['aov'], 'figures cover seven days; no orders means no average');
+
+// With orders: today vs yesterday by the same hour, the trend and the table.
+class VKL_Test_Date { private $ts; public function __construct(int $ts) { $this->ts = $ts; } public function getTimestamp() { return $this->ts; } }
+class VKL_Test_Order
+{
+    public function __construct(private int $id, private int $ts, private float $total, private int $uid = 5) {}
+    public function get_id() { return $this->id; }
+    public function get_order_number() { return (string) $this->id; }
+    public function get_date_created() { return new VKL_Test_Date($this->ts); }
+    public function get_total() { return $this->total; }
+    public function get_customer_id() { return $this->uid; }
+    public function get_formatted_billing_full_name() { return 'مریم احمدی'; }
+    public function get_status() { return 'processing'; }
+}
+$tz       = new DateTimeZone('Asia/Tehran');
+$midnight = (new DateTimeImmutable('now', $tz))->setTime(0, 0)->getTimestamp();
+$GLOBALS['test_orders'] = [
+    new VKL_Test_Order(101, time() - 5, 300000.0),
+    new VKL_Test_Order(102, time() - 10, 100000.0, 0),
+    new VKL_Test_Order(90, $midnight - 86400 + 60, 200000.0),          // yesterday, early: counts "by now"
+    new VKL_Test_Order(80, $midnight - 3 * 86400 + 3600, 50000.0),     // within the week
+    new VKL_Test_Order(10, $midnight - 30 * 86400, 999999.0),          // outside the week: ignored
+];
+$f = $today->figures();
+$check(2 === $f['orders'] && 400000.0 === $f['revenue'] && 200000.0 === $f['aov'], 'today: two orders, sum and average');
+$check(1 === $f['y_orders'] && 200000.0 === $f['y_revenue'], 'yesterday by the same hour');
+$check(650000.0 === array_sum(array_column($f['days'], 'revenue')), 'week total ignores older orders');
+$html = $screen('today with orders', [$today, 'render']);
+$check(str_contains($html, 'vkl-bars') && str_contains($html, 'page=vkl-customers&customer=5') && str_contains($html, '#101'), 'today shows the trend and latest orders linked to the customer');
+$check(str_contains($html, '▲ 100٪'), 'today shows the change against yesterday');
+unset($GLOBALS['test_orders']);
 
 // ---- Customers -------------------------------------------------------------
 $cust = new VKL_Customers_Admin();
