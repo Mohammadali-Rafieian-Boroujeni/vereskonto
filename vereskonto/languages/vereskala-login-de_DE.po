@@ -3857,6 +3857,9 @@ msgstr "Tokens laufen ab; wenn ein geschützter Aufruf 401 zurückgibt, sollte d
 msgid "Too many requests. Please try again later."
 msgstr "Zu viele Anfragen. Bitte später erneut versuchen."
 
+msgid "Too many wrong codes. Please try again in 15 minutes."
+msgstr "Zu viele falsche Codes. Bitte versuchen Sie es in 15 Minuten erneut."
+
 msgid "Top members"
 msgstr "Top-Mitglieder"
 

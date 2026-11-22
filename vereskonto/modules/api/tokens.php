@@ -56,17 +56,45 @@ final class VKL_Api_Tokens extends VKL_Repository
                 ) {$wpdb->get_charset_collate()};"
             );
         });
+
+        // 2.20.0: token scope. "customer" tokens (the shop app) can never
+        // reach the CRM API; staff sign in separately for a "staff" token.
+        // Additive column with a default, so older plugin versions keep
+        // working on the same table.
+        $migrator->register('2.20.0', static function (): void {
+            global $wpdb;
+
+            require_once ABSPATH . 'wp-admin/includes/upgrade.php';
+
+            dbDelta(
+                "CREATE TABLE {$wpdb->prefix}vkl_api_tokens (
+                    id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+                    user_id BIGINT UNSIGNED NOT NULL,
+                    token_hash CHAR(64) NOT NULL,
+                    scope VARCHAR(10) NOT NULL DEFAULT 'customer',
+                    device VARCHAR(190) NOT NULL DEFAULT '',
+                    created_at DATETIME NOT NULL,
+                    last_used_at DATETIME NULL,
+                    expires_at DATETIME NOT NULL,
+                    PRIMARY KEY  (id),
+                    UNIQUE KEY token_hash (token_hash),
+                    KEY user_id (user_id),
+                    KEY expires_at (expires_at)
+                ) {$wpdb->get_charset_collate()};"
+            );
+        });
     }
 
     /**
      * Issue a fresh token for a user. Returns the PLAINTEXT token — it is
      * shown exactly once and never recoverable afterwards.
      */
-    public function issue(int $user_id, string $device, int $ttl_days): string
+    public function issue(int $user_id, string $device, int $ttl_days, string $scope = 'customer'): string
     {
         $plain = $this->random_token();
+        $extra = 'customer' === $scope ? [] : ['scope' => 'staff' === $scope ? 'staff' : 'customer'];
 
-        $this->insert_row([
+        $this->insert_row($extra + [
             'user_id'    => $user_id,
             'token_hash' => hash('sha256', $plain),
             'device'     => mb_substr($device, 0, 190),
@@ -83,25 +111,37 @@ final class VKL_Api_Tokens extends VKL_Repository
      */
     public function resolve(string $plain): int
     {
+        return (int) ($this->resolve_full($plain)['user_id'] ?? 0);
+    }
+
+    /**
+     * Resolve a token to its user and scope; null when invalid/expired.
+     * Touches last_used_at on success.
+     *
+     * @return array{user_id: int, scope: string}|null
+     */
+    public function resolve_full(string $plain): ?array
+    {
         $plain = trim($plain);
 
         if ('' === $plain) {
-            return 0;
+            return null;
         }
 
+        // SELECT * so this keeps working before the 2.20.0 column exists.
         $row = $this->db->get_row(
-            'SELECT id, user_id, expires_at FROM {api_tokens} WHERE token_hash = %s',
+            'SELECT * FROM {api_tokens} WHERE token_hash = %s',
             hash('sha256', $plain)
         );
 
         if (null === $row) {
-            return 0;
+            return null;
         }
 
-        if (strtotime((string) $row['expires_at']) <= time()) {
+        if (strtotime((string) $row['expires_at'] . ' UTC') <= time()) {
             $this->db->delete('api_tokens', ['id' => (int) $row['id']]);
 
-            return 0;
+            return null;
         }
 
         $this->db->update(
@@ -110,7 +150,7 @@ final class VKL_Api_Tokens extends VKL_Repository
             ['id' => (int) $row['id']]
         );
 
-        return (int) $row['user_id'];
+        return ['user_id' => (int) $row['user_id'], 'scope' => (string) ($row['scope'] ?? 'customer')];
     }
 
     /**

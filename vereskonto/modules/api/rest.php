@@ -222,9 +222,19 @@ final class VKL_Api_Rest
             return new WP_Error('vkl_bad_mobile', __('The mobile number is not valid.', 'vereskala-login'), ['status' => 422]);
         }
 
-        $expected = function_exists('vkl_get_otp') ? vkl_get_otp($mobile) : false;
+        // Same lockout as the website form. Before 2.15.2 this endpoint
+        // counted wrong codes but never checked the count, so a script
+        // could try every code within the code's lifetime.
+        if (function_exists('vkl_otp_locked') && vkl_otp_locked($mobile)) {
+            return new WP_Error('vkl_locked', __('Too many wrong codes. Please try again in 15 minutes.', 'vereskala-login'), ['status' => 429]);
+        }
 
-        if (false === $expected || !hash_equals((string) $expected, $code)) {
+        $expected = function_exists('vkl_get_otp') ? vkl_get_otp($mobile) : false;
+        $matches  = false !== $expected && (function_exists('vkl_otp_matches')
+            ? vkl_otp_matches($expected, $code)
+            : hash_equals((string) $expected, $code));
+
+        if (!$matches) {
             if (function_exists('vkl_add_failed_attempt')) {
                 vkl_add_failed_attempt($mobile);
             }
@@ -234,6 +244,10 @@ final class VKL_Api_Rest
 
         if (function_exists('vkl_delete_otp')) {
             vkl_delete_otp($mobile);
+        }
+
+        if (function_exists('vkl_reset_failed_attempts')) {
+            vkl_reset_failed_attempts($mobile);
         }
 
         $user_id = $this->provision_user($mobile);

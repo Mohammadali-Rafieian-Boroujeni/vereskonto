@@ -3857,6 +3857,9 @@ msgstr "توکن‌ها منقضی می‌شوند؛ وقتی یک فراخوا�
 msgid "Too many requests. Please try again later."
 msgstr "تعداد درخواست‌ها بیش از حد است. بعداً دوباره تلاش کنید."
 
+msgid "Too many wrong codes. Please try again in 15 minutes."
+msgstr "کد نادرست بیش از اندازه وارد شد. ۱۵ دقیقهٔ دیگر دوباره تلاش کنید."
+
 msgid "Top members"
 msgstr "اعضای برتر"
 
@@ -5090,3 +5093,1219 @@ msgstr "گفبات"
 
 msgid "Main menu"
 msgstr "منوی اصلی"
+
+msgid "CRM"
+msgstr "مدیریت مشتریان"
+
+msgid "Contacts"
+msgstr "مخاطبین"
+
+msgid "CRM settings"
+msgstr "تنظیمات مدیریت مشتریان"
+
+msgid "CRM file (notes, calls, timeline)"
+msgstr "پروندهٔ مشتری (یادداشت، تماس، تاریخچه)"
+
+msgid "Contacts per page"
+msgstr "مخاطب در هر صفحه"
+
+msgid "That contact no longer exists."
+msgstr "این مخاطب دیگر وجود ندارد."
+
+msgid "You are not allowed to see this contact."
+msgstr "اجازهٔ دیدن این مخاطب را ندارید."
+
+msgid "Add contact"
+msgstr "افزودن مخاطب"
+
+msgid "Search contacts"
+msgstr "جست‌وجوی مخاطبین"
+
+msgid "Name, mobile, email or company…"
+msgstr "نام، موبایل، ایمیل یا شرکت…"
+
+msgid "Clear filters"
+msgstr "پاک کردن فیلترها"
+
+msgid "Advanced filters"
+msgstr "فیلترهای پیشرفته"
+
+msgid "Owner"
+msgstr "کارشناس"
+
+msgid "Anyone"
+msgstr "همه"
+
+msgid "Unassigned"
+msgstr "بدون کارشناس"
+
+msgid "Stage"
+msgstr "مرحله"
+
+msgid "Any"
+msgstr "همه"
+
+msgid "Source"
+msgstr "منبع"
+
+msgid "Tag"
+msgstr "برچسب"
+
+msgid "City"
+msgstr "شهر"
+
+msgid "Has a site account"
+msgstr "حساب کاربری دارد"
+
+msgid "No account"
+msgstr "حساب کاربری ندارد"
+
+msgid "Spent at least"
+msgstr "حداقل مبلغ خرید"
+
+msgid "Spent at most"
+msgstr "حداکثر مبلغ خرید"
+
+msgid "Orders at least"
+msgstr "حداقل تعداد سفارش"
+
+msgid "Added from"
+msgstr "افزوده‌شده از"
+
+msgid "Added until"
+msgstr "افزوده‌شده تا"
+
+msgid "Active from"
+msgstr "آخرین فعالیت از"
+
+msgid "Active until"
+msgstr "آخرین فعالیت تا"
+
+msgid "Apply filters"
+msgstr "اعمال فیلترها"
+
+msgid "Importing existing customers… %s so far"
+msgstr "در حال انتقال مشتریان فعلی… تا الان %s نفر"
+
+msgid "You are not allowed to add contacts."
+msgstr "اجازهٔ افزودن مخاطب را ندارید."
+
+msgid "Back to contact"
+msgstr "بازگشت به مخاطب"
+
+msgid "All contacts"
+msgstr "همهٔ مخاطبین"
+
+msgid "Edit %s"
+msgstr "ویرایش %s"
+
+msgid "Open the existing contact"
+msgstr "باز کردن مخاطب موجود"
+
+msgid "Contact details"
+msgstr "مشخصات مخاطب"
+
+msgid "First name"
+msgstr "نام"
+
+msgid "Last name"
+msgstr "نام خانوادگی"
+
+msgid "Email"
+msgstr "ایمیل"
+
+msgid "Company"
+msgstr "شرکت"
+
+msgid "At least a name, mobile or email. The mobile number must be unique."
+msgstr "دست‌کم نام، موبایل یا ایمیل لازم است. شمارهٔ موبایل نباید تکراری باشد."
+
+msgid "Sales"
+msgstr "فروش"
+
+msgid "Score"
+msgstr "امتیاز"
+
+msgid "Categories and tags"
+msgstr "دسته‌ها و برچسب‌ها"
+
+msgid "No tags yet. Type new ones below, separated by commas."
+msgstr "هنوز برچسبی نیست. برچسب‌های تازه را پایین بنویسید و با ویرگول جدا کنید."
+
+msgid "Categories"
+msgstr "دسته‌ها"
+
+msgid "Tags"
+msgstr "برچسب‌ها"
+
+msgid "New tags"
+msgstr "برچسب‌های تازه"
+
+msgid "e.g. VIP, wholesale"
+msgstr "مثلاً ویژه، عمده"
+
+msgid "Cancel"
+msgstr "انصراف"
+
+msgid "Contact created"
+msgstr "مخاطب ساخته شد"
+
+msgid "This contact is in the deleted list."
+msgstr "این مخاطب در فهرست حذف‌شده‌هاست."
+
+msgid "Restore"
+msgstr "بازگردانی"
+
+msgid "Call"
+msgstr "تماس"
+
+msgid "Assign to me"
+msgstr "برداشتن برای خودم"
+
+msgid "Details"
+msgstr "جزئیات"
+
+msgid "Added"
+msgstr "تاریخ افزودن"
+
+msgid "Another contact already uses this customer's account mobile (%s). Check for a duplicate."
+msgstr "شمارهٔ موبایل حساب این مشتری (%s) در مخاطب دیگری ثبت شده است. تکراری بودن را بررسی کنید."
+
+msgid "Wallet, installments and club"
+msgstr "کیف پول، اقساط و باشگاه"
+
+msgid "Site account"
+msgstr "حساب کاربری سایت"
+
+msgid "Assign this contact to yourself to add notes, calls and meetings."
+msgstr "برای ثبت یادداشت، تماس و جلسه، اول این مخاطب را برای خودتان بردارید."
+
+msgid "Timeline"
+msgstr "تاریخچه"
+
+msgid "Filter timeline"
+msgstr "فیلتر تاریخچه"
+
+msgid "Everything"
+msgstr "همه"
+
+msgid "Notes"
+msgstr "یادداشت‌ها"
+
+msgid "Calls and meetings"
+msgstr "تماس‌ها و جلسه‌ها"
+
+msgid "Money"
+msgstr "مالی"
+
+msgid "Changes"
+msgstr "تغییرات"
+
+msgid "Older entries"
+msgstr "موارد قدیمی‌تر"
+
+msgid "Back to the newest"
+msgstr "بازگشت به جدیدترین‌ها"
+
+msgid "Meeting"
+msgstr "جلسه"
+
+msgid "We called"
+msgstr "ما تماس گرفتیم"
+
+msgid "They called"
+msgstr "مشتری تماس گرفت"
+
+msgid "Result"
+msgstr "نتیجه"
+
+msgid "Minutes"
+msgstr "دقیقه"
+
+msgid "Time"
+msgstr "ساعت"
+
+msgid "Held"
+msgstr "برگزار شد"
+
+msgid "Scheduled"
+msgstr "برنامه‌ریزی‌شده"
+
+msgid "Write a note…"
+msgstr "یادداشتی بنویسید…"
+
+msgid "What was discussed?"
+msgstr "دربارهٔ چه صحبت شد؟"
+
+msgid "Agenda or minutes…"
+msgstr "دستور جلسه یا صورت‌جلسه…"
+
+msgid "Add to timeline"
+msgstr "ثبت در تاریخچه"
+
+msgid "%s min"
+msgstr "%s دقیقه"
+
+msgid "Automatic"
+msgstr "خودکار"
+
+msgid "Assigned to %s"
+msgstr "به %s سپرده شد"
+
+msgid "Stage changed: %1$s → %2$s"
+msgstr "تغییر مرحله: %1$s ← %2$s"
+
+msgid "Name"
+msgstr "نام"
+
+msgid "Last activity"
+msgstr "آخرین فعالیت"
+
+msgid "Assign to…"
+msgstr "سپردن به…"
+
+msgid "Change stage to…"
+msgstr "تغییر مرحله به…"
+
+msgid "Add tag…"
+msgstr "افزودن برچسب…"
+
+msgid "Remove tag…"
+msgstr "برداشتن برچسب…"
+
+msgid "Deleted"
+msgstr "حذف‌شده‌ها"
+
+msgid "No contact matches these filters."
+msgstr "هیچ مخاطبی با این فیلترها پیدا نشد."
+
+msgid "No contacts yet. Existing customers are imported automatically in the background."
+msgstr "هنوز مخاطبی نیست. مشتریان فعلی به‌طور خودکار در پس‌زمینه منتقل می‌شوند."
+
+msgid "Select %s"
+msgstr "انتخاب %s"
+
+msgid "Categories group customers by type (e.g. wholesale, retail); tags are free labels (e.g. VIP, follow up). A contact can have several of each."
+msgstr "دسته‌ها مشتریان را بر اساس نوع گروه‌بندی می‌کنند (مثلاً عمده، خرده)؛ برچسب‌ها علامت‌های آزادند (مثلاً ویژه، پیگیری). هر مخاطب می‌تواند چند دسته و چند برچسب داشته باشد."
+
+msgid "Kind"
+msgstr "نوع"
+
+msgid "No categories or tags yet."
+msgstr "هنوز دسته یا برچسبی نیست."
+
+msgid "Category"
+msgstr "دسته"
+
+msgid "Edit tag"
+msgstr "ویرایش برچسب"
+
+msgid "Add a category or tag"
+msgstr "افزودن دسته یا برچسب"
+
+msgid "Colour"
+msgstr "رنگ"
+
+msgid "Add"
+msgstr "افزودن"
+
+msgid "Access"
+msgstr "دسترسی"
+
+msgid "Sales agents see contacts nobody is assigned to (so they can pick up new leads)"
+msgstr "کارشناسان فروش مخاطبان بدون کارشناس را هم ببینند (تا بتوانند سرنخ‌های تازه را بردارند)"
+
+msgid "Give staff the \"Sales agent\" role (own contacts only) or \"Sales manager\" role (everyone's contacts) under Users. Shop managers have manager access; only administrators change these settings."
+msgstr "در بخش کاربران، به کارمندان نقش «کارشناس فروش» (فقط مخاطبان خودش) یا «مدیر فروش» (مخاطبان همه) بدهید. مدیر فروشگاه دسترسی مدیر فروش را دارد و فقط مدیر کل سایت این تنظیمات را تغییر می‌دهد."
+
+msgid "Save settings"
+msgstr "ذخیرهٔ تنظیمات"
+
+msgid "Lead"
+msgstr "سرنخ"
+
+msgid "Prospect"
+msgstr "مشتری بالقوه"
+
+msgid "Inactive"
+msgstr "غیرفعال"
+
+msgid "Lost"
+msgstr "از دست رفته"
+
+msgid "Entered by staff"
+msgstr "ثبت توسط کارمند"
+
+msgid "Website sign-up"
+msgstr "ثبت‌نام در سایت"
+
+msgid "Guest checkout"
+msgstr "خرید مهمان"
+
+msgid "Phone call"
+msgstr "تماس تلفنی"
+
+msgid "Instagram"
+msgstr "اینستاگرام"
+
+msgid "Referral"
+msgstr "معرفی"
+
+msgid "Chatbot"
+msgstr "گفبات"
+
+msgid "Abandoned cart"
+msgstr "سبد رهاشده"
+
+msgid "Prize wheel"
+msgstr "گردونهٔ شانس"
+
+msgid "Credit request"
+msgstr "درخواست اعتبار"
+
+msgid "Exhibition / in store"
+msgstr "نمایشگاه / فروشگاه حضوری"
+
+msgid "Ticket"
+msgstr "تیکت"
+
+msgid "Return"
+msgstr "مرجوعی"
+
+msgid "Installment"
+msgstr "قسط"
+
+msgid "Club"
+msgstr "باشگاه"
+
+msgid "Sales stage"
+msgstr "مرحلهٔ فروش"
+
+msgid "Task"
+msgstr "وظیفه"
+
+msgid "Change"
+msgstr "تغییر"
+
+msgid "No answer"
+msgstr "پاسخ نداد"
+
+msgid "Busy"
+msgstr "مشغول بود"
+
+msgid "Phone off / unreachable"
+msgstr "خاموش / در دسترس نبود"
+
+msgid "Asked to call back"
+msgstr "خواست بعداً تماس بگیریم"
+
+msgid "Contact #%d"
+msgstr "مخاطب #%d"
+
+msgid "%s ago"
+msgstr "%s پیش"
+
+msgid "Contact saved."
+msgstr "مخاطب ذخیره شد."
+
+msgid "Contact created."
+msgstr "مخاطب ساخته شد."
+
+msgid "Contact moved to the deleted list."
+msgstr "مخاطب به فهرست حذف‌شده‌ها رفت."
+
+msgid "Contact restored."
+msgstr "مخاطب بازگردانده شد."
+
+msgid "The contact is now yours."
+msgstr "این مخاطب حالا به شما سپرده شد."
+
+msgid "Added to the timeline."
+msgstr "در تاریخچه ثبت شد."
+
+msgid "Timeline entry removed."
+msgstr "مورد از تاریخچه برداشته شد."
+
+msgid "Bulk action applied."
+msgstr "عملیات گروهی انجام شد."
+
+msgid "Tag saved."
+msgstr "برچسب ذخیره شد."
+
+msgid "Tag deleted."
+msgstr "برچسب حذف شد."
+
+msgid "Settings saved."
+msgstr "تنظیمات ذخیره شد."
+
+msgid "Please check the form and try again."
+msgstr "لطفاً فرم را بررسی و دوباره تلاش کنید."
+
+msgid "Move this contact to the deleted list?"
+msgstr "این مخاطب به فهرست حذف‌شده‌ها برود؟"
+
+msgid "Apply this action to the selected contacts?"
+msgstr "این عملیات روی مخاطبان انتخاب‌شده انجام شود؟"
+
+msgid "Remove this timeline entry?"
+msgstr "این مورد از تاریخچه برداشته شود؟"
+
+msgid "Delete this tag? It is removed from every contact."
+msgstr "این برچسب حذف شود؟ از همهٔ مخاطبان هم برداشته می‌شود."
+
+msgid "%s contact affected."
+msgid_plural "%s contacts affected."
+msgstr[0] "روی %s مخاطب انجام شد."
+msgstr[1] "روی %s مخاطب انجام شد."
+
+msgid "The email address is not valid."
+msgstr "نشانی ایمیل درست نیست."
+
+msgid "Unknown lifecycle stage."
+msgstr "مرحلهٔ مشتری نامعتبر است."
+
+msgid "The birthday is not a valid date."
+msgstr "تاریخ تولد معتبر نیست."
+
+msgid "Enter at least a name, mobile or email."
+msgstr "دست‌کم نام، موبایل یا ایمیل را وارد کنید."
+
+msgid "A contact with this mobile number already exists."
+msgstr "مخاطبی با این شمارهٔ موبایل از قبل وجود دارد."
+
+msgid "The contact could not be saved."
+msgstr "ذخیرهٔ مخاطب ناموفق بود."
+
+msgid "Order #%1$s — %2$s"
+msgstr "سفارش #%1$s — %2$s"
+
+msgid "Ticket opened: %s"
+msgstr "تیکت باز شد: %s"
+
+msgid "Ticket closed: %s"
+msgstr "تیکت بسته شد: %s"
+
+msgid "Return requested for order #%s"
+msgstr "درخواست مرجوعی برای سفارش #%s"
+
+msgid "Wallet credited %s"
+msgstr "شارژ کیف پول: %s"
+
+msgid "Wallet debited %s"
+msgstr "برداشت از کیف پول: %s"
+
+msgid "Installment paid: %s"
+msgstr "پرداخت قسط: %s"
+
+msgid "The plan is now fully paid."
+msgstr "همهٔ اقساط این طرح پرداخت شد."
+
+msgid "Requested purchase credit of %s"
+msgstr "درخواست اعتبار خرید به مبلغ %s"
+
+msgid "Credit request approved (%s)"
+msgstr "درخواست اعتبار تأیید شد (%s)"
+
+msgid "Credit request declined"
+msgstr "درخواست اعتبار رد شد"
+
+msgid "Deals"
+msgstr "فرصت‌های فروش"
+
+msgid "No deals yet."
+msgstr "هنوز فرصت فروشی نیست."
+
+msgid "Add deal"
+msgstr "افزودن فرصت فروش"
+
+msgid "Price too high"
+msgstr "قیمت بالا بود"
+
+msgid "Bought from a competitor"
+msgstr "از رقیب خرید"
+
+msgid "No response"
+msgstr "پاسخ نداد"
+
+msgid "No longer needed"
+msgstr "دیگر نیاز نداشت"
+
+msgid "Out of stock"
+msgstr "موجودی نداشتیم"
+
+msgid "That deal no longer exists."
+msgstr "این فرصت فروش دیگر وجود ندارد."
+
+msgid "You are not allowed to see this deal."
+msgstr "اجازهٔ دیدن این فرصت فروش را ندارید."
+
+msgid "Open deals"
+msgstr "فرصت‌های باز"
+
+msgid "Pipeline value"
+msgstr "ارزش قیف فروش"
+
+msgid "Weighted by stage probability"
+msgstr "ارزش وزنی (بر اساس احتمال هر مرحله)"
+
+msgid "Pipeline"
+msgstr "قیف فروش"
+
+msgid "Search deal titles…"
+msgstr "جست‌وجو در عنوان فرصت‌ها…"
+
+msgid "Everyone"
+msgstr "همه"
+
+msgid "My deals"
+msgstr "فرصت‌های من"
+
+msgid "Board"
+msgstr "کانبان"
+
+msgid "List"
+msgstr "فهرست"
+
+msgid "No pipeline yet. Create one in CRM settings."
+msgstr "هنوز قیف فروشی نیست. در تنظیمات مدیریت مشتریان یکی بسازید."
+
+msgid "Expected close"
+msgstr "تاریخ پیش‌بینی بستن"
+
+msgid "Move to…"
+msgstr "انتقال به…"
+
+msgid "Reason (if lost)"
+msgstr "دلیل (اگر از دست رفت)"
+
+msgid "Move"
+msgstr "انتقال"
+
+msgid "Why was this deal lost?"
+msgstr "چرا این فرصت از دست رفت؟"
+
+msgid "Other:"
+msgstr "دلیل دیگر:"
+
+msgid "Mark as lost"
+msgstr "ثبت به‌عنوان از دست رفته"
+
+msgid "Won"
+msgstr "برنده شد"
+
+msgid "Deal"
+msgstr "فرصت فروش"
+
+msgid "Contact"
+msgstr "مخاطب"
+
+msgid "Value"
+msgstr "ارزش"
+
+msgid "No deals match."
+msgstr "هیچ فرصتی پیدا نشد."
+
+msgid "You can only add deals for contacts assigned to you."
+msgstr "فقط برای مخاطبانی که به شما سپرده شده‌اند می‌توانید فرصت فروش بسازید."
+
+msgid "Back"
+msgstr "بازگشت"
+
+msgid "Edit deal: %s"
+msgstr "ویرایش فرصت: %s"
+
+msgid "e.g. 200 winter coats for Aria store"
+msgstr "مثلاً ۲۰۰ کاپشن زمستانه برای فروشگاه آریا"
+
+msgid "Type a name or mobile…"
+msgstr "نام یا موبایل را بنویسید…"
+
+msgid "Linked order number"
+msgstr "شمارهٔ سفارش مرتبط"
+
+msgid "When the linked order is paid, the deal is marked as won automatically."
+msgstr "وقتی سفارش مرتبط پرداخت شود، فرصت به‌طور خودکار برنده ثبت می‌شود."
+
+msgid "All deals"
+msgstr "همهٔ فرصت‌ها"
+
+msgid "Move to %s"
+msgstr "انتقال به %s"
+
+msgid "Probability"
+msgstr "احتمال"
+
+msgid "Lost because"
+msgstr "دلیل از دست رفتن"
+
+msgid "Other reason"
+msgstr "دلیل دیگر"
+
+msgid "Deal history"
+msgstr "تاریخچهٔ فرصت"
+
+msgid "You are not allowed to move this deal."
+msgstr "اجازهٔ جابه‌جایی این فرصت را ندارید."
+
+msgid "Sales pipelines"
+msgstr "قیف‌های فروش"
+
+msgid "Leads and access"
+msgstr "سرنخ‌ها و دسترسی"
+
+msgid "Pipelines"
+msgstr "قیف‌ها"
+
+msgid "Most shops need one pipeline. Add another for a different kind of sale (e.g. wholesale vs. installment purchases)."
+msgstr "بیشتر فروشگاه‌ها یک قیف لازم دارند. برای نوع دیگری از فروش (مثلاً عمده در برابر خرید اقساطی) قیف جدا بسازید."
+
+msgid "Default"
+msgstr "پیش‌فرض"
+
+msgid "Make default"
+msgstr "پیش‌فرض شود"
+
+msgid "New pipeline"
+msgstr "قیف تازه"
+
+msgid "Stages of \"%s\""
+msgstr "مراحل «%s»"
+
+msgid "Pipeline name"
+msgstr "نام قیف"
+
+msgid "Rename"
+msgstr "تغییر نام"
+
+msgid "Probability is how likely a deal in that stage is to close; it weights the pipeline value. A pipeline needs at least one \"in progress\", one \"won\" and one \"lost\" stage."
+msgstr "احتمال نشان می‌دهد فرصتی که در این مرحله است چقدر احتمال دارد به خرید برسد و در محاسبهٔ ارزش وزنی قیف به کار می‌رود. هر قیف دست‌کم یک مرحلهٔ «در جریان»، یک «برنده» و یک «از دست رفته» لازم دارد."
+
+msgid "Move up"
+msgstr "بالاتر"
+
+msgid "Move down"
+msgstr "پایین‌تر"
+
+msgid "Add a stage"
+msgstr "افزودن مرحله"
+
+msgid "New"
+msgstr "جدید"
+
+msgid "Create a lead when a guest leaves their mobile number in the chatbot"
+msgstr "وقتی مهمانی در گفبات شمارهٔ موبایلش را می‌دهد، سرنخ ساخته شود"
+
+msgid "Create a lead (or note on the existing contact) for each abandoned cart with a mobile number"
+msgstr "برای هر سبد رهاشده‌ای که شمارهٔ موبایل دارد سرنخ ساخته شود (یا روی مخاطب موجود ثبت شود)"
+
+msgid "…and open a follow-up deal for it"
+msgstr "…و برایش یک فرصت پیگیری باز شود"
+
+msgid "Open a deal for each purchase-credit request"
+msgstr "برای هر درخواست اعتبار خرید یک فرصت فروش باز شود"
+
+msgid "Automatic leads"
+msgstr "سرنخ‌های خودکار"
+
+msgid "Checked every hour (and when staff open the admin). New leads are unassigned so any agent can pick them up. Existing customers are never duplicated: a known mobile number only adds a timeline entry."
+msgstr "هر ساعت (و هنگام ورود کارمندان به پیشخوان) بررسی می‌شود. سرنخ‌های تازه بدون کارشناس‌اند تا هر کارشناسی بتواند برشان دارد. مشتری تکراری ساخته نمی‌شود: برای شمارهٔ آشنا فقط یک مورد در تاریخچه ثبت می‌شود."
+
+msgid "Last checked %s."
+msgstr "آخرین بررسی: %s."
+
+msgid "Reasons for losing a deal"
+msgstr "دلایل از دست رفتن فرصت"
+
+msgid "One per line. Offered when a deal is marked as lost; the reports group lost deals by these."
+msgstr "هر دلیل در یک خط. هنگام ثبت «از دست رفته» پیشنهاد می‌شوند و گزارش‌ها بر اساس آن‌ها گروه‌بندی می‌شوند."
+
+msgid "Deal created."
+msgstr "فرصت فروش ساخته شد."
+
+msgid "Deal saved."
+msgstr "فرصت فروش ذخیره شد."
+
+msgid "Deal moved."
+msgstr "فرصت فروش جابه‌جا شد."
+
+msgid "Deal won. Well done!"
+msgstr "فرصت برنده شد. آفرین!"
+
+msgid "Deal marked as lost."
+msgstr "فرصت به‌عنوان از دست رفته ثبت شد."
+
+msgid "Deal deleted."
+msgstr "فرصت فروش حذف شد."
+
+msgid "A pipeline that still has deals (or is the only one) cannot be deleted."
+msgstr "قیفی که هنوز فرصت دارد (یا تنها قیف است) حذف نمی‌شود."
+
+msgid "Move the deals out of this stage before deleting it."
+msgstr "پیش از حذف این مرحله، فرصت‌هایش را به مرحلهٔ دیگری ببرید."
+
+msgid "Every pipeline needs at least one in-progress, one won and one lost stage."
+msgstr "هر قیف دست‌کم یک مرحلهٔ در جریان، یک برنده و یک از دست رفته لازم دارد."
+
+msgid "Delete this deal?"
+msgstr "این فرصت فروش حذف شود؟"
+
+msgid "Delete this pipeline and its stages?"
+msgstr "این قیف و مراحلش حذف شوند؟"
+
+msgid "Delete this stage?"
+msgstr "این مرحله حذف شود؟"
+
+msgid "The deal could not be moved. Reload the page and try again."
+msgstr "جابه‌جایی فرصت انجام نشد. صفحه را دوباره بارگذاری و دوباره تلاش کنید."
+
+msgid "No contact found"
+msgstr "مخاطبی پیدا نشد"
+
+msgid "Give the deal a title."
+msgstr "برای فرصت یک عنوان بنویسید."
+
+msgid "Choose a contact for the deal."
+msgstr "مخاطب این فرصت را انتخاب کنید."
+
+msgid "The deal value must be a positive number."
+msgstr "ارزش فرصت باید عددی مثبت باشد."
+
+msgid "The expected close date is not valid."
+msgstr "تاریخ پیش‌بینی بستن معتبر نیست."
+
+msgid "That stage belongs to another pipeline."
+msgstr "این مرحله مال قیف دیگری است."
+
+msgid "This pipeline has no open stage yet. Add one in CRM settings."
+msgstr "این قیف هنوز مرحلهٔ در جریانی ندارد. در تنظیمات اضافه کنید."
+
+msgid "A deal needs a title and a contact."
+msgstr "هر فرصت فروش عنوان و مخاطب لازم دارد."
+
+msgid "The deal could not be saved."
+msgstr "ذخیرهٔ فرصت فروش ناموفق بود."
+
+msgid "New deal \"%1$s\" in %2$s"
+msgstr "فرصت تازهٔ «%1$s» در مرحلهٔ %2$s"
+
+msgid "That stage is not part of this deal's pipeline."
+msgstr "این مرحله جزو قیف این فرصت نیست."
+
+msgid "\"%1$s\": %2$s → %3$s"
+msgstr "«%1$s»: %2$s ← %3$s"
+
+msgid "This pipeline has no \"won\" stage. Add one in CRM settings."
+msgstr "این قیف مرحلهٔ «برنده» ندارد. در تنظیمات اضافه کنید."
+
+msgid "This pipeline has no \"lost\" stage. Add one in CRM settings."
+msgstr "این قیف مرحلهٔ «از دست رفته» ندارد. در تنظیمات اضافه کنید."
+
+msgid "Installment purchase (credit request)"
+msgstr "خرید اقساطی (درخواست اعتبار)"
+
+msgid "No order with that number."
+msgstr "سفارشی با این شماره نیست."
+
+msgid "That order belongs to a different customer."
+msgstr "این سفارش مال مشتری دیگری است."
+
+msgid "Talked to the shop chatbot"
+msgstr "با گفبات فروشگاه گفتگو کرد"
+
+msgid "Left a cart of %1$s (%2$s items)"
+msgstr "سبد خریدی به مبلغ %1$s (%2$s کالا) را رها کرد"
+
+msgid "Abandoned cart follow-up"
+msgstr "پیگیری سبد رهاشده"
+
+msgid "Customer orders"
+msgstr "سفارش‌های مشتریان"
+
+msgid "Orders of the customers assigned to you (customers with a site account)."
+msgstr "سفارش‌های مشتریانی که به شما سپرده شده‌اند (مشتریانی که حساب کاربری دارند)."
+
+msgid "Order number, customer name or mobile…"
+msgstr "شمارهٔ سفارش، نام یا موبایل مشتری…"
+
+msgid "Any status"
+msgstr "همهٔ وضعیت‌ها"
+
+msgid "From 1405/09/01"
+msgstr "از ۱۴۰۵/۰۹/۰۱"
+
+msgid "From date"
+msgstr "از تاریخ"
+
+msgid "To 1405/09/30"
+msgstr "تا ۱۴۰۵/۰۹/۳۰"
+
+msgid "To date"
+msgstr "تا تاریخ"
+
+msgid "No orders match."
+msgstr "هیچ سفارشی پیدا نشد."
+
+msgid "Wallet top-up or installment repayment"
+msgstr "شارژ کیف پول یا پرداخت قسط"
+
+msgid "Not a sale"
+msgstr "فروش نیست"
+
+msgid "Order status"
+msgstr "وضعیت سفارش"
+
+msgid "Create deal"
+msgstr "ساخت فرصت فروش"
+
+msgid "Status changed from the CRM by %s."
+msgstr "وضعیت از بخش مدیریت مشتریان توسط %s تغییر کرد."
+
+msgid "Order #%s"
+msgstr "سفارش #%s"
+
+msgid "%s order"
+msgid_plural "%s orders"
+msgstr[0] "%s سفارش"
+msgstr[1] "%s سفارش"
+
+msgid "Email task reminders to the assigned staff member"
+msgstr "یادآوری وظایف برای کارمند مسئول ایمیل شود"
+
+msgid "No reminder"
+msgstr "بدون یادآوری"
+
+msgid "At the due time"
+msgstr "سر موعد"
+
+msgid "15 minutes before"
+msgstr "۱۵ دقیقه پیش از موعد"
+
+msgid "1 hour before"
+msgstr "۱ ساعت پیش از موعد"
+
+msgid "1 day before"
+msgstr "۱ روز پیش از موعد"
+
+msgid "Mark as not done"
+msgstr "برگرداندن به انجام‌نشده"
+
+msgid "Mark as done"
+msgstr "انجام شد"
+
+msgid "Reminder"
+msgstr "یادآوری"
+
+msgid "Tasks"
+msgstr "وظایف"
+
+msgid "No open tasks."
+msgstr "وظیفهٔ بازی نیست."
+
+msgid "New task, e.g. call back about the quote"
+msgstr "وظیفهٔ تازه، مثلاً پیگیری تماس دربارهٔ پیش‌فاکتور"
+
+msgid "Due date"
+msgstr "موعد"
+
+msgid "Add task"
+msgstr "افزودن وظیفه"
+
+msgid "All tasks"
+msgstr "همهٔ وظایف"
+
+msgid "Edit task"
+msgstr "ویرایش وظیفه"
+
+msgid "Assigned to"
+msgstr "مسئول"
+
+msgid "Optional — type a name or mobile…"
+msgstr "اختیاری — نام یا موبایل را بنویسید…"
+
+msgid "The reminder is emailed to the assigned person."
+msgstr "یادآوری برای مسئول وظیفه ایمیل می‌شود."
+
+msgid "That task no longer exists."
+msgstr "این وظیفه دیگر وجود ندارد."
+
+msgid "You are not allowed to see this task."
+msgstr "اجازهٔ دیدن این وظیفه را ندارید."
+
+msgid "No date"
+msgstr "بدون تاریخ"
+
+msgid "Done"
+msgstr "انجام‌شده"
+
+msgid "Task views"
+msgstr "نماهای وظایف"
+
+msgid "Search tasks…"
+msgstr "جست‌وجوی وظایف…"
+
+msgid "My tasks"
+msgstr "وظایف من"
+
+msgid "Any priority"
+msgstr "همهٔ اولویت‌ها"
+
+msgid "Nothing due today. 🎉"
+msgstr "برای امروز کاری نمانده. 🎉"
+
+msgid "No tasks here."
+msgstr "وظیفه‌ای اینجا نیست."
+
+msgid "Task added."
+msgstr "وظیفه افزوده شد."
+
+msgid "Task saved."
+msgstr "وظیفه ذخیره شد."
+
+msgid "Task done."
+msgstr "وظیفه انجام شد."
+
+msgid "Task reopened."
+msgstr "وظیفه دوباره باز شد."
+
+msgid "Task deleted."
+msgstr "وظیفه حذف شد."
+
+msgid "Order status updated."
+msgstr "وضعیت سفارش به‌روز شد."
+
+msgid "Delete this task?"
+msgstr "این وظیفه حذف شود؟"
+
+msgid "Give the task a title."
+msgstr "برای وظیفه یک عنوان بنویسید."
+
+msgid "The due date is not valid."
+msgstr "موعد معتبر نیست."
+
+msgid "Unknown reminder option."
+msgstr "گزینهٔ یادآوری نامعتبر است."
+
+msgid "Tasks can only be given to CRM staff."
+msgstr "وظیفه را فقط می‌توان به کارمندان مدیریت مشتریان سپرد."
+
+msgid "The task could not be saved."
+msgstr "ذخیرهٔ وظیفه ناموفق بود."
+
+msgid "Task added: %s"
+msgstr "وظیفهٔ تازه: %s"
+
+msgid "Task done: %s"
+msgstr "وظیفه انجام شد: %s"
+
+msgid "Reminder: %s"
+msgstr "یادآوری: %s"
+
+msgid "Due: %s"
+msgstr "موعد: %s"
+
+msgid "Contact: %s"
+msgstr "مخاطب: %s"
+
+msgid "Mobile: %s"
+msgstr "موبایل: %s"
+
+msgid "No data for this period yet."
+msgstr "هنوز داده‌ای برای این بازه نیست."
+
+msgid "Latest week: %s"
+msgstr "هفتهٔ آخر: %s"
+
+msgid "Show the numbers"
+msgstr "نمایش اعداد"
+
+msgid "Export CSV"
+msgstr "خروجی CSV"
+
+msgid "CRM dashboard"
+msgstr "داشبورد مدیریت مشتریان"
+
+msgid "Last month"
+msgstr "ماه گذشته"
+
+msgid "Custom range"
+msgstr "بازهٔ دلخواه"
+
+msgid "Period"
+msgstr "بازهٔ زمانی"
+
+msgid "Show"
+msgstr "نمایش"
+
+msgid "Whole team"
+msgstr "کل تیم"
+
+msgid "Your contacts and deals"
+msgstr "مخاطبان و فرصت‌های شما"
+
+msgid "New contacts"
+msgstr "مخاطبان تازه"
+
+msgid "Deals won"
+msgstr "فرصت‌های برنده"
+
+msgid "Won value"
+msgstr "ارزش فروش برنده"
+
+msgid "Win rate (won ÷ closed)"
+msgstr "نرخ موفقیت (برنده ÷ بسته‌شده)"
+
+msgid "Open pipeline (%s deals)"
+msgstr "قیف باز (%s فرصت)"
+
+msgid "Notes, calls and meetings"
+msgstr "یادداشت، تماس و جلسه"
+
+msgid "My tasks today (%s overdue)"
+msgstr "کارهای امروز من (%s معوق)"
+
+msgid "My tasks today"
+msgstr "کارهای امروز من"
+
+msgid "Open deals by stage — %s"
+msgstr "فرصت‌های باز به تفکیک مرحله — %s"
+
+msgid "Open deals by stage"
+msgstr "فرصت‌های باز به تفکیک مرحله"
+
+msgid "No open deals."
+msgstr "فرصت بازی نیست."
+
+msgid "Weighted by stage probability: %s"
+msgstr "ارزش وزنی بر اساس احتمال مراحل: %s"
+
+msgid "New contacts per week"
+msgstr "مخاطبان تازه در هر هفته"
+
+msgid "Won value per week"
+msgstr "ارزش فروش برنده در هر هفته"
+
+msgid "New contacts by source"
+msgstr "مخاطبان تازه به تفکیک منبع"
+
+msgid "Why deals were lost"
+msgstr "دلایل از دست رفتن فرصت‌ها"
+
+msgid "No reason given"
+msgstr "بدون دلیل"
+
+msgid "No deals were lost in this period."
+msgstr "در این بازه فرصتی از دست نرفت."
+
+msgid "My tasks for today"
+msgstr "کارهای امروز من"
+
+msgid "Latest activity"
+msgstr "آخرین فعالیت‌ها"
+
+msgid "CRM today"
+msgstr "مدیریت مشتریان امروز"
+
+msgid "tasks for today, %s overdue"
+msgstr "کار برای امروز، %s معوق"
+
+msgid "tasks for today"
+msgstr "کار برای امروز"
+
+msgid "New contacts today: %s"
+msgstr "مخاطبان تازهٔ امروز: %s"
+
+msgid "Open the CRM dashboard"
+msgstr "باز کردن داشبورد مدیریت مشتریان"
+
+msgid "CRM reports"
+msgstr "گزارش‌های مدیریت مشتریان"
+
+msgid "CSV"
+msgstr "CSV"
+
+msgid "Export all deals (CSV)"
+msgstr "خروجی همهٔ فرصت‌ها (CSV)"
+
+msgid "Deals won / lost"
+msgstr "فرصت‌های برنده / از دست رفته"
+
+msgid "Team performance"
+msgstr "عملکرد تیم"
+
+msgid "Staff member"
+msgstr "کارمند"
+
+msgid "Calls"
+msgstr "تماس‌ها"
+
+msgid "Meetings"
+msgstr "جلسه‌ها"
+
+msgid "Win rate"
+msgstr "نرخ موفقیت"
+
+msgid "Tasks done"
+msgstr "کارهای انجام‌شده"
+
+msgid "Overdue now"
+msgstr "معوق در حال حاضر"
+
+msgid "Lead sources"
+msgstr "منابع سرنخ"
+
+msgid "Now customers"
+msgstr "اکنون مشتری"
+
+msgid "Conversion"
+msgstr "نرخ تبدیل"
+
+msgid "Last 12 weeks"
+msgstr "۱۲ هفتهٔ گذشته"
+
+msgid "Week starting"
+msgstr "شروع هفته"
+
+msgid "Unknown export."
+msgstr "خروجی ناشناخته."
+
+msgid "ID"
+msgstr "شناسه"
+
+msgid "Last order"
+msgstr "آخرین سفارش"
+
+msgid "Last %d days"
+msgstr "%d روز گذشته"
+
+msgid "Year %d"
+msgstr "سال %d"
+
+msgid "This token belongs to the shop app and cannot open the CRM. Sign in to the CRM app instead."
+msgstr "این توکن مال اپ فروشگاه است و به بخش مدیریت مشتریان دسترسی ندارد. در اپ مدیریت مشتریان وارد شوید."
+
+msgid "Sign in first."
+msgstr "اول وارد شوید."
+
+msgid "This account has no access to the CRM."
+msgstr "این حساب به بخش مدیریت مشتریان دسترسی ندارد."
+
+msgid "The text message could not be sent. Try again in a moment."
+msgstr "پیامک فرستاده نشد. کمی بعد دوباره تلاش کنید."
+
+msgid "That deal does not belong to this contact."
+msgstr "این فرصت فروش مال این مخاطب نیست."
+
+msgid "Not found."
+msgstr "پیدا نشد."
+
+msgid "Unknown entry type."
+msgstr "نوع مورد نامعتبر است."
+
+msgid "Write something in the note."
+msgstr "متن یادداشت را بنویسید."
+
+msgid "The meeting date is not valid."
+msgstr "تاریخ جلسه معتبر نیست."
+
+msgid "The entry could not be saved."
+msgstr "ثبت این مورد ناموفق بود."

@@ -101,25 +101,59 @@ function vkl_delete_otp($mobile)
 }
 
 /**
+ * بیشینهٔ درخواست گذرشماره از یک نشانی IP در هر بازه (۰ = خاموش).
+ *
+ * @since 2.15.2
+ */
+function vkl_otp_max_requests_ip()
+{
+    return vkl_login_int('vkl_otp_max_requests_ip', 30, 0, 500);
+}
+
+/**
  * بررسی محدودیت ارسال
+ *
+ * Two buckets: per number (as before) and, since 2.15.2, per visitor IP —
+ * otherwise one script can text a code to thousands of different numbers
+ * at the shop's expense. Both are checked before either is counted, so a
+ * refused request never eats into the other bucket.
  */
 function vkl_can_send_otp($mobile)
 {
-    $key = 'vkl_rate_' . md5($mobile);
-
-    $count = (int) get_transient($key);
+    $window  = vkl_otp_rate_window();
+    $key     = 'vkl_rate_' . md5($mobile);
+    $count   = (int) get_transient($key);
 
     if ($count >= vkl_otp_max_requests()) {
         return false;
     }
 
-    set_transient(
-        $key,
-        $count + 1,
-        vkl_otp_rate_window()
-    );
+    $ip_max   = vkl_otp_max_requests_ip();
+    $ip       = $ip_max > 0 ? vkl_client_ip() : '';
+    $ip_key   = '' !== $ip ? 'vkl_rate_ip_' . md5($ip) : '';
+    $ip_count = '' !== $ip_key ? (int) get_transient($ip_key) : 0;
+
+    if ('' !== $ip_key && $ip_count >= $ip_max) {
+        return false;
+    }
+
+    set_transient($key, $count + 1, $window);
+
+    if ('' !== $ip_key) {
+        set_transient($ip_key, $ip_count + 1, $window);
+    }
 
     return true;
+}
+
+/**
+ * آیا ورود این شماره به خاطر گذرشمارهٔ نادرست بسته است؟
+ *
+ * @since 2.15.2
+ */
+function vkl_otp_locked($mobile)
+{
+    return vkl_get_failed_attempts($mobile) >= vkl_otp_max_failures();
 }
 
 /**

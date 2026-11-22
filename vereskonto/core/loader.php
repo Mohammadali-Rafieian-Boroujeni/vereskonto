@@ -26,6 +26,7 @@ require_once VKL_PATH . 'core/validator.php';
 require_once VKL_PATH . 'core/security.php';
 require_once VKL_PATH . 'core/repository.php';
 require_once VKL_PATH . 'core/helpers.php';
+require_once VKL_PATH . 'core/jalali.php';
 
 /**
  * Register core services.
@@ -70,6 +71,7 @@ require_once VKL_PATH . 'modules/smart/loader.php';
 require_once VKL_PATH . 'modules/api/loader.php';
 require_once VKL_PATH . 'modules/analytics/loader.php';
 require_once VKL_PATH . 'modules/notify/loader.php';
+require_once VKL_PATH . 'modules/crm/loader.php';
 
 add_action('plugins_loaded', static function (): void {
 
@@ -95,6 +97,8 @@ add_action('plugins_loaded', static function (): void {
     VKL_Api_Module::boot();
     VKL_Analytics_Module::boot();
     VKL_Notify_Module::boot();
+    // CRM last: it listens to events from the modules above.
+    VKL_Crm_Module::boot();
 
     // 1.6.0 renamed the My Account endpoints (vkl-wallet → wallet, …).
     // A rewrite flush is required once, also on zip-overwrite upgrades
