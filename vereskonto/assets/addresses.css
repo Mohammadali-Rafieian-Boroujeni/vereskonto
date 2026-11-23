@@ -50,3 +50,11 @@
 .vkl-addr-pick select { width: 100%; max-width: 100%; }
 .vkl-addr-manage { display: inline-block; margin-top: 6px; font-size: .9em; }
 .vkl-addr-pick-empty { margin: 0; font-size: .92em; }
+
+/* Courier map of the Vereskala Checkout plugin: not asked for when the
+   chosen saved address already has a map pin (the time slot stays). */
+body.vkl-pin-from-address .vpc-map-wrap,
+body.vkl-pin-from-address .vpc-isf__head span { display: none !important; }
+.vkl-pin-note { margin: 0 0 8px; font-size: 13px; line-height: 1.7; }
+.vkl-pin-note[hidden] { display: none; }
+.vkl-pin-change { padding: 0; border: 0; background: none; color: inherit; text-decoration: underline; cursor: pointer; font-size: inherit; }

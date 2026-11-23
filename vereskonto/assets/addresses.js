@@ -140,9 +140,83 @@
             if (window.jQuery) { window.jQuery(f).trigger('change'); } else { f.dispatchEvent(new Event('change', { bubbles: true })); }
         }
 
+        // --------------------------------------------------------------
+        // The address's map pin → the courier map of the Vereskala
+        // Checkout plugin (hidden fields vpc_lat / vpc_lng, which it reads
+        // on every checkout refresh). With a pin, its map is not asked
+        // for: it folds away behind a one-line note with a way back.
+        // --------------------------------------------------------------
+        var pinFromAddress = false;
+
+        function pinNote(a) {
+            var box = document.getElementById('vpc-isf');
+            var note = document.getElementById('vkl-pin-note');
+            if (!box) { return; }
+            if (!note) {
+                note = document.createElement('p');
+                note.id = 'vkl-pin-note';
+                note.className = 'vkl-pin-note';
+                var head = box.querySelector('.vpc-isf__head');
+                if (head && head.nextSibling) { box.insertBefore(note, head.nextSibling); } else { box.insertBefore(note, box.firstChild); }
+            }
+            note.textContent = (t.pinFrom || '%s').replace('%s', a.label || '') + ' ';
+            var change = document.createElement('button');
+            change.type = 'button';
+            change.className = 'vkl-pin-change';
+            change.textContent = t.pinChange || '';
+            change.addEventListener('click', function () {
+                document.body.classList.remove('vkl-pin-from-address');
+                note.hidden = true;
+                // Leaflet re-measures a map that was laid out while hidden.
+                window.dispatchEvent(new Event('resize'));
+            });
+            note.appendChild(change);
+            note.hidden = false;
+        }
+
+        function usePin(a) {
+            var lat = document.getElementById('vpc_lat');
+            var lng = document.getElementById('vpc_lng');
+            if (!lat || !lng) { return; } // the checkout plugin is not active
+
+            if (a && a.lat && a.lng) {
+                lat.value = a.lat;
+                lng.value = a.lng;
+                pinFromAddress = true;
+                document.body.classList.add('vkl-pin-from-address');
+                pinNote(a);
+                return;
+            }
+
+            // Typing another address: the previous address's point no
+            // longer applies; the customer sets one on the map.
+            if (pinFromAddress) {
+                lat.value = '';
+                lng.value = '';
+                pinFromAddress = false;
+            }
+            document.body.classList.remove('vkl-pin-from-address');
+            var note = document.getElementById('vkl-pin-note');
+            if (note) { note.hidden = true; }
+        }
+
         function apply() {
             var a = byId[select.value];
-            if (!a) { return; }
+            usePin(a || null);
+            if (!a) {
+                if (window.jQuery) { window.jQuery(document.body).trigger('update_checkout'); }
+                return;
+            }
+
+            // The recipient sits in the shipping fields; WooCommerce uses
+            // them only with "ship to a different address" on (otherwise
+            // the account holder's billing name lands on the shipping
+            // address of the order).
+            var diff = document.getElementById('ship-to-different-address-checkbox');
+            if (diff && !diff.checked && a.first_name) {
+                diff.checked = true;
+                if (window.jQuery) { window.jQuery(diff).trigger('change'); } else { diff.dispatchEvent(new Event('change', { bubbles: true })); }
+            }
             // Billing NAME and PHONE are the account holder's; only the
             // address goes there. The recipient goes to the shipping fields.
             ['billing', 'shipping'].forEach(function (p) {

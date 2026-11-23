@@ -49,6 +49,9 @@ final class VKL_Wc_Shipping_Step
     public const S_DONE    = 'vkl_ship_step_done';
     public const S_PIN     = 'vkl_ship_pin';
 
+    /** Session key of the Vereskala Checkout plugin's delivery point. */
+    public const VPC_PIN = 'vpc_pin';
+
     private const NONCE = 'vkl_ship_step';
 
     private VKL_Config $config;
@@ -557,8 +560,19 @@ final class VKL_Wc_Shipping_Step
         $customer->set_calculated_shipping(true);
         $customer->save();
 
+        $has_pin = '' !== (string) $a['lat'] && '' !== (string) $a['lng'];
+
         $this->session_set(self::S_ADDRESS, (string) $a['id']);
-        $this->session_set(self::S_PIN, '' !== (string) $a['lat'] ? ['lat' => (string) $a['lat'], 'lng' => (string) $a['lng']] : null);
+        $this->session_set(self::S_PIN, $has_pin ? ['lat' => (string) $a['lat'], 'lng' => (string) $a['lng']] : null);
+
+        /*
+         * The Vereskala Checkout plugin prices the Isfahan courier by the
+         * distance to its delivery point, kept in the session as
+         * [lat, lng] (VPC_Shipping::SESSION_PIN). Giving it the address's
+         * pin makes the courier rate right here, and its checkout block
+         * starts from this point instead of asking for it on its map.
+         */
+        $this->session_set(self::VPC_PIN, $has_pin ? [round((float) $a['lat'], 6), round((float) $a['lng'], 6)] : null);
 
         /**
          * A saved address was chosen for shipping. A checkout plugin that

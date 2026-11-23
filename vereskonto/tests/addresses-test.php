@@ -143,6 +143,7 @@ $check([] === $order2->meta, 'unknown address id stores nothing');
 ob_start(); (new VKL_Wc_Addresses())->admin_order_location($order); $html = (string) ob_get_clean();
 $check(str_contains($html, 'mlat=35.700000'), 'order screen links the location');
 $check(1 === count(VKL_Wc_Addresses::picker_data(7)) && '1' === VKL_Wc_Addresses::picker_data(7)[0]['default'], 'checkout picker data marks the default');
+$check('' !== VKL_Wc_Addresses::picker_data(7)[0]['lat'] && '' !== VKL_Wc_Addresses::picker_data(7)[0]['lng'], 'checkout picker data carries the map pin for the courier map');
 
 // ---- Credit request: IBAN and identity block --------------------------------
 class VKL_Repository { public function __construct($db = null) {} }

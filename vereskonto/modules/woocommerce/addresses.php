@@ -416,6 +416,8 @@ final class VKL_Wc_Addresses
                 'pick'      => 'روی نقشه بزنید تا محل دقیق نشانی ثبت شود.',
                 'suggested' => 'نشانی پیشنهادی از روی نقشه:',
                 'use'       => 'استفاده',
+                'pinFrom'   => 'نقطهٔ تحویل از روی نقشهٔ نشانی «%s» گرفته شد.',
+                'pinChange' => 'تغییر روی نقشه',
             ],
         ]);
     }
@@ -636,6 +638,10 @@ final class VKL_Wc_Addresses
             'address_1'  => (string) $a['address_1'],
             'address_2'  => (string) $a['address_2'],
             'postcode'   => (string) $a['postcode'],
+            // The map pin, so checkout can hand it to the courier map (VPC).
+            'lat'        => (string) ($a['lat'] ?? ''),
+            'lng'        => (string) ($a['lng'] ?? ''),
+            'label'      => (string) $a['label'],
         ], self::all($user_id));
     }
 

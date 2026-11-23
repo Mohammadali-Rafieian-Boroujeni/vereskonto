@@ -182,6 +182,7 @@ $check('https://shop.test/checkout/' === $to, 'a valid choice goes on to checkou
 $check([0 => 'vpc_courier'] === $session->get('chosen_shipping_methods'), 'the chosen rate is what checkout will use');
 $check(true === $session->get(VKL_Wc_Shipping_Step::S_DONE) && 'work' === $session->get(VKL_Wc_Shipping_Step::S_ADDRESS), 'the step is marked done with the chosen address');
 $check(['lat' => '32.650000', 'lng' => '51.670000'] === $session->get(VKL_Wc_Shipping_Step::S_PIN), 'the map pin of the address is in the session');
+$check([32.65, 51.67] === $session->get('vpc_pin'), "the pin is the checkout plugin's delivery point (courier priced by distance, no map at checkout)");
 $c = WC()->customer->p;
 $check('اصفهان' === $c['shipping_city'] && 'اصفهان' === $c['billing_city'] && 'IR' === $c['billing_country'] && WC()->customer->saved, 'the address is on the WooCommerce customer');
 $check('علی' === $c['shipping_first_name'] && '09131234567' === $c['shipping_phone'], 'the recipient goes to the shipping fields');
