@@ -52,6 +52,7 @@ function current_user_can($c) { return true; }
 function settings_fields($g) { echo '<input type="hidden" name="option_page" value="' . $g . '">'; }
 function submit_button($t = null, $type = 'primary', $name = 'submit', $wrap = true) { echo $wrap ? '<p class="submit"><input type="submit"></p>' : '<input type="submit">'; }
 function checked($a, $b = true, $e = true) { return ''; }
+function wp_dropdown_pages($a = []) { $h = '<select name="' . ($a['name'] ?? '') . '"></select>'; if (!empty($a['echo'])) { echo $h; } return $h; }
 function selected($a, $b = true, $e = true) { return ''; }
 function disabled($a, $b = true, $e = true) { return ''; }
 function get_option($k, $d = false) { return $GLOBALS['test_options'][$k] ?? $d; }

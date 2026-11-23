@@ -77,7 +77,20 @@ final class VKL_Wc_Checkout
             return;
         }
 
-        // Remember the intent so the login success handler can return here.
+        self::remember_return();
+
+        wp_safe_redirect(wc_get_page_permalink('myaccount'));
+        exit;
+    }
+
+    /**
+     * Remember that the login was triggered on the way to paying, so the
+     * login success handler returns to checkout. Also used by the shipping
+     * step: back at checkout, the step's own redirect takes the customer
+     * to the address and shipping page when the cart still needs it.
+     */
+    public static function remember_return(): void
+    {
         setcookie(
             self::COOKIE,
             'checkout',
@@ -89,9 +102,6 @@ final class VKL_Wc_Checkout
                 'samesite' => 'Lax',
             ]
         );
-
-        wp_safe_redirect(wc_get_page_permalink('myaccount'));
-        exit;
     }
 
     /**

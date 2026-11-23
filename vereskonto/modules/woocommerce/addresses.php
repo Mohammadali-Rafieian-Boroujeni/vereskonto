@@ -352,7 +352,13 @@ final class VKL_Wc_Addresses
                 return;
         }
 
-        wp_safe_redirect(self::url());
+        /**
+         * Where to go after a save/delete/default action (the shipping step
+         * sends its customers back to itself).
+         *
+         * @param string $url
+         */
+        wp_safe_redirect((string) apply_filters('vkl_address_saved_redirect', self::url()));
         exit;
     }
 
@@ -523,6 +529,8 @@ final class VKL_Wc_Addresses
 
         $v      = static fn(string $k): string => (string) ($a[$k] ?? '');
         $states = self::states();
+        // phpcs:ignore WordPress.Security.NonceVerification -- only picks where the form returns to.
+        $back = 'shipping' === ($_POST['vkl_back'] ?? $_GET['back'] ?? '') ? 'shipping' : '';
         ?>
         <div class="vkl-addr">
             <a class="vkl-addr-back" href="<?php echo esc_url(self::url()); ?>">→ همهٔ نشانی‌ها</a>
@@ -589,6 +597,9 @@ final class VKL_Wc_Addresses
                 </div>
 
                 <input type="hidden" name="vkl_addr_action" value="save">
+                <?php if ('shipping' === $back) : ?>
+                    <input type="hidden" name="vkl_back" value="shipping">
+                <?php endif; ?>
                 <input type="hidden" name="vkl_addr_id" value="<?php echo esc_attr($id); ?>">
                 <?php wp_nonce_field(self::NONCE, '_vkl_addr_nonce'); ?>
                 <p class="vkl-addr-submit">
@@ -628,6 +639,16 @@ final class VKL_Wc_Addresses
         ], self::all($user_id));
     }
 
+    /**
+     * Address chosen at the shipping step (VKL_Wc_Shipping_Step), '' if none.
+     */
+    public static function session_address_id(): string
+    {
+        $id = function_exists('WC') && WC()->session ? WC()->session->get('vkl_address_id') : '';
+
+        return is_string($id) ? sanitize_key($id) : '';
+    }
+
     public function checkout_picker(): void
     {
         if (!is_user_logged_in()) {
@@ -635,6 +656,7 @@ final class VKL_Wc_Addresses
         }
 
         $rows = self::all(get_current_user_id());
+        $pick = self::session_address_id();
         ?>
         <div class="vkl-addr-pick">
             <?php if ([] === $rows) : ?>
@@ -643,7 +665,7 @@ final class VKL_Wc_Addresses
                 <label for="vkl-address-id">ارسال به نشانی ذخیره‌شده</label>
                 <select id="vkl-address-id" name="vkl_address_id">
                     <?php foreach ($rows as $a) : ?>
-                        <option value="<?php echo esc_attr((string) $a['id']); ?>"><?php echo esc_html((string) $a['label'] . ' — ' . self::one_line($a)); ?></option>
+                        <option value="<?php echo esc_attr((string) $a['id']); ?>"<?php echo (string) $a['id'] === $pick ? ' selected' : ''; ?>><?php echo esc_html((string) $a['label'] . ' — ' . self::one_line($a)); ?></option>
                     <?php endforeach; ?>
                     <option value="">نشانی دیگری وارد می‌کنم</option>
                 </select>
@@ -662,7 +684,8 @@ final class VKL_Wc_Addresses
      */
     public function save_order_location($order, $data = []): void
     {
-        $id = isset($_POST['vkl_address_id']) ? sanitize_key((string) wp_unslash($_POST['vkl_address_id'])) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Missing -- WooCommerce verified the checkout nonce.
+        // The picker on the checkout form; else the address chosen at the shipping step.
+        $id = isset($_POST['vkl_address_id']) ? sanitize_key((string) wp_unslash($_POST['vkl_address_id'])) : self::session_address_id(); // phpcs:ignore WordPress.Security.NonceVerification.Missing -- WooCommerce verified the checkout nonce.
         $uid = is_object($order) && method_exists($order, 'get_customer_id') ? (int) $order->get_customer_id() : 0;
 
         if ('' === $id || $uid <= 0) {

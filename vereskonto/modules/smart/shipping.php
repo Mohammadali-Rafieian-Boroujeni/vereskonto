@@ -239,7 +239,7 @@ final class VKL_Smart_Shipping
      *
      * @return string[]
      */
-    private function nofree_titles(): array
+    public function nofree_titles(): array
     {
         if (!$this->has_checkout_plugin() || !method_exists('VPC_Settings', 'nofree_gateways') || !function_exists('WC') || !WC()->payment_gateways()) {
             return [];

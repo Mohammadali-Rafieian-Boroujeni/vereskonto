@@ -20,6 +20,7 @@ vkl_require('modules/woocommerce/frontendui.php');
 vkl_require('modules/woocommerce/coupons.php');
 vkl_require('modules/woocommerce/invoice.php');
 vkl_require('modules/woocommerce/addresses.php');
+vkl_require('modules/woocommerce/shippingstep.php');
 
 /**
  * Class VKL_Wc_Module
@@ -44,6 +45,8 @@ final class VKL_Wc_Module
 
         $config->add_defaults([
             'checkout_require_login' => '0',
+            'shipping_step_enabled'  => '0',
+            'shipping_step_page'     => 0,
         ]);
 
         $hooks = new VKL_Wc_Hooks($c->make('validator'));
@@ -55,5 +58,6 @@ final class VKL_Wc_Module
         (new VKL_Frontend_Ui())->register();
         (new VKL_Wc_Invoice($config))->register();
         (new VKL_Wc_Addresses())->register();
+        (new VKL_Wc_Shipping_Step($config))->register();
     }
 }

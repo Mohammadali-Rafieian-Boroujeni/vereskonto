@@ -6373,3 +6373,12 @@ msgstr "شارژ کیف پول و پرداخت قسط جزو فروش حساب �
 
 msgid "All orders"
 msgstr "همهٔ سفارش‌ها"
+
+msgid "Address and shipping step"
+msgstr "گام نشانی و ارسال"
+
+msgid "— Choose a page —"
+msgstr "— انتخاب برگه —"
+
+msgid "Between the cart and the checkout, logged-in customers pick a saved address and see the real shipping options before paying. Create an empty page (e.g. \"Shipping\") and choose it here; the step is shown on it (or wherever the [vereskonto_shipping] shortcode is). Carts that need no shipping go straight to checkout."
+msgstr "بین سبد خرید و تسویه، مشتری واردشده یکی از نشانی‌های ذخیره‌شده‌اش را انتخاب می‌کند و پیش از پرداخت، روش‌ها و هزینهٔ واقعی ارسال را می‌بیند. یک برگهٔ خالی (مثلاً «ارسال») بسازید و این‌جا انتخابش کنید؛ گام روی همان برگه (یا هر جا که شورت‌کد [vereskonto_shipping] باشد) نمایش داده می‌شود. سبدهایی که ارسال ندارند مستقیم به تسویه می‌روند."

@@ -152,6 +152,18 @@ final class VKL_Wallet_Admin
             'default'           => '0',
         ]);
 
+        register_setting(self::SETTINGS_GROUP, $this->config->option_name('shipping_step_enabled'), [
+            'type'              => 'string',
+            'sanitize_callback' => $bool,
+            'default'           => '0',
+        ]);
+
+        register_setting(self::SETTINGS_GROUP, $this->config->option_name('shipping_step_page'), [
+            'type'              => 'integer',
+            'sanitize_callback' => 'absint',
+            'default'           => 0,
+        ]);
+
         register_setting(self::SETTINGS_GROUP, $this->config->option_name('wallet_topup_min'), [
             'type'              => 'integer',
             'sanitize_callback' => 'absint',
@@ -1114,6 +1126,29 @@ final class VKL_Wallet_Admin
                                 <?php esc_html_e('Enabled', 'vereskala-login'); ?>
                             </label>
                             <p class="description"><?php esc_html_e('Guests who open the checkout are sent to the login page and returned to checkout after logging in. Payment links for existing orders keep working.', 'vereskala-login'); ?></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><?php esc_html_e('Address and shipping step', 'vereskala-login'); ?></th>
+                        <td>
+                            <label>
+                                <input type="hidden" name="<?php echo esc_attr($this->config->option_name('shipping_step_enabled')); ?>" value="0">
+                                <input type="checkbox" name="<?php echo esc_attr($this->config->option_name('shipping_step_enabled')); ?>" value="1" <?php checked($this->config->get_bool('shipping_step_enabled', false)); ?>>
+                                <?php esc_html_e('Enabled', 'vereskala-login'); ?>
+                            </label>
+                            <p>
+                                <?php
+                                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- core markup.
+                                echo wp_dropdown_pages([
+                                    'name'              => $this->config->option_name('shipping_step_page'),
+                                    'selected'          => $this->config->get_int('shipping_step_page', 0),
+                                    'show_option_none'  => __('— Choose a page —', 'vereskala-login'),
+                                    'option_none_value' => '0',
+                                    'echo'              => 0,
+                                ]);
+                                ?>
+                            </p>
+                            <p class="description"><?php esc_html_e('Between the cart and the checkout, logged-in customers pick a saved address and see the real shipping options before paying. Create an empty page (e.g. "Shipping") and choose it here; the step is shown on it (or wherever the [vereskonto_shipping] shortcode is). Carts that need no shipping go straight to checkout.', 'vereskala-login'); ?></p>
                         </td>
                     </tr>
                 </table>
