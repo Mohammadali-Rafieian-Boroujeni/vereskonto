@@ -19,6 +19,7 @@ vkl_require('modules/woocommerce/account.php');
 vkl_require('modules/woocommerce/frontendui.php');
 vkl_require('modules/woocommerce/coupons.php');
 vkl_require('modules/woocommerce/invoice.php');
+vkl_require('modules/woocommerce/addresses.php');
 
 /**
  * Class VKL_Wc_Module
@@ -53,5 +54,6 @@ final class VKL_Wc_Module
         (new VKL_Wc_Account($c->make('validator')))->register();
         (new VKL_Frontend_Ui())->register();
         (new VKL_Wc_Invoice($config))->register();
+        (new VKL_Wc_Addresses())->register();
     }
 }

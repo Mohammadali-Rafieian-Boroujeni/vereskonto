@@ -190,9 +190,10 @@ final class VKL_Wc_Account
             $errors->add('vkl_national_id', 'کد ملی واردشده معتبر نیست؛ لطفاً ارقام را دوباره بررسی کنید.');
         }
 
-        $iban = isset($_POST['vkl_iban']) ? strtoupper(preg_replace('/[^0-9A-Za-z]/', '', (string) wp_unslash($_POST['vkl_iban']))) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Missing
+        $iban = isset($_POST['vkl_iban']) ? self::clean_iban((string) wp_unslash($_POST['vkl_iban'])) : ''; // phpcs:ignore WordPress.Security.NonceVerification.Missing
+        $good = class_exists('VKL_Credit_Requests') ? VKL_Credit_Requests::is_valid_iban($iban) : (bool) preg_match('/^IR\d{24}$/', $iban);
 
-        if ('' !== $iban && !preg_match('/^IR\d{24}$/', $iban)) {
+        if ('' !== $iban && !$good) {
             $errors->add('vkl_iban', __('The IBAN must start with IR followed by 24 digits, and must belong to the applicant.', 'vereskala-login'));
         }
     }
@@ -224,7 +225,7 @@ final class VKL_Wc_Account
         }
 
         if (isset($_POST['vkl_iban'])) {
-            update_user_meta($user_id, 'vkl_iban', strtoupper(preg_replace('/[^0-9A-Za-z]/', '', (string) wp_unslash($_POST['vkl_iban']))));
+            update_user_meta($user_id, 'vkl_iban', self::clean_iban((string) wp_unslash($_POST['vkl_iban'])));
         }
         // phpcs:enable
 
@@ -257,6 +258,16 @@ final class VKL_Wc_Account
         if (false !== $parsed) {
             update_user_meta($user_id, self::META_BIRTHDAY, $parsed);
         }
+    }
+
+    /**
+     * IBAN as stored: shared normalizer (Persian digits, spaces, "IR").
+     */
+    private static function clean_iban(string $raw): string
+    {
+        return class_exists('VKL_Credit_Requests')
+            ? VKL_Credit_Requests::normalize_iban($raw)
+            : strtoupper((string) preg_replace('/[^0-9A-Za-z]/', '', $raw));
     }
 
     /**

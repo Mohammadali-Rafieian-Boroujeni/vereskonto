@@ -138,6 +138,124 @@ final class VKL_Credit_Requests extends VKL_Repository
         add_action('template_redirect', [$this, 'handle_submit']);
         add_action('admin_post_vkl_credit_doc', [$this, 'stream_doc']);
         add_action('admin_post_vkl_credit_decide', [$this, 'handle_decide']);
+        add_action('wp_ajax_vkl_cr_identity', [$this, 'ajax_identity']);
+    }
+
+    /** Most mobile/national-ID inquiries a customer may start per hour. */
+    private const IDENTITY_CHECKS_PER_HOUR = 6;
+
+    /**
+     * Iranian IBAN (Sheba): IR + 24 digits with a valid ISO 13616 mod-97
+     * check, so a mistyped digit is caught before the shop sees it.
+     */
+    public static function is_valid_iban(string $iban): bool
+    {
+        $iban = self::normalize_iban($iban);
+
+        if (!preg_match('/^IR\d{24}$/', $iban)) {
+            return false;
+        }
+
+        // Move "IR" + check digits to the end, letters → numbers (I=18, R=27).
+        $digits = substr($iban, 4) . '1827' . substr($iban, 2, 2);
+        $mod    = 0;
+
+        foreach (str_split($digits) as $d) {
+            $mod = ($mod * 10 + (int) $d) % 97;
+        }
+
+        return 1 === $mod;
+    }
+
+    /**
+     * Upper-case, Latin digits, no spaces; "IR" added when only digits.
+     */
+    public static function normalize_iban(string $raw): string
+    {
+        $raw = strtr($raw, ['۰' => '0', '۱' => '1', '۲' => '2', '۳' => '3', '۴' => '4', '۵' => '5', '۶' => '6', '۷' => '7', '۸' => '8', '۹' => '9', '٠' => '0', '١' => '1', '٢' => '2', '٣' => '3', '٤' => '4', '٥' => '5', '٦' => '6', '٧' => '7', '٨' => '8', '٩' => '9']);
+        $raw = strtoupper((string) preg_replace('/[^0-9A-Za-z]/', '', $raw));
+
+        return preg_match('/^\d{24}$/', $raw) ? 'IR' . $raw : $raw;
+    }
+
+    /**
+     * Profile name parts used by the credit file.
+     *
+     * @return array{0: string, 1: string}
+     */
+    private static function profile_name(int $user_id): array
+    {
+        $first = trim((string) (get_user_meta($user_id, 'billing_first_name', true) ?: get_user_meta($user_id, 'first_name', true)));
+        $last  = trim((string) (get_user_meta($user_id, 'billing_last_name', true) ?: get_user_meta($user_id, 'last_name', true)));
+
+        return [$first, $last];
+    }
+
+    /**
+     * AJAX: does the customer's mobile belong to the owner of the national
+     * ID typed on the request form? The (checksum-valid) code is saved to
+     * the profile — the same field "Account details" edits — so the
+     * verdict and the stored identity never disagree.
+     */
+    public function ajax_identity(): void
+    {
+        check_ajax_referer('vkl_cr_identity', 'nonce');
+
+        $user_id = get_current_user_id();
+
+        if ($user_id <= 0) {
+            wp_send_json_error(['message' => 'ابتدا وارد حساب خود شوید.'], 403);
+        }
+
+        $national = VKL_Wc_Account::normalize_national_id((string) wp_unslash($_POST['national_id'] ?? '')); // phpcs:ignore WordPress.Security.NonceVerification.Missing
+
+        if (!VKL_Wc_Account::is_valid_national_id($national)) {
+            wp_send_json_error(['status' => 'invalid', 'message' => 'کد ملی معتبر نیست؛ ارقام را بررسی کنید.']);
+        }
+
+        if (!class_exists('VKL_Identity') || !VKL_Identity::enabled()) {
+            update_user_meta($user_id, 'vkl_national_id', $national);
+            wp_send_json_success(['status' => 'off', 'message' => '']);
+        }
+
+        // A pair already answered is free; a new pair costs one inquiry.
+        $mobile = (string) get_user_meta($user_id, 'billing_phone', true);
+        $hash   = md5((function_exists('vkl_normalize_mobile') ? vkl_normalize_mobile($mobile) : $mobile) . '|' . $national);
+        $known  = $hash === (string) get_user_meta($user_id, VKL_Identity::META_HASH, true)
+            && in_array(VKL_Identity::stored_status($user_id), ['match', 'mismatch'], true);
+
+        if (!$known) {
+            $key   = 'vkl_idchk_' . $user_id;
+            $count = (int) get_transient($key);
+
+            if ($count >= self::IDENTITY_CHECKS_PER_HOUR) {
+                wp_send_json_error(['status' => 'limited', 'message' => 'تعداد استعلام‌ها زیاد شده است؛ یک ساعت دیگر دوباره تلاش کنید.']);
+            }
+
+            set_transient($key, $count + 1, HOUR_IN_SECONDS);
+        }
+
+        update_user_meta($user_id, 'vkl_national_id', $national);
+        $verdict = VKL_Identity::verify_user($user_id);
+
+        wp_send_json_success(['status' => $verdict['status'], 'message' => self::identity_text($verdict['status'])]);
+    }
+
+    /**
+     * Customer-facing sentence for a matching verdict.
+     */
+    private static function identity_text(string $status): string
+    {
+        switch ($status) {
+            case 'match':
+                return '✓ شمارهٔ همراه شما به نام صاحب این کد ملی ثبت شده است.';
+            case 'mismatch':
+                return '✗ شمارهٔ همراه شما به نام صاحب این کد ملی نیست. شماره باید به نام خود متقاضی باشد.';
+            case 'error':
+                return '؟ سرویس استعلام فعلاً پاسخ نمی‌دهد؛ چند دقیقهٔ دیگر دوباره بررسی کنید.';
+            default:
+                return '';
+        }
     }
 
     /**
@@ -250,6 +368,8 @@ final class VKL_Credit_Requests extends VKL_Repository
                     </select></label>
             </p>
 
+            <?php $this->render_identity_fields($user_id); ?>
+
             <p style="font-weight:600;margin-bottom:4px">مدارک هویتی</p>
             <p class="description" style="margin-top:0">تصویر کارت ملی — JPG، PNG یا PDF، حداکثر ۵ مگابایت هر فایل. مدارک محرمانه نگهداری می‌شوند و فقط مدیریت فروشگاه به آن‌ها دسترسی دارد.</p>
             <?php foreach (self::doc_slots() as $slot => $label) : ?>
@@ -271,6 +391,153 @@ final class VKL_Credit_Requests extends VKL_Repository
             <?php wp_nonce_field(self::NONCE, '_vkl_cr_nonce'); ?>
             <button type="submit" name="vkl_cr_submit" value="1" class="button"><?php esc_html_e('Submit credit request', 'vereskala-login'); ?></button>
         </form>
+        <?php
+    }
+
+    /**
+     * Applicant identity on the request form itself: name, mobile,
+     * national ID with the mobile-ownership check, and IBAN. Before
+     * 2.22.0 the form only said "save them in Account details first",
+     * so customers left the page halfway through applying.
+     */
+    private function render_identity_fields(int $user_id): void
+    {
+        [$first, $last] = self::profile_name($user_id);
+        $mobile   = (string) get_user_meta($user_id, 'billing_phone', true);
+        $national = (string) get_user_meta($user_id, 'vkl_national_id', true);
+        $iban     = (string) get_user_meta($user_id, 'vkl_iban', true);
+        $id_on    = class_exists('VKL_Identity') && VKL_Identity::enabled();
+        $require  = $id_on && 'require' === VKL_Identity::mode();
+        $state    = $id_on ? VKL_Identity::stored_status($user_id) : '';
+        $fresh    = $id_on && '' !== $national && 'none' !== $state && '' !== $state
+            && md5((function_exists('vkl_normalize_mobile') ? vkl_normalize_mobile($mobile) : $mobile) . '|' . $national) === (string) get_user_meta($user_id, VKL_Identity::META_HASH, true);
+        $config   = [
+            'ajax'    => admin_url('admin-ajax.php'),
+            'nonce'   => wp_create_nonce('vkl_cr_identity'),
+            'enabled' => $id_on,
+            'require' => $require,
+            'state'   => $fresh ? $state : '',
+        ];
+        ?>
+        <fieldset class="vkl-cr-identity">
+            <legend>اطلاعات متقاضی</legend>
+            <p class="description" style="margin-top:0">این اطلاعات در پروندهٔ حساب شما ذخیره می‌شود و در «جزئیات حساب» هم همین‌ها را می‌بینید.</p>
+            <div class="vkl-cr-grid">
+                <label>نام<br><input type="text" name="vkl_cr_first" value="<?php echo esc_attr($first); ?>" required autocomplete="given-name"></label>
+                <label>نام خانوادگی<br><input type="text" name="vkl_cr_last" value="<?php echo esc_attr($last); ?>" required autocomplete="family-name"></label>
+                <label>شمارهٔ همراه<br>
+                    <input type="tel" dir="ltr" value="<?php echo esc_attr($mobile); ?>" readonly aria-describedby="vkl-cr-mobile-hint">
+                    <small id="vkl-cr-mobile-hint"><?php echo '' === $mobile ? 'شماره ثبت نشده است — ' : 'برای تغییر: '; ?><a href="<?php echo esc_url(wc_get_account_endpoint_url('edit-account')); ?>">جزئیات حساب</a></small>
+                </label>
+                <label>کد ملی (۱۰ رقم)<br>
+                    <input type="text" name="vkl_cr_national" id="vkl_cr_national" dir="ltr" maxlength="10" inputmode="numeric" autocomplete="off" required value="<?php echo esc_attr($national); ?>" aria-describedby="vkl_cr_national_msg vkl_cr_identity_msg">
+                    <small id="vkl_cr_national_msg"></small>
+                </label>
+                <label class="vkl-cr-wide">شمارهٔ شبای حساب متقاضی<br>
+                    <input type="text" name="vkl_cr_iban" id="vkl_cr_iban" dir="ltr" maxlength="34" required placeholder="IR000000000000000000000000" value="<?php echo esc_attr($iban); ?>" aria-describedby="vkl_cr_iban_msg">
+                    <small id="vkl_cr_iban_msg"></small>
+                </label>
+            </div>
+            <?php if ($id_on) : ?>
+                <div class="vkl-cr-match" id="vkl_cr_identity_box" aria-live="polite">
+                    <strong>تطبیق شمارهٔ همراه با کد ملی</strong>
+                    <span id="vkl_cr_identity_msg"><?php echo esc_html($fresh ? self::identity_text($state) : 'پس از وارد کردن کد ملی، بررسی می‌شود که شمارهٔ همراه به نام صاحب آن باشد.'); ?></span>
+                    <button type="button" class="button" id="vkl_cr_identity_btn">بررسی تطبیق</button>
+                    <?php if ($require) : ?><small>درخواست فقط وقتی پذیرفته می‌شود که تطبیق تأیید شود.</small><?php endif; ?>
+                </div>
+            <?php endif; ?>
+        </fieldset>
+        <style>
+            .vkl-cr-identity{border:1px solid #e2e2e2;border-radius:10px;padding:10px 14px 14px;margin:6px 0 14px}
+            .vkl-cr-identity legend{font-weight:600;padding:0 6px}
+            .vkl-cr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px 14px}
+            .vkl-cr-grid label{display:block}
+            .vkl-cr-grid input{width:100%;box-sizing:border-box}
+            .vkl-cr-grid input[readonly]{background:#f6f7f7}
+            .vkl-cr-grid small{display:block;margin-top:3px;min-height:1em}
+            .vkl-cr-wide{grid-column:1/-1}
+            .vkl-cr-match{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;margin-top:12px;padding:10px 12px;border-radius:8px;background:#f6f7f7;border:1px solid #e2e2e2}
+            .vkl-cr-match.is-match{background:#edf7f0;border-color:#b5dcc2;color:#0f5d2b}
+            .vkl-cr-match.is-mismatch{background:#fdf0f0;border-color:#f0c4c4;color:#8a1f1f}
+            .vkl-cr-match.is-error{background:#fdf8ef;border-color:#f0d9a8;color:#7a4b00}
+            .vkl-cr-match small{flex-basis:100%;color:#50575e}
+            .vkl-ok{color:#157f3a}.vkl-bad{color:#b32d2e}
+        </style>
+        <script>
+        (function () {
+            var cfg = <?php echo wp_json_encode($config); ?>;
+            var nat = document.getElementById('vkl_cr_national'), natMsg = document.getElementById('vkl_cr_national_msg');
+            var iban = document.getElementById('vkl_cr_iban'), ibanMsg = document.getElementById('vkl_cr_iban_msg');
+            var box = document.getElementById('vkl_cr_identity_box'), idMsg = document.getElementById('vkl_cr_identity_msg'), btn = document.getElementById('vkl_cr_identity_btn');
+            var form = nat ? nat.form : null, submit = form ? form.querySelector('[name="vkl_cr_submit"]') : null;
+            var state = cfg.state, checked = state ? nat.value : '';
+            if (!nat || !iban) { return; }
+            function latin(s) { return s.replace(/[۰-۹]/g, function (d) { return d.charCodeAt(0) - 1776; }).replace(/[٠-٩]/g, function (d) { return d.charCodeAt(0) - 1632; }); }
+            function nationalOk(c) {
+                if (!/^\d{10}$/.test(c) || /^(\d)\1{9}$/.test(c)) { return false; }
+                var s = 0, i; for (i = 0; i < 9; i++) { s += +c[i] * (10 - i); }
+                var r = s % 11; return r < 2 ? +c[9] === r : +c[9] === 11 - r;
+            }
+            function ibanOk(v) {
+                if (!/^IR\d{24}$/.test(v)) { return false; }
+                var d = v.slice(4) + '1827' + v.slice(2, 4), m = 0, i;
+                for (i = 0; i < d.length; i++) { m = (m * 10 + +d[i]) % 97; }
+                return m === 1;
+            }
+            function say(el, ok, text) { el.textContent = text; el.className = ok === null ? '' : (ok ? 'vkl-ok' : 'vkl-bad'); }
+            function setState(s, text) {
+                state = s;
+                if (box) { box.className = 'vkl-cr-match' + (s ? ' is-' + s : ''); }
+                if (idMsg && text) { idMsg.textContent = text; }
+                gate();
+            }
+            function gate() {
+                if (!submit || !cfg.require) { return; }
+                var ready = state === 'match' && checked === nat.value;
+                submit.disabled = !ready;
+                submit.title = ready ? '' : 'ابتدا تطبیق شمارهٔ همراه با کد ملی باید تأیید شود.';
+            }
+            function checkNational() {
+                var c = latin(nat.value).replace(/\D/g, '');
+                if (nat.value !== c) { nat.value = c; }
+                if (c === '') { say(natMsg, null, ''); nat.setCustomValidity(''); }
+                else if (c.length < 10) { say(natMsg, null, ''); nat.setCustomValidity('کد ملی باید ۱۰ رقم باشد.'); }
+                else { var ok = nationalOk(c); say(natMsg, ok, ok ? '✓ کد ملی معتبر است' : '✗ کد ملی معتبر نیست؛ ارقام را بررسی کنید'); nat.setCustomValidity(ok ? '' : 'کد ملی معتبر نیست.'); }
+                if (checked && checked !== c) { setState('', 'کد ملی تغییر کرد؛ دوباره بررسی کنید.'); checked = ''; }
+                return c.length === 10 && nationalOk(c);
+            }
+            function checkIban() {
+                var v = latin(iban.value).toUpperCase().replace(/[^0-9A-Z]/g, '');
+                if (/^\d{24}$/.test(v)) { v = 'IR' + v; }
+                if (iban.value !== v) { iban.value = v; }
+                if (v === '') { say(ibanMsg, null, ''); iban.setCustomValidity(''); return; }
+                if (v.length < 26) { say(ibanMsg, null, ''); iban.setCustomValidity('شبا باید IR و ۲۴ رقم باشد.'); return; }
+                var ok = ibanOk(v);
+                say(ibanMsg, ok, ok ? '✓ شمارهٔ شبا معتبر است' : '✗ شمارهٔ شبا معتبر نیست؛ ارقام را بررسی کنید');
+                iban.setCustomValidity(ok ? '' : 'شمارهٔ شبا معتبر نیست.');
+            }
+            function inquire() {
+                if (!cfg.enabled || !checkNational()) { return; }
+                var value = nat.value, body = new FormData();
+                body.append('action', 'vkl_cr_identity'); body.append('nonce', cfg.nonce); body.append('national_id', value);
+                btn.disabled = true; setState('', 'در حال بررسی…');
+                fetch(cfg.ajax, { method: 'POST', credentials: 'same-origin', body: body })
+                    .then(function (r) { return r.json(); })
+                    .then(function (r) {
+                        var d = r && r.data ? r.data : {};
+                        if (value !== nat.value) { return; }
+                        checked = r && r.success ? value : '';
+                        setState(r && r.success && d.status !== 'none' ? d.status : (d.status === 'limited' ? 'error' : ''), d.message || 'بررسی ممکن نشد؛ دوباره تلاش کنید.');
+                    })
+                    .catch(function () { setState('error', 'ارتباط برقرار نشد؛ دوباره تلاش کنید.'); })
+                    .then(function () { btn.disabled = false; });
+            }
+            nat.addEventListener('input', function () { if (checkNational() && cfg.enabled && checked !== nat.value) { inquire(); } });
+            iban.addEventListener('input', checkIban);
+            if (btn) { btn.addEventListener('click', inquire); }
+            checkNational(); checkIban(); setState(state, '');
+        })();
+        </script>
         <?php
     }
 
@@ -305,13 +572,37 @@ final class VKL_Credit_Requests extends VKL_Repository
             return;
         }
 
-        // A credit file needs a complete identity: profile name + mobile,
-        // a checksum-valid national ID, and the applicant's own IBAN.
-        $first = trim((string) get_user_meta($user_id, 'billing_first_name', true) ?: get_user_meta($user_id, 'first_name', true));
-        $last  = trim((string) get_user_meta($user_id, 'billing_last_name', true) ?: get_user_meta($user_id, 'last_name', true));
-        $phone = trim((string) get_user_meta($user_id, 'billing_phone', true));
+        // A credit file needs a complete identity: name, mobile, a
+        // checksum-valid national ID and the applicant's own IBAN. Since
+        // 2.22.0 they are filled in on this form; they are stored in the
+        // same profile fields "Account details" edits (one source of truth).
+        // phpcs:disable WordPress.Security.NonceVerification.Missing -- verified above.
+        $posted_first = isset($_POST['vkl_cr_first']) ? sanitize_text_field(wp_unslash((string) $_POST['vkl_cr_first'])) : null;
+        $posted_last  = isset($_POST['vkl_cr_last']) ? sanitize_text_field(wp_unslash((string) $_POST['vkl_cr_last'])) : null;
+        $national     = isset($_POST['vkl_cr_national']) ? VKL_Wc_Account::normalize_national_id((string) wp_unslash($_POST['vkl_cr_national'])) : (string) get_user_meta($user_id, 'vkl_national_id', true);
+        $iban         = isset($_POST['vkl_cr_iban']) ? self::normalize_iban((string) wp_unslash($_POST['vkl_cr_iban'])) : (string) get_user_meta($user_id, 'vkl_iban', true);
+        // phpcs:enable
 
-        if ('' === $first || '' === $last || '' === $phone) {
+        foreach (['first' => $posted_first, 'last' => $posted_last] as $part => $value) {
+            if (null !== $value && '' !== trim($value)) {
+                update_user_meta($user_id, 'billing_' . $part . '_name', trim($value));
+
+                if ('' === trim((string) get_user_meta($user_id, $part . '_name', true))) {
+                    update_user_meta($user_id, $part . '_name', trim($value));
+                }
+            }
+        }
+
+        [$first, $last] = self::profile_name($user_id);
+        $phone          = trim((string) get_user_meta($user_id, 'billing_phone', true));
+
+        if ('' === $first || '' === $last) {
+            wc_add_notice('نام و نام خانوادگی متقاضی را وارد کنید.', 'error');
+
+            return;
+        }
+
+        if ('' === $phone) {
             wc_add_notice(
                 sprintf(
                     /* translators: %s: account details URL. */
@@ -324,23 +615,20 @@ final class VKL_Credit_Requests extends VKL_Repository
             return;
         }
 
-        // Identity lives in Account details (single source of truth):
-        // the request only checks that it is complete and valid there.
-        $national = (string) get_user_meta($user_id, 'vkl_national_id', true);
-        $iban     = (string) get_user_meta($user_id, 'vkl_iban', true);
-
-        if (!VKL_Wc_Account::is_valid_national_id($national) || !preg_match('/^IR\d{24}$/', $iban)) {
-            wc_add_notice(
-                sprintf(
-                    /* translators: %s: account details URL. */
-                    __('Please save a valid national ID and IBAN in Account details first: %s', 'vereskala-login'),
-                    esc_url(wc_get_account_endpoint_url('edit-account'))
-                ),
-                'error'
-            );
+        if (!VKL_Wc_Account::is_valid_national_id($national)) {
+            wc_add_notice('کد ملی واردشده معتبر نیست؛ لطفاً ارقام را دوباره بررسی کنید.', 'error');
 
             return;
         }
+
+        if (!self::is_valid_iban($iban)) {
+            wc_add_notice('شمارهٔ شبا معتبر نیست. شبا با IR و ۲۴ رقم نوشته می‌شود و باید به نام خود متقاضی باشد.', 'error');
+
+            return;
+        }
+
+        update_user_meta($user_id, 'vkl_national_id', $national);
+        update_user_meta($user_id, 'vkl_iban', $iban);
 
         // When the shop requires it, the mobile must be registered in the
         // name of the owner of the national ID (inquiry service).
@@ -350,7 +638,7 @@ final class VKL_Credit_Requests extends VKL_Repository
             if ('match' !== $verdict) {
                 wc_add_notice(
                     'mismatch' === $verdict
-                        ? 'شمارهٔ همراه شما به نام صاحب این کد ملی ثبت نشده است؛ درخواست اعتبار فقط با شمارهٔ ثبت‌شده به نام خودتان پذیرفته می‌شود. شماره یا کد ملی را در «جزئیات حساب» اصلاح کنید.'
+                        ? 'شمارهٔ همراه شما به نام صاحب این کد ملی ثبت نشده است؛ درخواست اعتبار فقط با شمارهٔ ثبت‌شده به نام خودتان پذیرفته می‌شود. کد ملی را در همین فرم یا شمارهٔ همراه را در «جزئیات حساب» اصلاح کنید.'
                         : 'در حال حاضر تطبیق شمارهٔ همراه با کد ملی ممکن نیست. چند دقیقهٔ دیگر دوباره تلاش کنید.',
                     'error'
                 );
