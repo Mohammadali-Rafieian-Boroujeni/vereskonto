@@ -80,6 +80,29 @@ final class VKL_Wc_Shipping_Step
         add_action('woocommerce_cart_emptied', [$this, 'reset']);
 
         add_filter('vkl_address_saved_redirect', [$this, 'back_after_address_save']);
+
+        // Checkout: the step's choice as a summary card (phase 2).
+        add_action('woocommerce_checkout_before_customer_details', [$this, 'summary_card'], 5);
+        add_filter('body_class', [$this, 'body_class']);
+        add_filter('woocommerce_ship_to_different_address_checked', [$this, 'ship_to_recipient']);
+        add_filter('woocommerce_update_order_review_fragments', [$this, 'summary_fragment']);
+
+        // WoodMart's "cart → checkout → complete" bar gets the step. The
+        // theme declares woodmart_checkout_steps() only when it does not
+        // exist yet, and plugins load before the theme.
+        self::$active = $this;
+
+        if (!function_exists('woodmart_checkout_steps')) {
+            vkl_require('modules/woocommerce/woodmart-steps.php');
+        }
+    }
+
+    /** The registered, enabled step (for the WoodMart bar). */
+    private static ?self $active = null;
+
+    public static function active(): ?self
+    {
+        return self::$active;
     }
 
     // ------------------------------------------------------------------
@@ -267,6 +290,218 @@ final class VKL_Wc_Shipping_Step
         $this->session_set(self::S_DONE, null);
         $this->session_set(self::S_ADDRESS, null);
         $this->session_set(self::S_PIN, null);
+    }
+
+    // ------------------------------------------------------------------
+    // Steps bar
+    // ------------------------------------------------------------------
+
+    /**
+     * Which step a page is: 'cart' | 'shipping' | 'checkout' | 'complete' | ''.
+     */
+    public function current_step(): string
+    {
+        if (function_exists('is_order_received_page') && is_order_received_page()) {
+            return 'complete';
+        }
+
+        if ($this->on_step_page()) {
+            return 'shipping';
+        }
+
+        if (function_exists('is_checkout') && is_checkout()) {
+            return 'checkout';
+        }
+
+        return function_exists('is_cart') && is_cart() ? 'cart' : '';
+    }
+
+    /**
+     * The four steps. Labels of the three WoodMart steps keep the theme's
+     * own translations.
+     *
+     * @return array<int, array{key: string, label: string, url: string}>
+     */
+    public function steps(): array
+    {
+        return [
+            ['key' => 'cart', 'label' => __('Shopping cart', 'woodmart'), 'url' => wc_get_cart_url()],
+            ['key' => 'shipping', 'label' => 'نشانی و ارسال', 'url' => $this->url()],
+            ['key' => 'checkout', 'label' => __('Checkout', 'woodmart'), 'url' => wc_get_checkout_url()],
+            ['key' => 'complete', 'label' => __('Order complete', 'woodmart'), 'url' => ''],
+        ];
+    }
+
+    /**
+     * WoodMart's markup (.wd-checkout-steps) with the step added, so it
+     * keeps the theme's look, typography settings and RTL arrows.
+     */
+    public function woodmart_steps_html(): string
+    {
+        $current = $this->current_step();
+        $html    = '<ul class="wd-checkout-steps">';
+
+        foreach ($this->steps() as $s) {
+            $label = '<span>' . esc_html($s['label']) . '</span>';
+            // The finished order cannot be revisited; every other step links.
+            $inner = '' !== $s['url'] && 'complete' !== $current ? '<a href="' . esc_url($s['url']) . '">' . $label . '</a>' : $label;
+
+            $html .= sprintf(
+                '<li class="step-%1$s %2$s"%3$s>%4$s</li>',
+                esc_attr($s['key']),
+                $s['key'] === $current ? 'step-active' : 'step-inactive',
+                $s['key'] === $current ? ' aria-current="step"' : '',
+                $inner
+            );
+        }
+
+        return $html . '</ul>';
+    }
+
+    /**
+     * The bar on the step page: WoodMart's when the theme is active,
+     * a plain one otherwise.
+     */
+    private function steps_bar(): string
+    {
+        if (function_exists('woodmart_enqueue_inline_style')) {
+            woodmart_enqueue_inline_style('woo-mod-checkout-steps');
+
+            return '<div class="wd-checkout-steps-wrapp vkl-ship-wd-steps">' . $this->woodmart_steps_html() . '</div>';
+        }
+
+        $html = '<ol class="vkl-ship-steps" aria-label="مراحل خرید">';
+
+        foreach (array_slice($this->steps(), 0, 3) as $s) {
+            if ('shipping' === $s['key']) {
+                $html .= '<li class="is-current" aria-current="step">' . esc_html($s['label']) . '</li>';
+            } elseif ('cart' === $s['key']) {
+                $html .= '<li class="is-done"><a href="' . esc_url($s['url']) . '">' . esc_html($s['label']) . '</a></li>';
+            } else {
+                $html .= '<li>' . esc_html($s['label']) . '</li>';
+            }
+        }
+
+        return $html . '</ol>';
+    }
+
+    // ------------------------------------------------------------------
+    // Checkout summary card
+    // ------------------------------------------------------------------
+
+    /**
+     * The address chosen at the step, when the checkout should show it as
+     * a card instead of the address fields; null otherwise.
+     *
+     * @return array<string, string>|null
+     */
+    public function summary_address(): ?array
+    {
+        if (
+            !is_user_logged_in()
+            || !function_exists('WC') || null === WC()->cart || !WC()->cart->needs_shipping()
+            || !$this->session_get(self::S_DONE)
+        ) {
+            return null;
+        }
+
+        $id = (string) $this->session_get(self::S_ADDRESS);
+
+        return '' !== $id ? VKL_Wc_Addresses::find(get_current_user_id(), $id) : null;
+    }
+
+    private function on_checkout_form(): bool
+    {
+        return function_exists('is_checkout') && is_checkout()
+            && !is_wc_endpoint_url('order-pay') && !is_wc_endpoint_url('order-received');
+    }
+
+    /**
+     * @param string[] $classes
+     *
+     * @return string[]
+     */
+    public function body_class(array $classes): array
+    {
+        if ($this->on_checkout_form() && null !== $this->summary_address()) {
+            $classes[] = 'vkl-ship-summary-on';
+        }
+
+        return $classes;
+    }
+
+    /**
+     * With a card, the recipient of the chosen address is in the shipping
+     * fields; keep "ship to a different address" on so the order uses them
+     * instead of copying the account holder's billing name over.
+     */
+    public function ship_to_recipient(mixed $checked): mixed
+    {
+        return null !== $this->summary_address() ? true : $checked;
+    }
+
+    /**
+     * Label and price of the shipping method that checkout currently has.
+     */
+    public function method_html(): string
+    {
+        $rates  = self::rates_from_packages((array) WC()->shipping()->get_packages());
+        $chosen = $this->chosen_session_rate();
+
+        foreach ($rates as $r) {
+            if ($r['id'] === $chosen) {
+                return '<span class="vkl-ship-summary-method">' . esc_html($r['label']) . ' — '
+                    . ($r['cost'] > 0 ? wp_kses_post(wc_price($r['cost'])) : esc_html('رایگان')) . '</span>';
+            }
+        }
+
+        return '<span class="vkl-ship-summary-method">' . esc_html('در جمع سفارش، پایین همین صفحه') . '</span>';
+    }
+
+    public function summary_card(): void
+    {
+        $a = $this->summary_address();
+
+        if (null === $a) {
+            return;
+        }
+        ?>
+        <div class="vkl-ship-summary" id="vkl-ship-summary">
+            <div class="vkl-ship-summary-row">
+                <span class="vkl-ship-summary-key">ارسال به</span>
+                <span class="vkl-ship-summary-val">
+                    <strong><?php echo esc_html((string) $a['label']); ?></strong>
+                    <span><?php echo esc_html(VKL_Wc_Addresses::one_line($a)); ?></span>
+                    <span class="vkl-ship-recipient"><?php echo esc_html('گیرنده: ' . trim($a['first_name'] . ' ' . $a['last_name']) . ' · ' . $a['phone']); ?></span>
+                </span>
+            </div>
+            <div class="vkl-ship-summary-row">
+                <span class="vkl-ship-summary-key">روش ارسال</span>
+                <span class="vkl-ship-summary-val"><?php echo $this->method_html(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped in method_html(). ?></span>
+            </div>
+            <p class="vkl-ship-summary-actions">
+                <a class="button" href="<?php echo esc_url($this->url()); ?>">ویرایش نشانی و روش ارسال</a>
+                <button type="button" class="vkl-ship-summary-fields" id="vkl-ship-show-fields" aria-controls="customer_details" aria-expanded="false">نمایش همهٔ فیلدها</button>
+            </p>
+        </div>
+        <?php
+    }
+
+    /**
+     * Keep the card's method line in step when the customer changes the
+     * method in the order review below it.
+     *
+     * @param array<string, string> $fragments
+     *
+     * @return array<string, string>
+     */
+    public function summary_fragment(array $fragments): array
+    {
+        if (null !== $this->summary_address()) {
+            $fragments['.vkl-ship-summary-method'] = $this->method_html();
+        }
+
+        return $fragments;
     }
 
     // ------------------------------------------------------------------
@@ -544,6 +779,15 @@ final class VKL_Wc_Shipping_Step
 
     public function assets(): void
     {
+        $summary = !$this->on_step_page() && $this->on_checkout_form() && null !== $this->summary_address();
+
+        if ($summary) {
+            wp_enqueue_style('vkl-shipping-step', VKL_URL . 'assets/shipping-step.css', [], VKL_VERSION);
+            wp_enqueue_script('vkl-shipping-step', VKL_URL . 'assets/shipping-step.js', ['jquery'], VKL_VERSION, true);
+
+            return;
+        }
+
         if (!$this->on_step_page()) {
             return;
         }
@@ -588,11 +832,7 @@ final class VKL_Wc_Shipping_Step
         ?>
         <div class="vkl-ship">
             <?php if (function_exists('wc_print_notices')) { wc_print_notices(); } ?>
-            <ol class="vkl-ship-steps" aria-label="مراحل خرید">
-                <li class="is-done"><a href="<?php echo esc_url(wc_get_cart_url()); ?>">سبد خرید</a></li>
-                <li class="is-current" aria-current="step">نشانی و ارسال</li>
-                <li>پرداخت</li>
-            </ol>
+            <?php echo $this->steps_bar(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- escaped in steps_bar(). ?>
 
             <?php if ([] === $rows) : ?>
                 <div class="vkl-ship-empty">

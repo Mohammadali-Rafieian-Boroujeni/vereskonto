@@ -35,7 +35,31 @@
 .vkl-ship-submit { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
 .vkl-ship-submit .button[disabled] { opacity: .5; cursor: not-allowed; }
 
+/* WoodMart's steps bar on the step page (the page title shows the page name). */
+.vkl-ship-wd-steps { margin: 0 0 24px; text-align: center; }
+
+/* Checkout: summary card of the step's choice. */
+.vkl-ship-summary { margin: 0 0 24px; padding: 16px 18px; border: 1px solid var(--wd-primary-color, #2e7d32); border-radius: 10px; background: rgba(46, 125, 50, .04); }
+.vkl-ship-summary-row { display: flex; gap: 16px; padding: 8px 0; line-height: 1.7; }
+.vkl-ship-summary-row + .vkl-ship-summary-row { border-top: 1px solid rgba(0, 0, 0, .07); }
+.vkl-ship-summary-key { flex: 0 0 90px; color: #777; }
+.vkl-ship-summary-val { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.vkl-ship-summary-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin: 12px 0 0; }
+.vkl-ship-summary-fields { padding: 0; border: 0; background: none; color: inherit; text-decoration: underline; cursor: pointer; font-size: 13px; }
+
+/* The address fields stay in the form for WooCommerce, folded away. */
+body.vkl-ship-summary-on:not(.vkl-ship-fields-open) .woocommerce-shipping-fields,
+body.vkl-ship-summary-on:not(.vkl-ship-fields-open) .vkl-addr-pick,
+body.vkl-ship-summary-on:not(.vkl-ship-fields-open) #billing_country_field,
+body.vkl-ship-summary-on:not(.vkl-ship-fields-open) #billing_state_field,
+body.vkl-ship-summary-on:not(.vkl-ship-fields-open) #billing_city_field,
+body.vkl-ship-summary-on:not(.vkl-ship-fields-open) #billing_address_1_field,
+body.vkl-ship-summary-on:not(.vkl-ship-fields-open) #billing_address_2_field,
+body.vkl-ship-summary-on:not(.vkl-ship-fields-open) #billing_postcode_field { display: none !important; }
+
 @media (max-width: 600px) {
+    .vkl-ship-summary-row { flex-direction: column; gap: 2px; }
+    .vkl-ship-summary-key { flex: none; font-size: 13px; }
     .vkl-ship-steps { font-size: 12px; }
     .vkl-ship-submit { flex-direction: column-reverse; align-items: stretch; }
     .vkl-ship-submit .button { width: 100%; text-align: center; }

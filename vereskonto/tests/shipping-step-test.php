@@ -36,7 +36,14 @@ function get_current_user_id() { return 7; }
 function wp_verify_nonce($n, $a) { return 'good' === $n; }
 function get_post_status($id) { return 42 === (int) $id ? 'publish' : false; }
 function get_permalink($id) { return 'https://shop.test/shipping/'; }
-function is_page($id) { return 42 === (int) $id; }
+$GLOBALS['page'] = 'step'; // which page the request is on: step | cart | checkout | complete
+function is_page($id) { return 42 === (int) $id && 'step' === $GLOBALS['page']; }
+function is_cart() { return 'cart' === $GLOBALS['page']; }
+function is_checkout() { return in_array($GLOBALS['page'], ['checkout', 'complete'], true); }
+function is_order_received_page() { return 'complete' === $GLOBALS['page']; }
+function is_wc_endpoint_url($e) { return 'order-received' === $e && 'complete' === $GLOBALS['page']; }
+function __($s, $d = '') { return $s; }
+function vkl_require($f) { require_once __DIR__ . '/../' . $f; }
 function add_shortcode(...$a) {}
 function add_action(...$a) {}
 function add_filter(...$a) {}
@@ -78,6 +85,8 @@ class VKL_Test_Cart
     public function calculate_shipping() {}
     public function calculate_totals() {}
     public function is_empty() { return false; }
+    public bool $ships = true;
+    public function needs_shipping() { return $this->ships; }
 }
 class VKL_Test_Shipping
 {
@@ -195,6 +204,60 @@ $check('work' === VKL_Wc_Addresses::session_address_id(), 'the checkout picker p
 // ---- Reset -----------------------------------------------------------------
 $step->reset();
 $check(null === $session->get(VKL_Wc_Shipping_Step::S_DONE) && null === $session->get(VKL_Wc_Shipping_Step::S_ADDRESS), 'after the order (or an emptied cart) the next purchase starts at the step');
+
+// ---- Phase 2: checkout summary card ------------------------------------------
+$check(null === $step->summary_address(), 'no card before the step is done');
+$check(false === $step->ship_to_recipient(false), '"ship to a different address" is left alone without a card');
+
+$GLOBALS['page'] = 'step';
+$submit(['vkl_address_id' => 'work', 'vkl_ship_rate' => 'vpc_courier']);
+$GLOBALS['page'] = 'checkout';
+
+$card = $step->summary_address();
+$check(null !== $card && 'work' === $card['id'], 'after the step, checkout shows the chosen address as a card');
+$check(in_array('vkl-ship-summary-on', $step->body_class([]), true), 'the checkout body is marked so the address fields fold away');
+$check(true === $step->ship_to_recipient(false), 'the order uses the recipient (shipping fields), not the account holder');
+
+ob_start();
+$step->summary_card();
+$html = (string) ob_get_clean();
+$check(str_contains($html, 'محل کار') && str_contains($html, 'اصفهان') && str_contains($html, 'علی رضایی'), 'the card shows the label, address and recipient');
+$check(str_contains($html, 'پیک اصفهان') && str_contains($html, '90,000'), 'the card shows the chosen method and its price');
+$check(str_contains($html, 'https://shop.test/shipping/'), 'the card links back to the step to edit');
+
+$session->set('chosen_shipping_methods', [0 => 'local_pickup:3']); // changed in the order review below
+$frag = $step->summary_fragment([]);
+$check(isset($frag['.vkl-ship-summary-method']) && str_contains($frag['.vkl-ship-summary-method'], 'دریافت حضوری') && str_contains($frag['.vkl-ship-summary-method'], 'رایگان'), 'changing the method below updates the card');
+
+WC()->cart->ships = false;
+$check(null === $step->summary_address() && [] === $step->body_class([]), 'a cart without shipping shows no card');
+WC()->cart->ships = true;
+
+$GLOBALS['page'] = 'complete';
+$check([] === $step->body_class([]), 'the thank-you page shows no card');
+
+// ---- Phase 2: steps bar -------------------------------------------------------
+$step->register(); // enabled → becomes the bar's source and defines the WoodMart function
+$check(function_exists('woodmart_checkout_steps') && VKL_Wc_Shipping_Step::active() === $step, 'the WoodMart steps function is provided while the step is on');
+
+$bar = static function (string $page): string {
+    $GLOBALS['page'] = $page;
+    ob_start();
+    woodmart_checkout_steps();
+    return (string) ob_get_clean();
+};
+$active = static fn(string $html): string => preg_match('/class="step-(\w+) step-active"/', $html, $m) ? $m[1] : '';
+
+$h = $bar('cart');
+$check(4 === substr_count($h, '<li ') && 'cart' === $active($h), 'cart page: four steps, cart active');
+$check(str_contains($h, 'class="wd-checkout-steps"') && str_contains($h, 'نشانی و ارسال'), "the bar keeps WoodMart's markup and has the new step");
+$check('shipping' === $active($bar('step')), 'step page: address and shipping active');
+$check('checkout' === $active($bar('checkout')), 'checkout page: checkout active');
+$h = $bar('complete');
+$check('complete' === $active($h) && !str_contains($h, '<a '), 'thank-you page: complete active, no links back into a finished order');
+$check(1 === substr_count($bar('checkout'), 'aria-current="step"'), 'exactly one step is marked current');
+
+$GLOBALS['page'] = 'step';
 
 // ---- Disabled --------------------------------------------------------------
 $off = new VKL_Config();

@@ -66,9 +66,41 @@
         if (submit) { submit.disabled = !box.querySelector('input[name="vkl_ship_rate"]'); }
     }
 
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
-    } else {
+    // ------------------------------------------------------------------
+    // Checkout: the address fields stay in the form (WooCommerce needs
+    // them) but are folded under the summary card. They open on request,
+    // and by themselves when checkout reports an error the customer could
+    // otherwise not see.
+    // ------------------------------------------------------------------
+    function initSummary() {
+        var btn = document.getElementById('vkl-ship-show-fields');
+        if (!btn) { return; }
+
+        function open() {
+            document.body.classList.add('vkl-ship-fields-open');
+            btn.setAttribute('aria-expanded', 'true');
+            btn.hidden = true;
+        }
+
+        btn.addEventListener('click', function () {
+            open();
+            var details = document.getElementById('customer_details');
+            if (details) { details.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        });
+
+        if (window.jQuery) {
+            window.jQuery(document.body).on('checkout_error', open);
+        }
+    }
+
+    function start() {
         init();
+        initSummary();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', start);
+    } else {
+        start();
     }
 })();
